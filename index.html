@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carnet de réunions</title>
+<meta name="description" content="Prépare tes réunions et retrouve tes commentaires, même hors connexion.">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#f6f5fb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#12101b" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Carnet">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<style>
+/* VOICE: calme, personnel, encourageant — un carnet d'étude qu'on ouvre chaque matin
+   IDEA: le carnet de préparation : chaque partie du programme suivie de sa fiche de commentaire
+   PICTURE: carnet ouvert violet avec bulle et coche (bannière), fiches-cartes du programme
+   COLOUR and TYPE: lavande/violet pour le mercredi, terre cuite pour le samedi ; Inter 800 serré pour les titres
+   LAYOUT: une colonne mobile (max 760px), onglets en haut, cartes arrondies */
+/* Couleurs en variables classiques (compatibles avec les anciens iPhone/Android, contrairement à light-dark()) */
+:root{color-scheme:light;
+--bg:#f6f5fb;--card:#fff;--ink:#1f1b3a;--muted:#6b6880;--line:#e6e2f3;--vi:#5a45c6;--vibtn:#6550cf;--lav:#efeafd;--lav2:#f4f1fe;
+--te:#a3443a;--peach:#fdece6;--peach2:#fff8f5;--ok:#1f7a4d;--okbg:#e5f5ec;--h1:#f3effe;--h2:#e9e2fd;--hb:#e0d8fa;--sb:#f4ddd5;--fs:13.5px}
+@media(prefers-color-scheme:dark){:root:not([data-mode=light]):not([data-theme=light]){color-scheme:dark;
+--bg:#12101b;--card:#1c1a29;--ink:#eeecf7;--muted:#a6a3bb;--line:#2d2a42;--vi:#ab9cff;--vibtn:#7b68e8;--lav:#2a2446;--lav2:#221e36;
+--te:#f2a596;--peach:#3a2420;--peach2:#241a1a;--ok:#7fd6a6;--okbg:#183326;--h1:#231d3d;--h2:#2b2350;--hb:#3a3160;--sb:#3a2a28}}
+:root[data-mode=dark],:root[data-theme=dark]{color-scheme:dark;
+--bg:#12101b;--card:#1c1a29;--ink:#eeecf7;--muted:#a6a3bb;--line:#2d2a42;--vi:#ab9cff;--vibtn:#7b68e8;--lav:#2a2446;--lav2:#221e36;
+--te:#f2a596;--peach:#3a2420;--peach2:#241a1a;--ok:#7fd6a6;--okbg:#183326;--h1:#231d3d;--h2:#2b2350;--hb:#3a3160;--sb:#3a2a28}
+*{box-sizing:border-box;min-width:0}
+b,strong,dt{font-weight:500}
+body{margin:0;background:var(--bg);color:var(--ink);font:var(--fs)/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:clip;-webkit-text-size-adjust:100%}
+a{color:var(--vi)}
+button,select,input,textarea{font:inherit;color:inherit}
+.wrap{max-width:760px;margin:0 auto;padding:0 max(4vw,16px)}
+header{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.brand{display:flex;align-items:center;gap:10px;padding:10px 0 4px}
+.logo{width:38px;height:38px;border-radius:11px;background:linear-gradient(145deg,#8a6cf0,#5a3fc4);display:grid;place-items:center;box-shadow:0 8px 18px #5a3fc440;flex:none}
+.brand b{font-size:15px;letter-spacing:-.01em;flex:1}
+.theme{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;min-height:36px;padding:0 12px;font-size:13px;font-weight:500;cursor:pointer;display:inline-flex;gap:6px;align-items:center}
+nav{display:flex;gap:6px;padding:6px 0 10px;overflow-x:auto}
+nav a{display:flex;align-items:center;gap:6px;padding:7px 11px;border-radius:12px;text-decoration:none;color:var(--ink);font-weight:500;font-size:13.5px;white-space:nowrap;min-height:38px}
+nav svg{width:17px;height:17px}
+nav svg,.btn svg,.refs svg,.acts svg,.srcs svg,.wk svg{flex:none}
+.pill{white-space:nowrap}
+nav a[aria-current=page]{background:var(--lav);color:var(--vi)}
+h1{font-size:clamp(21px,5.6vw,27px);line-height:1.1;letter-spacing:-.025em;margin:18px 0 4px;font-weight:600;text-wrap:balance}
+h2{font-size:17px;letter-spacing:-.015em;margin:22px 0 8px;font-weight:600;line-height:1.1}
+h3{font-size:14.5px;font-weight:500;margin:0;line-height:1.25;letter-spacing:-.01em}
+.sub{color:var(--muted);margin:0 0 14px;font-size:14px}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:20px;padding:16px;margin-bottom:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border-radius:12px;font-size:14px;border:1.5px solid var(--line);background:var(--card);color:var(--vi);font-weight:500;cursor:pointer;text-decoration:none}
+.btn.pri{background:var(--vibtn);border-color:transparent;color:#fff;box-shadow:0 6px 14px #5a45c633}
+.btn.soft{background:var(--lav);border-color:transparent}
+.btn.te{background:var(--peach);border-color:transparent;color:var(--te)}
+.btn:focus-visible,nav a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--vi);outline-offset:2px}
+.weeknav{display:flex;align-items:center;justify-content:space-between;background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:3px;margin:4px 0 14px}
+.weeknav button{width:40px;height:40px;border:0;background:none;border-radius:14px;cursor:pointer;display:grid;place-items:center;color:var(--ink)}
+.weeknav button:disabled{opacity:.25}
+.weeknav span{display:flex;gap:8px;align-items:center;font-weight:500;font-size:15px}
+.hero{background:linear-gradient(135deg,var(--h1),var(--h2));border:1.5px solid var(--hb);border-radius:20px;padding:16px;display:grid;grid-template-columns:minmax(0,1fr) 132px;gap:8px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:7px;background:var(--card);color:var(--vi);border-radius:999px;padding:4px 10px;font-size:12px;font-weight:500}
+.hero h2{margin:8px 0 4px;font-size:clamp(17px,4.6vw,21px)}
+.hero p{margin:0;color:var(--muted)}
+.hero .ready{margin-top:8px;font-size:12.5px;color:var(--vi);font-weight:500}
+.rowhead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.rowhead a{font-weight:500;text-decoration:none;font-size:13px}
+.meet{display:grid;grid-template-columns:52px minmax(0,1fr);gap:12px}
+.tile{width:52px;height:52px;border-radius:13px;background:var(--lav);color:var(--vi);display:grid;place-items:center;text-align:center;line-height:1}
+.tile b{font-size:20px;display:block;font-weight:500}.tile small{font-size:10.5px;font-weight:500;letter-spacing:.04em}
+.sat .tile{background:var(--peach);color:var(--te)}
+.meet .top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.status{flex:none;background:var(--lav2);color:var(--muted);border-radius:999px;padding:3px 9px;font-size:12px;font-weight:500;white-space:nowrap}
+.status.ok{background:var(--okbg);color:var(--ok)}
+.meta{color:var(--muted);margin:4px 0 0}
+.focus{grid-column:1/-1;background:var(--lav2);border-radius:13px;padding:10px 12px;display:flex;gap:10px}
+.sat .focus{background:var(--peach2)}
+.focus small{color:var(--muted);font-weight:500;display:block;font-size:12px}.focus b{font-size:14.5px;line-height:1.35}
+.foot{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;color:var(--muted)}
+.foot span{display:flex;gap:8px;align-items:center}
+.empty{text-align:left}
+.ico{width:42px;height:42px;border-radius:12px;background:var(--lav);display:grid;place-items:center;color:var(--vi);margin-bottom:14px}
+.empty h3{margin-bottom:4px}.empty p{color:var(--muted);margin:0 0 16px}
+.tools{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:12px;margin:18px 0}
+.field{display:flex;align-items:center;gap:10px;background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:0 12px;min-height:44px}
+.field input,.field select{border:0;background:none;outline:none;width:100%;font-size:16px;min-height:42px}
+.wk{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;cursor:pointer}
+.wk .ico{margin:0;flex:none}.wk div{flex:1}.wk small{color:var(--muted);font-size:13px}
+.back{display:inline-flex;gap:6px;align-items:center;font-weight:500;text-decoration:none;margin-top:12px;min-height:38px;font-size:13.5px}
+.dhead{display:grid;grid-template-columns:52px minmax(0,1fr);gap:12px;align-items:start;margin:6px 0 14px}
+.dhead h1{margin:0;font-size:clamp(20px,5.4vw,25px)}
+.prog{background:var(--card);border:1.5px solid var(--line);border-radius:20px;padding:16px 14px}
+.sat .prog{background:linear-gradient(var(--peach2),var(--card) 320px);border-color:var(--sb)}
+.prog>h2{margin:0 0 4px}
+.meter{height:8px;background:var(--lav2);border-radius:9px;overflow:hidden;margin:10px 0 4px}.meter i{display:block;height:100%;background:var(--vibtn);border-radius:9px}
+.sec{margin-top:18px;font-size:12px;font-weight:500;color:var(--vi);background:var(--lav);display:inline-block;padding:6px 12px;border-radius:10px}
+.sat .sec{color:var(--te);background:var(--peach)}
+.part{padding:12px 0;border-bottom:1px solid var(--line)}
+.part:last-child{border-bottom:0}
+.ph{display:grid;grid-template-columns:34px minmax(0,1fr);gap:2px}
+.num{font-weight:500;color:var(--vi);font-size:14px}
+.sat .num{color:var(--te)}
+.ph h3{font-size:14.5px}.ph .dur{color:var(--muted);font-weight:500;font-size:12.5px;white-space:nowrap}
+.cons{color:var(--muted);margin:6px 0 0}
+.refs{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.refs a{font-size:12px;font-weight:500;text-decoration:none;background:var(--lav2);padding:6px 10px;border-radius:10px;display:inline-flex;gap:6px;align-items:center}
+.inner{margin-left:34px}
+.conseils{margin:10px 0 0;padding-left:20px;color:var(--ink)}
+.item{margin-top:12px}
+.item .q{font-weight:500;display:flex;gap:6px;align-items:flex-start}
+.item .q a{flex:none;margin-top:2px}
+.item .qq{color:var(--muted);margin:4px 0 0}
+details{margin-top:8px}
+summary{cursor:pointer;color:var(--vi);font-weight:500;list-style:none;min-height:36px;font-size:13.5px;display:flex;align-items:center;gap:6px}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"▸";transition:transform .15s}details[open]>summary::before{transform:rotate(90deg)}
+.pp dt{font-weight:500;font-size:13px;margin-top:9px}.pp dd{margin:2px 0 0;color:var(--muted)}
+.say{background:var(--lav);border-radius:14px;padding:12px;margin-top:10px}
+.say b{display:block;font-size:13px;margin-bottom:4px}
+.acts{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:12px;flex-wrap:wrap}
+.acts a{font-weight:500;text-decoration:none;display:inline-flex;gap:6px;align-items:center;min-height:38px;font-size:13.5px}
+.mine{margin-top:12px;border-left:3px solid var(--vibtn);padding:4px 0 4px 12px}
+.mine small{color:var(--vi);font-weight:500}
+.also{margin-top:14px;background:var(--lav2);border-radius:16px;padding:12px 14px}
+.also b{font-size:12.5px}.also a{display:block;font-weight:500;font-size:13px;text-decoration:none;padding:5px 0}
+.srcs{background:var(--peach);border-radius:18px;padding:14px 16px;margin:18px 0 40px}
+.srcs a{display:flex;justify-content:space-between;gap:10px;font-weight:500;text-decoration:none;padding:6px 0;font-size:13px}
+.cm .cmh{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.cm small{color:var(--muted)}
+.cm .txt{margin:10px 0 0;white-space:pre-wrap}
+.cm .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.cm .row .btn{min-height:38px;padding:0 12px;font-size:13px}
+.tag{font-size:11.5px;font-weight:500;border-radius:999px;padding:4px 10px;background:var(--lav);color:var(--vi);white-space:nowrap}
+.tag.pret{background:var(--okbg);color:var(--ok)}.tag.idee{background:var(--peach);color:var(--te)}
+dialog{border:0;padding:0;border-radius:28px 28px 0 0;width:100%;max-width:760px;margin:auto auto 0;background:var(--card);color:var(--ink);max-height:92vh}
+dialog::backdrop{background:#120e2a88}
+@media(min-width:700px){dialog{border-radius:28px;margin:auto}}
+.sheet{padding:18px;display:grid;gap:12px}
+.sheet h2{margin:0}
+.sheet label{font-weight:500;font-size:13px;display:grid;gap:6px}
+.sheet textarea,.sheet select,.sheet input{border:1.5px solid var(--line);background:var(--bg);border-radius:14px;padding:12px;font-size:16px;width:100%}
+.sheet textarea{min-height:76px;resize:vertical}
+.sheet .two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.sheet .end{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;margin-top:4px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:12px 18px;border-radius:14px;font-weight:500;opacity:0;transition:opacity .2s;pointer-events:none;z-index:20;max-width:90vw}
+.toast.on{opacity:1}
+.note{font-size:12.5px;color:var(--muted);margin:8px 0 0}
+@media(max-width:560px){.hero{grid-template-columns:minmax(0,1fr) 112px;padding:14px}.inner{margin-left:0}.tools{grid-template-columns:minmax(0,1fr)}.sheet .two{grid-template-columns:minmax(0,1fr)}.card{padding:18px}}
+@media(max-width:400px){nav{gap:0}nav a{padding:7px 8px;font-size:13px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+nav a{flex:none}
+@media(max-width:430px){nav svg{display:none}nav a{padding:7px 9px}}
+.medias{display:grid;gap:8px;margin-top:10px}
+.md{display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;background:var(--lav2);border-radius:12px;padding:10px 12px}
+.sat .md{background:var(--peach2)}
+.md .mdi{font-size:16px;line-height:1.4}.md b{font-size:13px}.md p{margin:2px 0 4px;color:var(--muted)}.md a{font-size:12.5px;font-weight:500;text-decoration:none}
+textarea.big,#tform textarea,#tform input,#tform select{width:100%;border:1.5px solid var(--line);background:var(--bg);border-radius:14px;padding:12px;font-size:16px}
+#tform textarea.big{min-height:140px;resize:vertical;margin-top:8px}
+.sec-ed{padding:12px;display:grid;gap:8px}.sec-ed textarea{min-height:64px}
+.clock{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:8px 0}
+.clock>div{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:10px;text-align:center}
+.clock small{display:block;color:var(--muted);font-size:11.5px}.clock b{font-size:26px;font-variant-numeric:tabular-nums;font-weight:600}
+.tbar{height:8px;background:var(--lav2);border-radius:9px;overflow:hidden}.tbar i{display:block;height:100%;width:0;background:var(--vibtn);transition:width .25s}
+.train .lc.now{border-color:var(--vibtn);box-shadow:0 0 0 3px var(--lav)}
+.train .lc.done{opacity:.5}
+/* ---- v2 : mode réunion, taille du texte, prochaine réunion ---- */
+.tag.dit{background:var(--lav2);color:var(--muted)}
+.fsz{display:inline-flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;flex:none}
+.fsz button{border:0;background:var(--card);min-height:36px;min-width:38px;font-weight:600;cursor:pointer;color:var(--ink)}
+.fsz button+button{border-left:1.5px solid var(--line)}
+.next{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:12px;padding-top:12px;border-top:1px solid var(--hb)}
+.next b{font-size:14px}.next small{display:block;color:var(--muted);font-size:12px}
+.foot .btns{display:flex;gap:8px;flex-wrap:wrap}
+.live .lc{background:var(--card);border:1.5px solid var(--line);border-radius:20px;padding:18px;margin-bottom:14px}
+.live .lc.done{opacity:.55}
+.live .lp{font-size:12px;font-weight:600;color:var(--vi);text-transform:uppercase;letter-spacing:.04em}
+.live.sat .lp{color:var(--te)}
+.live .lq{color:var(--muted);margin:6px 0 10px}
+.live .ld{font-size:calc(var(--fs) * 1.55);line-height:1.5;margin:0;white-space:pre-wrap}
+.live .lv{margin-top:10px;font-weight:500;color:var(--vi)}
+.live .bar{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin:6px 0 14px}
+.live .lact{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.draft{background:var(--peach);color:var(--te);border-radius:12px;padding:8px 12px;font-size:12.5px;font-weight:500}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="brand"><div class="logo"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5.5C4.5 4 8 4 12 6c4-2 7.5-2 10-.5V19c-2.5-1.5-6-1.5-10 .5-4-2-7.5-2-10-.5z"/><path d="M12 6v13.5"/></svg></div><b>Carnet de réunions</b><span class="fsz" role="group" aria-label="Taille du texte"><button type="button" data-fs="-1" aria-label="Réduire le texte">A−</button><button type="button" data-fs="1" aria-label="Agrandir le texte">A+</button></span><button class="theme" id="theme" type="button" aria-label="Changer de thème"></button></div>
+  <nav aria-label="Navigation">
+    <a href="#semaine" data-nav="semaine"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18M8 15h2M14 15h2"/></svg>Ma semaine</a>
+    <a href="#commentaires" data-nav="commentaires"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19l1.4-3.6A8 8 0 1 1 8.6 19z"/><path d="M9 10h6M9 13.5h4"/></svg>Commentaires</a>
+    <a href="#historique" data-nav="historique"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3.5 12a8.5 8.5 0 1 0 2.4-5.9L3.5 8.5"/><path d="M3.5 4v4.5H8M12 8v4.5l3 2"/></svg>Historique</a>
+    <a href="#discours" data-nav="discours"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>Discours</a>
+  </nav>
+</div></header>
+<main class="wrap" id="app"></main>
+<dialog id="dlg"><form class="sheet" id="form" method="dialog"></form></dialog>
+<div class="toast" id="toast" role="status"></div>
+<script>
+(function(){ // fonction auto-exécutée : évite un bug de Safari 15 avec les fonctions dans un bloc { }
+const OFFLINE = false;
+const WEEKS = {};
+let TALKS = [], COMMENTS = [], DB = null, UID = null, MODE = 'local', curWeek = null;
+const LS = 'carnet-commentaires', LSW = 'carnet-semaine';
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const MOIS = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+const MC = ['JANV','FÉVR','MARS','AVR','MAI','JUIN','JUIL','AOÛT','SEPT','OCT','NOV','DÉC'];
+const pd = s => { const [y,m,d] = s.split('-').map(Number); return new Date(y, m-1, d); };
+const today = () => { const t = new Date(); return new Date(t.getFullYear(), t.getMonth(), t.getDate()); };
+const ext = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>';
+const cal = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18M8 15h2M14 15h2"/></svg>';
+const bub = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19l1.4-3.6A8 8 0 1 1 8.6 19z"/><path d="M9 10h6M9 13.5h4"/></svg>';
+const book = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2 5.5C4.5 4 8 4 12 6c4-2 7.5-2 10-.5V19c-2.5-1.5-6-1.5-10 .5-4-2-7.5-2-10-.5z"/><path d="M12 6v13.5"/></svg>';
+const plus = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>';
+
+function sortedWeeks(){ return Object.values(WEEKS).sort((a,b) => a.debut < b.debut ? -1 : 1); }
+function pickWeek(){
+  if (curWeek && WEEKS[curWeek]) return WEEKS[curWeek];
+  const ws = sortedWeeks(), t = today();
+  let saved = null; try { saved = localStorage.getItem(LSW); } catch(e){}
+  const now = ws.find(w => pd(w.debut) <= t && t <= pd(w.fin));
+  const next = ws.find(w => pd(w.debut) > t);
+  // à partir du dimanche soir, la semaine suivante est mise en avant si elle est prête
+  const sundayEve = t.getDay() === 0 && new Date().getHours() >= 19;
+  const w = (sundayEve && next) || now || next || ws[ws.length-1];
+  curWeek = (saved && WEEKS[saved] && !now) ? saved : w.id;
+  return WEEKS[curWeek];
+}
+function setWeek(id){ curWeek = id; try { localStorage.setItem(LSW, id); } catch(e){} }
+function allParts(w, key){ const out = []; (w.reunions[key].sections||[]).forEach(s => s.parties.forEach(p => out.push(p))); return out; }
+function partKey(p){ return (p.num || '') + '|' + p.titre; }
+function forMeeting(wid, key){ return COMMENTS.filter(c => c.weekId === wid && c.meeting === key); }
+function dLabel(s){ const d = pd(s); return d.getDate() + ' ' + MOIS[d.getMonth()]; }
+function rel(s){ const n = Math.round((pd(s) - today()) / 864e5);
+  return n === 0 ? "aujourd'hui" : n === 1 ? 'demain' : n > 1 ? 'dans ' + n + ' jours' : n === -1 ? 'hier' : 'il y a ' + (-n) + ' jours'; }
+// ordre des parties dans le programme (pour trier les commentaires comme à la réunion)
+function partOrder(w, k){ const o = {}; allParts(w,k).forEach((p,i) => o[partKey(p)] = i); return o; }
+function nextMeeting(){
+  const t = today(); let best = null;
+  Object.values(WEEKS).forEach(w => ['mercredi','samedi'].forEach(k => { const m = w.reunions[k]; if (!m) return;
+    const d = pd(m.date); if (d >= t && (!best || d < best.d)) best = {w, k, m, d}; }));
+  return best;
+}
+const existingTake = (wid, k, pk, j) => COMMENTS.find(c => c.weekId === wid && c.meeting === k && c.partKey === pk && c.item === j);
+// estimation de la durée à l'oral (~2,5 mots par seconde)
+const oral = t => Math.round(String(t||'').trim().split(/\s+/).filter(Boolean).length / 2.5);
+
+/* ---------- vues ---------- */
+function vSemaine(){
+  const w = pickWeek(), ws = sortedWeeks(), i = ws.findIndex(x => x.id === w.id);
+  const mine = COMMENTS.filter(c => c.weekId === w.id);
+  return `<h1>Ma semaine</h1><p class="sub">Prépare tes réunions et retrouve tes commentaires au même endroit.</p>
+  <div class="weeknav"><button aria-label="Semaine précédente" data-wk="${ws[i-1]?.id||''}" ${i<=0?'disabled':''}><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <span><span style="color:var(--vi)">${cal}</span>${esc(w.court)}</span>
+  <button aria-label="Semaine suivante" data-wk="${ws[i+1]?.id||''}" ${i>=ws.length-1?'disabled':''}><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg></button></div>
+  <section class="hero"><div><span class="pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Chaque dimanche à 19 h</span>
+  <h2>Prépare tes deux réunions</h2><p>Retrouve les sujets du mercredi et du samedi pour commencer à réfléchir dès le début de la semaine.</p>
+  ${w.prepareLe ? `<div class="ready">✓ Semaine préparée le ${esc(dLabel(w.prepareLe))}</div>` : ''}</div>${art()}
+  ${(() => { const nx = nextMeeting(); if (!nx) return ''; const n = forMeeting(nx.w.id, nx.k).length;
+    return `<div class="next" style="grid-column:1/-1"><div><small>Prochaine réunion · ${esc(rel(nx.m.date))}</small><b>${esc(nx.m.jour)} ${esc(dLabel(nx.m.date))} · ${n} commentaire${n>1?'s':''} prêt${n>1?'s':''}</b></div>
+    <div class="btns" style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn" href="#${nx.k}" data-go="${esc(nx.w.id)}">Préparer</a>${n ? `<a class="btn pri" href="#live-${nx.k}" data-go="${esc(nx.w.id)}">Mode réunion</a>` : ''}</div></div>`; })()}</section>
+  ${draftBanner()}${installCard()}
+  <div class="rowhead"><h2>Les réunions</h2><a href="${esc(w.programme)}" target="_blank" rel="noopener">Voir le programme ${ext}</a></div>
+  ${['mercredi','samedi'].map(k => meetCard(w,k)).join('')}
+  <h2>Mes commentaires</h2><p class="sub">Pour la semaine du ${esc(w.court)}.</p>
+  ${mine.length ? mine.map(cmCard).join('') : emptyCard()}`;
+}
+function meetCard(w, k){
+  const m = w.reunions[k]; if (!m) return '';
+  const d = pd(m.date), n = forMeeting(w.id,k).length, past = d < today();
+  const st = past ? (n ? `<span class="status ok">● Préparée</span>` : `<span class="status">● Passée</span>`) : (n ? `<span class="status ok">● ${n} prêt${n>1?'s':''}</span>` : `<span class="status">● À préparer</span>`);
+  return `<article class="card ${k==='samedi'?'sat':''}"><div class="meet">
+    <div class="tile"><div><b>${d.getDate()}</b><small>${MC[d.getMonth()]}</small></div></div>
+    <div><div class="top"><h3 style="font-size:15px">Réunion du ${k}</h3>${st}</div><p class="meta">${esc(dLabel(m.date))} · ${esc(m.type)}</p></div>
+    <div class="focus"><span style="color:${k==='samedi'?'var(--te)':'var(--vi)'}">${book}</span><div><small>${esc(m.focusLabel)}</small><b>${esc(m.focus)}</b></div></div>
+    <div class="foot"><span>${bub.replace('24','18').replace('24','18')} ${n} commentaire${n>1?'s':''}${past ? '' : ` · ${esc(rel(m.date))}`}</span><span class="btns">${n ? `<a class="btn" href="#live-${k}">Mode réunion</a>` : ''}<a class="btn ${k==='samedi'?'te':'pri'}" href="#${k}">Ouvrir la fiche →</a></span></div>
+  </div></article>`;
+}
+function emptyCard(){
+  return `<div class="card empty"><div class="ico">${bub}</div><h3>Aucun commentaire pour le moment</h3><p>Commence par noter une idée que tu aimerais partager.</p><button class="btn" data-new>${plus} Ajouter</button></div>`;
+}
+function vCommentaires(){
+  return `<h1>Mes commentaires</h1><p class="sub">Retrouve tes idées, tes brouillons et tes réponses prêtes à partager.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn pri" data-new>${plus} Nouveau commentaire</button><button class="btn" data-export>Exporter</button><button class="btn" data-import>Importer</button></div>
+  ${OFFLINE ? '<p class="note">Version hors connexion : tes commentaires sont gardés sur ce téléphone. Utilise Exporter / Importer pour les transférer vers l\'application en ligne.</p>' : ''}
+  <div class="tools"><label class="field"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--vi)" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="q" type="search" placeholder="Rechercher un commentaire" aria-label="Rechercher"></label>
+  <label class="field"><select id="fm" aria-label="Filtrer"><option value="">Toutes les réunions</option><option value="mercredi">Réunions du mercredi</option><option value="samedi">Réunions du samedi</option><option value="pret">Prêts à dire</option><option value="brouillon">Brouillons</option><option value="idee">Idées</option><option value="dit">Déjà dits</option></select></label></div>
+  <div id="list"></div>`;
+}
+function fillList(){
+  const el = $('#list'); if (!el) return;
+  const q = ($('#q')?.value || '').toLowerCase(), f = $('#fm')?.value || '';
+  const L = COMMENTS.filter(c => (!f || c.meeting === f || c.statut === f) && (!q || JSON.stringify(c).toLowerCase().includes(q)))
+    .sort((a,b) => (b.updated||0) - (a.updated||0));
+  el.innerHTML = L.length ? L.map(cmCard).join('') : (COMMENTS.length ? `<p class="sub">Aucun résultat.</p>` : emptyCard());
+}
+const ST = {pret:'Prêt à dire', brouillon:'Brouillon', idee:'Idée', dit:'Dit ✓'};
+function cmCard(c){
+  const w = WEEKS[c.weekId], m = w?.reunions?.[c.meeting];
+  return `<article class="card cm"><div class="cmh"><div><h3>${esc(c.partLabel || 'Commentaire libre')}</h3><small>Réunion du ${esc(c.meeting)}${m ? ' · ' + esc(dLabel(m.date)) : ''}</small></div><span class="tag ${esc(c.statut)}">${esc(ST[c.statut]||'Brouillon')}</span></div>
+  ${c.dire ? `<p class="txt">${esc(c.dire)}</p>` : ''}
+  <details><summary>Voir la structure</summary><dl class="pp">
+  ${c.reponse?`<dt>Réponse directe</dt><dd>${esc(c.reponse)}</dd>`:''}${c.verset?`<dt>Verset ou publication</dt><dd>${esc(c.verset)}</dd>`:''}${c.probleme?`<dt>Problème ou difficulté</dt><dd>${esc(c.probleme)}</dd>`:''}${c.application?`<dt>Application ou leçon</dt><dd>${esc(c.application)}</dd>`:''}</dl></details>
+  <div class="row"><button class="btn soft" data-edit="${esc(c.id)}">Modifier</button><button class="btn" data-copy="${esc(c.id)}">Copier</button><button class="btn" data-del="${esc(c.id)}" style="color:var(--te)">Supprimer</button></div></article>`;
+}
+function vHistorique(){
+  const ws = sortedWeeks().reverse();
+  return `<h1>Historique</h1><p class="sub">Reviens aux réunions passées et à tes commentaires.</p>
+  <a class="btn" href="#semaine" style="margin-bottom:18px">${cal} Ma semaine</a><div style="height:16px"></div>
+  ${ws.map(w => { const n = COMMENTS.filter(c => c.weekId === w.id).length;
+    return `<a class="card wk" href="#semaine" data-go="${esc(w.id)}"><span class="ico">${cal}</span><div><h3>${esc(w.label)}</h3><small>${n} commentaire${n>1?'s':''}</small></div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--vi)" stroke-width="2.2" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg></a>`; }).join('')}
+  <p class="note">Une nouvelle semaine s'ajoute chaque dimanche soir.</p>`;
+}
+function vDetail(k){
+  const w = pickWeek(), m = w.reunions[k], d = pd(m.date), mine = forMeeting(w.id,k);
+  const parts = allParts(w,k).filter(p => p.items?.length), done = parts.filter(p => mine.some(c => c.partKey === partKey(p))).length;
+  return `<div class="${k==='samedi'?'sat':''}"><a class="back" href="#semaine">← Retour à la semaine</a>
+  <div class="dhead"><div class="tile"><div><b>${d.getDate()}</b><small>${MC[d.getMonth()]}</small></div></div><div><h1>Réunion du ${k}</h1><p class="meta">${k[0].toUpperCase()+k.slice(1)} ${esc(dLabel(m.date))} ${d.getFullYear()} · ${esc(m.type)}</p></div></div>
+  <section class="prog"><h2>Programme et préparation</h2>
+  <p class="meta">${m.intro ? esc(m.intro) : `Lecture biblique : <a href="${esc(m.focusUrl)}" target="_blank" rel="noopener">${esc(m.focus)}</a>`}</p>
+  ${parts.length ? `<div class="meter" aria-hidden="true"><i style="width:${Math.round(done/parts.length*100)}%"></i></div><p class="note">${done} partie${done>1?'s':''} sur ${parts.length} avec ton commentaire</p>` : ''}
+  ${m.sections.map(s => `<div class="sec">${esc(s.titre)}</div>${s.parties.map(p => partHtml(w,k,p,mine)).join('')}`).join('')}
+  </section>
+  <div class="srcs"><h3 style="margin-bottom:6px">Sources principales</h3>${m.sources.map(s => `<a href="${esc(s.u)}" target="_blank" rel="noopener"><span>${esc(s.t)}</span>${ext}</a>`).join('')}</div></div>`;
+}
+function partHtml(w,k,p,mine){
+  const pk = partKey(p), my = mine.filter(c => c.partKey === pk);
+  return `<div class="part"><div class="ph"><span class="num">${esc(p.num ? (/^\d+$/.test(p.num) ? p.num + '.' : p.num) : '♪')}</span><div><h3>${esc(p.titre)} ${p.duree ? `<span class="dur">· ${esc(p.duree)}</span>` : ''}</h3>
+  ${p.consigne ? `<p class="cons">${esc(p.consigne)}</p>` : ''}
+  ${p.refs?.length ? `<div class="refs">${p.refs.map(r => `<a href="${esc(r.u)}" target="_blank" rel="noopener">${esc(r.t)} ${ext}</a>`).join('')}</div>` : ''}</div></div>
+  <div class="inner">
+  ${p.medias?.length ? `<div class="medias">${p.medias.map(md => `<div class="md"><span class="mdi">${md.type==='video' ? '▶' : '🖼'}</span><div><b>${md.type==='video' ? 'Vidéo' : 'Image'}${md.titre ? ' · ' + esc(md.titre) : ''}</b>${md.description ? `<p>${esc(md.description)}</p>` : ''}${md.url ? `<a href="${esc(md.url)}" target="_blank" rel="noopener">${md.type==='video' ? 'Regarder' : 'Voir'} ${ext}</a>` : ''}</div></div>`).join('')}</div>` : ''}
+  ${p.conseils ? `<ul class="conseils">${p.conseils.map(c => `<li>${esc(c)}</li>`).join('')}</ul>` : ''}
+  ${(p.items||[]).map((it,j) => `<div class="item"><div class="q">${esc(it.titre)} ${it.lien ? `<a href="${esc(it.lien)}" target="_blank" rel="noopener" aria-label="Ouvrir sur wol.jw.org">${ext}</a>` : ''}</div><p class="qq">${esc(it.question)}</p>
+    <details><summary>Voir le commentaire</summary><dl class="pp"><dt>Réponse directe</dt><dd>${esc(it.prep.reponse)}</dd><dt>Verset ou publication</dt><dd>${esc(it.prep.verset)}</dd>${it.prep.probleme?`<dt>Problème ou difficulté</dt><dd>${esc(it.prep.probleme)}</dd>`:''}<dt>Application ou leçon</dt><dd>${esc(it.prep.application)}</dd></dl>
+    <div class="say"><b>Commentaire à dire</b>${esc(it.prep.dire)}</div>
+    <div class="acts"><a href="${esc(it.lien || w.programme)}" target="_blank" rel="noopener">Voir la source ${ext}</a>${(() => { const ex = existingTake(w.id, k, pk, j); return ex
+      ? `<button class="btn" data-edit="${esc(ex.id)}" style="color:var(--ok)">✓ Repris · Modifier</button>`
+      : `<button class="btn soft" data-take="${esc(k)}|${esc(pk)}|${j}">${plus} Reprendre</button>`; })()}</div></details></div>`).join('')}
+  ${p.autres ? `<details><summary>Autres questions du chapitre</summary><ul class="conseils">${p.autres.map(a => `<li>${esc(a)}</li>`).join('')}</ul></details>` : ''}
+  ${my.map(c => `<div class="mine"><small>Mon commentaire · ${esc(ST[c.statut]||'')}</small><p style="margin:4px 0">${esc(c.dire || c.reponse)}</p><button class="btn" style="min-height:40px" data-edit="${esc(c.id)}">Modifier</button></div>`).join('')}
+  ${p.items?.length ? `<button class="btn" style="margin-top:12px;min-height:42px" data-newp="${esc(k)}|${esc(pk)}">${plus} Mon commentaire</button>` : ''}
+  ${p.liens?.length ? `<div class="also"><b>À lire aussi sur jw.org</b>${p.liens.slice(0,3).map(l => `<a href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l.t)} ↗</a>`).join('')}</div>` : ''}
+  </div></div>`;
+}
+/* Mode réunion : mes commentaires dans l'ordre du programme, en grand, écran maintenu allumé */
+function vLive(k){
+  const w = pickWeek(), m = w.reunions[k]; if (!m) return vSemaine();
+  const ord = partOrder(w,k), sk = c => c.partKey in ord ? ord[c.partKey] : 999;
+  const L = forMeeting(w.id,k).sort((a,b) => sk(a) - sk(b) || (a.item ?? 99) - (b.item ?? 99) || (a.updated||0) - (b.updated||0));
+  const left = L.filter(c => c.statut !== 'dit').length;
+  return `<div class="live ${k==='samedi'?'sat':''}"><a class="back" href="#${k}">← Fiche de la réunion</a>
+  <h1>Mode réunion · ${esc(m.jour)} ${esc(dLabel(m.date))}</h1>
+  <div class="bar"><span class="pill">${left} à dire · ${L.length - left} dit${L.length - left > 1 ? 's' : ''}</span><span class="note" id="wl" style="margin:0"></span></div>
+  ${L.length ? L.map(c => `<article class="lc ${c.statut==='dit'?'done':''}" id="lc-${esc(c.id)}">
+    <div class="lp">${esc(c.partLabel || 'Commentaire libre')}</div>
+    ${c.question ? `<p class="lq">${esc(c.question)}</p>` : ''}
+    <p class="ld">${esc(c.dire || c.reponse || '—')}</p>
+    ${c.verset ? `<div class="lv">${esc(c.verset)}</div>` : ''}
+    <div class="lact"><button class="btn ${c.statut==='dit'?'':'pri'}" data-said="${esc(c.id)}">${c.statut==='dit' ? '↺ Pas encore dit' : '✓ Dit'}</button><button class="btn" data-edit="${esc(c.id)}">Modifier</button></div>
+  </article>`).join('') : `<div class="card empty"><div class="ico">${bub}</div><h3>Aucun commentaire pour cette réunion</h3><p>Ouvre la fiche et appuie sur « Reprendre » sous les questions.</p><a class="btn pri" href="#${k}">Ouvrir la fiche</a></div>`}
+  </div>`;
+}
+let WL = null;
+async function wakeLock(on){
+  try {
+    if (on && !WL && navigator.wakeLock){ WL = await navigator.wakeLock.request('screen'); WL.addEventListener('release', () => { WL = null; }); }
+    if (!on && WL){ await WL.release(); WL = null; }
+  } catch(e){ WL = null; }
+  const el = $('#wl'); if (el) el.textContent = WL ? "☀ L'écran reste allumé" : '';
+}
+document.addEventListener('visibilitychange', () => { const r = route(); if (document.visibilityState === 'visible' && (r.startsWith('live-') || r.startsWith('talk-train-'))) wakeLock(true); });
+function art(){
+  return `<svg viewBox="0 0 220 180" width="100%" aria-hidden="true">
+<defs>
+ <linearGradient id="aCov" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9a7ff0"/><stop offset="1" stop-color="#6a4bd0"/></linearGradient>
+ <linearGradient id="aCovD" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6f52d6"/><stop offset="1" stop-color="#4d34a8"/></linearGradient>
+ <linearGradient id="aPgL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fffdf8"/><stop offset=".75" stop-color="#f6efe2"/><stop offset="1" stop-color="#e9dcc7"/></linearGradient>
+ <linearGradient id="aPgR" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffdf8"/><stop offset=".75" stop-color="#f6efe2"/><stop offset="1" stop-color="#e9dcc7"/></linearGradient>
+ <linearGradient id="aEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#efe4d2"/><stop offset="1" stop-color="#d9c7aa"/></linearGradient>
+ <linearGradient id="aBub" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b9a2fb"/><stop offset="1" stop-color="#7d5ee0"/></linearGradient>
+ <linearGradient id="aOr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffab7e"/><stop offset="1" stop-color="#e8714a"/></linearGradient>
+ <linearGradient id="aPen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8b6cf0"/><stop offset=".45" stop-color="#b8a3ff"/><stop offset="1" stop-color="#7556dc"/></linearGradient>
+ <radialGradient id="aShadow"><stop offset="0" stop-color="#4a2fa8" stop-opacity=".32"/><stop offset="1" stop-color="#4a2fa8" stop-opacity="0"/></radialGradient>
+ <filter id="aDs" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#3b2390" flood-opacity=".25"/></filter>
+</defs>
+<ellipse cx="112" cy="160" rx="92" ry="12" fill="url(#aShadow)"/>
+<!-- couverture (épaisseur + dessus) -->
+<path d="M14 84 Q60 74 110 96 Q160 74 206 84 L206 146 Q160 136 110 158 Q60 136 14 146 Z" fill="url(#aCovD)"/>
+<path d="M14 80 Q60 70 110 92 Q160 70 206 80 L206 140 Q160 130 110 152 Q60 130 14 140 Z" fill="url(#aCov)"/>
+<!-- tranches des pages -->
+<path d="M22 76 Q64 66 110 88 L110 146 Q64 126 22 134 Z" fill="url(#aEdge)"/>
+<path d="M198 76 Q156 66 110 88 L110 146 Q156 126 198 134 Z" fill="url(#aEdge)"/>
+<g stroke="#cdb894" stroke-width=".8" fill="none" opacity=".7"><path d="M24 131 Q64 123 110 142"/><path d="M196 131 Q156 123 110 142"/><path d="M24 128 Q64 120 110 139"/><path d="M196 128 Q156 120 110 139"/></g>
+<!-- pages -->
+<path d="M24 68 Q66 56 110 78 L110 136 Q66 116 24 126 Z" fill="url(#aPgL)" filter="url(#aDs)"/>
+<path d="M196 68 Q154 56 110 78 L110 136 Q154 116 196 126 Z" fill="url(#aPgR)" filter="url(#aDs)"/>
+<path d="M110 78 L110 136" stroke="#d8c5a6" stroke-width="2"/>
+<!-- listes à cocher -->
+<g stroke="#8a6ee8" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+ <rect x="35" y="76" width="7" height="7" rx="2"/><rect x="35" y="89" width="7" height="7" rx="2"/><rect x="35" y="102" width="7" height="7" rx="2"/><rect x="35" y="115" width="7" height="7" rx="2"/>
+ <rect x="124" y="74" width="7" height="7" rx="2"/><rect x="124" y="87" width="7" height="7" rx="2"/><rect x="124" y="100" width="7" height="7" rx="2"/>
+</g>
+<g stroke="#a993f2" stroke-width="3.6" stroke-linecap="round">
+ <path d="M49 78 L94 87"/><path d="M49 91 L96 100"/><path d="M49 104 L90 112"/><path d="M49 117 L84 124"/>
+ <path d="M138 80 L182 72"/><path d="M138 93 L180 85"/><path d="M138 106 L170 100"/>
+</g>
+<!-- stylo -->
+<g filter="url(#aDs)" transform="rotate(38 176 92)">
+ <rect x="169" y="40" width="15" height="74" rx="7.5" fill="url(#aPen)"/>
+ <rect x="169" y="96" width="15" height="9" fill="#f6ead6"/>
+ <path d="M169 105 L184 105 L176.5 126 Z" fill="#f4e4c8"/><path d="M174 119 L179 119 L176.5 126 Z" fill="#6a4bd0"/>
+ <rect x="181" y="46" width="4" height="34" rx="2" fill="#6f52d6"/>
+ <rect x="172" y="44" width="3" height="46" rx="1.5" fill="#fff" opacity=".45"/>
+</g>
+<!-- bulle de discussion -->
+<g filter="url(#aDs)">
+ <path d="M44 14 H96 A14 14 0 0 1 110 28 V44 A14 14 0 0 1 96 58 H66 L52 70 L54 58 H44 A14 14 0 0 1 30 44 V28 A14 14 0 0 1 44 14 Z" fill="url(#aBub)"/>
+ <path d="M44 18 H92" stroke="#fff" stroke-opacity=".35" stroke-width="3" stroke-linecap="round"/>
+ <circle cx="55" cy="36" r="5" fill="#fff6e8"/><circle cx="70" cy="36" r="5" fill="#fff6e8"/><circle cx="85" cy="36" r="5" fill="#fff6e8"/>
+</g>
+<!-- coche orange -->
+<g filter="url(#aDs)" transform="rotate(8 156 34)">
+ <rect x="136" y="14" width="40" height="40" rx="11" fill="url(#aOr)"/>
+ <path d="M140 19 H170" stroke="#fff" stroke-opacity=".35" stroke-width="3" stroke-linecap="round"/>
+ <path d="M146 34 L153 41 L167 26" stroke="#fff" stroke-width="5.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<!-- étincelles -->
+<g fill="#9b82f5"><path d="M20 58 l2.5 6 6 2.5 -6 2.5 -2.5 6 -2.5 -6 -6 -2.5 6 -2.5z"/><path d="M196 44 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2z"/><path d="M122 8 l1.5 3.5 3.5 1.5 -3.5 1.5 -1.5 3.5 -1.5 -3.5 -3.5 -1.5 3.5 -1.5z" opacity=".7"/></g>
+</svg>`;
+}
+
+/* ---------- rendu et routage ---------- */
+function route(){ const h = location.hash.slice(1); return ['commentaires','historique','mercredi','samedi','live-mercredi','live-samedi','discours'].includes(h) || /^talk-(edit|train)-[\w-]+$/.test(h) ? h : 'semaine'; }
+function render(keepScroll){
+  const r = route(), y = scrollY, live = r.startsWith('live-');
+  const needWeeks = !['commentaires','discours'].includes(r) && !r.startsWith('talk-');
+  if (needWeeks && !Object.keys(WEEKS).length){
+    $('#app').innerHTML = LOADERR
+      ? `<div class="card" style="margin-top:18px"><h3>Programmes indisponibles</h3><p class="note">Connecte-toi une fois à Internet pour télécharger les programmes. Tes commentaires et tes discours restent accessibles.</p><a class="btn" href="#discours">Mes discours</a></div>`
+      : `<p class="sub" style="margin-top:24px">Chargement des programmes…</p>`;
+    return;
+  }
+  document.querySelectorAll('[data-nav]').forEach(a => a.toggleAttribute('aria-current', a.dataset.nav === r || (r==='mercredi'||r==='samedi'||live) && a.dataset.nav==='semaine' || r.startsWith('talk-') && a.dataset.nav==='discours'));
+  document.querySelectorAll('[data-nav]').forEach(a => a.hasAttribute('aria-current') ? a.setAttribute('aria-current','page') : 0);
+  const open = [...document.querySelectorAll('details[open]')].map(d => d.querySelector('summary')?.parentElement?.closest('.item')?.querySelector('.q')?.textContent);
+  const qv = $('#q')?.value, fv = $('#fm')?.value;
+  $('#app').innerHTML = r==='commentaires' ? vCommentaires() : r==='historique' ? vHistorique() : (r==='mercredi'||r==='samedi') ? vDetail(r) : live ? vLive(r.slice(5)) : r==='discours' ? vTalks() : r.startsWith('talk-edit-') ? vTalkEdit(r.slice(10)) : r.startsWith('talk-train-') ? vTalkTrain(r.slice(11)) : vSemaine();
+  if (r.startsWith('talk-edit-')) afterTalkEdit(r.slice(10));
+  if (r.startsWith('talk-train-')) startTrain(r.slice(11)); else stopTrain();
+  wakeLock(live || r.startsWith('talk-train-'));
+  if (r==='commentaires'){ if (qv) $('#q').value = qv; if (fv) $('#fm').value = fv; fillList(); }
+  if (keepScroll){ document.querySelectorAll('.item').forEach(it => { if (open.includes(it.querySelector('.q')?.textContent)) it.querySelector('details')?.setAttribute('open',''); }); scrollTo(0,y); }
+}
+addEventListener('hashchange', () => { render(); scrollTo(0,0); });
+
+/* ---------- stockage ---------- */
+function loadLocal(){ try { return JSON.parse(localStorage.getItem(LS) || '[]'); } catch(e){ return []; } }
+function saveLocal(){ try { localStorage.setItem(LS, JSON.stringify(COMMENTS)); } catch(e){} }
+// silent = true : pas de sauvegarde ni de rendu (utilisé pour les imports groupés)
+async function persist(c, del, silent){
+  if (!c) return;
+  if (MODE === 'db'){
+    try { const ref = DB.collection('data/users/' + UID).doc(c.id); del ? await ref.delete() : await ref.set(c); return; }
+    catch(e){ toast('Enregistré sur ce téléphone seulement'); MODE = 'local'; }
+  }
+  if (del) COMMENTS = COMMENTS.filter(x => x.id !== c.id); else { const i = COMMENTS.findIndex(x => x.id === c.id); i < 0 ? COMMENTS.push(c) : COMMENTS[i] = c; }
+  if (!silent){ saveLocal(); render(true); }
+}
+/* brouillon de l'éditeur : rien n'est perdu si l'appli se ferme pendant la saisie */
+const LSD = 'carnet-brouillon';
+function getDraft(){ try { return JSON.parse(localStorage.getItem(LSD) || 'null'); } catch(e){ return null; } }
+function setDraft(d){ try { d ? localStorage.setItem(LSD, JSON.stringify(d)) : localStorage.removeItem(LSD); } catch(e){} }
+function dropDraft(id){ if (getDraft()?.id === id) setDraft(null); }
+function draftBanner(){ const d = getDraft(); if (!d) return '';
+  return `<div class="card" style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px"><span class="draft">✎ Un commentaire n'a pas été enregistré</span><span style="display:flex;gap:8px"><button class="btn pri" data-draft>Reprendre</button><button class="btn" data-dropdraft>Effacer</button></span></div>`; }
+let tt; function toast(t){ const e = $('#toast'); e.textContent = t; e.classList.add('on'); clearTimeout(tt); tt = setTimeout(() => e.classList.remove('on'), 2200); }
+
+/* ---------- éditeur ---------- */
+function openEditor(c){
+  const w = WEEKS[c.weekId] || pickWeek();
+  const opts = k => allParts(w,k).filter(p => p.items?.length).map(p => `<option value="${esc(k)}|${esc(partKey(p))}" ${c.meeting===k && c.partKey===partKey(p)?'selected':''}>${k==='mercredi'?'Mer.':'Sam.'} · ${esc(p.num)} ${esc(p.titre)}</option>`).join('');
+  $('#form').innerHTML = `<h2>${c._new ? 'Nouveau commentaire' : 'Modifier'}</h2>
+  <div class="two"><label>Partie<select name="part"><option value="mercredi|">Mercredi · commentaire libre</option><option value="samedi|" ${c.meeting==='samedi'&&!c.partKey?'selected':''}>Samedi · commentaire libre</option>${opts('mercredi')}${opts('samedi')}</select></label>
+  <label>Statut<select name="statut">${Object.entries(ST).map(([v,l]) => `<option value="${v}" ${c.statut===v?'selected':''}>${l}</option>`).join('')}</select></label></div>
+  <label>Réponse directe<textarea name="reponse">${esc(c.reponse)}</textarea></label>
+  <label>Verset ou publication<input name="verset" value="${esc(c.verset)}"></label>
+  <label>Problème ou difficulté<textarea name="probleme">${esc(c.probleme)}</textarea></label>
+  <label>Application ou leçon<textarea name="application">${esc(c.application)}</textarea></label>
+  <label>Commentaire à dire<textarea name="dire" style="min-height:110px">${esc(c.dire)}</textarea></label>
+  <p class="note" id="oral" style="margin:-4px 0 0"></p>
+  <div class="end"><button class="btn" value="cancel" formnovalidate>Annuler</button><button class="btn pri" value="ok">Enregistrer</button></div>`;
+  const dlg = $('#dlg'), form = $('#form');
+  if (c._draft) form.insertAdjacentHTML('afterbegin', '<span class="draft">✎ Brouillon retrouvé</span>');
+  const snap = () => { const f = new FormData(form); return {...c, _draft: 1, part: f.get('part'), statut: f.get('statut'), reponse: f.get('reponse'), verset: f.get('verset'), probleme: f.get('probleme'), application: f.get('application'), dire: f.get('dire')}; };
+  const showOral = () => { const s = oral(form.elements.dire.value); $('#oral').innerHTML = s ? `≈ ${s} s à l'oral${s > 30 ? ' · <span style="color:var(--te)">un commentaire de 30 s maximum est idéal</span>' : ''}` : ''; };
+  // si on reprend un brouillon, on restaure aussi la partie choisie
+  if (c.part){ const o = [...form.elements.part.options].find(o => o.value === c.part); if (o) o.selected = true; }
+  let dirty = !!c._draft, sure = false;
+  form.oninput = () => { dirty = true; sure = false; setDraft(snap()); showOral(); };
+  showOral();
+  form.onsubmit = ev => {
+    if (ev.submitter?.value !== 'ok'){
+      if (dirty && !sure){ ev.preventDefault(); sure = true; ev.submitter.textContent = 'Abandonner le texte ?'; return; }
+      dropDraft(c.id); return;
+    }
+    const f = new FormData(form), pv = String(f.get('part')), cut = pv.indexOf('|'), meeting = pv.slice(0, cut), pk = pv.slice(cut + 1);
+    const part = allParts(w, meeting).find(p => partKey(p) === pk);
+    const keep = pk === c.partKey && meeting === c.meeting; // la question d'origine ne vaut que si la partie n'a pas changé
+    const out = {id: c.id, weekId: w.id, meeting, partKey: pk, partLabel: part ? (part.num ? part.num + ' · ' : '') + part.titre : 'Commentaire libre',
+      item: keep ? c.item : undefined, question: keep ? c.question : undefined,
+      statut: f.get('statut'), reponse: f.get('reponse').trim(), verset: f.get('verset').trim(), probleme: f.get('probleme').trim(), application: f.get('application').trim(), dire: f.get('dire').trim(), updated: Date.now()};
+    Object.keys(out).forEach(k => out[k] === undefined && delete out[k]);
+    dropDraft(c.id); persist(out); toast('Commentaire enregistré');
+  };
+  // Échap ou retour arrière : le brouillon reste disponible sur « Ma semaine »
+  dlg.oncancel = () => { if (!dirty) dropDraft(c.id); setTimeout(() => render(true), 0); };
+  try { dlg.showModal(); } catch(e){ dlg.setAttribute('open',''); }
+}
+function openTransfer(exp){
+  const data = JSON.stringify({version: 2, commentaires: COMMENTS, discours: TALKS});
+  $('#form').innerHTML = exp
+    ? `<h2>Exporter mes commentaires</h2><p class="note">${COMMENTS.length} commentaire(s) et ${TALKS.length} discours. Copie ce texte, puis colle-le avec « Importer » dans l'autre version de l'application.</p><textarea id="tx" readonly style="min-height:160px">${esc(data)}</textarea><div class="end"><button class="btn" value="cancel">Fermer</button><button class="btn" type="button" id="dl">Télécharger un fichier</button><button class="btn pri" type="button" id="cp">Copier</button></div>`
+    : `<h2>Importer des commentaires</h2><p class="note">Colle ici le texte copié avec « Exporter ». Les commentaires déjà présents sont mis à jour, rien n'est effacé.</p><textarea id="tx" style="min-height:160px" placeholder="Colle le texte ici"></textarea><div class="end"><button class="btn" value="cancel">Annuler</button><button class="btn pri" value="ok">Importer</button></div>`;
+  $('#form').oninput = null; $('#dlg').oncancel = null;
+  $('#form').onsubmit = async ev => {
+    if (exp || ev.submitter?.value !== 'ok') return;
+    let arr, tk = []; try { const o = JSON.parse($('#tx').value); arr = Array.isArray(o) ? o : o.commentaires; tk = Array.isArray(o) ? [] : (o.discours || []); if (!Array.isArray(arr)) throw 0; } catch(e){ ev.preventDefault(); toast('Texte non reconnu'); return; }
+    let nt = 0; tk.forEach(t => { if (!t || !t.id) return; const i = TALKS.findIndex(x => x.id === t.id); if (i >= 0 && (TALKS[i].updated||0) >= (t.updated||0)) return; i >= 0 ? TALKS[i] = t : TALKS.push(t); nt++; }); if (nt) saveTalks();
+    let n = 0;
+    // import groupé : une seule sauvegarde et un seul rendu à la fin
+    for (const c of arr){ if (!c || !c.id || !c.weekId) continue; const old = COMMENTS.find(x => x.id === c.id); if (old && (old.updated||0) >= (c.updated||0)) continue; await persist(c, false, true); n++; }
+    saveLocal(); render(true);
+    toast(n + ' commentaire(s)' + (nt ? ' et ' + nt + ' discours' : '') + ' importé(s)');
+  };
+  const dl = $('#dl'); if (dl) dl.onclick = () => { try {
+    const a = document.createElement('a'), d = new Date();
+    a.href = URL.createObjectURL(new Blob([data], {type:'application/json'}));
+    a.download = `carnet-commentaires-${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}.json`;
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 1000); toast('Fichier téléchargé');
+  } catch(e){ toast('Téléchargement impossible ici : utilise Copier'); } };
+  const cp = $('#cp'); if (cp) cp.onclick = () => { const tx = $('#tx'); tx.select(); try { navigator.clipboard.writeText(tx.value).then(() => toast('Copié'), () => { document.execCommand('copy'); toast('Copié'); }); } catch(e){ try { document.execCommand('copy'); toast('Copié'); } catch(_){ toast('Sélectionne le texte et copie-le'); } } };
+  try { $('#dlg').showModal(); } catch(e){ $('#dlg').setAttribute('open',''); }
+}
+const newId = () => 'c' + Date.now().toString(36) + Math.random().toString(36).slice(2,6);
+document.addEventListener('click', e => {
+  const t = e.target.closest('button,a'); if (!t) return;
+  if (t.dataset.wk){ setWeek(t.dataset.wk); render(); }
+  else if (t.dataset.go){ setWeek(t.dataset.go); }
+  else if ('new' in t.dataset){ const w = pickWeek(); openEditor({_new:1, id:newId(), weekId:w.id, meeting: new Date().getDay()>=4 || new Date().getDay()===0 ? 'samedi':'mercredi', statut:'idee'}); }
+  else if (t.dataset.newp){ const [k, ...r] = t.dataset.newp.split('|'); const w = pickWeek(); openEditor({_new:1, id:newId(), weekId:w.id, meeting:k, partKey:r.join('|'), statut:'brouillon'}); }
+  else if (t.dataset.take){ const a = t.dataset.take.split('|'), k = a[0], j = +a[a.length-1], pk = a.slice(1,-1).join('|'), w = pickWeek();
+    const ex = existingTake(w.id, k, pk, j); if (ex){ openEditor({...ex}); return; } // pas de doublon
+    const p = allParts(w,k).find(x => partKey(x) === pk), it = p?.items?.[j]; if (!it) return;
+    openEditor({_new:1, id:newId(), weekId:w.id, meeting:k, partKey:pk, item:j, question:it.question, statut:'pret', ...it.prep}); }
+  else if (t.dataset.said){ const c = COMMENTS.find(x => x.id === t.dataset.said);
+    if (c){ persist({...c, statut: c.statut === 'dit' ? 'pret' : 'dit', updated: Date.now()}); toast(c.statut === 'dit' ? 'Remis à dire' : 'Bravo, commentaire dit ✓'); } }
+  else if ('draft' in t.dataset){ const d = getDraft(); if (d) openEditor(d); }
+  else if ('dropdraft' in t.dataset){ setDraft(null); render(true); toast('Brouillon effacé'); }
+  else if (t.dataset.fs){ setFs(FS + (+t.dataset.fs)); }
+  else if (t.dataset.edit){ const c = COMMENTS.find(x => x.id === t.dataset.edit); if (c) openEditor({...c}); }
+  else if (t.dataset.del){ const c = COMMENTS.find(x => x.id === t.dataset.del);
+    if (t.dataset.sure){ persist(c, true); toast('Commentaire supprimé'); } else { t.dataset.sure = 1; t.textContent = 'Confirmer ?'; setTimeout(() => { if (t.isConnected){ delete t.dataset.sure; t.textContent = 'Supprimer'; } }, 3000); } }
+  else if ('export' in t.dataset){ openTransfer(true); }
+  else if ('import' in t.dataset){ openTransfer(false); }
+  else if (t.dataset.copy){ const c = COMMENTS.find(x => x.id === t.dataset.copy); try { navigator.clipboard.writeText(c.dire || c.reponse).then(() => toast('Copié'), () => toast('Copie impossible ici')); } catch(err){ toast('Copie impossible ici'); } }
+});
+document.addEventListener('input', e => { if (e.target.id === 'q' || e.target.id === 'fm') fillList(); });
+document.addEventListener('change', e => { if (e.target.id === 'fm') fillList(); });
+
+const MODES = {auto:['◐','Auto'], light:['☀','Clair'], dark:['☾','Sombre']};
+let tmode = 'auto'; try { tmode = localStorage.getItem('carnet-theme') || 'auto'; } catch(e){}
+function applyTheme(){ const r = document.documentElement; tmode === 'auto' ? r.removeAttribute('data-mode') : r.setAttribute('data-mode', tmode);
+  const [i,l] = MODES[tmode] || MODES.auto; $('#theme').innerHTML = `<span aria-hidden="true">${i}</span>${l}`; }
+$('#theme').addEventListener('click', () => { tmode = {auto:'light', light:'dark', dark:'auto'}[tmode] || 'auto'; try { localStorage.setItem('carnet-theme', tmode); } catch(e){} applyTheme(); toast('Thème : ' + MODES[tmode][1]); });
+applyTheme();
+// taille du texte (A− / A+), mémorisée sur l'appareil
+let FS = 0; try { FS = +localStorage.getItem('carnet-fs') || 0; } catch(e){}
+function setFs(v){ FS = Math.max(-2, Math.min(4, v)); document.documentElement.style.setProperty('--fs', (13.5 + FS * 1.5) + 'px');
+  try { localStorage.setItem('carnet-fs', FS); } catch(e){} }
+setFs(FS);
+/* ---------- module Discours : plans PDF/Word, plan minuté, texte, entraînement chronométré ---------- */
+const LST = 'carnet-discours';
+const TYPES = {public:['Discours public',30], joyaux:['Joyaux de la Parole de Dieu',10], vie:['Vie chrétienne',15], etudiant:['Discours (élève)',5], assemblee:['Assemblée',20], autre:['Autre',10]};
+const TST = {plan:'Plan reçu', prep:'En préparation', pret:'Prêt', donne:'Donné ✓'};
+function loadTalks(){ try { return JSON.parse(localStorage.getItem(LST) || '[]'); } catch(e){ return []; } }
+function saveTalks(){ try { localStorage.setItem(LST, JSON.stringify(TALKS)); } catch(e){ toast('Mémoire pleine : exporte tes données'); } }
+const talk = id => TALKS.find(t => t.id === id);
+const mmss = s => { s = Math.max(0, Math.round(s)); return Math.floor(s/60) + ':' + String(s%60).padStart(2,'0'); };
+const planMin = t => (t.sections||[]).reduce((a,x) => a + (+x.min||0), 0);
+
+function vTalks(){
+  const L = [...TALKS].sort((a,b) => (a.date||'9999') < (b.date||'9999') ? -1 : 1);
+  return `<h1>Mes discours</h1><p class="sub">Importe ton plan, construis ton discours minute par minute, puis entraîne-toi avec le chronomètre.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn pri" data-tnew>${plus} Nouveau discours</button>
+  <label class="btn" style="cursor:pointer">📄 Importer un plan (PDF, Word)<input type="file" id="tfile" accept=".pdf,.docx,.txt,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain" hidden></label></div>
+  <p class="note">Le fichier est lu sur ton téléphone : rien n'est envoyé sur Internet.</p>
+  <div style="height:12px"></div>
+  ${L.length ? L.map(t => { const ty = TYPES[t.type] || TYPES.autre;
+    return `<article class="card"><div class="cmh"><div><h3>${esc(t.titre || 'Sans titre')}</h3><small>${esc(ty[0])} · ${esc(t.duree || ty[1])} min${t.date ? ' · ' + esc(dLabel(t.date)) + ' (' + esc(rel(t.date)) + ')' : ''}</small></div><span class="tag ${t.statut==='pret'?'pret':t.statut==='donne'?'dit':''}">${esc(TST[t.statut]||'Plan reçu')}</span></div>
+    <div class="row"><a class="btn soft" href="#talk-edit-${esc(t.id)}">Ouvrir</a><a class="btn" href="#talk-train-${esc(t.id)}">⏱ S'entraîner</a></div></article>`; }).join('')
+  : `<div class="card empty"><div class="ico">🎤</div><h3>Aucun discours pour le moment</h3><p>Importe le plan que tu as reçu (PDF ou Word) ou crée un discours vide.</p></div>`}`;
+}
+
+function vTalkEdit(id){
+  const t = talk(id); if (!t) return `<p class="sub">Discours introuvable.</p><a class="btn" href="#discours">← Mes discours</a>`;
+  const ty = TYPES[t.type] || TYPES.autre, tot = planMin(t), dur = +t.duree || ty[1];
+  return `<a class="back" href="#discours">← Mes discours</a>
+  <form id="tform" autocomplete="off">
+  <section class="prog sheet" style="padding:16px">
+    <label>Titre<input name="titre" value="${esc(t.titre)}" placeholder="Ex. : « Qui est vraiment Jéhovah ? »"></label>
+    <div class="two"><label>Type<select name="type">${Object.entries(TYPES).map(([k,v]) => `<option value="${k}" ${t.type===k?'selected':''}>${v[0]}</option>`).join('')}</select></label>
+    <label>Durée (min)<input name="duree" type="number" min="1" max="90" value="${esc(dur)}"></label></div>
+    <div class="two"><label>Date<input name="date" type="date" value="${esc(t.date||'')}"></label>
+    <label>Statut<select name="statut">${Object.entries(TST).map(([k,v]) => `<option value="${k}" ${t.statut===k?'selected':''}>${v}</option>`).join('')}</select></label></div>
+    <label>Thème, texte de base, consignes<textarea name="theme" placeholder="Thème, textes bibliques imposés, publication de référence…">${esc(t.theme)}</textarea></label>
+  </section>
+
+  <h2>Plan d'origine ${t.fichier ? `<small class="note">· ${esc(t.fichier)}</small>` : ''}</h2>
+  <details ${t.plan ? '' : 'open'}><summary>${t.plan ? 'Voir le texte du plan' : 'Ajouter le texte du plan'}</summary>
+  <textarea name="plan" class="big" placeholder="Colle ici le texte du plan, ou importe le fichier ci-dessous.">${esc(t.plan)}</textarea></details>
+  <div class="row" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><label class="btn" style="cursor:pointer">📄 Importer un fichier<input type="file" id="tfile2" accept=".pdf,.docx,.txt" hidden></label><button type="button" class="btn" data-tsplit>✂︎ Découper en parties</button></div>
+
+  <h2>Plan minuté</h2>
+  <p class="note">${tot} min prévues sur ${dur} min ${tot > dur ? '<span style="color:var(--te)">· trop long</span>' : tot < dur ? '· il reste ' + (dur - tot) + ' min à répartir' : '· parfait ✓'}</p>
+  <div id="secs">${(t.sections||[]).map((x,i) => `<div class="card sec-ed" data-i="${i}">
+    <div style="display:grid;gap:8px;grid-template-columns:minmax(0,1fr) 84px"><input data-f="titre" value="${esc(x.titre)}" placeholder="Partie ${i+1}" aria-label="Titre de la partie"><input data-f="min" type="number" min="0" step="0.5" value="${esc(x.min)}" aria-label="Minutes"></div>
+    <textarea data-f="notes" placeholder="Idées clés, versets, illustration, application…">${esc(x.notes)}</textarea>
+    <div style="display:flex;gap:8px;margin-top:8px"><button type="button" class="btn" data-sup="${i}" aria-label="Monter">↑</button><button type="button" class="btn" data-sdown="${i}" aria-label="Descendre">↓</button><button type="button" class="btn" data-sdel="${i}" style="color:var(--te)">Retirer</button></div></div>`).join('')}</div>
+  <button type="button" class="btn" data-sadd>${plus} Ajouter une partie</button>
+
+  <h2>Texte du discours</h2>
+  <p class="note">Colle ici le discours préparé avec Claude, ou écris le tien. <span id="toral"></span></p>
+  <textarea name="texte" class="big" style="min-height:220px">${esc(t.texte)}</textarea>
+  <label class="sheet" style="padding:0;margin-top:12px">Mes notes personnelles<textarea name="notes">${esc(t.notes)}</textarea></label>
+  </form>
+  <div class="card" style="margin-top:16px"><h3>🤝 Préparer avec Claude</h3><p class="note">Copie ta demande toute prête (plan, durée, thème), puis colle-la dans une conversation avec Claude.</p>
+  <div class="row"><button class="btn pri" data-tclaude>Copier ma demande</button><a class="btn" href="#talk-train-${esc(t.id)}">⏱ S'entraîner</a></div></div>
+  <div style="margin:18px 0 40px"><button class="btn" data-tdel="${esc(t.id)}" style="color:var(--te)">Supprimer ce discours</button></div>`;
+}
+
+// enregistrement automatique pendant la saisie
+let tSaveT;
+function afterTalkEdit(id){
+  const f = $('#tform'); if (!f) return;
+  const showOral = () => { const s = oral(f.elements.texte.value); $('#toral').textContent = s ? '≈ ' + mmss(s) + ' à l\'oral' : ''; };
+  showOral();
+  f.oninput = e => {
+    const t = talk(id); if (!t) return;
+    const el = e.target, card = el.closest('.sec-ed');
+    if (card){ t.sections[+card.dataset.i][el.dataset.f] = el.dataset.f === 'min' ? +el.value : el.value; }
+    else if (el.name){ t[el.name] = el.name === 'duree' ? +el.value : el.value; }
+    if (el.name === 'texte') showOral();
+    t.updated = Date.now(); clearTimeout(tSaveT); tSaveT = setTimeout(saveTalks, 400);
+  };
+  f.onchange = e => { if (e.target.dataset.f === 'min' || ['duree','type','statut'].includes(e.target.name)){ const t = talk(id);
+    if (e.target.name === 'type' && !t.dureeManuelle) t.duree = TYPES[t.type][1]; if (e.target.name === 'duree') t.dureeManuelle = 1;
+    saveTalks(); render(true); } };
+}
+
+/* lecture des fichiers PDF / Word dans le navigateur (bibliothèques chargées à la demande, gardées hors connexion) */
+const LIBS = {pdf:'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js', pdfw:'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js', docx:'https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js'};
+const loadLib = src => new Promise((ok, ko) => { if (document.querySelector(`script[src="${src}"]`)) return ok(); const sc = document.createElement('script'); sc.src = src; sc.onload = ok; sc.onerror = ko; document.head.appendChild(sc); });
+async function fileText(file){
+  const name = file.name.toLowerCase(), buf = await file.arrayBuffer();
+  if (name.endsWith('.pdf')){
+    await loadLib(LIBS.pdf);
+    // Safari refuse un « worker » venant d'un autre site : on le charge en local (blob)
+    if (!String(pdfjsLib.GlobalWorkerOptions.workerSrc).startsWith('blob:')){ try { const w = await (await fetch(LIBS.pdfw)).blob(); pdfjsLib.GlobalWorkerOptions.workerSrc = URL.createObjectURL(w); } catch(e){ pdfjsLib.GlobalWorkerOptions.workerSrc = LIBS.pdfw; } }
+    const pdf = await pdfjsLib.getDocument({data: buf}).promise; let out = [];
+    for (let i = 1; i <= pdf.numPages; i++){
+      const c = await (await pdf.getPage(i)).getTextContent(); let line = '', lastY = null;
+      c.items.forEach(it => { const y = it.transform[5]; if (lastY !== null && Math.abs(y - lastY) > 2){ out.push(line); line = ''; } line += it.str; lastY = y; });
+      out.push(line, '');
+    }
+    return out.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+  }
+  if (name.endsWith('.docx')){ await loadLib(LIBS.docx); return (await mammoth.extractRawText({arrayBuffer: buf})).value.replace(/\n{3,}/g, '\n\n').trim(); }
+  if (name.endsWith('.doc')) throw new Error('Ancien format .doc : enregistre-le en .docx ou en PDF');
+  return new TextDecoder().decode(buf).trim();
+}
+async function importTalkFile(file, id){
+  if (!file) return;
+  toast('Lecture du fichier…');
+  try {
+    const txt = await fileText(file);
+    if (!txt) throw new Error('Aucun texte trouvé (PDF scanné ?)');
+    let t = id && talk(id);
+    if (!t){ t = {id: 't' + newId().slice(1), titre: guessTitle(txt, file.name), type:'public', duree:30, statut:'plan', sections:[], created: Date.now()}; TALKS.push(t); }
+    t.plan = txt; t.fichier = file.name; t.updated = Date.now();
+    if (!t.sections?.length) t.sections = splitPlan(txt, +t.duree || 30);
+    saveTalks(); toast('Plan importé ✓');
+    if (location.hash !== '#talk-edit-' + t.id) location.hash = 'talk-edit-' + t.id; else render(true);
+  } catch(e){ toast(e.message && e.message.length < 80 ? e.message : 'Impossible de lire ce fichier'); }
+}
+function guessTitle(txt, fname){
+  const l = txt.split('\n').map(x => x.trim()).filter(x => x.length > 3 && x.length < 120);
+  const q = l.find(x => /[«“"].+[»”"]/.test(x)) || l[0];
+  return (q || fname.replace(/\.[^.]+$/, '')).replace(/^\d+\s*[.\-–]\s*/, '');
+}
+// découpe un plan en parties : titres en majuscules, chiffres romains, numéros, ou mentions « (5 min) »
+function splitPlan(txt, total){
+  const lines = txt.split('\n').map(x => x.trim()).filter(Boolean), out = [];
+  const isHead = x => /\(\s*\d+(?:[.,]\d+)?\s*min/i.test(x) || /^(?:[IVX]+|\d{1,2})[.)]\s+\S/.test(x) || (x.length < 90 && x.length > 5 && x === x.toUpperCase() && /[A-ZÀ-Ý]/.test(x));
+  lines.forEach(x => {
+    if (isHead(x) || !out.length){ const m = x.match(/\(\s*(\d+(?:[.,]\d+)?)\s*min/i);
+      out.push({titre: x.replace(/\(\s*\d+(?:[.,]\d+)?\s*min[^)]*\)/i, '').trim(), min: m ? +m[1].replace(',', '.') : 0, notes: ''}); }
+    else out[out.length-1].notes += (out[out.length-1].notes ? '\n' : '') + x;
+  });
+  if (out.length > 1 && /^[«“"]|^thème/i.test(out[0].titre) && !out[0].notes) out.shift();
+  // répartit le temps restant entre les parties sans durée
+  const known = out.reduce((a,x) => a + x.min, 0), free = out.filter(x => !x.min);
+  if (free.length){ const each = Math.max(0.5, Math.round((Math.max(0, total - known) / free.length) * 2) / 2); free.forEach(x => x.min = each); }
+  return out.slice(0, 30);
+}
+function claudeRequest(t){
+  const ty = TYPES[t.type] || TYPES.autre;
+  return `Aide-moi à préparer ce discours.
+Type : ${ty[0]} · Durée : ${t.duree || ty[1]} minutes${t.date ? ' · Date : ' + t.date : ''}
+Titre : ${t.titre || ''}
+${t.theme ? 'Thème et consignes : ' + t.theme + '\n' : ''}
+Plan minuté actuel :
+${(t.sections||[]).map((x,i) => `${i+1}. ${x.titre} (${x.min} min)${x.notes ? '\n   ' + x.notes.replace(/\n/g, '\n   ') : ''}`).join('\n')}
+
+Plan d'origine :
+${t.plan || '(non fourni)'}
+
+Applique mon guide de style des orateurs (introduction qui capte l'attention, raisonnement, illustrations, application, conclusion qui motive). Donne-moi : 1) le plan minuté final, 2) le texte complet à dire, 3) les versets à lire et comment les introduire, 4) une fiche-mémo courte pour l'estrade.`;
+}
+
+/* entraînement chronométré */
+let TR = null;
+function vTalkTrain(id){
+  const t = talk(id); if (!t) return `<p class="sub">Discours introuvable.</p><a class="btn" href="#discours">← Mes discours</a>`;
+  const S = t.sections?.length ? t.sections : [{titre: 'Discours', min: +t.duree || 5, notes: t.texte || ''}];
+  return `<div class="live train"><a class="back" href="#talk-edit-${esc(t.id)}">← Retour au discours</a>
+  <h1>${esc(t.titre || 'Entraînement')}</h1>
+  <div class="clock"><div><small>Temps écoulé</small><b id="tel">0:00</b></div><div><small>Partie en cours</small><b id="tsec">${mmss(S[0].min*60)}</b></div><div><small>Durée prévue</small><b>${mmss(planMin({sections:S})*60)}</b></div></div>
+  <div class="tbar"><i id="tprog"></i></div>
+  <div class="row" style="display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 16px"><button class="btn pri" data-tgo>▶ Démarrer</button><button class="btn" data-tnext>Partie suivante →</button><button class="btn" data-treset>↺ Recommencer</button></div>
+  ${S.map((x,i) => `<article class="lc" data-ti="${i}"><div class="lp">${i+1}. ${esc(x.titre)} · ${esc(x.min)} min</div><p class="ld">${esc(x.notes || '—')}</p></article>`).join('')}
+  ${t.texte && t.sections?.length ? `<details class="card"><summary>Texte complet du discours</summary><p class="txt" style="white-space:pre-wrap">${esc(t.texte)}</p></details>` : ''}
+  </div>`;
+}
+function startTrain(id){
+  const t = talk(id); if (!t) return;
+  const S = t.sections?.length ? t.sections : [{min: +t.duree || 5}];
+  if (!TR || TR.id !== id) TR = {id, run:false, el:0, sec:0, secStart:0, last:0, S};
+  TR.S = S; paintTrain();
+  clearInterval(TR.iv); TR.iv = setInterval(() => { if (!TR.run) return; const n = Date.now(); TR.el += (n - TR.last)/1000; TR.last = n; paintTrain(); }, 250);
+}
+function stopTrain(){ if (TR){ clearInterval(TR.iv); TR.run = false; } }
+function paintTrain(){
+  if (!TR || !$('#tel')) return;
+  const S = TR.S, total = planMin({sections:S})*60, secLen = (+S[TR.sec]?.min||0)*60, inSec = TR.el - TR.secStart, left = secLen - inSec;
+  $('#tel').textContent = mmss(TR.el); $('#tel').style.color = TR.el > total ? 'var(--te)' : '';
+  $('#tsec').textContent = (left < 0 ? '+' : '') + mmss(Math.abs(left)); $('#tsec').style.color = left < 0 ? 'var(--te)' : left < 30 ? '#c98a00' : '';
+  $('#tprog').style.width = Math.min(100, total ? TR.el/total*100 : 0) + '%';
+  document.querySelectorAll('[data-ti]').forEach(a => { const i = +a.dataset.ti; a.classList.toggle('now', i === TR.sec); a.classList.toggle('done', i < TR.sec); });
+  const go = document.querySelector('[data-tgo]'); if (go) go.textContent = TR.run ? '⏸ Pause' : TR.el ? '▶ Reprendre' : '▶ Démarrer';
+}
+
+document.addEventListener('change', e => {
+  if (e.target.id === 'tfile') importTalkFile(e.target.files[0]);
+  if (e.target.id === 'tfile2') importTalkFile(e.target.files[0], route().slice(10));
+});
+document.addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  const id = route().replace(/^talk-(edit|train)-/, ''), t = talk(id), d = b.dataset;
+  if ('tnew' in d){ const n = {id: 't' + newId().slice(1), titre:'', type:'public', duree:30, statut:'plan', sections:[], created: Date.now(), updated: Date.now()}; TALKS.push(n); saveTalks(); location.hash = 'talk-edit-' + n.id; }
+  else if ('tsplit' in d && t){ if (!t.plan) return toast('Ajoute d\'abord le texte du plan');
+    if (t.sections?.length && !d.sure){ d.sure = 1; b.textContent = 'Remplacer le plan minuté ?'; return; }
+    t.sections = splitPlan(t.plan, +t.duree || 30); t.updated = Date.now(); saveTalks(); render(true); toast(t.sections.length + ' parties créées'); }
+  else if ('sadd' in d && t){ (t.sections = t.sections || []).push({titre:'', min:1, notes:''}); saveTalks(); render(true); }
+  else if (d.sdel && t){ t.sections.splice(+d.sdel, 1); saveTalks(); render(true); }
+  else if ((d.sup || d.sdown) && t){ const i = +(d.sup || d.sdown), j = d.sup ? i - 1 : i + 1; if (j < 0 || j >= t.sections.length) return; [t.sections[i], t.sections[j]] = [t.sections[j], t.sections[i]]; saveTalks(); render(true); }
+  else if ('tclaude' in d && t){ const txt = claudeRequest(t); try { navigator.clipboard.writeText(txt).then(() => toast('Demande copiée : colle-la à Claude'), () => toast('Copie impossible ici')); } catch(_){ toast('Copie impossible ici'); } }
+  else if (d.tdel){ if (!d.sure){ d.sure = 1; b.textContent = 'Confirmer la suppression ?'; return; } TALKS = TALKS.filter(x => x.id !== d.tdel); saveTalks(); location.hash = 'discours'; toast('Discours supprimé'); }
+  else if ('tgo' in d && TR){ TR.run = !TR.run; TR.last = Date.now(); paintTrain(); }
+  else if ('tnext' in d && TR){ if (TR.sec < TR.S.length - 1){ TR.sec++; TR.secStart = TR.el; paintTrain(); document.querySelector(`[data-ti="${TR.sec}"]`)?.scrollIntoView({behavior:'smooth', block:'center'}); } }
+  else if ('treset' in d && TR){ Object.assign(TR, {run:false, el:0, sec:0, secStart:0}); paintTrain(); }
+});
+
+/* ---------- application installable (PWA) ---------- */
+const STANDALONE = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+const IOS = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+let INSTALL = null, HIDEINST = false; try { HIDEINST = localStorage.getItem('carnet-install-ok') === '1'; } catch(e){}
+addEventListener('beforeinstallprompt', e => { e.preventDefault(); INSTALL = e; if (route() === 'semaine') render(true); });
+addEventListener('appinstalled', () => { INSTALL = null; toast('Application installée ✓'); render(true); });
+function installCard(){
+  if (STANDALONE || HIDEINST || location.protocol === 'file:') return '';
+  const how = INSTALL ? `<button class="btn pri" data-install>Installer l'application</button>`
+    : IOS ? `<p class="note" style="margin:0">Dans Safari : touche <b>Partager</b> <span aria-hidden="true">⬆︎</span> puis <b>« Sur l'écran d'accueil »</b>.</p>`
+    : `<p class="note" style="margin:0">Dans le menu du navigateur : <b>« Installer l'application »</b> ou <b>« Ajouter à l'écran d'accueil »</b>.</p>`;
+  return `<div class="card" style="margin-top:12px"><h3>📲 Installe le carnet sur ton téléphone</h3><p class="note" style="margin:6px 0 12px">Il s'ouvrira comme une vraie application et fonctionnera sans connexion.</p>
+  <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">${how}<button class="btn" data-noinstall>Plus tard</button></div></div>`;
+}
+document.addEventListener('click', async e => {
+  const t = e.target.closest('button'); if (!t) return;
+  if ('install' in t.dataset && INSTALL){ INSTALL.prompt(); try { await INSTALL.userChoice; } catch(_){} INSTALL = null; render(true); }
+  if ('noinstall' in t.dataset){ HIDEINST = true; try { localStorage.setItem('carnet-install-ok','1'); } catch(_){} render(true); }
+});
+if ('serviceWorker' in navigator && location.protocol !== 'file:'){
+  addEventListener('load', () => navigator.serviceWorker.register('sw.js').then(reg => {
+    // une nouvelle version a été téléchargée : on le signale
+    reg.addEventListener('updatefound', () => { const nw = reg.installing; if (!nw) return;
+      nw.addEventListener('statechange', () => { if (nw.state === 'installed' && navigator.serviceWorker.controller) toast('Nouvelle version prête : ferme et rouvre le carnet'); }); });
+  }).catch(() => {}));
+}
+addEventListener('offline', () => toast('Hors connexion : tout reste disponible'));
+COMMENTS = loadLocal(); TALKS = loadTalks();
+let LOADERR = false;
+async function loadWeeks(){
+  try { const r = await fetch('semaines.json', {cache:'no-cache'}); if (!r.ok) throw 0;
+    const d = await r.json(); (d.semaines || d).forEach(w => WEEKS[w.id] = w); }
+  catch(e){ LOADERR = true; }
+  render(true);
+}
+render(); loadWeeks();
+
+
+/* ---------- base de données (semaines + commentaires) ---------- */
+(async () => {
+  if (!window.claude || !claude.use) return;
+  const db = await claude.use('db'); if (!db) return;
+  DB = db;
+  db.collection('semaines').onSnapshot(s => {
+    let ch = false; s.docs.forEach(d => { const w = d.data(); if (w && w.id && w.reunions){ WEEKS[w.id] = w; ch = true; } });
+    if (ch) render(true);
+  }, () => {});
+  const user = await claude.use('user'); UID = user ? await user.id() : null; if (!UID) return;
+  const local = loadLocal(); let first = true;
+  db.collection('data/users/' + UID).onSnapshot(async s => {
+    MODE = 'db'; COMMENTS = s.docs.map(d => ({...d.data(), id: d.id}));
+    if (first){ first = false;
+      const miss = local.filter(l => !COMMENTS.some(c => c.id === l.id));
+      for (const c of miss){ try { await db.collection('data/users/' + UID).doc(c.id).set(c); } catch(e){ MODE = 'local'; break; } }
+      if (MODE === 'db' && miss.length){ try { localStorage.removeItem(LS); } catch(e){} }
+    }
+    render(true);
+  }, () => { MODE = 'local'; });
+})();
+})();
+</script>
+</body>
+</html>
