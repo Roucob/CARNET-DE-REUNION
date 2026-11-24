@@ -153,6 +153,10 @@ dialog::backdrop{background:#120e2a88}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 nav a{flex:none}
 @media(max-width:430px){nav svg{display:none}nav a{padding:7px 9px}}
+.disc{margin-top:12px;background:linear-gradient(var(--lav2),var(--card));border:1.5px solid var(--hb);border-radius:16px;padding:14px}
+.disc .dh{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}.disc .dh small{color:var(--muted)}
+.dplan{margin:10px 0 0;padding-left:20px}.dplan li{margin-top:6px}
+.dtxt{white-space:pre-wrap;margin-top:8px;font-size:calc(var(--fs) + 1px);line-height:1.6}
 .medias{display:grid;gap:8px;margin-top:10px}
 .md{display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;background:var(--lav2);border-radius:12px;padding:10px 12px}
 .sat .md{background:var(--peach2)}
@@ -334,6 +338,15 @@ function partHtml(w,k,p,mine){
   ${p.refs?.length ? `<div class="refs">${p.refs.map(r => `<a href="${esc(r.u)}" target="_blank" rel="noopener">${esc(r.t)} ${ext}</a>`).join('')}</div>` : ''}</div></div>
   <div class="inner">
   ${p.medias?.length ? `<div class="medias">${p.medias.map(md => `<div class="md"><span class="mdi">${md.type==='video' ? '▶' : '🖼'}</span><div><b>${md.type==='video' ? 'Vidéo' : 'Image'}${md.titre ? ' · ' + esc(md.titre) : ''}</b>${md.description ? `<p>${esc(md.description)}</p>` : ''}${md.url ? `<a href="${esc(md.url)}" target="_blank" rel="noopener">${md.type==='video' ? 'Regarder' : 'Voir'} ${ext}</a>` : ''}</div></div>`).join('')}</div>` : ''}
+  ${p.discours ? (() => { const D = p.discours, mots = (D.texte||'').split(/\s+/).filter(Boolean).length, tk = 'j-' + w.id + '-' + (p.num||'x');
+    return `<div class="disc"><div class="dh"><span class="pill">🎤 Discours préparé · ${esc(D.duree||10)} min</span><small>${mots} mots · ≈ ${mmss(mots/130*60)} à l'oral</small></div>
+    ${D.filRouge ? `<p class="note" style="margin:8px 0 0"><b>Fil rouge :</b> ${esc(D.filRouge)}</p>` : ''}
+    <ol class="dplan">${(D.plan||[]).map(x => `<li><b>${esc(x.titre)}</b> <span class="dur">· ${esc(x.min)} min</span>${x.notes ? `<div class="note" style="margin:2px 0 0">${esc(x.notes)}</div>` : ''}</li>`).join('')}</ol>
+    <details><summary>Texte complet du discours</summary><div class="dtxt">${esc(D.texte)}</div></details>
+    ${D.fiche ? `<details><summary>Fiche-mémo pour l'estrade</summary><ul class="conseils">${D.fiche.map(f => `<li>${esc(f)}</li>`).join('')}</ul></details>` : ''}
+    ${D.versets ? `<details><summary>Versets à préparer</summary><ul class="conseils">${D.versets.map(f => `<li>${esc(f)}</li>`).join('')}</ul></details>` : ''}
+    ${D.sources ? `<div class="refs">${D.sources.map(r => `<a href="${esc(r.u)}" target="_blank" rel="noopener">${esc(r.t)} ${ext}</a>`).join('')}</div>` : ''}
+    <div class="row" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px"><button class="btn pri" data-jtrain="${esc(k)}|${esc(pk)}">⏱ S'entraîner</button><button class="btn" data-jedit="${esc(k)}|${esc(pk)}">${talk(tk) ? '✎ Ma version' : '✎ Personnaliser'}</button></div></div>`; })() : ''}
   ${p.conseils ? `<ul class="conseils">${p.conseils.map(c => `<li>${esc(c)}</li>`).join('')}</ul>` : ''}
   ${(p.items||[]).map((it,j) => `<div class="item"><div class="q">${esc(it.titre)} ${it.lien ? `<a href="${esc(it.lien)}" target="_blank" rel="noopener" aria-label="Ouvrir sur wol.jw.org">${ext}</a>` : ''}</div><p class="qq">${esc(it.question)}</p>
     <details><summary>Voir le commentaire</summary><dl class="pp"><dt>Réponse directe</dt><dd>${esc(it.prep.reponse)}</dd><dt>Verset ou publication</dt><dd>${esc(it.prep.verset)}</dd>${it.prep.probleme?`<dt>Problème ou difficulté</dt><dd>${esc(it.prep.probleme)}</dd>`:''}<dt>Application ou leçon</dt><dd>${esc(it.prep.application)}</dd></dl>
@@ -764,6 +777,19 @@ function paintTrain(){
   const go = document.querySelector('[data-tgo]'); if (go) go.textContent = TR.run ? '⏸ Pause' : TR.el ? '▶ Reprendre' : '▶ Démarrer';
 }
 
+function joyauxTalk(k, pk){
+  const w = pickWeek(), p = allParts(w,k).find(x => partKey(x) === pk); if (!p?.discours) return null;
+  const id = 'j-' + w.id + '-' + (p.num||'x'); let t = talk(id);
+  if (!t){ const D = p.discours;
+    t = {id, titre: D.theme || p.titre, type:'joyaux', duree: D.duree || 10, date: w.reunions[k].date, statut:'prep', theme: 'Joyaux de la Parole de Dieu · ' + (p.consigne || ''),
+      sections: (D.plan||[]).map(x => ({titre: x.titre, min: x.min, notes: x.notes || ''})), texte: D.texte || '', plan: (D.fiche||[]).join('\n'), created: Date.now(), updated: Date.now()};
+    TALKS.push(t); saveTalks(); }
+  return t;
+}
+document.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return;
+  if (b.dataset.jtrain){ const [k, ...r] = b.dataset.jtrain.split('|'), t = joyauxTalk(k, r.join('|')); if (t) location.hash = 'talk-train-' + t.id; }
+  if (b.dataset.jedit){ const [k, ...r] = b.dataset.jedit.split('|'), t = joyauxTalk(k, r.join('|')); if (t) location.hash = 'talk-edit-' + t.id; }
+});
 document.addEventListener('change', e => {
   if (e.target.id === 'tfile') importTalkFile(e.target.files[0]);
   if (e.target.id === 'tfile2') importTalkFile(e.target.files[0], route().slice(10));

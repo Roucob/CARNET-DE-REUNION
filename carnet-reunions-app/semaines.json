@@ -1,5 +1,5 @@
 {
- "version": "2026-11-24",
+ "version": "2026-11-24b",
  "semaines": [
   {
    "id": "2026-48",
@@ -92,42 +92,76 @@
            "u": "https://wol.jw.org/fr/wol/d/r30/lp-f/2021521"
           }
          ],
-         "items": [
-          {
-           "titre": "Lamentations 3:22 · Se réjouir de ce que Jéhovah fait",
-           "question": "Pourquoi avons-nous des raisons de nous réjouir, même dans l'épreuve ?",
-           "lien": "https://wol.jw.org/fr/wol/bc/r30/lp-f/202026404/1/0",
-           "prep": {
-            "reponse": "Jérémie écrit après la destruction de Jérusalem, et pourtant il reconnaît que c'est grâce à l'amour fidèle de Jéhovah que le peuple n'a pas disparu : sa miséricorde ne s'arrête jamais. L'article de janvier 2024 donne l'exemple de Rachel, abandonnée par son mari : Jéhovah lui a montré son amour par des amis qui lui ont tenu compagnie, apporté des repas et envoyé des messages.",
-            "verset": "Lamentations 3:22 · La Tour de Garde janvier 2024, p. 30 § 16",
-            "probleme": "Quand une épreuve nous écrase, on ne voit plus que ce qui va mal et on oublie ce que Jéhovah fait encore pour nous.",
-            "application": "Chaque soir, je peux noter une marque concrète de l'amour de Jéhovah dans ma journée, souvent à travers un frère ou une sœur — et je peux moi-même être ce moyen pour quelqu'un.",
-            "dire": "Ce qui me touche en Lamentations 3:22, c'est que Jérémie écrit au milieu des ruines, et pourtant il dit que c'est grâce à l'amour fidèle de Jéhovah qu'on n'a pas disparu. L'exemple de Rachel, dans La Tour de Garde de janvier 2024, montre que Jéhovah nous fait souvent sentir son amour par nos frères : un repas, une visite, un message. Ça me pousse à chercher ses bontés dans ma journée, et à être moi aussi un de ces amis."
+         "discours": {
+          "theme": "Face aux épreuves, ne baissons pas les bras",
+          "duree": 10,
+          "filRouge": "Les trois regards de Jérémie : en arrière, aujourd'hui, devant",
+          "plan": [
+           {
+            "titre": "Introduction : Jérémie au milieu des ruines",
+            "min": 1.5,
+            "notes": "Question : « Est-ce que ça va finir un jour ? » · Lm 3:19 (malheureux, sans abri) · Annoncer les 3 regards"
+           },
+           {
+            "titre": "1. Regardons ce que Jéhovah a déjà fait",
+            "min": 3,
+            "notes": "Lire Lm 3:22 · « Nous n'avons pas disparu » : faire l'inventaire de ce qui reste · Rachel (w24.01 30 § 16) : amis, repas, messages · Application : noter une bonté par soir, être le « repas » de quelqu'un"
+           },
+           {
+            "titre": "2. Comptons sur ce qu'il fait chaque matin",
+            "min": 2.5,
+            "notes": "Lm 3:23 · La manne, chaque matin · Lire Mt 6:34 · Application : un jour à la fois, la force pour aujourd'hui"
+           },
+           {
+            "titre": "3. Attendons avec patience ce qu'il va faire",
+            "min": 2,
+            "notes": "Lm 3:24 · « héritage » = « part » · Jérémie fils de prêtre (Jr 1:1 ; Nb 18:20) · Is 30:18 : Jéhovah attend aussi · Ré 21:4 · « Le meilleur est devant nous » (w21.08 13 § 17-19) · Image : sœur sous perfusion qui prie"
+           },
+           {
+            "titre": "Conclusion",
+            "min": 1,
+            "notes": "Rappel des 3 regards · « Hier, il nous a gardés. Ce matin, il est là. Demain, il nous délivrera. » · Continuons de prier avec foi"
            }
-          },
-          {
-           "titre": "Lamentations 3:23 · Jéhovah reste avec nous",
-           "question": "Comment Lamentations 3:23 et Matthieu 6:34 nous aident-ils à faire confiance à Jéhovah pour l'avenir ?",
-           "lien": "https://wol.jw.org/fr/wol/bc/r30/lp-f/202026404/2/0",
-           "prep": {
-            "reponse": "Les marques de miséricorde de Jéhovah sont nouvelles chaque matin et sa fidélité est grande. Jésus nous invite à ne pas nous inquiéter pour le lendemain, car chaque jour a assez de ses propres soucis. Jéhovah nous donne l'aide dont nous avons besoin jour après jour.",
-            "verset": "Lamentations 3:23 · Matthieu 6:34",
-            "probleme": "On s'épuise souvent en imaginant tous les problèmes à venir : la maladie qui s'aggrave, l'argent qui manquera, etc.",
-            "application": "Je peux vivre un jour à la fois, et demander à Jéhovah dans la prière l'aide pour aujourd'hui, en lui faisant confiance pour demain.",
-            "dire": "Lamentations 3:23 dit que les miséricordes de Jéhovah sont nouvelles chaque matin. J'aime cette idée : l'aide de Jéhovah ne s'use pas, elle se renouvelle chaque jour. C'est pour ça que Jésus nous dit en Matthieu 6:34 de ne pas nous inquiéter pour le lendemain. Quand je m'angoisse pour l'avenir, je me rappelle que demain matin, Jéhovah sera encore là, avec une aide toute neuve."
+          ],
+          "fiche": [
+           "Accroche : « Est-ce que ça va finir un jour ? »",
+           "Fil rouge : 3 regards (hier, ce matin, demain)",
+           "Lm 3:22 → inventaire de ce qui reste · Rachel",
+           "Lm 3:23 + Mt 6:34 → la manne, chaque matin",
+           "Lm 3:24 → « ma part » (Jérémie, prêtre · Nb 18:20) · Is 30:18 · Ré 21:4",
+           "Image : sœur sous perfusion qui prie",
+           "Fin : « Hier il nous a gardés, ce matin il est là, demain il nous délivrera. »"
+          ],
+          "texte": "INTRODUCTION\nAvez-vous déjà traversé une épreuve dont vous vous demandiez : « Est-ce que ça va finir un jour ? » Une maladie qui dure, un deuil, une solitude, des soucis d'argent qui ne lâchent pas… Si c'est votre cas, le chapitre 3 des Lamentations a été écrit pour vous.\n\nPensez au moment où Jérémie écrit. Jérusalem vient d'être détruite. Le temple est en ruine. Les gens ont faim. Au verset 19, il dit qu'il est « malheureux et sans abri ». Et pourtant, au milieu des ruines, Jérémie écrit trois versets parmi les plus encourageants de toute la Bible : les versets 22, 23 et 24. Dans ces trois versets, il porte trois regards : un regard en arrière, sur ce que Jéhovah a déjà fait ; un regard sur aujourd'hui, sur ce que Jéhovah fait chaque matin ; et un regard en avant, sur ce que Jéhovah va faire. Ces trois regards vont nous aider à ne pas baisser les bras.\n\n1. REGARDONS CE QUE JÉHOVAH A DÉJÀ FAIT (Lamentations 3:22)\nLisons Lamentations 3:22 : « C'est grâce à l'amour fidèle de Jéhovah que nous n'avons pas disparu ; car ses manifestations de miséricorde ne prennent jamais fin. »\nRemarquez ce que Jérémie dit… et ce qu'il ne dit pas. Il ne dit pas : « Tout va bien. » Tout ne va pas bien ! Il dit : « Nous n'avons pas disparu. » Au milieu des ruines, Jérémie fait l'inventaire de ce qui reste. Et ce qui reste, c'est l'amour fidèle de Jéhovah.\n\nLa Tour de Garde de janvier 2024 donne un bel exemple. Une sœur, appelée Rachel, a été abandonnée par son mari pendant la pandémie de Covid-19. Imaginez sa détresse. Comment Jéhovah lui a-t-il montré son amour fidèle ? Par ses frères et sœurs : des amis lui ont tenu compagnie, lui ont apporté des repas, lui ont envoyé des messages. L'article cite justement Lamentations 3:22 et explique que c'est grâce à cet amour fidèle que nous ne disparaissons pas.\nEt il ne s'agit pas seulement de survivre. L'article cite aussi Colossiens 1:11 : Jéhovah nous fortifie pour que nous puissions endurer pleinement, avec patience et avec joie. Avec joie ! L'amour fidèle de Jéhovah ne fait pas que nous garder debout ; il nous permet de garder notre joie, même quand l'épreuve est toujours là.\n\nQuelle leçon pour nous ? Quand une épreuve nous écrase, on finit par ne voir que ce qui manque. Faisons comme Jérémie : faisons l'inventaire de ce qui reste. Pourquoi ne pas noter chaque soir une marque de l'amour de Jéhovah dans notre journée ? Et n'oublions pas : pour quelqu'un d'autre, c'est peut-être nous que Jéhovah veut utiliser comme son « repas », son « message », sa visite.\n\n2. COMPTONS SUR CE QU'IL FAIT CHAQUE MATIN (Lamentations 3:23 ; Matthieu 6:34)\nContinuons avec le verset 23. En parlant des manifestations de miséricorde de Jéhovah, Jérémie dit : « Elles se renouvellent chaque matin ; ta fidélité est immense. »\nChaque matin ! Ça vous rappelle quelque chose ? Dans le désert, Jéhovah donnait la manne chaque matin. Pas un stock pour un mois : juste ce qu'il fallait pour la journée. Le lendemain, il y en avait de nouveau. L'aide de Jéhovah fonctionne de la même façon. Elle ne s'use pas. Elle ne se périme pas. Elle se renouvelle.\n\nC'est exactement ce que Jésus enseigne en Matthieu 6:34. Lisons-le : « Ne vous inquiétez donc jamais du lendemain, car le lendemain aura ses propres inquiétudes. À chaque jour suffit sa peine. »\nSouvent, ce qui nous épuise, ce n'est pas l'épreuve d'aujourd'hui. C'est celle qu'on imagine pour demain : « Et si ma santé s'aggrave ? Et si l'argent manque ? » Mais l'aide de demain arrivera… demain matin. Imaginons un frère atteint d'une maladie chronique. Le matin, il se réveille fatigué, et les pensées arrivent : « Comment je vais tenir des mois, des années comme ça ? » Rien que d'y penser, il se sent écrasé. Mais s'il prie simplement : « Jéhovah, aide-moi pour aujourd'hui », la charge devient portable. Il n'a pas à porter aujourd'hui le poids de toutes les années à venir. Le soir, il peut constater : « Jéhovah m'a aidé à tenir aujourd'hui. » Et le lendemain matin, l'aide est de nouveau là, toute neuve.\nAlors vivons un jour à la fois. Demandons à Jéhovah la force pour aujourd'hui, et faisons-lui confiance pour demain. Sa fidélité est immense.\n\n3. ATTENDONS AVEC PATIENCE CE QU'IL VA FAIRE (Lamentations 3:24)\nEnfin, le verset 24 : « Jéhovah est mon héritage ; c'est pourquoi je l'attendrai patiemment. »\nUne note de la Bible d'étude indique que le mot « héritage » veut dire littéralement « part ». Pourquoi est-ce si fort dans la bouche de Jérémie ? Parce que Jérémie venait d'une famille de prêtres (Jérémie 1:1). Or les prêtres et les Lévites n'avaient pas reçu de terre en Israël. Jéhovah leur avait dit : « C'est moi qui suis ta part » (Nombres 18:20). Jérémie vient de perdre sa ville, sa maison, son confort. Mais il n'a pas perdu sa part : Jéhovah. Et parce que Jéhovah vaut la peine, il décide de l'attendre.\n\nLa Tour de Garde d'août 2021 nous rappelle quelque chose de touchant : nous ne sommes pas les seuls à attendre. D'après Isaïe 30:18, Jéhovah attend patiemment, lui aussi, pour nous témoigner de la compassion. Et ce qu'il prépare est magnifique : un monde où il n'y aura plus d'injustice ni de douleur, comme le promet Révélation 21:4. En attendant, il nous aide déjà à progresser. L'article conclut : ne perdons pas courage, le meilleur est devant nous !\n\nRegardez l'image du cahier : une sœur gravement malade, sous perfusion, qui prie calmement. Elle n'a pas encore sa guérison. Mais elle a sa part : Jéhovah. Le cahier dit : « Tandis que nous attendons Jéhovah, continuons de le prier avec foi. »\n\nCONCLUSION\nAlors, face aux épreuves, ne baissons pas les bras. Souvenons-nous des trois regards de Jérémie. En arrière : c'est grâce à l'amour fidèle de Jéhovah que nous n'avons pas disparu. Aujourd'hui : ses miséricordes se renouvellent chaque matin. Devant nous : Jéhovah est notre part, et le meilleur est à venir.\nHier, il nous a gardés. Ce matin, il est là. Demain, il nous délivrera. Alors oui, attendons-le patiemment, et continuons de le prier avec foi.",
+          "versets": [
+           "Lamentations 3:22 (lire)",
+           "Matthieu 6:34 (lire)",
+           "Lamentations 3:23, 24",
+           "Jérémie 1:1 ; Nombres 18:20",
+           "Isaïe 30:18 ; Révélation 21:4",
+           "Colossiens 1:11"
+          ],
+          "sources": [
+           {
+            "t": "La Tour de Garde, janvier 2024, p. 30 § 16",
+            "u": "https://wol.jw.org/fr/wol/d/r30/lp-f/2024246"
+           },
+           {
+            "t": "La Tour de Garde, août 2021, p. 13 § 17-19",
+            "u": "https://wol.jw.org/fr/wol/d/r30/lp-f/2021521"
+           },
+           {
+            "t": "Lamentations 3 (Bible d'étude)",
+            "u": "https://wol.jw.org/fr/wol/b/r30/lp-f/nwtsty/25/3"
            }
-          },
+          ]
+         },
+         "medias": [
           {
-           "titre": "Lamentations 3:24 · Attendre patiemment",
-           "question": "Qu'est-ce qui nous aide à attendre patiemment la fin de nos épreuves ?",
-           "lien": "https://wol.jw.org/fr/wol/bc/r30/lp-f/202026404/3/0",
-           "prep": {
-            "reponse": "Jérémie dit que Jéhovah est sa part, et c'est pourquoi il décide de l'attendre avec patience. L'article d'août 2021 rappelle qu'Isaïe 30:18 déclare heureux ceux qui attendent Jéhovah : il y a des bénédictions dès maintenant, et dans le monde nouveau, la douleur et l'injustice auront disparu (Révélation 21:4). En attendant, Jéhovah nous aide à progresser spirituellement.",
-            "verset": "Lamentations 3:24 · Isaïe 30:18 · La Tour de Garde août 2021, p. 13 § 17-19",
-            "probleme": "Quand une épreuve dure, on peut s'impatienter et finir par se décourager ou par perdre sa joie.",
-            "application": "Je peux garder les yeux fixés sur le monde nouveau et profiter de l'attente pour cultiver des qualités chrétiennes, en continuant de prier avec foi.",
-            "dire": "En Lamentations 3:24, Jérémie dit : Jéhovah est ma part, c'est pourquoi je l'attendrai. Il a choisi d'attendre parce qu'il savait que Jéhovah valait la peine. La Tour de Garde d'août 2021 rappelle qu'attendre Jéhovah rend heureux, parce que le meilleur reste à venir. Comme la sœur sur l'image, je veux continuer à prier avec foi pendant que j'attends."
-           }
+           "type": "image",
+           "titre": "Une sœur sous perfusion prie calmement",
+           "description": "Une sœur gravement malade, sous perfusion, prie calmement. « Tandis que nous attendons Jéhovah, continuons de le prier avec foi. » → utilisée au point 3 du discours.",
+           "url": "https://wol.jw.org/fr/wol/d/r30/lp-f/202026404"
           }
          ]
         },
