@@ -157,6 +157,11 @@ nav a{flex:none}
 .disc .dh{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}.disc .dh small{color:var(--muted)}
 .dplan{margin:10px 0 0;padding-left:20px}.dplan li{margin-top:6px}
 .dtxt{white-space:pre-wrap;margin-top:8px;font-size:calc(var(--fs) + 1px);line-height:1.6}
+.dlg{background:var(--lav2);border-radius:14px;padding:6px 12px 10px;margin-top:10px}
+.bub{background:var(--card);border:1px solid var(--line);border-radius:14px 14px 14px 4px;padding:8px 11px;margin:8px 30px 0 0}
+.bub.me{background:var(--lav);border-color:transparent;border-radius:14px 14px 4px 14px;margin:8px 0 0 30px}
+.bub small{display:block;font-size:11px;font-weight:600;color:var(--vi)}
+.reco{background:var(--okbg);border-radius:14px;padding:12px 14px;margin:14px 0 4px}.reco b{color:var(--ok)}.reco ul{margin:6px 0 0;padding-left:18px}.reco li b{color:var(--ink)}
 .medias{display:grid;gap:8px;margin-top:10px}
 .md{display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;background:var(--lav2);border-radius:12px;padding:10px 12px}
 .sat .md{background:var(--peach2)}
@@ -327,6 +332,7 @@ function vDetail(k){
   <section class="prog"><h2>Programme et préparation</h2>
   <p class="meta">${m.intro ? esc(m.intro) : `Lecture biblique : <a href="${esc(m.focusUrl)}" target="_blank" rel="noopener">${esc(m.focus)}</a>`}</p>
   ${parts.length ? `<div class="meter" aria-hidden="true"><i style="width:${Math.round(done/parts.length*100)}%"></i></div><p class="note">${done} partie${done>1?'s':''} sur ${parts.length} avec ton commentaire</p>` : ''}
+  ${m.recommandations?.length ? `<div class="reco"><b>⭐ Les commentaires que je privilégierais</b><ul>${m.recommandations.map(r => `<li><b>${esc(r.titre)}</b> — ${esc(r.raison)}</li>`).join('')}</ul></div>` : ''}
   ${m.sections.map(s => `<div class="sec">${esc(s.titre)}</div>${s.parties.map(p => partHtml(w,k,p,mine)).join('')}`).join('')}
   </section>
   <div class="srcs"><h3 style="margin-bottom:6px">Sources principales</h3>${m.sources.map(s => `<a href="${esc(s.u)}" target="_blank" rel="noopener"><span>${esc(s.t)}</span>${ext}</a>`).join('')}</div></div>`;
@@ -339,7 +345,7 @@ function partHtml(w,k,p,mine){
   <div class="inner">
   ${p.medias?.length ? `<div class="medias">${p.medias.map(md => `<div class="md"><span class="mdi">${md.type==='video' ? '▶' : '🖼'}</span><div><b>${md.type==='video' ? 'Vidéo' : 'Image'}${md.titre ? ' · ' + esc(md.titre) : ''}</b>${md.description ? `<p>${esc(md.description)}</p>` : ''}${md.url ? `<a href="${esc(md.url)}" target="_blank" rel="noopener">${md.type==='video' ? 'Regarder' : 'Voir'} ${ext}</a>` : ''}</div></div>`).join('')}</div>` : ''}
   ${p.discours ? (() => { const D = p.discours, mots = (D.texte||'').split(/\s+/).filter(Boolean).length, tk = 'j-' + w.id + '-' + (p.num||'x');
-    return `<div class="disc"><div class="dh"><span class="pill">🎤 Discours préparé · ${esc(D.duree||10)} min</span><small>${mots} mots · ≈ ${mmss(mots/130*60)} à l'oral</small></div>
+    return `<div class="disc"><div class="dh"><span class="pill">🎤 Discours préparé · ${esc(D.duree||10)} min</span><small>${mots} mots · ≈ ${mmss(mots/130*60)} + lecture des versets</small></div>
     ${D.filRouge ? `<p class="note" style="margin:8px 0 0"><b>Fil rouge :</b> ${esc(D.filRouge)}</p>` : ''}
     <ol class="dplan">${(D.plan||[]).map(x => `<li><b>${esc(x.titre)}</b> <span class="dur">· ${esc(x.min)} min</span>${x.notes ? `<div class="note" style="margin:2px 0 0">${esc(x.notes)}</div>` : ''}</li>`).join('')}</ol>
     <details><summary>Texte complet du discours</summary><div class="dtxt">${esc(D.texte)}</div></details>
@@ -347,10 +353,11 @@ function partHtml(w,k,p,mine){
     ${D.versets ? `<details><summary>Versets à préparer</summary><ul class="conseils">${D.versets.map(f => `<li>${esc(f)}</li>`).join('')}</ul></details>` : ''}
     ${D.sources ? `<div class="refs">${D.sources.map(r => `<a href="${esc(r.u)}" target="_blank" rel="noopener">${esc(r.t)} ${ext}</a>`).join('')}</div>` : ''}
     <div class="row" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px"><button class="btn pri" data-jtrain="${esc(k)}|${esc(pk)}">⏱ S'entraîner</button><button class="btn" data-jedit="${esc(k)}|${esc(pk)}">${talk(tk) ? '✎ Ma version' : '✎ Personnaliser'}</button></div></div>`; })() : ''}
+  ${p.dialogue?.length ? `<details class="dlg" open><summary>Exemple de dialogue</summary>${p.dialogue.map(l => `<div class="bub ${/proclam|^moi$/i.test(l.qui) ? 'me' : ''}"><small>${esc(l.qui)}</small>${esc(l.texte)}</div>`).join('')}${p.lecon ? `<p class="note"><b>Leçon :</b> ${esc(p.lecon)}</p>` : ''}</details>` : ''}
   ${p.conseils ? `<ul class="conseils">${p.conseils.map(c => `<li>${esc(c)}</li>`).join('')}</ul>` : ''}
   ${(p.items||[]).map((it,j) => `<div class="item"><div class="q">${esc(it.titre)} ${it.lien ? `<a href="${esc(it.lien)}" target="_blank" rel="noopener" aria-label="Ouvrir sur wol.jw.org">${ext}</a>` : ''}</div><p class="qq">${esc(it.question)}</p>
     <details><summary>Voir le commentaire</summary><dl class="pp"><dt>Réponse directe</dt><dd>${esc(it.prep.reponse)}</dd><dt>Verset ou publication</dt><dd>${esc(it.prep.verset)}</dd>${it.prep.probleme?`<dt>Problème ou difficulté</dt><dd>${esc(it.prep.probleme)}</dd>`:''}<dt>Application ou leçon</dt><dd>${esc(it.prep.application)}</dd></dl>
-    <div class="say"><b>Commentaire à dire</b>${esc(it.prep.dire)}</div>
+    <div class="say"><b>Commentaire à dire</b>${esc(it.prep.dire)}</div>${it.src?.length ? `<div class="refs">${it.src.map(r => `<a href="${esc(r.u)}" target="_blank" rel="noopener">📖 ${esc(r.t)} ${ext}</a>`).join('')}</div>` : ''}
     <div class="acts"><a href="${esc(it.lien || w.programme)}" target="_blank" rel="noopener">Voir la source ${ext}</a>${(() => { const ex = existingTake(w.id, k, pk, j); return ex
       ? `<button class="btn" data-edit="${esc(ex.id)}" style="color:var(--ok)">✓ Repris · Modifier</button>`
       : `<button class="btn soft" data-take="${esc(k)}|${esc(pk)}|${j}">${plus} Reprendre</button>`; })()}</div></details></div>`).join('')}
