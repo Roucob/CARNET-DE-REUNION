@@ -173,6 +173,26 @@ nav a{flex:none}
 .tv-foot{position:absolute;left:6vw;right:6vw;bottom:3vh;display:flex;justify-content:space-between;color:#7d76a0;font-size:clamp(12px,1.4vw,20px)}
 .tv-nav{position:absolute;top:0;bottom:0;width:30%;background:none;border:0;cursor:pointer}.tv-nav.l{left:0}.tv-nav.r{right:0}
 .tv-x-btn{position:absolute;top:2vh;right:2vw;z-index:2;background:#ffffff1a;color:#fff;border:0;border-radius:999px;width:44px;height:44px;font-size:18px;cursor:pointer}
+.tvadd{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.tvrow{display:flex;gap:12px;align-items:flex-start}
+.tvth{width:88px;height:62px;border-radius:10px;object-fit:cover;background:var(--lav2);flex:none}
+.tvth.vid{position:relative;display:grid;place-items:center;overflow:hidden;background:#1b1530}.tvth.vid img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.7}.tvth.vid span{position:relative;color:#fff;font-size:22px}
+.tv-full{position:absolute;inset:0;display:grid;place-items:center;background:#000}
+.tv-media{max-width:100%;max-height:100%;width:100%;height:100%;object-fit:contain;background:#000}
+.tv-cap{position:absolute;left:0;right:0;top:0;padding:2vh 6vw;font-size:clamp(16px,2vw,30px);background:linear-gradient(#000c,#0000);color:#fff;pointer-events:none}
+.tv-card.with-m{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:4vw;align-items:center}
+.tv-side{width:100%;max-height:70vh;object-fit:contain;border-radius:16px;background:#000}
+.tv-arrows{display:flex;gap:10px}.tv-arrows button{background:#ffffff26;color:#fff;border:0;border-radius:999px;width:48px;height:48px;font-size:26px;cursor:pointer}
+.tv-foot{z-index:3}
+@media(max-aspect-ratio:1/1){.tv-card.with-m{grid-template-columns:minmax(0,1fr)}}
+.jwtabs{display:flex;gap:6px;margin:6px 0 14px;overflow-x:auto}.jwtabs button{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 14px;font-weight:500;cursor:pointer;white-space:nowrap}.jwtabs button.on{background:var(--vibtn);color:#fff;border-color:transparent}
+.jwgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-bottom:16px}
+.jwcat{position:relative;border:0;border-radius:14px;overflow:hidden;aspect-ratio:16/9;background:#2a2446;color:#fff;cursor:pointer;padding:0}.jwcat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.75}.jwcat span{position:absolute;left:0;right:0;bottom:0;padding:8px 10px;font-weight:600;font-size:13px;text-align:left;background:linear-gradient(#0000,#000c)}
+.jwvids{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.jwv{background:var(--card);border:1.5px solid var(--line);border-radius:16px;overflow:hidden}
+.jwp{position:relative;aspect-ratio:16/9;background:#1b1530}.jwp img{width:100%;height:100%;object-fit:cover;display:block}.jwp span{position:absolute;right:8px;bottom:8px;background:#000b;color:#fff;font-size:12px;border-radius:6px;padding:2px 6px}
+.jwb{padding:10px 12px 12px}.jwb h3{font-size:14px}.jwb small{color:var(--muted)}.jwb .btn{min-height:36px;padding:0 10px;font-size:13px}
+.tv-arrows .tv-ap{width:auto;padding:0 16px;font-size:15px;font-weight:600}
 .medias{display:grid;gap:8px;margin-top:10px}
 .md{display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;background:var(--lav2);border-radius:12px;padding:10px 12px}
 .sat .md{background:var(--peach2)}
@@ -355,7 +375,7 @@ function partHtml(w,k,p,mine){
   ${p.consigne ? `<p class="cons">${esc(p.consigne)}</p>` : ''}
   ${p.refs?.length ? `<div class="refs">${p.refs.map(r => `<a href="${esc(r.u)}" target="_blank" rel="noopener">${esc(r.t)} ${ext}</a>`).join('')}</div>` : ''}</div></div>
   <div class="inner">
-  ${p.medias?.length ? `<div class="medias">${p.medias.map(md => `<div class="md"><span class="mdi">${md.type==='video' ? '▶' : '🖼'}</span><div><b>${md.type==='video' ? 'Vidéo' : 'Image'}${md.titre ? ' · ' + esc(md.titre) : ''}</b>${md.description ? `<p>${esc(md.description)}</p>` : ''}${md.url ? `<a href="${esc(md.url)}" target="_blank" rel="noopener">${md.type==='video' ? 'Regarder' : 'Voir'} ${ext}</a>` : ''}</div></div>`).join('')}</div>` : ''}
+  ${p.medias?.length ? `<div class="medias">${p.medias.map(md => `<div class="md"><span class="mdi">${md.type==='video' ? '▶' : '🖼'}</span><div><b>${md.type==='video' ? 'Vidéo' : 'Image'}${md.titre ? ' · ' + esc(md.titre) : ''}</b>${md.description ? `<p>${esc(md.description)}</p>` : ''}${md.url ? `<a href="${esc(md.url)}" target="_blank" rel="noopener">${md.type==='video' ? 'Regarder' : 'Voir'} ${ext}</a>` : ''}${md.type==='video' && /_VIDEO/i.test(md.url||'') ? ` <button class="btn" style="min-height:32px;padding:0 10px;font-size:12.5px;margin-left:6px" data-tvjw="${esc(md.url)}">📺 Diffuser</button>` : ''}</div></div>`).join('')}</div>` : ''}
   ${p.discours ? (() => { const D = p.discours, mots = (D.texte||'').split(/\s+/).filter(Boolean).length, tk = 'j-' + w.id + '-' + (p.num||'x');
     return `<div class="disc"><div class="dh"><span class="pill">🎤 Discours préparé · ${esc(D.duree||10)} min</span><small>${mots} mots · ≈ ${mmss(mots/130*60)} + lecture des versets</small></div>
     ${D.filRouge ? `<p class="note" style="margin:8px 0 0"><b>Fil rouge :</b> ${esc(D.filRouge)}</p>` : ''}
@@ -467,25 +487,27 @@ function art(){
 }
 
 /* ---------- rendu et routage ---------- */
-function route(){ const h = location.hash.slice(1); return ['commentaires','historique','mercredi','samedi','live-mercredi','live-samedi','discours','diffuser','tv','tv-recv'].includes(h) || /^talk-(edit|train)-[\w-]+$/.test(h) ? h : 'semaine'; }
+function route(){ const h = location.hash.slice(1); return ['commentaires','historique','mercredi','samedi','live-mercredi','live-samedi','discours','diffuser','tv','tv-recv','jw'].includes(h) || /^talk-(edit|train)-[\w-]+$/.test(h) ? h : 'semaine'; }
 function render(keepScroll){
   const r = route(), y = scrollY, live = r.startsWith('live-');
-  const needWeeks = !['commentaires','discours','diffuser','tv','tv-recv'].includes(r) && !r.startsWith('talk-');
+  const needWeeks = !['commentaires','discours','diffuser','tv','tv-recv','jw'].includes(r) && !r.startsWith('talk-');
   if (needWeeks && !Object.keys(WEEKS).length){
     $('#app').innerHTML = LOADERR
       ? `<div class="card" style="margin-top:18px"><h3>Programmes indisponibles</h3><p class="note">Connecte-toi une fois à Internet pour télécharger les programmes. Tes commentaires et tes discours restent accessibles.</p><a class="btn" href="#discours">Mes discours</a></div>`
       : `<p class="sub" style="margin-top:24px">Chargement des programmes…</p>`;
     return;
   }
-  document.querySelectorAll('[data-nav]').forEach(a => a.toggleAttribute('aria-current', a.dataset.nav === r || (r==='mercredi'||r==='samedi'||live) && a.dataset.nav==='semaine' || r.startsWith('talk-') && a.dataset.nav==='discours'));
+  document.querySelectorAll('[data-nav]').forEach(a => a.toggleAttribute('aria-current', a.dataset.nav === r || (r==='mercredi'||r==='samedi'||live) && a.dataset.nav==='semaine' || r.startsWith('talk-') && a.dataset.nav==='discours' || (r==='jw'||r==='tv') && a.dataset.nav==='diffuser'));
   document.querySelectorAll('[data-nav]').forEach(a => a.hasAttribute('aria-current') ? a.setAttribute('aria-current','page') : 0);
   const open = [...document.querySelectorAll('details[open]')].map(d => d.querySelector('summary')?.parentElement?.closest('.item')?.querySelector('.q')?.textContent);
   const qv = $('#q')?.value, fv = $('#fm')?.value;
-  $('#app').innerHTML = r==='commentaires' ? vCommentaires() : r==='historique' ? vHistorique() : (r==='mercredi'||r==='samedi') ? vDetail(r) : live ? vLive(r.slice(5)) : r==='discours' ? vTalks() : r==='diffuser' ? vDiffuser() : (r==='tv'||r==='tv-recv') ? vTV() : r.startsWith('talk-edit-') ? vTalkEdit(r.slice(10)) : r.startsWith('talk-train-') ? vTalkTrain(r.slice(11)) : vSemaine();
+  $('#app').innerHTML = r==='commentaires' ? vCommentaires() : r==='historique' ? vHistorique() : (r==='mercredi'||r==='samedi') ? vDetail(r) : live ? vLive(r.slice(5)) : r==='discours' ? vTalks() : r==='diffuser' ? vDiffuser() : r==='jw' ? vJW() : (r==='tv'||r==='tv-recv') ? vTV() : r.startsWith('talk-edit-') ? vTalkEdit(r.slice(10)) : r.startsWith('talk-train-') ? vTalkTrain(r.slice(11)) : vSemaine();
   if (r.startsWith('talk-edit-')) afterTalkEdit(r.slice(10));
   if (r.startsWith('talk-train-')) startTrain(r.slice(11)); else stopTrain();
   wakeLock(live || r.startsWith('talk-train-') || r==='tv' || r==='tv-recv');
   if (r==='tv' || r==='tv-recv') tvEnter(); else tvLeave();
+  if (r==='diffuser') hydrate($('#app'));
+  if (r==='jw') afterJW();
   if (r==='commentaires'){ if (qv) $('#q').value = qv; if (fv) $('#fm').value = fv; fillList(); }
   if (keepScroll){ document.querySelectorAll('.item').forEach(it => { if (open.includes(it.querySelector('.q')?.textContent)) it.querySelector('details')?.setAttribute('open',''); }); scrollTo(0,y); }
 }
@@ -831,56 +853,196 @@ document.addEventListener('click', e => {
   else if ('treset' in d && TR){ Object.assign(TR, {run:false, el:0, sec:0, secStart:0}); paintTrain(); }
 });
 
-/* ---------- Diffuseur : partager des recherches sur la télé ---------- */
+/* ---------- Diffuseur : partager des recherches, images, vidéos et présentations sur la télé ---------- */
 const LTV = 'carnet-tv';
 let TVL = []; try { TVL = JSON.parse(localStorage.getItem(LTV) || '[]'); } catch(e){}
-const saveTV = () => { try { localStorage.setItem(LTV, JSON.stringify(TVL)); } catch(e){} };
+const saveTV = () => { try { localStorage.setItem(LTV, JSON.stringify(TVL)); } catch(e){ toast('Mémoire pleine'); } };
 let TVI = 0;
 function tvAdd(sl, quiet){ TVL.push({id: 's' + newId().slice(1), ...sl}); saveTV(); if (!quiet) toast('📺 Ajouté à la diffusion (' + TVL.length + ')'); }
 
+/* --- stockage des fichiers (images, vidéos, pages) dans IndexedDB : trop gros pour localStorage --- */
+let IDB = null;
+function idb(){ return IDB || (IDB = new Promise((ok, ko) => { const r = indexedDB.open('carnet-media', 1);
+  r.onupgradeneeded = () => r.result.createObjectStore('f'); r.onsuccess = () => ok(r.result); r.onerror = () => ko(r.error); })); }
+async function idbPut(id, blob){ const db = await idb(); return new Promise((ok, ko) => { const t = db.transaction('f', 'readwrite'); t.objectStore('f').put(blob, id); t.oncomplete = ok; t.onerror = () => ko(t.error); }); }
+async function idbGet(id){ const db = await idb(); return new Promise((ok, ko) => { const q = db.transaction('f').objectStore('f').get(id); q.onsuccess = () => ok(q.result); q.onerror = () => ko(q.error); }); }
+async function idbDel(id){ try { const db = await idb(); db.transaction('f', 'readwrite').objectStore('f').delete(id); } catch(e){} }
+const OURL = {};
+async function mediaURL(m){ if (!m) return ''; if (!m.ref) return m.url || '';
+  if (OURL[m.ref]) return OURL[m.ref]; const b = await idbGet(m.ref); return b ? (OURL[m.ref] = URL.createObjectURL(b)) : (m.url || ''); }
+// remplace les éléments [data-mref] par leur vraie source une fois le HTML affiché
+async function hydrate(root){
+  for (const el of (root || document).querySelectorAll('[data-mref]')){
+    const s = TVL.find(x => x.id === el.dataset.mref); if (!s) continue;
+    const u = await mediaURL(s.media); if (u && el.getAttribute('src') !== u) el.src = u;
+    if (!u) el.replaceWith(Object.assign(document.createElement('p'), {className: 'note', textContent: 'Fichier indisponible (supprimé ou hors connexion).'}));
+  }
+}
+async function storeFile(blob){ const id = 'm' + newId().slice(1); await idbPut(id, blob); return id; }
+
+/* --- vidéos jw.org : lecture directe grâce à l'API publique des médias --- */
+function jwKey(u){ const m = String(u).match(/(?:lank=|\/)((?:pub|docid)-[^&#/?]+?_VIDEO)/i); return m ? m[1] : null; }
+async function jwVideo(u){
+  const key = jwKey(u); if (!key) throw new Error('Lien jw.org non reconnu');
+  const r = await fetch('https://b.jw-cdn.org/apis/mediator/v1/media-items/F/' + key + '?clientType=www'); const d = await r.json();
+  const m = d.media && d.media[0]; if (!m) throw new Error('Vidéo introuvable');
+  const pick = l => (m.files || []).find(f => f.label === l && /\.mp4/.test(f.progressiveDownloadURL));
+  const f = pick('720p') || pick('480p') || pick('360p') || pick('240p'), light = pick('480p') || pick('360p') || f;
+  return {titre: m.title, url: f.progressiveDownloadURL, light: light.progressiveDownloadURL, poster: ((m.images || {}).lss || {}).lg || '', duree: m.durationFormattedMinSec || ''};
+}
+async function addJwVideo(u){
+  toast('Recherche de la vidéo…');
+  try { const v = await jwVideo(u); tvAdd({titre: v.titre, sous: v.duree ? '▶ ' + v.duree : '', media: {type: 'video', url: v.url, light: v.light, poster: v.poster, src: 'jw'}}); render(true); }
+  catch(e){ toast(e.message || 'Impossible de charger la vidéo'); }
+}
+async function keepOffline(i){
+  const s = TVL[i]; if (!s?.media?.url) return; toast('Téléchargement de la vidéo… (garde l\'appli ouverte)');
+  try { const b = await fetchBlob(s.media.url, s.media.q || ''); s.media.ref = await storeFile(b); saveTV(); render(true); toast('✓ Vidéo disponible hors connexion (' + Math.round(b.size/1048576) + ' Mo)'); }
+  catch(e){ toast('Téléchargement impossible'); }
+}
+
+/* téléchargement avec pourcentage d'avancement */
+async function fetchBlob(url, label){
+  const r = await fetch(url); if (!r.ok) throw new Error('HTTP ' + r.status);
+  const total = +r.headers.get('content-length') || 0;
+  if (!r.body || !r.body.getReader) return r.blob();
+  const rd = r.body.getReader(), parts = []; let got = 0, last = 0;
+  for (;;){ const {done, value} = await rd.read(); if (done) break; parts.push(value); got += value.length;
+    if (Date.now() - last > 700){ last = Date.now(); toast('⬇ ' + (label || '') + ' ' + (total ? Math.round(got / total * 100) + ' %' : Math.round(got / 1048576) + ' Mo') + ' · garde l\'appli ouverte'); } }
+  return new Blob(parts, {type: r.headers.get('content-type') || 'video/mp4'});
+}
+/* --- import de fichiers : images, vidéos, PDF, PowerPoint --- */
+async function importMediaFiles(files){
+  let n = 0;
+  for (const f of files){
+    const name = f.name.replace(/\.[^.]+$/, ''), low = f.name.toLowerCase();
+    try {
+      if (f.type.startsWith('image/')){ tvAdd({titre: name, media: {type: 'image', ref: await storeFile(f)}, full: 1}, true); n++; }
+      else if (f.type.startsWith('video/')){ tvAdd({titre: name, media: {type: 'video', ref: await storeFile(f)}}, true); n++; }
+      else if (low.endsWith('.pdf')) n += await importPdfSlides(f, name);
+      else if (low.endsWith('.pptx')) n += await importPptx(f, name);
+      else if (low.endsWith('.ppt') || low.endsWith('.key')) toast('Format ancien : enregistre la présentation en PDF (ou en .pptx)');
+    } catch(e){ toast('Erreur avec ' + f.name); }
+  }
+  if (n){ toast('📺 ' + n + ' diapo' + (n > 1 ? 's' : '') + ' ajoutée' + (n > 1 ? 's' : '')); render(true); }
+}
+async function importPdfSlides(f, name){
+  toast('Conversion des pages…');
+  await loadLib(LIBS.pdf);
+  if (!String(pdfjsLib.GlobalWorkerOptions.workerSrc).startsWith('blob:')){ try { const w = await (await fetch(LIBS.pdfw)).blob(); pdfjsLib.GlobalWorkerOptions.workerSrc = URL.createObjectURL(w); } catch(e){ pdfjsLib.GlobalWorkerOptions.workerSrc = LIBS.pdfw; } }
+  const pdf = await pdfjsLib.getDocument({data: await f.arrayBuffer()}).promise; let n = 0;
+  for (let i = 1; i <= Math.min(pdf.numPages, 120); i++){
+    const pg = await pdf.getPage(i), v0 = pg.getViewport({scale: 1}), sc = Math.min(3, 1920 / v0.width), vp = pg.getViewport({scale: sc});
+    const c = document.createElement('canvas'); c.width = vp.width; c.height = vp.height;
+    await pg.render({canvasContext: c.getContext('2d'), viewport: vp}).promise;
+    const blob = await new Promise(r => c.toBlob(r, 'image/jpeg', .88));
+    tvAdd({titre: name + ' · ' + i + '/' + pdf.numPages, media: {type: 'image', ref: await storeFile(blob)}, full: 1, deck: name}, true); n++;
+  }
+  return n;
+}
+const LIBZIP = 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js';
+async function importPptx(f, name){
+  toast('Lecture du PowerPoint…'); await loadLib(LIBZIP);
+  const zip = await JSZip.loadAsync(await f.arrayBuffer()), P = new DOMParser();
+  const xml = async p => { const z = zip.file(p); return z ? P.parseFromString(await z.async('string'), 'application/xml') : null; };
+  const rels = async p => { const d = await xml(p); const m = {}; d && [...d.getElementsByTagName('Relationship')].forEach(r => m[r.getAttribute('Id')] = r.getAttribute('Target')); return m; };
+  const pres = await xml('ppt/presentation.xml'), prel = await rels('ppt/_rels/presentation.xml.rels');
+  const order = pres ? [...pres.getElementsByTagNameNS('*', 'sldId')].map(s => prel[s.getAttribute('r:id') || s.getAttributeNS('http://schemas.openxmlformats.org/officeDocument/2006/relationships', 'id')]).filter(Boolean) : [];
+  const paths = order.length ? order.map(t => 'ppt/' + t.replace(/^\/?ppt\//, '').replace(/^\.\.\//, '')) : Object.keys(zip.files).filter(k => /^ppt\/slides\/slide\d+\.xml$/.test(k)).sort((a, b) => parseInt(a.match(/\d+/)) - parseInt(b.match(/\d+/)));
+  let n = 0;
+  for (const [idx, path] of paths.entries()){
+    const d = await xml(path); if (!d) continue;
+    const paras = [...d.getElementsByTagNameNS('*', 'p')].map(p => [...p.getElementsByTagNameNS('*', 't')].map(t => t.textContent).join('')).filter(t => t.trim());
+    const sr = await rels(path.replace(/slides\/(slide\d+\.xml)$/, 'slides/_rels/$1.rels'));
+    const used = [...d.getElementsByTagNameNS('*', 'blip')].map(b => b.getAttribute('r:embed') || b.getAttributeNS('http://schemas.openxmlformats.org/officeDocument/2006/relationships', 'embed'));
+    const vids = Object.values(sr).filter(t => /\.(mp4|m4v|mov|webm)$/i.test(t));
+    let media = null;
+    const tgt = t => 'ppt/' + t.replace(/^\.\.\//, '');
+    if (vids.length){ const z = zip.file(tgt(vids[0])); if (z) media = {type: 'video', ref: await storeFile(await z.async('blob'))}; }
+    if (!media){ const imgT = used.map(r => sr[r]).find(t => t && /\.(png|jpe?g|gif|webp)$/i.test(t)); if (imgT){ const z = zip.file(tgt(imgT)); if (z){ const b = await z.async('blob'); media = {type: 'image', ref: await storeFile(new Blob([b], {type: /png$/i.test(imgT) ? 'image/png' : 'image/jpeg'}))}; } } }
+    tvAdd({titre: paras[0] || name + ' · ' + (idx + 1), texte: paras.slice(1).join('\n'), media, deck: name}, true); n++;
+  }
+  if (n) toast('PowerPoint importé : pour garder exactement le design, exporte-le plutôt en PDF');
+  return n;
+}
+
+/* --- vues --- */
+function thumb(s){
+  if (!s.media) return '';
+  if (s.media.type === 'image') return `<img class="tvth" data-mref="${esc(s.id)}" alt="">`;
+  return `<div class="tvth vid">${s.media.poster ? `<img src="${esc(s.media.poster)}" alt="">` : ''}<span>▶</span></div>`;
+}
 function vDiffuser(){
   const cast = 'PresentationRequest' in window;
-  return `<h1>Diffuser sur la télé</h1><p class="sub">Prépare ici ce que tu veux montrer à ta famille, puis lance le mode TV.</p>
+  return `<h1>Diffuser sur la télé</h1><p class="sub">Prépare ici ce que tu veux montrer à ta famille : recherches, images, vidéos, présentations. Puis lance le mode TV.</p>
   <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn pri" href="#tv" ${TVL.length ? '' : 'aria-disabled="true" style="opacity:.5;pointer-events:none"'}>▶ Lancer le mode TV</a>
-  ${cast ? `<button class="btn" data-tvcast>📡 Envoyer au Chromecast</button>` : ''}
-  <button class="btn" data-tvnew>${plus} Ajouter une recherche</button>${TVL.length ? `<button class="btn" data-tvclear style="color:var(--te)">Tout vider</button>` : ''}</div>
-  <div style="height:12px"></div>
-  ${TVL.length ? TVL.map((s,i) => `<article class="card cm"><div class="cmh"><div><small>Diapo ${i+1}</small><h3>${esc(s.titre || 'Sans titre')}</h3>${s.verset ? `<small style="color:var(--vi)">${esc(s.verset)}</small>` : ''}</div></div>
-    ${s.texte ? `<p class="txt" style="max-height:4.6em;overflow:hidden">${esc(s.texte)}</p>` : ''}
-    <div class="row"><button class="btn" data-tvup="${i}" aria-label="Monter">↑</button><button class="btn" data-tvdown="${i}" aria-label="Descendre">↓</button><button class="btn soft" data-tved="${i}">Modifier</button><button class="btn" data-tvdel="${i}" style="color:var(--te)">Retirer</button><a class="btn" href="#tv" data-tvgo="${i}">▶</a></div></article>`).join('')
-  : `<div class="card empty"><div class="ico">📺</div><h3>Rien à diffuser pour le moment</h3><p>Touche « 📺 Diffuser » sous un commentaire, un plan de discours ou un de tes commentaires. Tu peux aussi ajouter ta propre recherche.</p></div>`}
-  <details class="card"><summary>Comment afficher sur ma télé ?</summary><ul class="conseils">
-   <li><b>iPhone + Apple TV ou télé compatible AirPlay</b> : ouvre le Centre de contrôle (glisse depuis le coin en haut à droite) → <b>Recopie de l'écran</b> → choisis ta télé, puis lance le mode TV et tourne le téléphone à l'horizontale.</li>
-   <li><b>Android</b> : dans les réglages rapides, touche <b>Caster</b>, <b>Smart View</b> (Samsung) ou <b>Partage d'écran</b>, choisis ta télé, puis lance le mode TV.</li>
-   <li><b>Chromecast + Chrome sur Android</b> : utilise le bouton <b>📡 Envoyer au Chromecast</b> s'il apparaît ; sinon, menu ⋮ de Chrome → <b>Caster…</b>.</li>
-   <li><b>Télé avec navigateur internet</b> : ouvre l'adresse de l'appli sur la télé. Note : la liste de diffusion est enregistrée sur chaque appareil.</li>
+  ${cast ? `<button class="btn" data-tvcast>📡 Envoyer au Chromecast</button>` : ''}</div>
+  <a class="card wk" href="#jw" style="margin-top:12px"><span class="ico">🌐</span><div><h3>Bibliothèque jw.org</h3><small>Parcourir et télécharger les vidéos, ouvrir les publications</small></div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--vi)" stroke-width="2.2" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg></a>
+  <div class="tvadd">
+   <button class="btn" data-tvnew>✍️ Recherche (texte)</button>
+   <label class="btn" style="cursor:pointer">🖼 Photos et vidéos<input type="file" id="tvmedia" accept="image/*,video/*" multiple hidden></label>
+   <label class="btn" style="cursor:pointer">📊 PowerPoint ou PDF<input type="file" id="tvdeck" accept=".pdf,.pptx,application/pdf,application/vnd.openxmlformats-officedocument.presentationml.presentation" hidden></label>
+   <button class="btn" data-tvjwnew>▶ Vidéo jw.org</button>
+   ${TVL.length ? `<button class="btn" data-tvclear style="color:var(--te)">Tout vider</button>` : ''}</div>
+  <p class="note">Les fichiers restent sur cet appareil. Pour un PowerPoint, le plus fidèle est de l'exporter en PDF (PowerPoint : Fichier → Exporter → PDF).</p>
+  <div style="height:8px"></div>
+  ${TVL.length ? TVL.map((s,i) => `<article class="card cm tvrow">${thumb(s)}<div style="flex:1;min-width:0"><small>Diapo ${i+1}${s.media ? (s.media.type === 'video' ? ' · vidéo' + (s.media.src === 'jw' && !s.media.ref ? ' en ligne' : '') : ' · image') : ''}</small><h3>${esc(s.titre || 'Sans titre')}</h3>${s.verset ? `<small style="color:var(--vi)">${esc(s.verset)}</small>` : ''}
+    ${s.texte ? `<p class="txt" style="max-height:3em;overflow:hidden;margin-top:4px">${esc(s.texte)}</p>` : ''}
+    <div class="row"><button class="btn" data-tvup="${i}" aria-label="Monter">↑</button><button class="btn" data-tvdown="${i}" aria-label="Descendre">↓</button><button class="btn soft" data-tved="${i}">Modifier</button>${s.media?.src === 'jw' && !s.media.ref ? `<button class="btn" data-tvkeep="${i}">⬇ Hors connexion</button>` : ''}<button class="btn" data-tvdel="${i}" style="color:var(--te)">Retirer</button><a class="btn" href="#tv" data-tvgo="${i}">▶</a></div></div></article>`).join('')
+  : `<div class="card empty"><div class="ico">📺</div><h3>Rien à diffuser pour le moment</h3><p>Ajoute une recherche, des photos, une vidéo jw.org ou une présentation. Tu peux aussi toucher « 📺 Diffuser » sous un commentaire ou une vidéo du programme.</p></div>`}
+  <details class="card" open><summary>📺 Ma télé Hisense (VIDAA)</summary><ul class="conseils">
+   <li><b>Avec un iPhone (AirPlay)</b> : sur la télé, ouvre <b>Paramètres → Système → AirPlay et HomeKit</b> (selon le modèle : Paramètres → Réseau) et active AirPlay. iPhone et télé doivent être sur le <b>même Wi-Fi</b>.</li>
+   <li><b>Pour les vidéos (meilleure qualité)</b> : dans le mode TV, touche <b>AirPlay</b> sur la diapo vidéo. C'est la télé qui lit la vidéo elle-même, en 720p, sans passer par l'écran du téléphone.</li>
+   <li><b>Pour les textes, images et PDF</b> : iPhone → Centre de contrôle → <b>Recopie de l'écran</b> → ta Hisense, puis tourne le téléphone à l'horizontale.</li>
+   <li><b>Avec un Android</b> : sur la télé, active <b>Partage d'écran</b> (Paramètres → Réseau, ou touche Source/Input → « Partage d'écran »). Sur le téléphone : <b>Smart View</b>, <b>Caster</b> ou <b>Diffuser l'écran</b> → ta Hisense.</li>
+   <li><b>La meilleure image possible</b> : un <b>câble HDMI</b> (adaptateur USB-C ou Lightning vers HDMI) branché sur la télé.</li>
+   <li>Si ton modèle n'a pas AirPlay dans les menus, il est peut-être plus ancien : utilise le partage d'écran (Android) ou le câble HDMI.</li>
+  </ul></details>
+  <details class="card"><summary>Autres télés</summary><ul class="conseils">
+   <li><b>iPhone + Apple TV ou télé compatible AirPlay</b> : Centre de contrôle (glisse depuis le coin en haut à droite) → <b>Recopie de l'écran</b> → ta télé, puis lance le mode TV et tourne le téléphone à l'horizontale.</li>
+   <li><b>Android</b> : réglages rapides → <b>Caster</b>, <b>Smart View</b> (Samsung) ou <b>Partage d'écran</b> → ta télé, puis lance le mode TV.</li>
+   <li><b>Chromecast + Chrome sur Android</b> : bouton <b>📡 Envoyer au Chromecast</b> s'il apparaît (texte uniquement) ; pour les images et vidéos, utilise plutôt la recopie d'écran.</li>
    <li><b>Câble HDMI</b> : branche le téléphone ou l'ordinateur à la télé avec un adaptateur, puis lance le mode TV.</li>
-  </ul><p class="note">Dans le mode TV : touche la droite ou la gauche de l'écran, glisse le doigt ou utilise les flèches du clavier pour changer de diapo.</p></details>`;
+  </ul><p class="note">Dans le mode TV : touche la droite ou la gauche de l'écran, glisse le doigt ou utilise les flèches du clavier. Sur une vidéo, utilise les boutons ‹ › en bas.</p></details>`;
 }
 function tvSlide(s, i, n){
-  const len = (s.texte || '').length, fs = len > 520 ? 'tv-s' : len > 300 ? 'tv-m' : 'tv-l';
-  return `<div class="tv-card">${s.titre ? `<div class="tv-t">${esc(s.titre)}</div>` : ''}${s.sous ? `<div class="tv-q">${esc(s.sous)}</div>` : ''}
-   ${s.texte ? `<div class="tv-x ${fs}">${esc(s.texte)}</div>` : ''}${s.verset ? `<div class="tv-v">📖 ${esc(s.verset)}</div>` : ''}</div>
-   <div class="tv-foot"><span>${i+1} / ${n}</span><span>Carnet de réunions</span></div>`;
+  const m = s.media, len = (s.texte || '').length, fs = len > 520 ? 'tv-s' : len > 300 ? 'tv-m' : 'tv-l';
+  let body;
+  if (m && (s.full || (!s.texte && !s.sous))){
+    body = m.type === 'video'
+      ? `<video class="tv-media" data-mref="${esc(s.id)}" ${m.ref ? '' : `src="${esc(m.url)}"`} ${m.poster ? `poster="${esc(m.poster)}"` : ''} controls playsinline x-webkit-airplay="allow" preload="metadata"></video>${s.titre && !s.full ? `<div class="tv-cap">${esc(s.titre)}</div>` : ''}`
+      : `<img class="tv-media" data-mref="${esc(s.id)}" alt="${esc(s.titre)}">`;
+    body = `<div class="tv-full">${body}</div>`;
+  } else {
+    const mh = !m ? '' : m.type === 'video'
+      ? `<video class="tv-side" data-mref="${esc(s.id)}" ${m.ref ? '' : `src="${esc(m.url)}"`} ${m.poster ? `poster="${esc(m.poster)}"` : ''} controls playsinline x-webkit-airplay="allow" preload="metadata"></video>`
+      : `<img class="tv-side" data-mref="${esc(s.id)}" alt="">`;
+    body = `<div class="tv-card ${m ? 'with-m' : ''}"><div>${s.titre ? `<div class="tv-t">${esc(s.titre)}</div>` : ''}${s.sous ? `<div class="tv-q">${esc(s.sous)}</div>` : ''}
+     ${s.texte ? `<div class="tv-x ${fs}">${esc(s.texte)}</div>` : ''}${s.verset ? `<div class="tv-v">📖 ${esc(s.verset)}</div>` : ''}</div>${mh}</div>`;
+  }
+  const isVid = m?.type === 'video';
+  const ap = isVid && window.WebKitPlaybackTargetAvailabilityEvent ? `<button data-tvairplay class="tv-ap">AirPlay</button>` : isVid && 'remote' in HTMLMediaElement.prototype ? `<button data-tvremote class="tv-ap">Caster la vidéo</button>` : '';
+  return body + `<div class="tv-foot"><span>${i+1} / ${n}</span>${isVid ? `<span class="tv-arrows"><button data-tvprev aria-label="Précédent">‹</button>${ap}<button data-tvnext aria-label="Suivant">›</button></span>` : ''}<span>Carnet de réunions</span></div>`
+    + (isVid ? '' : `<button class="tv-nav l" data-tvprev aria-label="Précédent"></button><button class="tv-nav r" data-tvnext aria-label="Suivant"></button>`);
 }
 function vTV(){
   if (!TVL.length) return `<div class="tv"><div class="tv-card"><div class="tv-t">Rien à diffuser</div></div><button class="tv-x-btn" data-tvquit>✕</button></div>`;
   TVI = Math.max(0, Math.min(TVI, TVL.length - 1));
-  return `<div class="tv" id="tv">${tvSlide(TVL[TVI], TVI, TVL.length)}<button class="tv-nav l" data-tvprev aria-label="Précédent"></button><button class="tv-nav r" data-tvnext aria-label="Suivant"></button><button class="tv-x-btn" data-tvquit aria-label="Quitter">✕</button></div>`;
+  return `<div class="tv" id="tv">${tvSlide(TVL[TVI], TVI, TVL.length)}<button class="tv-x-btn" data-tvquit aria-label="Quitter">✕</button></div>`;
 }
-function tvShow(){ const el = $('#tv'); if (!el) return; el.innerHTML = vTV().replace(/^<div class="tv" id="tv">|<\/div>$/g, ''); tvSync(); }
+function tvShow(){ const el = $('#tv'); if (!el) return; el.querySelectorAll('video').forEach(v => v.pause()); el.innerHTML = tvSlide(TVL[TVI], TVI, TVL.length) + `<button class="tv-x-btn" data-tvquit aria-label="Quitter">✕</button>`; hydrate(el); tvSync(); }
 function tvMove(d){ const n = Math.max(0, Math.min(TVL.length - 1, TVI + d)); if (n !== TVI){ TVI = n; tvShow(); } }
 function tvEnter(){
   document.body.classList.add('tvmode');
   try { const r = document.documentElement; (r.requestFullscreen || r.webkitRequestFullscreen)?.call(r)?.catch?.(() => {}); } catch(e){}
   try { screen.orientation?.lock?.('landscape').catch(() => {}); } catch(e){}
-  tvSync();
+  hydrate($('#tv')); tvSync();
 }
 function tvLeave(){ document.body.classList.remove('tvmode'); try { if (document.fullscreenElement) document.exitFullscreen(); } catch(e){} }
 
-/* envoi direct vers un Chromecast (Chrome Android, API Presentation) */
+/* envoi direct vers un Chromecast (Chrome Android, API Presentation) : diapos texte */
 let PCONN = null;
-function tvSync(){ try { if (PCONN && PCONN.state === 'connected') PCONN.send(JSON.stringify({slides: TVL, i: TVI})); } catch(e){} }
+function tvSync(){ try { if (PCONN && PCONN.state === 'connected') PCONN.send(JSON.stringify({slides: TVL.map(s => s.media?.ref ? {...s, media: null} : s), i: TVI})); } catch(e){} }
 async function tvCast(){
   try {
     const req = new PresentationRequest([location.href.split('#')[0] + '#tv-recv']);
@@ -890,7 +1052,6 @@ async function tvCast(){
     location.hash = 'tv';
   } catch(e){ toast(e && e.name === 'NotAllowedError' ? 'Diffusion annulée' : 'Ta télé ne permet pas l\'envoi direct : utilise la recopie d\'écran'); }
 }
-// côté télé : reçoit les diapos envoyées par le téléphone
 if (navigator.presentation && navigator.presentation.receiver){
   navigator.presentation.receiver.connectionList.then(list => {
     const on = c => c.addEventListener('message', ev => { try { const m = JSON.parse(ev.data); TVL = m.slides || []; TVI = m.i || 0; if (location.hash !== '#tv') location.hash = 'tv'; else tvShow(); } catch(e){} });
@@ -905,14 +1066,29 @@ function tvEditor(i){
   <label>Question ou sous-titre<input name="sous" value="${esc(s.sous)}"></label>
   <label>Texte à afficher<textarea name="texte" style="min-height:140px">${esc(s.texte)}</textarea></label>
   <label>Verset ou référence<input name="verset" value="${esc(s.verset)}" placeholder="Ex. : Jacques 1:13"></label>
+  ${s.media ? `<label style="flex-direction:row;display:flex;gap:8px;align-items:center"><input type="checkbox" name="full" ${s.full ? 'checked' : ''} style="width:auto"> Afficher ${s.media.type === 'video' ? 'la vidéo' : "l'image"} en plein écran (sans texte)</label>` : ''}
   <div class="end"><button class="btn" value="cancel" formnovalidate>Annuler</button><button class="btn pri" value="ok">Enregistrer</button></div>`;
   $('#form').oninput = null; $('#dlg').oncancel = null;
   $('#form').onsubmit = ev => { if (ev.submitter?.value !== 'ok') return; const f = new FormData($('#form'));
     const sl = {titre: f.get('titre').trim(), sous: f.get('sous').trim(), texte: f.get('texte').trim(), verset: f.get('verset').trim()};
+    if (s.media) sl.full = f.get('full') ? 1 : 0;
     if (i == null) tvAdd(sl); else { Object.assign(TVL[i], sl); saveTV(); } render(true); };
   try { $('#dlg').showModal(); } catch(e){ $('#dlg').setAttribute('open',''); }
 }
+function jwDialog(){
+  $('#form').innerHTML = `<h2>Ajouter une vidéo jw.org</h2>
+  <label>Lien de la vidéo<input name="u" placeholder="https://www.jw.org/fr/bibliothèque/videos/…" inputmode="url"></label>
+  <p class="note">Sur jw.org, ouvre la vidéo, touche « Partager » puis « Copier le lien », et colle-le ici. La vidéo est lue en ligne ; touche ensuite « ⬇ Hors connexion » pour la garder sur l'appareil.</p>
+  <div class="end"><button class="btn" value="cancel" formnovalidate>Annuler</button><button class="btn pri" value="ok">Ajouter</button></div>`;
+  $('#form').oninput = null; $('#dlg').oncancel = null;
+  $('#form').onsubmit = ev => { if (ev.submitter?.value !== 'ok') return; addJwVideo(new FormData($('#form')).get('u')); };
+  try { $('#dlg').showModal(); } catch(e){ $('#dlg').setAttribute('open',''); }
+}
+function tvRemove(i){ const s = TVL[i]; if (s?.media?.ref && !TVL.some((x, j) => j !== i && x.media?.ref === s.media.ref)) idbDel(s.media.ref); TVL.splice(i, 1); saveTV(); }
 
+document.addEventListener('change', e => {
+  if (e.target.id === 'tvmedia' || e.target.id === 'tvdeck'){ importMediaFiles([...e.target.files]); e.target.value = ''; }
+});
 document.addEventListener('click', e => {
   const b = e.target.closest('button,a'); if (!b) return; const d = b.dataset;
   if (d.tvadd){ const a = d.tvadd.split('|'), k = a[0], j = +a[a.length-1], pk = a.slice(1,-1).join('|'), w = pickWeek();
@@ -921,11 +1097,14 @@ document.addEventListener('click', e => {
   else if (d.tvd){ const [k, ...r] = d.tvd.split('|'), w = pickWeek(), p = allParts(w,k).find(x => partKey(x) === r.join('|')), D = p?.discours; if (!D) return;
     tvAdd({titre: D.theme, sous: D.filRouge || '', texte: (D.plan||[]).map(x => '• ' + x.titre).join('\n'), verset: (D.versets||[]).join(' · ')}, true);
     (D.plan||[]).forEach(x => tvAdd({titre: x.titre, texte: x.notes || ''}, true)); toast('📺 Plan ajouté (' + ((D.plan||[]).length + 1) + ' diapos)'); }
+  else if (d.tvjw) addJwVideo(d.tvjw);
+  else if ('tvjwnew' in d) jwDialog();
+  else if (d.tvkeep) keepOffline(+d.tvkeep);
   else if ('tvnew' in d) tvEditor(null);
   else if (d.tved) tvEditor(+d.tved);
-  else if (d.tvdel){ TVL.splice(+d.tvdel, 1); saveTV(); render(true); }
+  else if (d.tvdel){ tvRemove(+d.tvdel); render(true); }
   else if (d.tvup || d.tvdown){ const i = +(d.tvup || d.tvdown), j = d.tvup ? i - 1 : i + 1; if (j < 0 || j >= TVL.length) return; [TVL[i], TVL[j]] = [TVL[j], TVL[i]]; saveTV(); render(true); }
-  else if ('tvclear' in d){ if (!d.sure){ d.sure = 1; b.textContent = 'Confirmer ?'; return; } TVL = []; saveTV(); render(true); }
+  else if ('tvclear' in d){ if (!d.sure){ d.sure = 1; b.textContent = 'Confirmer ?'; return; } while (TVL.length) tvRemove(0); render(true); }
   else if (d.tvgo){ TVI = +d.tvgo; }
   else if (b.getAttribute('href') === '#tv') TVI = 0;
   else if ('tvcast' in d) tvCast();
@@ -934,12 +1113,129 @@ document.addEventListener('click', e => {
   else if ('tvquit' in d) location.hash = 'diffuser';
 });
 document.addEventListener('keydown', e => { if (!document.body.classList.contains('tvmode')) return;
-  if (['ArrowRight','PageDown',' ','Enter'].includes(e.key)){ e.preventDefault(); tvMove(1); }
-  else if (['ArrowLeft','PageUp','Backspace'].includes(e.key)){ e.preventDefault(); tvMove(-1); }
+  if (['ArrowRight','PageDown'].includes(e.key) || (e.key === ' ' && e.target.tagName !== 'VIDEO')){ e.preventDefault(); tvMove(1); }
+  else if (['ArrowLeft','PageUp'].includes(e.key)){ e.preventDefault(); tvMove(-1); }
   else if (e.key === 'Escape') location.hash = 'diffuser'; });
 let tx0 = null;
-document.addEventListener('touchstart', e => { if (document.body.classList.contains('tvmode')) tx0 = e.touches[0].clientX; }, {passive: true});
+document.addEventListener('touchstart', e => { if (document.body.classList.contains('tvmode') && !e.target.closest('video')) tx0 = e.touches[0].clientX; }, {passive: true});
 document.addEventListener('touchend', e => { if (tx0 == null) return; const dx = e.changedTouches[0].clientX - tx0; tx0 = null; if (Math.abs(dx) > 50) tvMove(dx < 0 ? 1 : -1); }, {passive: true});
+
+/* ---------- Bibliothèque jw.org : vidéos (API publique des médias) et publications ---------- */
+const MED = 'https://b.jw-cdn.org/apis/mediator/v1/categories/F/';
+const PUBM = 'https://b.jw-cdn.org/apis/pub-media/GETPUBMEDIALINKS?output=json&fileformat=PDF&langwritten=F&alllangs=0&pub=';
+let JWTAB = 'videos', JWCAT = null, JWDATA = {};
+const LJW = 'carnet-jwcache';
+try { JWDATA = JSON.parse(localStorage.getItem(LJW) || '{}'); } catch(e){}
+async function jwCat(key){
+  try { const r = await fetch(MED + key + '?detailed=1&clientType=www'); const d = await r.json(); JWDATA[key] = d.category;
+    try { localStorage.setItem(LJW, JSON.stringify(JWDATA)); } catch(e){ JWDATA = {[key]: d.category}; } }
+  catch(e){ if (!JWDATA[key]) toast('Pas de connexion : catégorie indisponible'); }
+  return JWDATA[key];
+}
+const qual = f => parseInt(f.label) || 0;
+const mp4s = m => (m.files || []).filter(f => /\.mp4/.test(f.progressiveDownloadURL)).sort((a, b) => qual(b) - qual(a));
+const poster = m => { const i = m.images || {}; return (i.pnr && (i.pnr.md || i.pnr.lg)) || (i.lss && (i.lss.md || i.lss.lg)) || (i.wss && i.wss.md) || (i.sqr && i.sqr.md) || ''; };
+function findMedia(key){ for (const c of Object.values(JWDATA)){ for (const m of (c.media || [])) if (m.naturalKey === key || m.guid === key) return m;
+  for (const s of (c.subcategories || [])) for (const m of (s.media || [])) if (m.naturalKey === key || m.guid === key) return m; } return null; }
+
+const PUBS = [
+ {s:'w', n:'La Tour de Garde (édition d\'étude)', per:'m'}, {s:'mwb', n:'Cahier Vie chrétienne et ministère', per:'b'},
+ {s:'nwtsty', n:'Bible · Traduction du monde nouveau (étude)', wol:'https://wol.jw.org/fr/wol/binav/r30/lp-f/nwtsty', pdf:'nwt'},
+ {s:'lff', n:'Vivez pour toujours ! (cours biblique)'}, {s:'wcg', n:'Marche courageusement avec Dieu'},
+ {s:'rr', n:'Le culte pur de Jéhovah enfin rétabli !'}, {s:'lmd', n:'Aime les gens, fais des disciples'},
+ {s:'th', n:'Applique-toi à la lecture et à l\'enseignement'}];
+function issues(per){ const out = [], d = new Date(); d.setDate(1); d.setMonth(d.getMonth() + 3);
+  for (let i = 0; i < 12 && out.length < 8; i++){ const y = d.getFullYear(), m = d.getMonth() + 1;
+    if (per === 'm' || m % 2 === 1) out.push({v: y + String(m).padStart(2, '0'), l: MOIS[m-1] + ' ' + y}); d.setMonth(d.getMonth() - 1); }
+  return out; }
+
+function vJW(){
+  const tabs = [['videos','🎬 Vidéos'],['pubs','📚 Publications'],['sites','🌐 Sites']];
+  let body = '';
+  if (JWTAB === 'videos'){
+    const c = JWCAT && JWDATA[JWCAT];
+    if (!JWCAT){ const root = JWDATA.VideoOnDemand;
+      body = `<div class="card" style="display:flex;gap:8px;flex-wrap:wrap;align-items:center"><input id="jwlink" class="field" style="flex:1;min-width:220px;border:1.5px solid var(--line);border-radius:12px;padding:10px;font-size:16px;background:var(--bg)" placeholder="Ou colle un lien de vidéo jw.org"><button class="btn" data-jwlink>Ajouter</button></div>
+      <button class="btn soft" data-jwcat="LatestVideos" style="margin-bottom:12px">🆕 Dernières vidéos</button>
+      ${root ? `<div class="jwgrid">${(root.subcategories || []).map(s => `<button class="jwcat" data-jwcat="${esc(s.key)}">${poster(s) ? `<img src="${esc(poster(s))}" alt="" loading="lazy">` : ''}<span>${esc(s.name)}</span></button>`).join('')}</div>` : `<p class="sub">Chargement des catégories…</p>`}`;
+    } else {
+      body = `<button class="back" data-jwback style="border:0;background:none;color:var(--vi);cursor:pointer;padding:0">← ${c?.parentCategory?.name ? esc(c.parentCategory.name) : 'Catégories'}</button><h2>${esc(c?.name || 'Chargement…')}</h2>
+      ${c ? `${(c.subcategories || []).length ? `<div class="jwgrid">${c.subcategories.map(s => `<button class="jwcat" data-jwcat="${esc(s.key)}">${poster(s) ? `<img src="${esc(poster(s))}" alt="" loading="lazy">` : ''}<span>${esc(s.name)}</span></button>`).join('')}</div>` : ''}
+      <div class="jwvids">${(c.media || []).map(m => { const f = mp4s(m)[0];
+        return `<article class="jwv"><div class="jwp">${poster(m) ? `<img src="${esc(poster(m))}" alt="" loading="lazy">` : ''}<span>${esc(m.durationFormattedMinSec || '')}</span></div>
+        <div class="jwb"><h3>${esc(m.title)}</h3><small>${f ? esc(f.label) + ' max' : ''}</small>
+        <div class="row" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px"><button class="btn pri" data-jwplay="${esc(m.naturalKey)}">▶</button><button class="btn" data-jwadd="${esc(m.naturalKey)}">📺 Diffuser</button><button class="btn" data-jwdl="${esc(m.naturalKey)}">⬇ Télécharger</button></div></div></article>`; }).join('')}</div>` : ''}`;
+    }
+  } else if (JWTAB === 'pubs'){
+    body = `<p class="note">Lis sur la Bibliothèque en ligne, ou télécharge le PDF : enregistre-le, puis importe-le dans Diffuser → « 📊 PowerPoint ou PDF » pour projeter les pages sur la télé.</p>
+    ${PUBS.map(p => `<article class="card"><h3>${esc(p.n)}</h3>
+      <div class="row" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;align-items:center">
+      ${p.per ? `<select id="iss-${p.s}" class="btn" style="color:var(--ink)">${issues(p.per).map(i => `<option value="${i.v}">${i.l}</option>`).join('')}</select>` : ''}
+      <button class="btn soft" data-pubwol="${p.s}">📖 Lire</button><button class="btn" data-pubpdf="${p.s}">⬇ PDF</button></div></article>`).join('')}`;
+  } else {
+    body = [['https://www.jw.org/fr/','jw.org','Le site officiel : actualités, vidéos, publications'],['https://wol.jw.org/fr/wol/h/r30/lp-f','Bibliothèque en ligne','Toutes les publications, la Bible d\'étude, l\'index'],['https://www.jw.org/fr/biblioth%C3%A8que/','Bibliothèque jw.org','Livres, brochures, revues, musique'],['https://www.jw.org/fr/biblioth%C3%A8que/videos/','Vidéos jw.org','Toutes les vidéos et JW Télédiffusion'],['https://www.jw.org/fr/biblioth%C3%A8que/bible/bible-d-etude/livres/','Bible d\'étude en ligne','Avec notes d\'étude et médias']]
+      .map(([u,t,d]) => `<a class="card wk" href="${u}" target="_blank" rel="noopener"><span class="ico">🌐</span><div><h3>${t}</h3><small>${d}</small></div>${ext}</a>`).join('');
+  }
+  return `<a class="back" href="#diffuser">← Diffuser</a><h1>Bibliothèque jw.org</h1>
+  <div class="jwtabs">${tabs.map(([k,l]) => `<button class="${JWTAB===k?'on':''}" data-jwtab="${k}">${l}</button>`).join('')}</div>${body}`;
+}
+function afterJW(){ if (JWTAB === 'videos' && !JWCAT && !JWDATA.VideoOnDemand) jwCat('VideoOnDemand').then(() => route() === 'jw' && render(true)); }
+
+/* lecteur intégré */
+function jwPlayer(m){
+  const f = mp4s(m)[0]; if (!f) return toast('Vidéo indisponible');
+  $('#form').innerHTML = `<h2>${esc(m.title)}</h2><video src="${esc(f.progressiveDownloadURL)}" poster="${esc(poster(m))}" controls autoplay playsinline x-webkit-airplay="allow" style="width:100%;border-radius:12px;background:#000;max-height:60vh"></video>
+  <p class="note">${esc(f.label)} · ${esc(m.durationFormattedMinSec || '')}. Sur iPhone, touche l'icône AirPlay du lecteur pour l'envoyer sur la télé en pleine qualité.</p>
+  <div class="end"><button class="btn" type="button" data-jwadd="${esc(m.naturalKey)}">📺 Diffuser</button><button class="btn pri" value="cancel">Fermer</button></div>`;
+  $('#form').oninput = null; $('#form').onsubmit = () => $('#form video')?.pause(); $('#dlg').oncancel = () => $('#form video')?.pause();
+  try { $('#dlg').showModal(); } catch(e){ $('#dlg').setAttribute('open',''); }
+}
+/* choix de la qualité pour télécharger */
+function jwDownload(m, idx){
+  const fs = mp4s(m); if (!fs.length) return toast('Vidéo indisponible');
+  $('#form').innerHTML = `<h2>Télécharger pour le diffuseur</h2><p class="note">${esc(m.title)}</p>
+  ${fs.map((f, i) => `<label style="flex-direction:row;display:flex;gap:10px;align-items:center;font-weight:400"><input type="radio" name="q" value="${i}" ${i === 0 ? 'checked' : ''} style="width:auto"> <b>${esc(f.label)}</b> · ${Math.round(f.filesize/1048576)} Mo ${i === 0 ? '— meilleure qualité, conseillée pour la télé' : ''}</label>`).join('')}
+  <p class="note">jw.org fournit les vidéos jusqu'en ${esc(fs[0].label)}. La vidéo est gardée sur cet appareil et fonctionne hors connexion.</p>
+  <div class="end"><button class="btn" value="cancel" formnovalidate>Annuler</button><button class="btn pri" value="ok">Télécharger</button></div>`;
+  $('#form').oninput = null; $('#dlg').oncancel = null;
+  $('#form').onsubmit = async ev => { if (ev.submitter?.value !== 'ok') return; const f = fs[+new FormData($('#form')).get('q')];
+    toast('Téléchargement ' + f.label + '… garde l\'appli ouverte');
+    try { const b = await fetchBlob(f.progressiveDownloadURL, f.label); const ref = await storeFile(b);
+      const media = {type: 'video', url: f.progressiveDownloadURL, poster: poster(m), src: 'jw', ref, q: f.label};
+      if (idx != null && TVL[idx]){ TVL[idx].media = {...TVL[idx].media, ...media}; saveTV(); } else tvAdd({titre: m.title, sous: m.durationFormattedMinSec ? '▶ ' + m.durationFormattedMinSec : '', media}, true);
+      toast('✓ ' + m.title + ' (' + f.label + ', ' + Math.round(b.size/1048576) + ' Mo) prête hors connexion'); render(true); }
+    catch(e){ toast('Téléchargement impossible (espace ou connexion)'); } };
+  try { $('#dlg').showModal(); } catch(e){ $('#dlg').setAttribute('open',''); }
+}
+async function pubPdf(sym){
+  const p = PUBS.find(x => x.s === sym), iss = $('#iss-' + sym)?.value;
+  const win = window.open('', '_blank'); // ouvert tout de suite, sinon Safari bloque la fenêtre
+  try { const d = await (await fetch(PUBM + (p.pdf || sym) + (iss ? '&issue=' + iss : ''))).json();
+    const f = (((d.files || {}).F || {}).PDF || [])[0]; if (!f) throw 0;
+    if (win){ win.opener = null; win.location.href = f.file.url; } else location.href = f.file.url;
+    toast('PDF ouvert : enregistre-le, puis importe-le dans Diffuser'); }
+  catch(e){ if (win) win.close(); toast('PDF pas encore disponible pour ce numéro'); }
+}
+function pubWol(sym){
+  const p = PUBS.find(x => x.s === sym), iss = $('#iss-' + sym)?.value;
+  const u = p.wol || (iss ? `https://wol.jw.org/fr/wol/library/r30/lp-f/tous-les-numéros/${sym === 'w' ? 'la-tour-de-garde' : 'cahier-vie-et-ministère'}/${iss.slice(0,4)}` : `https://wol.jw.org/fr/wol/publication/r30/lp-f/${sym}`);
+  window.open(u, '_blank', 'noopener');
+}
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return; const d = b.dataset;
+  if (d.jwtab){ JWTAB = d.jwtab; render(); }
+  else if (d.jwcat){ JWCAT = d.jwcat; render(); scrollTo(0,0); jwCat(d.jwcat).then(() => route() === 'jw' && render(true)); }
+  else if ('jwback' in d){ const c = JWDATA[JWCAT]; JWCAT = c?.parentCategory && c.parentCategory.key !== 'VideoOnDemand' ? c.parentCategory.key : null; render(); }
+  else if ('jwlink' in d){ const u = $('#jwlink').value.trim(); if (u) addJwVideo(u); }
+  else if (d.jwplay){ const m = findMedia(d.jwplay); if (m) jwPlayer(m); }
+  else if (d.jwadd){ const m = findMedia(d.jwadd), f = m && mp4s(m)[0]; if (f){ tvAdd({titre: m.title, sous: m.durationFormattedMinSec ? '▶ ' + m.durationFormattedMinSec : '', media: {type: 'video', url: f.progressiveDownloadURL, poster: poster(m), src: 'jw', q: f.label}}); } }
+  else if (d.jwdl){ const m = findMedia(d.jwdl); if (m) jwDownload(m); }
+  else if (d.pubpdf) pubPdf(d.pubpdf);
+  else if (d.pubwol) pubWol(d.pubwol);
+  else if ('tvairplay' in d){ const v = document.querySelector('.tv video'); try { v.webkitShowPlaybackTargetPicker(); } catch(_){ toast('AirPlay indisponible ici'); } }
+  else if ('tvremote' in d){ const v = document.querySelector('.tv video'); try { v.remote.prompt().catch(() => toast('Aucun appareil trouvé : utilise la recopie d\'écran')); } catch(_){ toast('Diffusion indisponible ici'); } }
+});
 
 /* ---------- application installable (PWA) ---------- */
 const STANDALONE = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;

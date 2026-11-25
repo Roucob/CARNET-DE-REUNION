@@ -1,13 +1,14 @@
 /* Service worker du Carnet de réunions : l'appli fonctionne entièrement hors connexion.
    Mise à jour de l'appli : modifie index.html puis change VERSION.
    Mise à jour des programmes : remplace simplement semaines.json (récupéré automatiquement quand il y a Internet). */
-const VERSION = 'carnet-v3.3.0';
+const VERSION = 'carnet-v3.5.0';
 const FILES = ['./', './index.html', './semaines.json', './manifest.webmanifest',
   './icons/icon-192.png', './icons/icon-512.png', './icons/icon-maskable-512.png', './icons/apple-touch-icon.png'];
 // lecteurs PDF et Word : gardés en cache pour importer des plans hors connexion
 const LIBS = ['https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js',
   'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js',
-  'https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js'];
+  'https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js',
+  'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(VERSION).then(async c => {
