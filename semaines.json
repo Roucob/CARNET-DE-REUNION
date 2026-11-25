@@ -1,5 +1,5 @@
 {
- "version": "2026-11-24",
+ "version": "2026-11-25c",
  "semaines": [
   {
    "id": "2026-48",
@@ -92,42 +92,76 @@
            "u": "https://wol.jw.org/fr/wol/d/r30/lp-f/2021521"
           }
          ],
-         "items": [
-          {
-           "titre": "Lamentations 3:22 · Se réjouir de ce que Jéhovah fait",
-           "question": "Pourquoi avons-nous des raisons de nous réjouir, même dans l'épreuve ?",
-           "lien": "https://wol.jw.org/fr/wol/bc/r30/lp-f/202026404/1/0",
-           "prep": {
-            "reponse": "Jérémie écrit après la destruction de Jérusalem, et pourtant il reconnaît que c'est grâce à l'amour fidèle de Jéhovah que le peuple n'a pas disparu : sa miséricorde ne s'arrête jamais. L'article de janvier 2024 donne l'exemple de Rachel, abandonnée par son mari : Jéhovah lui a montré son amour par des amis qui lui ont tenu compagnie, apporté des repas et envoyé des messages.",
-            "verset": "Lamentations 3:22 · La Tour de Garde janvier 2024, p. 30 § 16",
-            "probleme": "Quand une épreuve nous écrase, on ne voit plus que ce qui va mal et on oublie ce que Jéhovah fait encore pour nous.",
-            "application": "Chaque soir, je peux noter une marque concrète de l'amour de Jéhovah dans ma journée, souvent à travers un frère ou une sœur — et je peux moi-même être ce moyen pour quelqu'un.",
-            "dire": "Ce qui me touche en Lamentations 3:22, c'est que Jérémie écrit au milieu des ruines, et pourtant il dit que c'est grâce à l'amour fidèle de Jéhovah qu'on n'a pas disparu. L'exemple de Rachel, dans La Tour de Garde de janvier 2024, montre que Jéhovah nous fait souvent sentir son amour par nos frères : un repas, une visite, un message. Ça me pousse à chercher ses bontés dans ma journée, et à être moi aussi un de ces amis."
+         "discours": {
+          "theme": "Face aux épreuves, ne baissons pas les bras",
+          "duree": 10,
+          "filRouge": "Les trois regards de Jérémie : en arrière, aujourd'hui, devant",
+          "plan": [
+           {
+            "titre": "Introduction : Jérémie au milieu des ruines",
+            "min": 1.5,
+            "notes": "Question : « Est-ce que ça va finir un jour ? » · Lm 3:19 (malheureux, sans abri) · Annoncer les 3 regards"
+           },
+           {
+            "titre": "1. Regardons ce que Jéhovah a déjà fait",
+            "min": 3,
+            "notes": "Lire Lm 3:22 · « Nous n'avons pas disparu » : faire l'inventaire de ce qui reste · Rachel (w24.01 30 § 16) : amis, repas, messages · Application : noter une bonté par soir, être le « repas » de quelqu'un"
+           },
+           {
+            "titre": "2. Comptons sur ce qu'il fait chaque matin",
+            "min": 2.5,
+            "notes": "Lm 3:23 · La manne, chaque matin · Lire Mt 6:34 · Application : un jour à la fois, la force pour aujourd'hui"
+           },
+           {
+            "titre": "3. Attendons avec patience ce qu'il va faire",
+            "min": 2,
+            "notes": "Lm 3:24 · « héritage » = « part » · Jérémie fils de prêtre (Jr 1:1 ; Nb 18:20) · Is 30:18 : Jéhovah attend aussi · Ré 21:4 · « Le meilleur est devant nous » (w21.08 13 § 17-19) · Image : sœur sous perfusion qui prie"
+           },
+           {
+            "titre": "Conclusion",
+            "min": 1,
+            "notes": "Rappel des 3 regards · « Hier, il nous a gardés. Ce matin, il est là. Demain, il nous délivrera. » · Continuons de prier avec foi"
            }
-          },
-          {
-           "titre": "Lamentations 3:23 · Jéhovah reste avec nous",
-           "question": "Comment Lamentations 3:23 et Matthieu 6:34 nous aident-ils à faire confiance à Jéhovah pour l'avenir ?",
-           "lien": "https://wol.jw.org/fr/wol/bc/r30/lp-f/202026404/2/0",
-           "prep": {
-            "reponse": "Les marques de miséricorde de Jéhovah sont nouvelles chaque matin et sa fidélité est grande. Jésus nous invite à ne pas nous inquiéter pour le lendemain, car chaque jour a assez de ses propres soucis. Jéhovah nous donne l'aide dont nous avons besoin jour après jour.",
-            "verset": "Lamentations 3:23 · Matthieu 6:34",
-            "probleme": "On s'épuise souvent en imaginant tous les problèmes à venir : la maladie qui s'aggrave, l'argent qui manquera, etc.",
-            "application": "Je peux vivre un jour à la fois, et demander à Jéhovah dans la prière l'aide pour aujourd'hui, en lui faisant confiance pour demain.",
-            "dire": "Lamentations 3:23 dit que les miséricordes de Jéhovah sont nouvelles chaque matin. J'aime cette idée : l'aide de Jéhovah ne s'use pas, elle se renouvelle chaque jour. C'est pour ça que Jésus nous dit en Matthieu 6:34 de ne pas nous inquiéter pour le lendemain. Quand je m'angoisse pour l'avenir, je me rappelle que demain matin, Jéhovah sera encore là, avec une aide toute neuve."
+          ],
+          "fiche": [
+           "Accroche : « Est-ce que ça va finir un jour ? »",
+           "Fil rouge : 3 regards (hier, ce matin, demain)",
+           "Lm 3:22 → inventaire de ce qui reste · Rachel",
+           "Lm 3:23 + Mt 6:34 → la manne, chaque matin",
+           "Lm 3:24 → « ma part » (Jérémie, prêtre · Nb 18:20) · Is 30:18 · Ré 21:4",
+           "Image : sœur sous perfusion qui prie",
+           "Fin : « Hier il nous a gardés, ce matin il est là, demain il nous délivrera. »"
+          ],
+          "texte": "INTRODUCTION\nAvez-vous déjà traversé une épreuve dont vous vous demandiez : « Est-ce que ça va finir un jour ? » Une maladie qui dure, un deuil, une solitude, des soucis d'argent qui ne lâchent pas… Si c'est votre cas, le chapitre 3 des Lamentations a été écrit pour vous.\n\nPensez au moment où Jérémie écrit. Jérusalem vient d'être détruite. Le temple est en ruine. Les gens ont faim. Au verset 19, il dit qu'il est « malheureux et sans abri ». Et pourtant, au milieu des ruines, Jérémie écrit trois versets parmi les plus encourageants de toute la Bible : les versets 22, 23 et 24. Dans ces trois versets, il porte trois regards : un regard en arrière, sur ce que Jéhovah a déjà fait ; un regard sur aujourd'hui, sur ce que Jéhovah fait chaque matin ; et un regard en avant, sur ce que Jéhovah va faire. Ces trois regards vont nous aider à ne pas baisser les bras.\n\n1. REGARDONS CE QUE JÉHOVAH A DÉJÀ FAIT (Lamentations 3:22)\nLisons Lamentations 3:22 : « C'est grâce à l'amour fidèle de Jéhovah que nous n'avons pas disparu ; car ses manifestations de miséricorde ne prennent jamais fin. »\nRemarquez ce que Jérémie dit… et ce qu'il ne dit pas. Il ne dit pas : « Tout va bien. » Tout ne va pas bien ! Il dit : « Nous n'avons pas disparu. » Au milieu des ruines, Jérémie fait l'inventaire de ce qui reste. Et ce qui reste, c'est l'amour fidèle de Jéhovah.\n\nLa Tour de Garde de janvier 2024 donne un bel exemple. Une sœur, appelée Rachel, a été abandonnée par son mari pendant la pandémie de Covid-19. Imaginez sa détresse. Comment Jéhovah lui a-t-il montré son amour fidèle ? Par ses frères et sœurs : des amis lui ont tenu compagnie, lui ont apporté des repas, lui ont envoyé des messages. L'article cite justement Lamentations 3:22 et explique que c'est grâce à cet amour fidèle que nous ne disparaissons pas.\nEt il ne s'agit pas seulement de survivre. L'article cite aussi Colossiens 1:11 : Jéhovah nous fortifie pour que nous puissions endurer pleinement, avec patience et avec joie. Avec joie ! L'amour fidèle de Jéhovah ne fait pas que nous garder debout ; il nous permet de garder notre joie, même quand l'épreuve est toujours là.\n\nQuelle leçon pour nous ? Quand une épreuve nous écrase, on finit par ne voir que ce qui manque. Faisons comme Jérémie : faisons l'inventaire de ce qui reste. Pourquoi ne pas noter chaque soir une marque de l'amour de Jéhovah dans notre journée ? Et n'oublions pas : pour quelqu'un d'autre, c'est peut-être nous que Jéhovah veut utiliser comme son « repas », son « message », sa visite.\n\n2. COMPTONS SUR CE QU'IL FAIT CHAQUE MATIN (Lamentations 3:23 ; Matthieu 6:34)\nContinuons avec le verset 23. En parlant des manifestations de miséricorde de Jéhovah, Jérémie dit : « Elles se renouvellent chaque matin ; ta fidélité est immense. »\nChaque matin ! Ça vous rappelle quelque chose ? Dans le désert, Jéhovah donnait la manne chaque matin. Pas un stock pour un mois : juste ce qu'il fallait pour la journée. Le lendemain, il y en avait de nouveau. L'aide de Jéhovah fonctionne de la même façon. Elle ne s'use pas. Elle ne se périme pas. Elle se renouvelle.\n\nC'est exactement ce que Jésus enseigne en Matthieu 6:34. Lisons-le : « Ne vous inquiétez donc jamais du lendemain, car le lendemain aura ses propres inquiétudes. À chaque jour suffit sa peine. »\nSouvent, ce qui nous épuise, ce n'est pas l'épreuve d'aujourd'hui. C'est celle qu'on imagine pour demain : « Et si ma santé s'aggrave ? Et si l'argent manque ? » Mais l'aide de demain arrivera… demain matin. Imaginons un frère atteint d'une maladie chronique. Le matin, il se réveille fatigué, et les pensées arrivent : « Comment je vais tenir des mois, des années comme ça ? » Rien que d'y penser, il se sent écrasé. Mais s'il prie simplement : « Jéhovah, aide-moi pour aujourd'hui », la charge devient portable. Il n'a pas à porter aujourd'hui le poids de toutes les années à venir. Le soir, il peut constater : « Jéhovah m'a aidé à tenir aujourd'hui. » Et le lendemain matin, l'aide est de nouveau là, toute neuve.\nAlors vivons un jour à la fois. Demandons à Jéhovah la force pour aujourd'hui, et faisons-lui confiance pour demain. Sa fidélité est immense.\n\n3. ATTENDONS AVEC PATIENCE CE QU'IL VA FAIRE (Lamentations 3:24)\nEnfin, le verset 24 : « Jéhovah est mon héritage ; c'est pourquoi je l'attendrai patiemment. »\nUne note de la Bible d'étude indique que le mot « héritage » veut dire littéralement « part ». Pourquoi est-ce si fort dans la bouche de Jérémie ? Parce que Jérémie venait d'une famille de prêtres (Jérémie 1:1). Or les prêtres et les Lévites n'avaient pas reçu de terre en Israël. Jéhovah leur avait dit : « C'est moi qui suis ta part » (Nombres 18:20). Jérémie vient de perdre sa ville, sa maison, son confort. Mais il n'a pas perdu sa part : Jéhovah. Et parce que Jéhovah vaut la peine, il décide de l'attendre.\n\nLa Tour de Garde d'août 2021 nous rappelle quelque chose de touchant : nous ne sommes pas les seuls à attendre. D'après Isaïe 30:18, Jéhovah attend patiemment, lui aussi, pour nous témoigner de la compassion. Et ce qu'il prépare est magnifique : un monde où il n'y aura plus d'injustice ni de douleur, comme le promet Révélation 21:4. En attendant, il nous aide déjà à progresser. L'article conclut : ne perdons pas courage, le meilleur est devant nous !\n\nRegardez l'image du cahier : une sœur gravement malade, sous perfusion, qui prie calmement. Elle n'a pas encore sa guérison. Mais elle a sa part : Jéhovah. Le cahier dit : « Tandis que nous attendons Jéhovah, continuons de le prier avec foi. »\n\nCONCLUSION\nAlors, face aux épreuves, ne baissons pas les bras. Souvenons-nous des trois regards de Jérémie. En arrière : c'est grâce à l'amour fidèle de Jéhovah que nous n'avons pas disparu. Aujourd'hui : ses miséricordes se renouvellent chaque matin. Devant nous : Jéhovah est notre part, et le meilleur est à venir.\nHier, il nous a gardés. Ce matin, il est là. Demain, il nous délivrera. Alors oui, attendons-le patiemment, et continuons de le prier avec foi.",
+          "versets": [
+           "Lamentations 3:22 (lire)",
+           "Matthieu 6:34 (lire)",
+           "Lamentations 3:23, 24",
+           "Jérémie 1:1 ; Nombres 18:20",
+           "Isaïe 30:18 ; Révélation 21:4",
+           "Colossiens 1:11"
+          ],
+          "sources": [
+           {
+            "t": "La Tour de Garde, janvier 2024, p. 30 § 16",
+            "u": "https://wol.jw.org/fr/wol/d/r30/lp-f/2024246"
+           },
+           {
+            "t": "La Tour de Garde, août 2021, p. 13 § 17-19",
+            "u": "https://wol.jw.org/fr/wol/d/r30/lp-f/2021521"
+           },
+           {
+            "t": "Lamentations 3 (Bible d'étude)",
+            "u": "https://wol.jw.org/fr/wol/b/r30/lp-f/nwtsty/25/3"
            }
-          },
+          ]
+         },
+         "medias": [
           {
-           "titre": "Lamentations 3:24 · Attendre patiemment",
-           "question": "Qu'est-ce qui nous aide à attendre patiemment la fin de nos épreuves ?",
-           "lien": "https://wol.jw.org/fr/wol/bc/r30/lp-f/202026404/3/0",
-           "prep": {
-            "reponse": "Jérémie dit que Jéhovah est sa part, et c'est pourquoi il décide de l'attendre avec patience. L'article d'août 2021 rappelle qu'Isaïe 30:18 déclare heureux ceux qui attendent Jéhovah : il y a des bénédictions dès maintenant, et dans le monde nouveau, la douleur et l'injustice auront disparu (Révélation 21:4). En attendant, Jéhovah nous aide à progresser spirituellement.",
-            "verset": "Lamentations 3:24 · Isaïe 30:18 · La Tour de Garde août 2021, p. 13 § 17-19",
-            "probleme": "Quand une épreuve dure, on peut s'impatienter et finir par se décourager ou par perdre sa joie.",
-            "application": "Je peux garder les yeux fixés sur le monde nouveau et profiter de l'attente pour cultiver des qualités chrétiennes, en continuant de prier avec foi.",
-            "dire": "En Lamentations 3:24, Jérémie dit : Jéhovah est ma part, c'est pourquoi je l'attendrai. Il a choisi d'attendre parce qu'il savait que Jéhovah valait la peine. La Tour de Garde d'août 2021 rappelle qu'attendre Jéhovah rend heureux, parce que le meilleur reste à venir. Comme la sœur sur l'image, je veux continuer à prier avec foi pendant que j'attends."
-           }
+           "type": "image",
+           "titre": "Une sœur sous perfusion prie calmement",
+           "description": "Une sœur gravement malade, sous perfusion, prie calmement. « Tandis que nous attendons Jéhovah, continuons de le prier avec foi. » → utilisée au point 3 du discours.",
+           "url": "https://wol.jw.org/fr/wol/d/r30/lp-f/202026404"
           }
          ]
         },
@@ -161,11 +195,11 @@
             "verset": "Lamentations 3:27 · La Tour de Garde 1er juin 2007, p. 11",
             "probleme": "Les jeunes peuvent subir des moqueries à l'école à cause de leur foi et avoir envie de cacher qui ils sont.",
             "application": "Une épreuve vécue jeune n'est pas du temps perdu : c'est un entraînement. Les parents peuvent aider leurs enfants à voir les choses ainsi.",
-            "dire": "Lamentations 3:27 dit qu'il est bon de porter le joug pendant sa jeunesse. La Tour de Garde de 2007 explique que les moqueries ou les difficultés qu'un jeune endure pour sa foi le préparent pour la suite de sa vie. C'est comme un muscle qu'on entraîne tôt. Aux jeunes, j'ai envie de dire : ce que vous endurez aujourd'hui fait de vous des chrétiens solides pour demain."
+            "dire": "Oui, Lamentations 3:27 dit qu'il est bon de porter le joug quand on est jeune. Et vous savez, un article de La Tour de Garde explique que les moqueries ou les difficultés qu'un jeune vit à cause de sa foi, eh bien, ça le prépare pour toute sa vie. C'est un peu comme un muscle : plus on l'entraîne tôt, plus il devient fort. Alors, les jeunes, ce que vous endurez aujourd'hui, ce n'est pas perdu. Ça fait de vous des chrétiens solides pour demain."
            }
           },
           {
-           "titre": "Ma perle · Lamentations 3:40, 41",
+           "titre": "Perle 1 · Lamentations 3:40, 41",
            "question": "Quelles perles spirituelles avez-vous tirées de la lecture de la Bible de cette semaine ?",
            "lien": "https://wol.jw.org/fr/wol/b/r30/lp-f/nwtsty/25/3",
            "prep": {
@@ -173,7 +207,55 @@
             "verset": "Lamentations 3:31-33, 40, 41",
             "probleme": "Dans l'épreuve, on peut prier de façon machinale, ou penser que Jéhovah nous a rejetés.",
             "application": "Une prière sincère commence par un examen honnête de moi-même ; et je peux être sûr que Jéhovah désire me faire miséricorde.",
-            "dire": "Ma perle, c'est Lamentations 3:41 : élevons notre cœur en même temps que nos mains. Ce n'est pas le geste qui compte, c'est le cœur. Et juste avant, Jérémie dit que Jéhovah ne prend aucun plaisir à faire souffrir. Ça m'encourage à revenir vers lui avec sincérité, sûr qu'il veut me pardonner."
+            "dire": "Moi, j'ai été touché par le verset 41. Il dit d'élever notre cœur en même temps que nos mains. Autrement dit, quand on prie, ce n'est pas le geste qui compte, c'est le cœur. Et juste avant, au verset 40, Jérémie nous invite à examiner notre conduite. Donc une vraie prière, ça commence par être honnête avec soi-même. Et après, on peut aller vers Jéhovah, sûrs qu'il veut nous accueillir."
+           }
+          },
+          {
+           "titre": "Perle 2 · Lamentations 3:26",
+           "question": "Attendre en silence que Jéhovah sauve",
+           "lien": "https://wol.jw.org/fr/wol/b/r30/lp-f/nwtsty/25/3",
+           "prep": {
+            "reponse": "Jérémie écrit qu'il est bon d'attendre en silence, ou patiemment, que Jéhovah sauve.",
+            "verset": "Lamentations 3:26",
+            "probleme": "Dans l'épreuve, on peut se plaindre sans arrêt ou chercher des solutions qui ne respectent pas les principes de Jéhovah.",
+            "application": "Attendre « en silence », c'est rester calme et confiant, sans murmurer, en laissant Jéhovah agir à son heure.",
+            "dire": "Au verset 26, Jérémie dit qu'il est bon d'attendre en silence que Jéhovah sauve. Et je me suis demandé : ça veut dire quoi, attendre en silence ? En fait, ce n'est pas rester les bras croisés. C'est ne pas se plaindre sans arrêt, et ne pas chercher une solution facile qui déplairait à Jéhovah. C'est lui faire assez confiance pour le laisser agir… à son heure."
+           }
+          },
+          {
+           "titre": "Perle 3 · Lamentations 3:31-33",
+           "question": "Jéhovah n'afflige pas de bon cœur",
+           "lien": "https://wol.jw.org/fr/wol/b/r30/lp-f/nwtsty/25/3",
+           "prep": {
+            "reponse": "Jéhovah ne rejette pas pour toujours ; même s'il a causé de la peine, il fera preuve de miséricorde, car ce n'est pas de bon cœur qu'il afflige les humains.",
+            "verset": "Lamentations 3:31-33",
+            "probleme": "Quand on souffre, on peut penser que Jéhovah est indifférent, ou même qu'il prend plaisir à nous voir souffrir.",
+            "application": "Je peux être sûr que Jéhovah ne se réjouit jamais de ma souffrance et qu'il désire me faire miséricorde.",
+            "dire": "Ce qui m'a touché, ce sont les versets 31 à 33. Jérémie dit que ce n'est pas de bon cœur que Jéhovah afflige les humains. Même quand il a dû discipliner son peuple, il n'y prenait aucun plaisir. Ça change tout, non ? Quand on souffre, Jéhovah n'est pas indifférent. Il souffre avec nous, et ce qu'il veut, c'est nous faire miséricorde."
+           }
+          },
+          {
+           "titre": "Perle 4 · Lamentations 3:55-57",
+           "question": "« N'aie pas peur »",
+           "lien": "https://wol.jw.org/fr/wol/b/r30/lp-f/nwtsty/25/3",
+           "prep": {
+            "reponse": "Du fond de la fosse, Jérémie a appelé Jéhovah, et Jéhovah s'est approché de lui le jour où il l'a appelé, en lui disant de ne pas avoir peur.",
+            "verset": "Lamentations 3:55-57 · Jérémie 38:6-13",
+            "probleme": "Au plus fort de la détresse, on peut avoir l'impression que nos prières ne sont pas entendues.",
+            "application": "Même au fond de la « fosse », ma prière atteint Jéhovah, et il s'approche de moi.",
+            "dire": "J'aime beaucoup les versets 55 à 57. Jérémie dit qu'il a appelé Jéhovah du fond de la fosse. Et on pense tout de suite au jour où on l'a jeté dans la citerne pleine de boue. Mais regardez la réponse de Jéhovah : il s'est approché de lui, le jour même, et il lui a dit : « N'aie pas peur. » Alors, même si on se sent tout au fond, Jéhovah nous entend, et il s'approche."
+           }
+          },
+          {
+           "titre": "Perle 5 · Lamentations 5:21",
+           "question": "« Fais-nous revenir à toi »",
+           "lien": "https://wol.jw.org/fr/wol/b/r30/lp-f/nwtsty/25/5",
+           "prep": {
+            "reponse": "À la fin du livre, le peuple supplie Jéhovah de le faire revenir à lui pour qu'il puisse revenir, et de renouveler ses jours comme autrefois.",
+            "verset": "Lamentations 5:21",
+            "probleme": "Après une faute ou une période de faiblesse spirituelle, on peut penser qu'il est trop tard pour retrouver l'amitié de Jéhovah.",
+            "application": "Je peux demander à Jéhovah de m'aider à revenir vers lui : c'est lui qui rend le retour possible.",
+            "dire": "Ma perle, c'est le tout dernier passage du livre, au chapitre 5, verset 21. Le peuple dit : « Fais-nous revenir à toi, ô Jéhovah, et nous reviendrons. » C'est beau, parce qu'ils reconnaissent que même pour revenir, ils ont besoin de l'aide de Jéhovah. Donc si un jour je me sens loin de lui, je sais quoi faire : lui demander de m'aider à revenir. Et lui, il peut renouveler mes jours, comme avant."
            }
           }
          ]
@@ -346,7 +428,7 @@
             "verset": "Proverbes 20:18 · Philippiens 2:4",
             "probleme": "Souvent, une seule personne finit par tout porter, s'épuise en silence et se sent seule.",
             "application": "Dans ma famille, je peux proposer qu'on se concerte et qu'on se partage les tâches, et demander concrètement à l'aidant ce qui le soulagerait.",
-            "dire": "Proverbes 20:18 montre que les projets réussissent quand on se consulte. En famille, ça veut dire s'asseoir ensemble pour organiser les soins, plutôt que de laisser un seul porter tout le poids. Et Philippiens 2:4 nous rappelle de penser aux intérêts des autres : pas seulement à la personne malade, mais aussi à celui qui s'en occupe jour et nuit."
+            "dire": "Proverbes 20:18 dit que les projets réussissent quand on se consulte. En famille, ça veut dire s'asseoir ensemble et se partager les soins, au lieu de laisser une seule personne tout porter. Et Philippiens 2:4 va encore plus loin. Il nous dit de penser aux intérêts des autres. Donc pas seulement à la personne malade, mais aussi à celui qui s'en occupe, jour et nuit. Lui aussi, il a besoin qu'on pense à lui."
            }
           },
           {
@@ -358,7 +440,7 @@
             "verset": "1 Timothée 5:4, 8 · Psaume 56:8 · La Tour de Garde novembre 2025",
             "probleme": "Le risque, c'est l'épuisement, qui réduit la patience et la bonté (Proverbes 24:10).",
             "application": "Je peux être attentif aux aidants de mon assemblée : leurs sacrifices ne se voient pas toujours.",
-            "dire": "Être aidant, c'est un honneur, mais c'est souvent un combat invisible. L'article de novembre 2025 dit qu'un aidant peut sourire à la réunion et pleurer seul chez lui. Ce qui me réconforte, c'est Psaume 56:8 : Jéhovah garde nos larmes. Il voit chacun de leurs sacrifices."
+            "dire": "Être aidant, c'est un honneur, c'est vrai. Mais c'est souvent un combat que personne ne voit. Dans l'article de novembre 2025, on lit qu'un aidant peut sourire à la réunion… et pleurer tout seul en rentrant chez lui. Ce qui me réconforte, c'est le Psaume 56:8 : Jéhovah garde nos larmes. Il voit chacun de leurs sacrifices, même ceux que nous, on ne voit pas."
            }
           },
           {
@@ -370,7 +452,7 @@
             "verset": "Proverbes 11:2 · Proverbes 17:22 · La Tour de Garde novembre 2025",
             "probleme": "Beaucoup d'aidants se sentent coupables de prendre du temps pour eux.",
             "application": "Prendre soin de soi n'est pas de l'égoïsme : c'est ce qui permet de continuer à aider avec patience et bonté.",
-            "dire": "Proverbes 11:2 dit que la sagesse est avec les modestes. Pour un aidant, être modeste, c'est accepter qu'il ne peut pas tout faire et dire oui quand on lui propose de l'aide. Prendre du temps pour prier, dormir ou même rire un peu, ce n'est pas abandonner la personne : c'est se donner la force de continuer."
+            "dire": "Je pense à Proverbes 11:2 : la sagesse est avec les modestes. Pour un aidant, être modeste, c'est accepter de ne pas pouvoir tout faire. C'est dire oui quand quelqu'un propose de l'aide. Et prendre un peu de temps pour prier, pour dormir, ou même pour rire un peu, ce n'est pas abandonner la personne qu'on aide. Au contraire, c'est ce qui permet de tenir dans la durée."
            }
           },
           {
@@ -382,7 +464,7 @@
             "verset": "Galates 6:2 · Proverbes 27:23",
             "probleme": "On a tendance à dire « Appelle-moi si tu as besoin », mais l'aidant épuisé appelle rarement.",
             "application": "Je peux proposer une aide précise : un après-midi de présence, un repas, un trajet, ou simplement un mot de reconnaissance (1 Thessaloniciens 5:18).",
-            "dire": "Galates 6:2 nous demande de porter les fardeaux les uns des autres. Pour un aidant, ça peut être tout simple : rester deux heures avec son proche pour qu'il puisse dormir ou sortir. Plutôt que de dire « Appelle-moi si besoin », je peux proposer quelque chose de précis. Et un simple merci peut lui redonner beaucoup de courage."
+            "dire": "Galates 6:2 nous dit de porter les fardeaux les uns des autres. Et pour un aidant, ça peut être tout simple : rester deux heures avec son proche pour qu'il puisse dormir un peu ou faire ses courses. Moi, je me rends compte qu'on dit souvent : « Appelle-moi si tu as besoin. » Mais un aidant épuisé, il n'appelle pas. Alors c'est mieux de proposer quelque chose de précis. Et un simple merci, ça peut aussi lui faire énormément de bien."
            }
           },
           {
@@ -394,7 +476,7 @@
             "verset": "Psaume 55:22 · Colossiens 1:11 · Révélation 21:3, 4",
             "probleme": "Un aidant peut se sentir oublié, comme si personne, même Dieu, ne voyait ce qu'il vit.",
             "application": "Je peux jeter mon fardeau sur Jéhovah dans la prière et parler avec mon proche de ce que nous ferons ensemble dans le paradis.",
-            "dire": "Psaume 55:22 nous invite à jeter notre fardeau sur Jéhovah, et il promet de nous soutenir. Il le fait par la prière, par nos frères, et par l'espérance. L'article suggère même de parler avec la personne aidée de ce qu'on fera ensemble dans le paradis. Penser qu'un jour « le boiteux bondira », ça redonne de la joie aujourd'hui."
+            "dire": "Le Psaume 55:22 nous dit de jeter notre fardeau sur Jéhovah, et il promet de nous soutenir. Il le fait par la prière, par nos frères et sœurs, et par l'espérance. D'ailleurs, l'article donne une idée que j'ai trouvée très belle : parler avec la personne qu'on aide de tout ce qu'on fera ensemble dans le paradis. Penser qu'un jour, comme le dit Isaïe, le boiteux bondira, ça redonne de la joie dès aujourd'hui."
            }
           }
          ]
@@ -416,16 +498,6 @@
            "u": "https://wol.jw.org/fr/wol/d/r30/lp-f/1102025918"
           }
          ],
-         "autres": [
-          "Dans le rêve du soldat, pourquoi le « pain d'orge rond » symbolise-t-il l'armée de Gédéon ? (Juges 7:13)",
-          "Pourquoi le vacarme des 300 cors a-t-il jeté la confusion chez les Madianites ?",
-          "Qu'ont dû faire Gédéon et ses soldats pour vaincre les Madianites ? (poursuite d'environ 80 km jusqu'à Jogbeha)",
-          "Quelles précisions confirment l'exactitude du récit biblique ?",
-          "Dans quelles situations nous faut-il être courageux et prudents ? (illustration : une jeune sœur subit des pressions à l'école)",
-          "Comment peux-tu imiter le courage de Gédéon ?",
-          "Quel lien peux-tu faire entre ce récit et le projet de Jéhovah ?",
-          "Qu'aimerais-tu demander à Gédéon quand il sera ressuscité ?"
-         ],
          "items": [
           {
            "titre": "Question de réflexion",
@@ -436,7 +508,7 @@
             "verset": "Juges 6:25-27 · Juges 7:7 · wcg chap. 18",
             "probleme": "Le courage ne veut pas dire ne pas avoir peur : Gédéon avait peur, et il a agi la nuit.",
             "application": "Je peux obéir à Jéhovah même quand j'ai peur, tout en choisissant le moment et la manière avec sagesse.",
-            "dire": "Ce que j'aime chez Gédéon, c'est qu'il avait peur, et il a quand même obéi. Il a détruit l'autel de Baal de nuit, avec prudence, mais il l'a fait. Puis il a affronté les Madianites avec seulement 300 hommes. Ça me montre que le courage, c'est obéir à Jéhovah malgré la peur."
+            "dire": "Ce que j'aime chez Gédéon, c'est qu'il avait peur… et il a obéi quand même. Il a détruit l'autel de Baal de nuit, oui, avec prudence, mais il l'a fait. Et ensuite, il a affronté toute l'armée de Madiân avec seulement 300 hommes. Pour moi, c'est ça, le vrai courage : ce n'est pas ne jamais avoir peur, c'est obéir à Jéhovah malgré la peur."
            }
           },
           {
@@ -448,7 +520,7 @@
             "verset": "Juges 6:11 · Juges 6:36-40 · Juges 7:9-15",
             "probleme": "Le courage sans prudence peut devenir de l'imprudence ; la prudence sans courage peut devenir de la peur.",
             "application": "À l'école ou au travail, je peux rester ferme sur mes principes tout en restant poli et réfléchi, comme la jeune sœur de l'illustration.",
-            "dire": "Gédéon n'était pas téméraire. Il battait son blé en cachette, il a agi de nuit et il a demandé à Jéhovah de lui confirmer son soutien. Pour nous, c'est pareil : face à une pression à l'école ou au travail, on peut refuser fermement, mais avec tact et prudence."
+            "dire": "Gédéon n'était pas imprudent. Il battait son blé en cachette, il a agi de nuit, et il a demandé à Jéhovah de lui confirmer son soutien. Et pour nous, c'est pareil. Prenez l'exemple de la jeune sœur, sur l'illustration, qui subit des pressions à l'école. Elle peut dire non, fermement… mais avec tact et avec sagesse. Le courage et la prudence vont ensemble."
            }
           },
           {
@@ -460,7 +532,7 @@
             "verset": "Juges 8:1-3",
             "probleme": "Quand on est critiqué, on a tendance à se justifier ou à se défendre avec vivacité.",
             "application": "Une réponse humble et des félicitations sincères peuvent calmer une tension dans la famille ou l'assemblée.",
-            "dire": "En Juges 8:1-3, Gédéon aurait pu se vanter de sa victoire. Au lieu de ça, il a mis en valeur ce qu'avaient fait les Éphraïmites, et leur colère s'est calmée. Un chef de famille ou un ancien peut faire pareil : reconnaître les efforts des autres au lieu de défendre sa décision."
+            "dire": "En Juges 8, les hommes d'Éphraïm sont très en colère contre Gédéon. Il aurait pu se défendre, ou rappeler sa victoire. Mais non : il a mis en valeur ce qu'eux avaient fait, et leur colère est retombée. Je trouve que c'est une belle leçon pour les chefs de famille et pour les anciens. Parfois, au lieu de justifier sa décision, il vaut mieux reconnaître les efforts des autres."
            }
           },
           {
@@ -472,7 +544,91 @@
             "verset": "Juges 7:2, 7 · Juges 7:13-15 · Hébreux 11:32",
             "probleme": "Quand on se sent faible ou en infériorité, on peut douter de pouvoir réussir.",
             "application": "Ma faiblesse n'est pas un obstacle pour Jéhovah : c'est l'occasion de voir sa force.",
-            "dire": "Ce qui me frappe, c'est que Jéhovah a réduit l'armée de Gédéon à 300 hommes. Il voulait que tout le monde comprenne que la victoire venait de lui. Et il a été patient avec les doutes de Gédéon. Ça me rassure : quand je me sens faible, Jéhovah peut quand même agir par moi."
+            "dire": "Ce qui me frappe, c'est que Jéhovah a réduit l'armée de Gédéon à seulement 300 hommes. Il voulait que tout le monde comprenne que la victoire venait de lui, pas d'eux. Et en même temps, il a été très patient avec les doutes de Gédéon. Ça me rassure : même quand je me sens faible, ou que j'ai des doutes, Jéhovah peut quand même agir par moi."
+           }
+          },
+          {
+           "titre": "Pour aller plus loin · 1",
+           "question": "Dans le rêve du soldat, pourquoi le « pain d'orge rond » symbolise-t-il l'armée de Gédéon ? (Juges 7:13)",
+           "lien": "https://wol.jw.org/fr/wol/d/r30/lp-f/1102025918",
+           "prep": {
+            "reponse": "Le pain d'orge était la nourriture la plus simple, celle des pauvres. Les Israélites, pillés depuis des années par les Madianites, étaient pauvres et peu nombreux. Pourtant, dans le rêve, ce simple pain renverse la tente du camp ennemi : l'armée humble de Gédéon allait vaincre grâce à Jéhovah.",
+            "verset": "Juges 7:13, 14 ; 6:3-6",
+            "probleme": "Nous pouvons nous sentir trop petits ou trop faibles pour être utiles à Jéhovah.",
+            "application": "Ce qui compte, ce n'est pas notre force, c'est que Jéhovah soit avec nous.",
+            "dire": "Le pain d'orge, c'était le pain le plus simple, le pain des pauvres. Et c'est exactement ce qu'étaient les Israélites à ce moment-là : pauvres, peu nombreux, pillés depuis des années par les Madianites. Et pourtant, dans le rêve, ce petit pain renverse toute une tente. J'aime bien cette image : même si on se sent petit et ordinaire, avec Jéhovah, on peut faire de grandes choses."
+           }
+          },
+          {
+           "titre": "Pour aller plus loin · 2",
+           "question": "Pourquoi le vacarme des 300 cors a-t-il jeté la confusion chez les Madianites ?",
+           "lien": "https://wol.jw.org/fr/wol/d/r30/lp-f/1102025918",
+           "prep": {
+            "reponse": "D'habitude, seuls quelques hommes sonnaient du cor pour toute une troupe. En entendant 300 cors, les Madianites ont pu croire qu'une armée immense les attaquait. En plus, c'était la nuit, au moment de la relève de la garde, avec les jarres brisées, les torches et le cri de guerre : paniqués, ils se sont tués entre eux.",
+            "verset": "Juges 7:19-22",
+            "probleme": "",
+            "application": "Jéhovah peut utiliser des moyens inattendus pour accomplir sa volonté.",
+            "dire": "Il faut se mettre à leur place. En général, il n'y avait que quelques sonneurs de cor pour toute une troupe. Alors entendre d'un coup 300 cors, en pleine nuit, avec des jarres qui éclatent, des torches qui apparaissent partout et des cris… les Madianites ont dû croire qu'une armée énorme les encerclait. Ils ont paniqué et se sont tués entre eux. Jéhovah n'a même pas eu besoin d'épées !"
+           }
+          },
+          {
+           "titre": "Pour aller plus loin · 3",
+           "question": "Qu'ont dû faire Gédéon et ses soldats pour vaincre les Madianites ?",
+           "lien": "https://wol.jw.org/fr/wol/d/r30/lp-f/1102025918",
+           "prep": {
+            "reponse": "Après la panique dans le camp, ils ont poursuivi l'ennemi sur une longue distance, environ 80 km jusqu'à Jogbeha. Ils étaient épuisés, et les villes de Soukkoth et de Penouel ont même refusé de leur donner du pain, mais ils ont continué la poursuite.",
+            "verset": "Juges 8:4-12",
+            "probleme": "Quand on est fatigué, on peut avoir envie d'abandonner avant la fin.",
+            "application": "Comme Gédéon, je peux être « épuisé, mais continuer » dans mon service.",
+            "dire": "La victoire n'est pas tombée du ciel en une nuit. Après la panique dans le camp, Gédéon et ses hommes ont dû poursuivre l'ennemi sur environ 80 kilomètres, jusqu'à Jogbeha. Et Juges 8:4 dit qu'ils étaient épuisés… mais qu'ils continuaient la poursuite. J'aime beaucoup cette expression. Parfois, dans notre service, on est fatigué. Mais on peut quand même continuer, comme eux."
+           }
+          },
+          {
+           "titre": "Pour aller plus loin · 4",
+           "question": "Quelles précisions confirment l'exactitude du récit biblique ?",
+           "lien": "https://wol.jw.org/fr/wol/d/r30/lp-f/1102025918",
+           "prep": {
+            "reponse": "Le récit est rempli de détails précis et vérifiables : des noms de lieux réels (Soukkoth, Penouel, Karkor, Jogbeha), le moment exact de l'attaque, au début de la veille du milieu, quand les gardes venaient d'être relevés, et des chiffres précis (300 hommes, 120 000 ennemis tombés).",
+            "verset": "Juges 7:19 ; 8:5, 8, 10, 11",
+            "probleme": "On peut lire les récits bibliques comme de simples histoires.",
+            "application": "Ces détails précis renforcent ma confiance dans la Bible : ce sont des faits réels.",
+            "dire": "Ce que je remarque, c'est que le récit est plein de détails très précis. On a des noms de lieux réels : Soukkoth, Penouel, Jogbeha. On a l'heure exacte de l'attaque : au début de la veille du milieu, juste après la relève de la garde. On a même des chiffres. Une légende, ça reste vague. Là, on a des détails qu'on peut vérifier. Ça me montre que ce sont des faits réels."
+           }
+          },
+          {
+           "titre": "Tire des leçons · Imiter Gédéon",
+           "question": "Comment peux-tu imiter le courage de Gédéon ?",
+           "lien": "https://wol.jw.org/fr/wol/d/r30/lp-f/1102025918",
+           "prep": {
+            "reponse": "En obéissant à Jéhovah même quand on a peur, en prenant position pour le vrai culte dans sa famille ou au travail, en agissant avec sagesse, et en restant humble après une réussite.",
+            "verset": "Juges 6:25-27 ; 8:22, 23",
+            "probleme": "On peut attendre de ne plus avoir peur pour agir.",
+            "application": "Je peux faire le premier pas qui me fait peur, et laisser Jéhovah faire le reste.",
+            "dire": "Moi, je retiens surtout une chose : Gédéon n'a pas attendu de ne plus avoir peur pour obéir. Il a fait ce que Jéhovah demandait, en tremblant peut-être, mais il l'a fait. Et après sa victoire, quand on a voulu le faire roi, il a dit non : c'est Jéhovah qui doit régner. Donc pour l'imiter, il faut deux choses : du courage avant… et de l'humilité après."
+           }
+          },
+          {
+           "titre": "Élargis ta réflexion · Le projet de Jéhovah",
+           "question": "Quel lien peux-tu faire entre ce récit et le projet de Jéhovah ?",
+           "lien": "https://wol.jw.org/fr/wol/d/r30/lp-f/1102025918",
+           "prep": {
+            "reponse": "Jéhovah a délivré son peuple d'une oppression qui semblait sans issue, avec très peu de moyens. C'est une garantie qu'il délivrera bientôt ses serviteurs de toute oppression par son Royaume. Isaïe 9:4 fait d'ailleurs référence au « jour de Madiân » pour décrire la libération que le Messie apportera.",
+            "verset": "Isaïe 9:4 ; Psaume 83:9-11",
+            "probleme": "",
+            "application": "Les délivrances du passé me donnent confiance dans les promesses de l'avenir.",
+            "dire": "Ce récit, c'est une petite image de ce que Jéhovah va faire à une bien plus grande échelle. Avec seulement 300 hommes, il a libéré son peuple d'une oppression qui durait depuis des années. Et Isaïe 9:4 reprend justement l'expression « le jour de Madiân » pour parler de la libération que le Messie apportera. Donc si Jéhovah l'a fait à l'époque de Gédéon, il le fera encore, pour toute la terre."
+           }
+          },
+          {
+           "titre": "Élargis ta réflexion · Question à Gédéon",
+           "question": "Qu'aimerais-tu demander à Gédéon quand il sera ressuscité ?",
+           "lien": "https://wol.jw.org/fr/wol/d/r30/lp-f/1102025918",
+           "prep": {
+            "reponse": "Question personnelle.",
+            "verset": "Juges 6-8",
+            "probleme": "",
+            "application": "Préparer une question sincère montre qu'on a réfléchi au récit.",
+            "dire": "Moi, j'aimerais lui demander ce qu'il a ressenti quand Jéhovah lui a dit de renvoyer presque toute son armée et de ne garder que 300 hommes. Est-ce qu'il a eu envie de protester ? Et ce soir-là, avec sa jarre et sa torche à la main, à quoi il pensait ? Je pense que sa réponse m'aiderait beaucoup, les jours où Jéhovah me demande quelque chose qui me fait peur."
            }
           }
          ]
@@ -561,7 +717,7 @@
             "verset": "Éphésiens 2:12 · Colossiens 1:21",
             "probleme": "Beaucoup de gens ne se rendent pas compte qu'ils ont besoin d'aide ; ils cherchent un sens à leur vie sans le trouver.",
             "application": "Reconnaître que j'ai besoin de Jéhovah, c'est le premier pas pour me rapprocher de lui.",
-            "dire": "Le paragraphe dit que la réponse tient en un mot : le péché. D'après Éphésiens 2:12, il nous a éloignés de Dieu, comme un gouffre qu'on ne peut pas franchir seul. Personne ne peut sauter ce gouffre par ses propres efforts. C'est pour ça que nous avons tous besoin de l'aide que Jéhovah a prévue."
+            "dire": "En fait, la réponse tient en un seul mot : le péché. Éphésiens 2:12 explique qu'il nous a éloignés de Dieu. C'est un peu comme un gouffre entre lui et nous. Et ce gouffre, personne ne peut le sauter tout seul, quels que soient ses efforts. C'est pour ça qu'on a tous besoin de l'aide que Jéhovah a prévue."
            }
           }
          ]
@@ -579,7 +735,7 @@
             "verset": "La Tour de Garde, paragraphe 2",
             "probleme": "On peut voir la prêtrise comme un sujet technique, sans lien avec nos sentiments.",
             "application": "Étudier la prêtrise peut m'aider à mieux sentir combien Jéhovah m'aime.",
-            "dire": "On pourrait croire que la prêtrise est un sujet un peu technique. Mais cet article va nous montrer qu'elle révèle surtout l'amour profond de Jéhovah. Elle a aidé Israël, elle nous aide aujourd'hui et elle nous aidera dans l'avenir."
+            "dire": "On pourrait se dire : « La prêtrise, c'est un sujet un peu technique. » Mais justement, cet article va nous montrer que c'est tout le contraire. La prêtrise révèle surtout à quel point Jéhovah nous aime. On va voir comment elle a aidé Israël, comment elle nous aide aujourd'hui, et ce qu'elle va faire pour nous dans l'avenir."
            }
           }
          ]
@@ -612,7 +768,7 @@
             "verset": "Hébreux 5:1",
             "probleme": "Le péché crée une distance qu'aucun humain ne peut combler par lui-même.",
             "application": "Je peux remercier Jéhovah d'avoir construit ce « pont » pour que je puisse venir à lui.",
-            "dire": "Hébreux 5:1 dit que le grand prêtre était établi en faveur des hommes. L'illustration du pont m'aide beaucoup : d'un côté un désert sombre, de l'autre un paysage verdoyant, et entre les deux un gouffre. La prêtrise, c'est le pont que Jéhovah a construit pour que nous puissions traverser jusqu'à lui."
+            "dire": "Hébreux 5:1 dit que le grand prêtre était établi en faveur des hommes. Et l'illustration du pont m'aide beaucoup à comprendre. D'un côté, un désert sombre. De l'autre, un paysage tout vert. Et au milieu, un gouffre. Eh bien, la prêtrise, c'est le pont que Jéhovah a construit, pour qu'on puisse traverser et venir jusqu'à lui."
            }
           }
          ]
@@ -644,7 +800,7 @@
             "verset": "Malachie 2:7 · Néhémie 8:2, 3, 6-8",
             "probleme": "Lire la Parole de Dieu sans la comprendre ne nous aide pas à changer.",
             "application": "Je peux, moi aussi, aider les autres à comprendre le sens des Écritures dans mes études bibliques et mes commentaires.",
-            "dire": "En Néhémie 8, les Lévites ne se contentaient pas de lire la Loi : ils en donnaient le sens pour que le peuple comprenne. Résultat, les gens ont pu appliquer les commandements et se rapprocher de Jéhovah. Ça me rappelle qu'enseigner, c'est aider le cœur à comprendre, pas seulement transmettre des mots."
+            "dire": "Ce qui m'a frappé, c'est Néhémie chapitre 8. Les Lévites ne se contentaient pas de lire la Loi au peuple. Ils expliquaient le sens, pour que tout le monde comprenne. Et du coup, les gens ont pu appliquer ce qu'ils apprenaient et se rapprocher de Jéhovah. Ça me rappelle qu'enseigner, ce n'est pas juste répéter des mots. C'est aider le cœur à comprendre."
            }
           }
          ]
@@ -668,7 +824,7 @@
             "verset": "Psaume 51:9",
             "probleme": "Le poids de la culpabilité peut écraser quelqu'un qui a conscience de ses fautes.",
             "application": "Quand j'ai péché, je peux, comme David, demander sincèrement à Jéhovah d'effacer mes fautes et ressentir le soulagement de son pardon.",
-            "dire": "En Psaume 51:9, David supplie Jéhovah d'effacer ses fautes. Les Israélites savaient qu'ils péchaient chaque jour, et les sacrifices des prêtres leur offraient le pardon. Ce qui me touche, c'est que Jéhovah a pris l'initiative de cette disposition : ça prouve qu'il veut vraiment nous pardonner et nous sauver."
+            "dire": "Les Israélites savaient qu'ils péchaient tous les jours. Et grâce aux sacrifices offerts par les prêtres, ils pouvaient être pardonnés. Quel soulagement ! Ça me fait penser à David, au Psaume 51, qui supplie Jéhovah d'effacer ses fautes. Mais ce qui me touche le plus, c'est que c'est Jéhovah qui a eu l'idée de tout ça. Ça prouve qu'il veut vraiment nous pardonner."
            }
           }
          ]
@@ -709,7 +865,7 @@
             "verset": "Genèse 8:20 · Genèse 12:7, 8 · Job 1:5 · Exode 19:22",
             "probleme": "Un chef de famille peut être tellement occupé qu'il néglige la spiritualité de sa famille.",
             "application": "Comme Job, un chef de famille peut se soucier activement de la relation de chacun des siens avec Jéhovah, par exemple grâce au culte familial et à la prière.",
-            "dire": "J'aime l'exemple de Job en Job 1:5 : il offrait des sacrifices pour ses enfants, au cas où ils auraient péché. Il se souciait de leur relation avec Jéhovah. Aujourd'hui, un chef de famille ne fait plus de sacrifices d'animaux, mais il peut prier pour les siens et les aider à rester proches de Dieu."
+            "dire": "J'aime beaucoup l'exemple de Job, au chapitre 1, verset 5. Il offrait des sacrifices pour ses enfants, juste au cas où ils auraient péché. Vous voyez, il se souciait vraiment de leur amitié avec Jéhovah. Aujourd'hui, un père ne fait plus de sacrifices d'animaux, bien sûr. Mais il peut prier pour sa famille, et tout faire pour que chacun reste proche de Jéhovah."
            }
           }
          ]
@@ -741,7 +897,7 @@
             "verset": "Genèse 14:18 · Psaume 110:4 · Hébreux 7:17",
             "probleme": "Les rois et les prêtres humains sont imparfaits et finissent par mourir.",
             "application": "Je peux faire pleinement confiance à Jésus, qui est roi et prêtre pour toujours.",
-            "dire": "Genèse 14:18 présente Melchisédech comme roi et prêtre. C'est rare : en Israël, les deux rôles étaient séparés. Psaume 110:4 annonce que le Messie serait prêtre pour toujours à la manière de Melchisédech. Jésus réunit donc les deux rôles, et contrairement aux humains, son service ne s'arrêtera jamais."
+            "dire": "Melchisédech, c'est vraiment un personnage à part. Genèse 14:18 le présente à la fois comme roi et comme prêtre. Et c'est rare, parce qu'en Israël, les deux rôles étaient séparés. Le Psaume 110:4 annonce que le Messie serait prêtre pour toujours, comme Melchisédech. Et c'est exactement Jésus : il est roi et prêtre. Et lui, contrairement aux humains, il ne mourra jamais."
            }
           }
          ]
@@ -765,7 +921,7 @@
             "verset": "Exode 40:12-15",
             "probleme": "Sans directives précises, chacun aurait pu adorer Dieu à sa façon.",
             "application": "Jéhovah est un Dieu d'ordre : je peux respecter la façon dont il organise son culte aujourd'hui.",
-            "dire": "En Exode 40, Jéhovah désigne Aaron et ses fils comme prêtres. Il précisait tout : quels sacrifices, pourquoi et comment. Ce qui est intéressant, c'est que tout cela n'était qu'une ombre : un aperçu de quelque chose de bien plus grand, le sacrifice de Jésus."
+            "dire": "En Exode 40, Jéhovah choisit Aaron et ses fils comme prêtres. Et il précise tout : quels sacrifices offrir, pourquoi, et comment. Mais ce que je trouve intéressant, c'est que tout ça n'était qu'une ombre. Un petit aperçu de quelque chose de beaucoup plus grand qui allait venir : le sacrifice de Jésus."
            }
           }
          ]
@@ -801,7 +957,7 @@
             "verset": "Hébreux 8:1 · Hébreux 9:24 · 1 Pierre 1:3, 4 ; 2:9",
             "probleme": "Sans cette disposition, les humains resteraient prisonniers de l'imperfection.",
             "application": "Je peux attendre avec impatience le temps où les humains fidèles seront rendus parfaits, et soutenir les oints aujourd'hui.",
-            "dire": "Hébreux 9:24 dit que Jésus se présente devant Dieu en notre faveur. Et d'après 1 Pierre 2:9, les oints seront rois et prêtres avec lui. Leur objectif, c'est de nous amener à la perfection. Ce qui m'émerveille, c'est qu'un jour la prêtrise ne sera plus nécessaire, parce que nous serons parfaits !"
+            "dire": "Hébreux 9:24 dit que Jésus se présente devant Dieu en notre faveur. Et d'après 1 Pierre 2:9, les oints vont régner avec lui, comme rois et prêtres. Leur mission, c'est de nous aider à devenir parfaits. Et vous savez ce qui m'émerveille ? C'est qu'un jour, on n'aura même plus besoin de prêtrise… parce qu'on sera parfaits !"
            }
           }
          ]
@@ -830,7 +986,7 @@
             "verset": "2 Corinthiens 5:18",
             "probleme": "Certains pensent que Dieu est lointain et ne s'intéresse pas à eux personnellement.",
             "application": "Je peux saisir la main que Jéhovah me tend et cultiver une amitié chaleureuse avec lui.",
-            "dire": "D'après 2 Corinthiens 5:18, c'est Jéhovah qui nous réconcilie avec lui. C'est lui qui fait le premier pas. Il sait que nous sommes nés pécheurs, que ce n'est pas notre faute, et il nous tend la main avec compassion. Ça me pousse vraiment à l'aimer encore plus."
+            "dire": "2 Corinthiens 5:18 dit que c'est Jéhovah qui nous réconcilie avec lui. Donc c'est lui qui fait le premier pas, pas nous. Il sait qu'on est nés pécheurs, que ce n'est pas notre faute, et il nous tend la main. Franchement, quand je pense à ça, ça me donne encore plus envie de l'aimer."
            }
           }
          ]
@@ -866,7 +1022,7 @@
             "verset": "Hébreux 7:25 · 1 Jean 2:1 · Psaume 86:5",
             "probleme": "Quand on se sent coupable, on peut avoir l'impression que personne ne plaide notre cause.",
             "application": "Je peux prier avec confiance au nom de Jésus, en sachant qu'il voit aussi mes efforts et mes bonnes actions.",
-            "dire": "Hébreux 7:25 dit que Jésus est toujours vivant pour intercéder en notre faveur. L'illustration le montre en train de présenter à Jéhovah les belles actions de ses serviteurs : une sœur âgée qui prie, un jeune qui aide un frère âgé. Jésus ne voit pas seulement nos erreurs, il voit aussi nos efforts. Et c'est Jéhovah lui-même qui l'a choisi pour être notre défenseur !"
+            "dire": "Hébreux 7:25 dit que Jésus est toujours là pour intercéder en notre faveur. Regardez l'illustration : Jésus présente à Jéhovah les belles actions de ses serviteurs. Une sœur âgée qui prie, un jeune qui aide un frère âgé. Ça veut dire que Jésus ne voit pas seulement nos erreurs. Il voit aussi nos efforts. Et c'est Jéhovah lui-même qui l'a choisi pour nous défendre !"
            }
           }
          ]
@@ -894,7 +1050,7 @@
             "verset": "Hébreux 4:16 · Romains 8:26",
             "probleme": "Dans la détresse, on peut ne pas trouver les mots pour prier, ou se sentir indigne de s'adresser à Dieu.",
             "application": "Je peux confier toutes mes inquiétudes à Jéhovah, même avec des mots simples ou maladroits.",
-            "dire": "Hébreux 4:16 nous invite à nous avancer avec confiance vers le trône de Jéhovah. Imaginez : le Souverain de l'univers nous écoute ! Et Romains 8:26 montre que même quand on ne sait pas quoi dire, il nous comprend. Je n'ai donc pas besoin de belles phrases ; je peux lui ouvrir mon cœur."
+            "dire": "Hébreux 4:16 nous invite à nous approcher du trône de Jéhovah avec confiance. Imaginez un peu : le Souverain de l'univers prend le temps de nous écouter ! Et Romains 8:26 va encore plus loin. Même quand on ne sait pas quoi dire, il nous comprend. Donc je n'ai pas besoin de faire de belles phrases. Je peux simplement lui ouvrir mon cœur."
            }
           }
          ]
@@ -926,7 +1082,7 @@
             "verset": "Ézéchiel 33:11 · Hébreux 7:19 · 1 Jean 4:10",
             "probleme": "On peut finir par considérer la rançon comme une vérité connue, sans en être touché.",
             "application": "Je peux exprimer ma reconnaissance pour la rançon par ma façon de vivre.",
-            "dire": "Ézéchiel 33:11 dit que Jéhovah ne prend aucun plaisir à la mort du méchant. Il veut que nous vivions ! C'est pour ça qu'il a donné son Fils. 1 Jean 4:10 dit que l'amour, c'est lui qui l'a montré le premier. Quand je pense à ça, je suis profondément reconnaissant."
+            "dire": "Ézéchiel 33:11 dit que Jéhovah ne prend aucun plaisir à la mort du méchant. Ce qu'il veut, c'est qu'on vive ! Et c'est pour ça qu'il a donné son Fils. Comme le dit 1 Jean 4:10, c'est lui qui nous a aimés le premier. Quand je pense à ça, je suis vraiment reconnaissant. Et j'ai envie de le montrer par ma façon de vivre."
            }
           }
          ]
@@ -958,7 +1114,7 @@
             "verset": "Philippiens 2:8 · Révélation 2:10 · Révélation 22:1, 2",
             "probleme": "On pourrait craindre que ceux qui nous dirigent abusent de leur pouvoir, comme souvent chez les humains.",
             "application": "Je peux être confiant : ceux que Jéhovah a choisis ont prouvé leur fidélité et leur amour.",
-            "dire": "D'après Révélation 2:10, les oints doivent rester fidèles jusqu'à la mort. Jéhovah ne confie pas cette tâche à n'importe qui : il choisit des personnes dont la fidélité a été prouvée. Ça me rassure : ceux qui nous aideront à devenir parfaits le feront avec loyauté et amour."
+            "dire": "Révélation 2:10 dit que les oints doivent rester fidèles jusqu'à la mort. Donc Jéhovah ne confie pas ce rôle à n'importe qui. Il choisit des personnes qui ont déjà prouvé leur fidélité. Et ça, moi, ça me rassure. Ceux qui vont nous aider à devenir parfaits le feront avec loyauté et avec amour."
            }
           }
          ]
@@ -1002,7 +1158,7 @@
             "verset": "Hébreux 4:15 · Jean 4:6 · Matthieu 4:2 · Jean 15:20",
             "probleme": "Quand on souffre, on a souvent l'impression que personne ne peut comprendre ce qu'on vit.",
             "application": "Dans une épreuve, je peux me rappeler que Jésus est passé par des situations semblables et qu'il me comprend.",
-            "dire": "Hébreux 4:15 dit que Jésus peut compatir à nos faiblesses. Il ne nous comprend pas de loin : il a été fatigué, il a eu faim, on s'est moqué de lui, il a pleuré la mort d'un ami. Quand je traverse quelque chose de difficile, ça me réconforte de savoir que mon Grand Prêtre sait exactement ce que je ressens."
+            "dire": "Hébreux 4:15 dit que Jésus peut compatir à nos faiblesses. Et ce n'est pas de la théorie ! Il a été fatigué, il a eu faim, on s'est moqué de lui, il a pleuré la mort d'un ami. Alors, quand je traverse quelque chose de difficile, ça me fait du bien de me dire : mon Grand Prêtre sait exactement ce que je ressens."
            }
           }
          ]
@@ -1020,7 +1176,7 @@
             "verset": "La Tour de Garde, paragraphe 17",
             "probleme": "On peut penser que notre histoire est trop particulière pour être comprise.",
             "application": "Je peux être sûr que, dans le monde nouveau, personne ne sera incompris.",
-            "dire": "Ce paragraphe me touche beaucoup. Les 144 000 viennent de tous les pays, de toutes les cultures et de toutes les époques. Ils ont connu la culpabilité, la maladie, la souffrance. Donc, quelle que soit mon histoire, l'un d'eux pourra forcément me comprendre. Jéhovah a vraiment pensé à tout."
+            "dire": "Ce paragraphe m'a vraiment touché. Les oints viennent de tous les pays, de toutes les cultures, de toutes les époques. Ils ont connu la culpabilité, la maladie, la souffrance. Donc, quelle que soit mon histoire, il y en aura forcément un qui pourra me comprendre. Jéhovah a vraiment pensé à tout."
            }
           }
          ]
@@ -1044,7 +1200,7 @@
             "verset": "Révélation 12:10",
             "probleme": "Satan cherche à nous faire croire que nous sommes trop mauvais pour être aimés de Dieu.",
             "application": "Je peux accepter plus facilement l'amour et le pardon de Jéhovah, et rejeter les accusations de Satan.",
-            "dire": "Révélation 12:10 appelle Satan l'accusateur, qui nous accuse jour et nuit. Jéhovah, lui, fait exactement l'inverse : il a prévu une prêtrise pour nous défendre et nous rapprocher de lui. Quand je pense à ça, je me sens attiré vers lui, et c'est plus facile d'accepter son pardon."
+            "dire": "Révélation 12:10 appelle Satan « l'accusateur ». Il nous accuse jour et nuit. Et Jéhovah, lui, c'est exactement l'inverse. Il a prévu toute une prêtrise pour nous défendre et nous rapprocher de lui. Moi, quand je pense à ça, je me sens attiré vers Jéhovah. Et c'est plus facile d'accepter son pardon."
            }
           }
          ]
@@ -1072,7 +1228,7 @@
             "verset": "Psaume 103:14 · 1 Jean 3:20",
             "probleme": "Un cœur trop sévère peut nous faire voir seulement nos erreurs et nos fautes.",
             "application": "Quand mon cœur me condamne, je peux me rappeler que Jéhovah me connaît mieux que moi et voit le bien en moi.",
-            "dire": "Psaume 103:14 dit que Jéhovah se souvient que nous sommes poussière. Il sait que nous menons un combat. Parfois, notre cœur nous condamne et on ne voit que nos fautes. Mais 1 Jean 3:20 dit que Dieu est plus grand que notre cœur. Lui voit le bien en nous et notre capacité à progresser."
+            "dire": "Le Psaume 103:14 dit que Jéhovah se souvient qu'on est poussière. Il sait qu'on mène un combat. Parfois, notre cœur nous condamne, et on ne voit plus que nos fautes. Mais 1 Jean 3:20 dit que Dieu est plus grand que notre cœur. Lui, il voit le bien en nous. Et il voit aussi qu'on peut progresser."
            }
           }
          ]
@@ -1096,7 +1252,7 @@
             "verset": "Hébreux 4:16",
             "probleme": "On peut hésiter à s'approcher de Jéhovah à cause de son imperfection.",
             "application": "Je suis déterminé à m'approcher de Jéhovah dans la prière avec confiance, surtout quand j'ai besoin d'aide.",
-            "dire": "Je suis reconnaissant parce que, grâce à la prêtrise, le fossé entre Jéhovah et moi est comblé, malgré mon imperfection. Hébreux 4:16 nous invite à nous avancer avec confiance pour être secourus au bon moment. Alors je suis déterminé à ne jamais hésiter à aller vers Jéhovah, surtout quand je me sens faible."
+            "dire": "Moi, je suis reconnaissant parce que, grâce à la prêtrise, le fossé entre Jéhovah et moi est comblé. Et pourtant, je suis imparfait ! Hébreux 4:16 nous invite à nous approcher de lui avec confiance, pour recevoir de l'aide au bon moment. Alors je suis bien décidé : je n'hésiterai jamais à aller vers Jéhovah, surtout quand je me sens faible."
            }
           }
          ]
@@ -1119,7 +1275,7 @@
             "verset": "Éphésiens 2:12 · Hébreux 5:1",
             "probleme": "Sans aide, nous n'aurions ni vrai sens à notre vie ni espoir.",
             "application": "Je ne m'appuie pas sur mes propres efforts pour me rapprocher de Dieu, mais sur la disposition qu'il a prise.",
-            "dire": "Nous avons besoin d'une prêtrise parce que le péché a creusé un gouffre entre nous et Jéhovah. Hébreux 5:1 montre que le grand prêtre servait Dieu en faveur des hommes. C'est le pont que Jéhovah a construit pour que nous puissions venir à lui."
+            "dire": "Parce que le péché a creusé un gouffre entre Jéhovah et nous. Et Hébreux 5:1 montre que le grand prêtre était là, justement, pour servir Dieu en faveur des hommes. En fait, la prêtrise, c'est le pont que Jéhovah a construit pour qu'on puisse venir à lui."
            }
           },
           {
@@ -1131,7 +1287,7 @@
             "verset": "Genèse 14:18 · Exode 40:12-15 · Hébreux 9:24 · 1 Pierre 2:9",
             "probleme": "Chaque prêtrise humaine était limitée par l'imperfection et la mort.",
             "application": "La prêtrise de Jésus et des oints est la seule qui peut nous amener à la perfection.",
-            "dire": "Au fil du temps, Jéhovah a confié ce rôle aux chefs de famille, à Melchisédech, puis à Aaron et ses fils. Mais tout cela préparait la venue de Jésus, notre Grand Prêtre, qui avec les 144 000 conduira les humains fidèles à la perfection."
+            "dire": "Il y a d'abord eu les chefs de famille, comme Noé, Abraham ou Job. Puis Melchisédech, qui était roi et prêtre. Ensuite Aaron et ses fils. Mais tout ça préparait la venue de Jésus, notre Grand Prêtre. Avec les oints, c'est lui qui va conduire les humains fidèles à la perfection."
            }
           },
           {
@@ -1143,7 +1299,7 @@
             "verset": "Hébreux 4:15, 16 · Hébreux 7:25 · 1 Jean 3:20",
             "probleme": "On peut se sentir indigne de l'amour de Dieu à cause de ses fautes.",
             "application": "Je peux m'approcher de Jéhovah avec confiance et accepter son amour et son pardon.",
-            "dire": "Ce qui me rapproche de Jéhovah, c'est de voir tout ce qu'il a prévu pour moi : un Grand Prêtre qui me comprend, qui plaide ma cause, et un Père qui m'écoute et voit le bien en moi. Ça me donne envie de m'avancer vers lui avec confiance."
+            "dire": "Ce qui me rapproche de Jéhovah, c'est de voir tout ce qu'il a prévu pour moi. Un Grand Prêtre qui me comprend et qui défend ma cause. Et un Père qui m'écoute et qui voit le bien en moi. Franchement, ça me donne envie de m'approcher de lui avec confiance."
            }
           }
          ]
@@ -2184,6 +2340,1414 @@
            "u": "https://wol.jw.org/fr/wol/pc/r30/lp-f/2026562/2/0"
           }
          ]
+        }
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026-49",
+   "debut": "2026-11-30",
+   "fin": "2026-12-06",
+   "label": "30 novembre – 6 décembre 2026",
+   "court": "30 nov – 6 déc",
+   "programme": "https://wol.jw.org/fr/wol/meetings/r30/lp-f/2026/49",
+   "prepareLe": "2026-11-24",
+   "reunions": {
+    "mercredi": {
+     "date": "2026-12-02",
+     "jour": "Mercredi",
+     "type": "Vie et ministère",
+     "focusLabel": "Lecture biblique",
+     "focus": "ÉZÉCHIEL 1-2",
+     "focusUrl": "https://wol.jw.org/fr/wol/bc/r30/lp-f/202026405/0/0",
+     "sources": [
+      {
+       "t": "Programme officiel · 30 novembre – 6 décembre 2026",
+       "u": "https://wol.jw.org/fr/wol/meetings/r30/lp-f/2026/49"
+      },
+      {
+       "t": "Cahier Vie chrétienne et ministère · semaine du 30 nov – 6 déc",
+       "u": "https://wol.jw.org/fr/wol/d/r30/lp-f/202026405"
+      },
+      {
+       "t": "Le culte pur de Jéhovah enfin rétabli ! chap. 3 et 4",
+       "u": "https://wol.jw.org/fr/wol/d/r30/lp-f/1102017163"
+      },
+      {
+       "t": "Marche courageusement avec Dieu, chap. 19 (Jephté)",
+       "u": "https://wol.jw.org/fr/wol/d/r30/lp-f/1102025919"
+      }
+     ],
+     "recommandations": [
+      {
+       "titre": "Perles · Ézéchiel 1:6, 10 (les quatre visages)",
+       "raison": "La question officielle : une réponse claire qui fait admirer la personnalité complète de Jéhovah."
+      },
+      {
+       "titre": "Perles · Ézéchiel 2:5",
+       "raison": "Très encourageant pour ceux qui prêchent sans voir de résultats."
+      },
+      {
+       "titre": "Étude · Question 3 (le sacrifice de Jephté)",
+       "raison": "Montre le prix réel du vœu et touche le cœur."
+      },
+      {
+       "titre": "Étude · Les jeunes filles qui encourageaient la fille de Jephté",
+       "raison": "Application pratique et concrète pour soutenir ceux qui font des sacrifices."
+      },
+      {
+       "titre": "Étude · Ce que le récit nous apprend sur Jéhovah",
+       "raison": "Pour finir sur une pensée rassurante : Jéhovah honore ceux qui le servent fidèlement."
+      }
+     ],
+     "sections": [
+      {
+       "titre": "Ouverture",
+       "parties": [
+        {
+         "num": "",
+         "titre": "Cantique 65 et prière | Paroles d'introduction",
+         "duree": "1 min",
+         "refs": [
+          {
+           "t": "Cantique 65",
+           "u": "https://wol.jw.org/fr/wol/pc/r30/lp-f/202026405/0/0"
+          }
+         ],
+         "medias": [
+          {
+           "type": "image",
+           "titre": "La vision du char céleste",
+           "description": "Le gigantesque char céleste de Jéhovah flotte dans le ciel devant Ézéchiel. « Dans une vision, Ézéchiel voit un véhicule gigantesque. »",
+           "url": "https://wol.jw.org/fr/wol/mp/r30/lp-f/mwb26/2026/441"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "titre": "Joyaux de la Parole de Dieu",
+       "parties": [
+        {
+         "num": "1",
+         "titre": "Suivons le rythme du char céleste de Jéhovah",
+         "duree": "10 min",
+         "consigne": "Montrer la vidéo « Introduction à Ézéchiel » (4 min). La partie céleste de l'organisation de Jéhovah est représentée par un véhicule immense, très rapide et très maniable (Éz 1:16-18 ; rr 37-38 § 18-19). Jéhovah dirige les mouvements de ce char (Éz 1:20, 26-28 ; rr 38-40 § 21-24). Sujet de méditation : Que dois-je faire pour suivre le rythme du char céleste ?",
+         "refs": [
+          {
+           "t": "Éz 1:16-18",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/202026405/1/0"
+          },
+          {
+           "t": "rr 37-38 § 18-19",
+           "u": "https://wol.jw.org/fr/wol/pc/r30/lp-f/202026405/1/0"
+          },
+          {
+           "t": "Éz 1:20",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/202026405/2/0"
+          },
+          {
+           "t": "Éz 1:26-28",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/202026405/2/1"
+          },
+          {
+           "t": "rr 38-40 § 21-24",
+           "u": "https://wol.jw.org/fr/wol/pc/r30/lp-f/202026405/2/0"
+          }
+         ],
+         "medias": [
+          {
+           "type": "video",
+           "titre": "Introduction à Ézéchiel (4 min 11)",
+           "description": "Ézéchiel, fils de prêtre, exilé à Babylone en 617 av. n. è., prophétise à partir de 613 pendant au moins 22 ans. « Souverain Seigneur Jéhovah » apparaît 217 fois. Chap. 1-3 : visions près du Kebar, les chérubins aux 4 visages (homme, lion, taureau, aigle) qui représentent des qualités de Jéhovah, et le char céleste dirigé par l'esprit. Chap. 4-24 : jugements contre Jérusalem (brique, 430 jours couché). Chap. 25-32 : les nations, Tyr détruite en deux temps (Nabuchodonosor puis Alexandre). Chap. 33-48 : rétablissement du culte pur, vision du temple.",
+           "url": "https://www.jw.org/finder?lank=pub-nwtsv_260_VIDEO&wtlocale=F"
+          },
+          {
+           "type": "image",
+           "titre": "Suivre le rythme du char",
+           "description": "1. Un couple regarde JW Télédiffusion. 2. Un frère dirige l'étude de La Tour de Garde à la Salle du Royaume. 3. Des milliers de frères et sœurs assistent à une assemblée régionale. → utilisée dans l'application du discours.",
+           "url": "https://wol.jw.org/fr/wol/mp/r30/lp-f/mwb26/2026/443"
+          }
+         ],
+         "liens": [
+          {
+           "t": "Le culte pur, chap. 3 « J'ai commencé à avoir des visions de Dieu »",
+           "u": "https://wol.jw.org/fr/wol/d/r30/lp-f/1102017163"
+          }
+         ],
+         "discours": {
+          "theme": "Suivons le rythme du char céleste de Jéhovah",
+          "duree": 6,
+          "filRouge": "Le char est venu jusqu'à Ézéchiel en exil ; notre rôle n'est pas de le conduire, mais de suivre son rythme",
+          "plan": [
+           {
+            "titre": "Introduction : Ézéchiel loin de tout",
+            "min": 1,
+            "notes": "Après la vidéo · Exilé près du Kebar, fils de prêtre loin du temple · La tempête, le char · 2 questions : comment est-il ? qui le conduit ?"
+           },
+           {
+            "titre": "1. Un char immense, qui voit tout et qui va vite",
+            "min": 2,
+            "notes": "Lire Éz 1:16-18 · roues immenses (grandeur) · « pleines d'yeux » (Pr 15:3, des milliards d'anges) · 4 directions sans tourner : Jéhovah s'adapte (rr § 18-19) · Le char vient jusqu'à nous"
+           },
+           {
+            "titre": "2. C'est Jéhovah qui conduit le char",
+            "min": 1.5,
+            "notes": "Éz 1:20 : l'esprit dans les roues · Lire Éz 1:26-28 : « cela ressemblait à » · l'arc-en-ciel = alliance de paix (Gn 9) · Dieu puissant ET Dieu de paix (rr § 21-24)"
+           },
+           {
+            "titre": "Application et conclusion",
+            "min": 1.5,
+            "notes": "Image : JW Télédiffusion, étude TG, assemblée · Sujet de méditation : une chose précise à faire cette semaine · « Notre rôle n'est pas de conduire le char, mais de suivre son rythme »"
+           }
+          ],
+          "fiche": [
+           "Après la vidéo : Ézéchiel exilé, loin du temple",
+           "Q1 : comment est le char ? · Q2 : qui le conduit ?",
+           "Éz 1:16-18 → grand · voit tout (yeux) · rapide, s'adapte",
+           "Éz 1:20 → l'esprit dans les roues",
+           "Éz 1:26-28 → « ressemblait à » · arc-en-ciel = paix",
+           "Image : Télédiffusion · étude TG · assemblée",
+           "Fin : « Pas conduire le char, suivre son rythme. Montons à bord ! »"
+          ],
+          "versets": [
+           "Ézéchiel 1:16-18 (lire)",
+           "Ézéchiel 1:26-28 (lire)",
+           "Ézéchiel 1:20",
+           "Proverbes 15:3",
+           "Genèse 9:13-16"
+          ],
+          "texte": "(Après la vidéo « Introduction à Ézéchiel »)\n\nINTRODUCTION\nVous venez de le voir dans la vidéo : Ézéchiel est un exilé. Il vit à Babylone, près du fleuve Kebar, à des centaines de kilomètres du temple de Jérusalem. Fils de prêtre, il aurait dû servir au temple… et il se retrouve loin de tout. Il aurait pu se dire : « Jéhovah m'a oublié. »\nEt soudain, une tempête. Et au milieu de la tempête, une vision incroyable : un véhicule gigantesque, un char céleste. Ce char représente la partie céleste de l'organisation de Jéhovah. Posons-nous deux questions : comment est ce char ? Et qui le conduit ?\n\n1. UN CHAR IMMENSE, QUI VOIT TOUT ET QUI VA VITE\nLisons Ézéchiel 1:16-18. Remarquez trois détails.\nD'abord, les roues sont immenses : si hautes qu'elles « inspiraient la crainte ». Le livre Le culte pur explique que cela montre la grandeur de l'organisation céleste de Jéhovah.\nEnsuite, les jantes sont « pleines d'yeux ». Rien n'échappe à Jéhovah. Proverbes 15:3 dit que ses yeux sont partout. Et il a des millions, des milliards d'anges qu'il peut envoyer n'importe où dans l'univers.\nEnfin, ce char peut aller dans les quatre directions sans tourner. Il change de direction instantanément. Quel contraste avec les gouvernements humains, lents, lourds, qui finissent par échouer ! Jéhovah, lui, s'adapte à chaque situation. En un instant, il peut être un guerrier qui défend son peuple, puis un Père plein de miséricorde qui relève un pécheur repentant.\nQu'est-ce que ça veut dire pour nous ? Que nous ne sommes jamais trop loin pour Jéhovah. Ézéchiel était en exil, et le char est venu jusqu'à lui. Quelle que soit votre situation, ce char peut venir jusqu'à vous.\n\n2. C'EST JÉHOVAH QUI CONDUIT LE CHAR\nMais qui fait avancer ce char ? Ézéchiel 1:20 répond : l'esprit qui animait les créatures vivantes était aussi dans les roues. C'est l'esprit saint de Jéhovah, la force la plus puissante de l'univers. C'est lui qui fait avancer le char, qui tient ses parties ensemble et qui synchronise parfaitement leurs mouvements.\nEt tout en haut, Ézéchiel voit un trône. Lisons Ézéchiel 1:26-28. Remarquez qu'Ézéchiel peine à trouver ses mots : il répète « cela ressemblait à », « cela avait l'apparence de ». Ce qu'il voit le dépasse. Autour du trône, une lumière comme un arc-en-ciel. Un arc-en-ciel ! Ça vous rappelle quelque chose ? Après le Déluge, l'arc-en-ciel était le signe de l'alliance de paix de Jéhovah. Celui qui conduit ce char puissant est aussi le Dieu de la paix.\n\nAPPLICATION\nAlors, si le char avance si vite, comment le suivre ? Regardez l'image du cahier : un couple qui regarde JW Télédiffusion, un frère qui dirige l'étude de La Tour de Garde, des milliers de frères et sœurs à l'assemblée régionale. Voilà comment suivre le rythme : nous nourrir de la nourriture spirituelle au moment où Jéhovah la donne, être présents aux réunions et aux assemblées, et appliquer rapidement les directives que nous recevons.\nLe cahier nous propose un sujet de méditation : « Que dois-je faire pour suivre le rythme du char céleste ? » Cette semaine, posons-nous la question pour une chose précise : une directive récente que je n'ai pas encore appliquée, une émission que je n'ai pas encore regardée, une réunion que je néglige.\n\nCONCLUSION\nÉzéchiel était loin de tout, mais il n'était pas loin de Jéhovah. Le char est venu jusqu'à lui. Aujourd'hui, ce char avance toujours, conduit par l'esprit de Jéhovah, et il ne s'arrête jamais. Notre rôle n'est pas de le conduire : c'est de suivre son rythme. Alors, montons à bord, et restons-y !",
+          "sources": [
+           {
+            "t": "Le culte pur, chap. 3 § 18-19 et § 21-24",
+            "u": "https://wol.jw.org/fr/wol/d/r30/lp-f/1102017163"
+           },
+           {
+            "t": "Vidéo · Introduction à Ézéchiel",
+            "u": "https://www.jw.org/finder?lank=pub-nwtsv_260_VIDEO&wtlocale=F"
+           }
+          ]
+         },
+         "items": [
+          {
+           "titre": "Sujet de méditation (personnel)",
+           "question": "Que dois-je faire pour suivre le rythme du char céleste ?",
+           "lien": "https://wol.jw.org/fr/wol/d/r30/lp-f/1102017163",
+           "prep": {
+            "reponse": "Suivre le rythme, c'est avancer avec l'organisation de Jéhovah : profiter de la nourriture spirituelle au moment où elle est donnée, assister aux réunions et aux assemblées, et appliquer rapidement les directives.",
+            "verset": "Ézéchiel 1:20, 21 · Le culte pur chap. 3",
+            "probleme": "On peut rester attaché à « comment on faisait avant » et prendre du retard sans s'en rendre compte.",
+            "application": "Choisir cette semaine une chose précise : regarder la dernière émission de JW Télédiffusion, appliquer une directive récente, ou préparer mieux une réunion.",
+            "dire": "Le char d'Ézéchiel peut changer de direction en un instant. Alors, pour suivre son rythme, il faut que moi aussi, je sois prêt à m'adapter vite. Concrètement, cette semaine, je veux regarder la dernière émission de JW Télédiffusion. Et il y a une directive que j'ai tendance à remettre à plus tard… je veux enfin l'appliquer."
+           },
+           "src": [
+            {
+             "t": "Le culte pur, chap. 3",
+             "u": "https://wol.jw.org/fr/wol/d/r30/lp-f/1102017163"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "num": "2",
+         "titre": "Perles spirituelles",
+         "duree": "10 min",
+         "consigne": "Éz 1:6, 10 — Dans la vision d'Ézéchiel, que représentent les quatre visages des chérubins quand ils sont pris comme un tout ? (rr 43 § 5 ; 45 § 13 ; 48 § 14). Quelles perles spirituelles avez-vous tirées de la lecture de la Bible de cette semaine ?",
+         "refs": [
+          {
+           "t": "Éz 1:6",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/202026405/3/0"
+          },
+          {
+           "t": "Éz 1:10",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/202026405/3/1"
+          },
+          {
+           "t": "rr 43 § 5",
+           "u": "https://wol.jw.org/fr/wol/pc/r30/lp-f/202026405/3/0"
+          },
+          {
+           "t": "rr 45 § 13",
+           "u": "https://wol.jw.org/fr/wol/pc/r30/lp-f/202026405/3/1"
+          },
+          {
+           "t": "rr 48 § 14",
+           "u": "https://wol.jw.org/fr/wol/pc/r30/lp-f/202026405/3/2"
+          }
+         ],
+         "liens": [
+          {
+           "t": "Le culte pur, chap. 4 « Qui sont les créatures vivantes aux quatre visages ? »",
+           "u": "https://wol.jw.org/fr/wol/d/r30/lp-f/1102017164"
+          }
+         ],
+         "items": [
+          {
+           "titre": "Question officielle · Ézéchiel 1:6, 10",
+           "question": "Dans la vision d'Ézéchiel, que représentent les quatre visages des chérubins quand ils sont pris comme un tout ?",
+           "lien": "https://wol.jw.org/fr/wol/bc/r30/lp-f/202026405/3/0",
+           "prep": {
+            "reponse": "Pris comme un tout, les quatre visages (homme, lion, taureau, aigle) représentent l'ensemble des qualités de Jéhovah, la base de sa personnalité. Dans la Bible, le chiffre quatre évoque ce qui est complet ; et comme les quatre roues forment ensemble la base du char, les quatre visages forment ensemble un tout.",
+            "verset": "Ézéchiel 1:6, 10 · Le culte pur p. 43 § 5, p. 45 § 13, p. 48 § 14",
+            "probleme": "On pourrait voir Jéhovah à travers une seule qualité, par exemple seulement sa puissance ou seulement sa justice.",
+            "application": "Je veux connaître Jéhovah dans sa personnalité complète, ce qui m'aide à lui faire confiance dans toutes les situations.",
+            "dire": "Si on les prend un par un, chaque visage fait penser à une qualité : le lion à la justice, le taureau à la puissance, l'aigle à la sagesse, et l'homme à l'amour. Mais le livre Le culte pur explique que, pris tous ensemble, ils représentent toutes les qualités de Jéhovah. Dans la Bible, le chiffre quatre, c'est l'idée de quelque chose de complet. C'est un peu comme les quatre roues du char : une seule ne suffit pas, c'est l'ensemble qui porte tout. Et c'est pareil pour la personnalité de Jéhovah : elle est parfaitement équilibrée."
+           },
+           "src": [
+            {
+             "t": "Le culte pur p. 43 § 5",
+             "u": "https://wol.jw.org/fr/wol/pc/r30/lp-f/202026405/3/0"
+            },
+            {
+             "t": "p. 45 § 13",
+             "u": "https://wol.jw.org/fr/wol/pc/r30/lp-f/202026405/3/1"
+            },
+            {
+             "t": "p. 48 § 14",
+             "u": "https://wol.jw.org/fr/wol/pc/r30/lp-f/202026405/3/2"
+            }
+           ]
+          },
+          {
+           "titre": "Perle · Ézéchiel 1:3",
+           "question": "La main de Jéhovah vient sur Ézéchiel… à Babylone",
+           "lien": "https://wol.jw.org/fr/wol/b/r30/lp-f/nwtsty/26/1",
+           "prep": {
+            "reponse": "Ézéchiel reçoit la vision « au pays des Chaldéens », près du fleuve Kebar, loin du temple de Jérusalem.",
+            "verset": "Ézéchiel 1:3",
+            "probleme": "On peut penser que Jéhovah est loin de nous quand on est isolé, malade ou loin de l'assemblée.",
+            "application": "Jéhovah n'est pas limité à un lieu : il peut me fortifier où que je sois.",
+            "dire": "Moi, ce qui m'a frappé, c'est l'endroit où Ézéchiel reçoit sa vision. À Babylone ! En pays païen, à des centaines de kilomètres du temple. Et pourtant, le verset 3 dit que la main de Jéhovah est venue sur lui, là-bas. Jéhovah n'était pas enfermé dans le temple de Jérusalem. Et ça me rassure : même quand je me sens loin, ou isolé, Jéhovah peut venir jusqu'à moi."
+           }
+          },
+          {
+           "titre": "Perle · Ézéchiel 1:28",
+           "question": "La réaction d'Ézéchiel devant la gloire de Jéhovah",
+           "lien": "https://wol.jw.org/fr/wol/b/r30/lp-f/nwtsty/26/1",
+           "prep": {
+            "reponse": "Devant la gloire de Jéhovah, Ézéchiel tombe face contre terre.",
+            "verset": "Ézéchiel 1:28 ; 2:1, 2",
+            "probleme": "L'habitude peut nous faire perdre le sens du respect profond envers Jéhovah, par exemple dans la prière.",
+            "application": "Je peux méditer sur la grandeur de Jéhovah avant de prier, pour lui parler avec respect et reconnaissance.",
+            "dire": "Au verset 28, Ézéchiel tombe face contre terre devant la gloire de Jéhovah. Mais regardez la suite, au début du chapitre 2. Jéhovah lui dit : « Lève-toi. » Et c'est l'esprit qui l'aide à se remettre debout. J'aime beaucoup ça. Jéhovah est tellement grand qu'on tombe devant lui… mais il est tellement bon qu'il nous relève."
+           }
+          },
+          {
+           "titre": "Perle · Ézéchiel 2:3-5",
+           "question": "Qu'ils écoutent ou non",
+           "lien": "https://wol.jw.org/fr/wol/b/r30/lp-f/nwtsty/26/2",
+           "prep": {
+            "reponse": "Jéhovah prévient Ézéchiel que le peuple est rebelle, mais que, qu'ils écoutent ou non, ils sauront qu'il y a eu un prophète parmi eux.",
+            "verset": "Ézéchiel 2:5",
+            "probleme": "On peut se décourager quand on prêche beaucoup sans voir de résultats.",
+            "application": "Notre réussite se mesure à notre fidélité, pas au nombre de personnes qui acceptent le message.",
+            "dire": "Le verset 5 m'encourage beaucoup pour la prédication. Jéhovah dit à Ézéchiel : « Qu'ils écoutent ou non, ils sauront qu'il y a eu un prophète parmi eux. » Donc Ézéchiel n'était pas jugé sur ses résultats, mais sur sa fidélité. Et pour nous, c'est pareil. Même quand personne ne nous écoute dans le territoire, on a réussi : les gens savent que Jéhovah a des témoins."
+           }
+          },
+          {
+           "titre": "Perle · Ézéchiel 2:6",
+           "question": "Ne crains pas, même au milieu des orties et des scorpions",
+           "lien": "https://wol.jw.org/fr/wol/b/r30/lp-f/nwtsty/26/2",
+           "prep": {
+            "reponse": "Jéhovah dit à Ézéchiel de ne pas avoir peur, même s'il est entouré d'« orties » et d'« épines » et qu'il habite parmi des « scorpions ».",
+            "verset": "Ézéchiel 2:6",
+            "probleme": "L'opposition ou les moqueries peuvent nous intimider.",
+            "application": "Jéhovah ne nous promet pas l'absence d'opposition, mais son soutien pour l'affronter sans peur.",
+            "dire": "J'aime la franchise de Jéhovah au verset 6. Il ne cache rien à Ézéchiel. Il lui dit : tu seras entouré d'orties, d'épines, et même de scorpions. Mais en même temps, il lui répète : « N'aie pas peur. » Vous voyez, Jéhovah ne nous promet pas une mission facile. Ce qu'il nous promet, c'est d'être avec nous."
+           }
+          },
+          {
+           "titre": "Perle · Ézéchiel 2:8-10",
+           "question": "Manger le rouleau",
+           "lien": "https://wol.jw.org/fr/wol/b/r30/lp-f/nwtsty/26/2",
+           "prep": {
+            "reponse": "Jéhovah demande à Ézéchiel de manger le rouleau écrit des deux côtés, avant d'aller parler au peuple.",
+            "verset": "Ézéchiel 2:8-10 ; 3:1-3",
+            "probleme": "On peut vouloir enseigner les autres sans avoir d'abord bien assimilé soi-même la Parole de Dieu.",
+            "application": "Avant de prêcher ou de commenter, je dois d'abord « manger » la Parole : l'étudier et la méditer personnellement.",
+            "dire": "Au verset 8, Jéhovah ne dit pas seulement à Ézéchiel de lire le rouleau. Il lui dit de le manger ! Autrement dit, il devait d'abord bien l'assimiler, avant d'aller le transmettre aux autres. Et je me dis que pour nous, c'est pareil. On ne peut pas bien nourrir les autres si on ne s'est pas d'abord nourri soi-même, par l'étude personnelle."
+           }
+          }
+         ]
+        },
+        {
+         "num": "3",
+         "titre": "Lecture de la Bible",
+         "duree": "4 min",
+         "consigne": "Ézéchiel 2:1-10 · leçon 2 de « Applique-toi à la lecture et à l'enseignement » (Ton de la conversation).",
+         "refs": [
+          {
+           "t": "Éz 2:1-10",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/202026405/4/0"
+          },
+          {
+           "t": "th leçon 2",
+           "u": "https://wol.jw.org/fr/wol/pc/r30/lp-f/202026405/4/0"
+          }
+         ],
+         "conseils": [
+          "Leçon 2 · Ton de la conversation (2 Co 2:17) : lis de façon naturelle et sincère, comme si tu racontais ce qui est arrivé à Ézéchiel.",
+          "Connais bien le passage pour pouvoir regarder ton auditoire de temps en temps.",
+          "Les paroles de Jéhovah (v. 3-8) : avec sentiment mais sans théâtre. Mets de la fermeté dans « N'aie pas peur » (v. 6) et de la gravité dans « lamentations, plaintes et gémissements » (v. 10)."
+         ]
+        }
+       ]
+      },
+      {
+       "titre": "Applique-toi au ministère",
+       "parties": [
+        {
+         "num": "4",
+         "titre": "Engage la conversation",
+         "duree": "3 min",
+         "consigne": "De maison en maison. Propose un cours biblique (lmd leçon 3 idée 3).",
+         "refs": [
+          {
+           "t": "lmd leçon 3 idée 3",
+           "u": "https://wol.jw.org/fr/wol/pc/r30/lp-f/202026405/5/0"
+          }
+         ],
+         "conseils": [
+          "Leçon 3 · Parler et agir avec bonté (1 Co 13:4). Idée 3 : mets-toi à la place de la personne.",
+          "Demande-toi ce qui la préoccupe, ce qui compte pour elle et ce dont elle a besoin, pour que ton intérêt soit sincère.",
+          "Si elle exprime une opinion ou une inquiétude, écoute attentivement et ne change pas de sujet."
+         ],
+         "dialogue": [
+          {
+           "qui": "Proclamateur",
+           "texte": "Bonjour ! Nous passons dans le quartier pour encourager les gens. Vous avez l'air bien occupée !"
+          },
+          {
+           "qui": "Personne",
+           "texte": "Oui… entre le travail et les enfants, je n'ai plus une minute. Et en ce moment, mon fils a des soucis à l'école."
+          },
+          {
+           "qui": "Proclamateur",
+           "texte": "Je comprends, c'est inquiétant quand nos enfants traversent des difficultés. Qu'est-ce qui vous préoccupe le plus ?"
+          },
+          {
+           "qui": "Personne",
+           "texte": "Il se fait embêter par d'autres élèves. Je ne sais pas trop comment l'aider."
+          },
+          {
+           "qui": "Proclamateur",
+           "texte": "C'est une vraie question. Beaucoup de parents trouvent des conseils utiles dans la Bible pour aider leurs enfants à faire face à ça. Nous proposons un cours biblique gratuit, à l'heure qui vous convient, même 15 minutes. Est-ce que vous aimeriez essayer ?"
+          },
+          {
+           "qui": "Personne",
+           "texte": "Pourquoi pas, si ça ne prend pas trop de temps."
+          },
+          {
+           "qui": "Proclamateur",
+           "texte": "Très bien. Je peux repasser jeudi vers 18 heures, et on regardera ensemble ce que la Bible dit sur ce sujet."
+          }
+         ],
+         "lecon": "On n'enchaîne pas sur un discours préparé : on écoute la préoccupation de la personne, on y reste, et le cours biblique est présenté comme une aide pour ce qui la touche."
+        },
+        {
+         "num": "5",
+         "titre": "Fais des disciples",
+         "duree": "5 min",
+         "consigne": "Encourage un étudiant de la Bible qui rencontre de l'opposition de la part de sa famille (lmd leçon 11 idée 5).",
+         "refs": [
+          {
+           "t": "lmd leçon 11 idée 5",
+           "u": "https://wol.jw.org/fr/wol/pc/r30/lp-f/202026405/6/0"
+          }
+         ],
+         "conseils": [
+          "Leçon 11 · Rester simple (1 Co 14:9). Idée 5 : choisis bien tes illustrations.",
+          "Avant d'utiliser une illustration, demande-toi : est-elle simple ? l'étudiant la comprendra-t-il facilement ? retiendra-t-il l'idée principale ou seulement l'illustration ?",
+          "Versets utiles : 2 Timothée 3:12 ; Matthieu 10:36 ; 1 Pierre 3:15."
+         ],
+         "dialogue": [
+          {
+           "qui": "Étudiant",
+           "texte": "Ma femme n'est pas contente que j'étudie la Bible. Hier, elle m'a dit que je changeais et que ça la dérangeait."
+          },
+          {
+           "qui": "Proclamateur",
+           "texte": "Merci de me le dire. Ça doit être difficile pour toi, parce que tu l'aimes. Qu'est-ce qui l'inquiète, à ton avis ?"
+          },
+          {
+           "qui": "Étudiant",
+           "texte": "Elle a peur que je ne fête plus rien et que je m'éloigne de la famille."
+          },
+          {
+           "qui": "Proclamateur",
+           "texte": "Je comprends sa peur. Jésus avait annoncé ce genre de situation. Lisons Matthieu 10:36. … Tu vois, ce n'est pas parce que tu fais quelque chose de mal."
+          },
+          {
+           "qui": "Étudiant",
+           "texte": "Oui, mais je ne veux pas que ça crée des disputes."
+          },
+          {
+           "qui": "Proclamateur",
+           "texte": "Imagine une nouvelle plante dans le jardin : au début, le voisin se méfie parce qu'il ne la connaît pas. Mais quand il voit les fruits, il change d'avis. Si ta femme voit que tu deviens un mari plus patient et plus attentionné grâce à la Bible, elle verra les fruits. 1 Pierre 3:1, 2 montre qu'une bonne conduite peut gagner le cœur des autres sans paroles."
+          },
+          {
+           "qui": "Étudiant",
+           "texte": "Alors je dois surtout lui montrer que je l'aime encore plus."
+          },
+          {
+           "qui": "Proclamateur",
+           "texte": "Exactement. Et si tu veux, la prochaine fois, elle peut assister à notre étude pour voir ce que nous apprenons."
+          }
+         ],
+         "lecon": "L'illustration de la plante et des fruits est simple, liée à la vie de l'étudiant, et elle renforce l'idée principale (une bonne conduite) au lieu de la remplacer."
+        },
+        {
+         "num": "6",
+         "titre": "Discours",
+         "duree": "4 min",
+         "consigne": "lmd appendice A idée 22 — Thème : « Le royaume de Dieu va remplacer tous les gouvernements humains » (th leçon 6).",
+         "refs": [
+          {
+           "t": "lmd appendice A idée 22",
+           "u": "https://wol.jw.org/fr/wol/pc/r30/lp-f/202026405/7/0"
+          },
+          {
+           "t": "th leçon 6",
+           "u": "https://wol.jw.org/fr/wol/pc/r30/lp-f/202026405/8/0"
+          },
+          {
+           "t": "Ps 2:7-9",
+           "u": "https://wol.jw.org/fr/wol/b/r30/lp-f/nwtsty/19/2"
+          },
+          {
+           "t": "Dn 2:44",
+           "u": "https://wol.jw.org/fr/wol/b/r30/lp-f/nwtsty/27/2"
+          }
+         ],
+         "conseils": [
+          "Leçon 6 · Application claire des versets (Jn 10:33-36) : ne lis pas un verset pour passer aussitôt à autre chose.",
+          "Isole les mots clés (« écrasera », « mettra fin », « subsistera pour toujours », « héritage ») en les répétant ou en posant une question.",
+          "Fais ressortir le lien entre ces mots et ton idée, puis donne une application simple."
+         ],
+         "discours": {
+          "theme": "Le royaume de Dieu va remplacer tous les gouvernements humains",
+          "duree": 4,
+          "filRouge": "Pas améliorer, remplacer",
+          "plan": [
+           {
+            "titre": "Introduction : la confiance dans les gouvernements",
+            "min": 0.5,
+            "notes": "On change de dirigeants, les problèmes restent"
+           },
+           {
+            "titre": "Daniel 2:44 : remplacer, pour toujours",
+            "min": 1.5,
+            "notes": "Lire · mots clés : « écrasera », « mettra fin », « subsistera pour toujours » · pas améliorer : remplacer"
+           },
+           {
+            "titre": "Psaume 2:7-9 : le Roi choisi par Jéhovah",
+            "min": 1,
+            "notes": "Mot clé « héritage » · v. 9 : il brise toute opposition"
+           },
+           {
+            "titre": "Application et conclusion",
+            "min": 1,
+            "notes": "Espoir hors des élections · neutralité · « il y en a un qui va tout changer »"
+           }
+          ],
+          "fiche": [
+           "Accroche : on change de dirigeants, les problèmes restent",
+           "Dn 2:44 → écrasera · mettra fin · pour toujours",
+           "Ps 2:7-9 → « héritage » donné par Jéhovah",
+           "3 applications : espoir · neutralité · bonne nouvelle",
+           "Fin : « Il y en a un qui va tout changer »"
+          ],
+          "versets": [
+           "Daniel 2:44 (lire)",
+           "Psaume 2:7-9 (lire)"
+          ],
+          "texte": "Avez-vous remarqué que, dans le monde entier, les gens ont de moins en moins confiance en leurs gouvernements ? On change de dirigeants, mais les problèmes restent. La Bible annonce une solution radicale : le royaume de Dieu va remplacer tous les gouvernements humains.\n\nLisons Daniel 2:44. Prenez le temps de repérer les mots clés : le royaume de Dieu « écrasera tous ces royaumes et y mettra fin », et « lui seul subsistera pour toujours ». Remarquez : il ne s'agit pas d'améliorer les gouvernements humains, ni de collaborer avec eux. Il s'agit de les remplacer. Et ce royaume ne sera jamais renversé : il subsistera pour toujours. Aucun gouvernement humain ne peut promettre ça.\n\nMais qui dirigera ce royaume ? Psaume 2:7-9 répond. Jéhovah s'adresse à son Fils et lui dit qu'il lui donnera les nations en héritage, jusqu'aux extrémités de la terre. Le mot clé ici, c'est « héritage » : c'est Jéhovah lui-même qui confie la terre entière à Jésus. Et le verset 9 montre que Jésus a le pouvoir de briser toute opposition, comme on brise un vase d'argile.\n\nQu'est-ce que cela signifie pour nous ? D'abord, nous n'avons pas besoin de placer notre espoir dans les élections ou dans les promesses des hommes. Ensuite, nous pouvons rester neutres, parce que nous soutenons déjà un gouvernement : le royaume de Dieu. Et enfin, nous avons une bonne nouvelle extraordinaire à annoncer : bientôt, un seul gouvernement, juste et éternel, dirigera toute la terre.\n\nAlors, la prochaine fois que vous entendrez quelqu'un dire : « De toute façon, aucun gouvernement ne changera rien », vous pourrez lui répondre : « Vous avez raison… mais il y en a un qui va tout changer. » Et lui montrer Daniel 2:44.",
+          "sources": [
+           {
+            "t": "lmd appendice A idée 22",
+            "u": "https://wol.jw.org/fr/wol/pc/r30/lp-f/202026405/7/0"
+           },
+           {
+            "t": "th leçon 6 · Application claire des versets",
+            "u": "https://wol.jw.org/fr/wol/pc/r30/lp-f/202026405/8/0"
+           }
+          ]
+         }
+        }
+       ]
+      },
+      {
+       "titre": "Vie chrétienne",
+       "parties": [
+        {
+         "num": "",
+         "titre": "Cantique 63",
+         "duree": "",
+         "refs": [
+          {
+           "t": "Cantique 63",
+           "u": "https://wol.jw.org/fr/wol/pc/r30/lp-f/202026405/9/0"
+          }
+         ]
+        },
+        {
+         "num": "7",
+         "titre": "Besoins de l'assemblée",
+         "duree": "15 min",
+         "consigne": "Partie locale, préparée par les anciens : aucun contenu n'est publié dans le cahier."
+        },
+        {
+         "num": "8",
+         "titre": "Étude biblique de l'assemblée",
+         "duree": "30 min",
+         "consigne": "« Marche courageusement avec Dieu » (wcg), chapitre 19 : « Il a fait un serment ; elle l'a respecté » (Jephté et sa fille), p. 90-93. Versets clés : Juges 10:15, 16 ; 11:1-40.",
+         "refs": [
+          {
+           "t": "wcg chap. 19",
+           "u": "https://wol.jw.org/fr/wol/pc/r30/lp-f/202026405/10/0"
+          },
+          {
+           "t": "Jg 11:30-40",
+           "u": "https://wol.jw.org/fr/wol/b/r30/lp-f/nwtsty/7/11"
+          }
+         ],
+         "medias": [
+          {
+           "type": "image",
+           "titre": "Jephté et sa fille",
+           "description": "Jephté, à genoux, déchire ses vêtements. Sa fille pose la main sur son épaule pour le rassurer.",
+           "url": "https://wol.jw.org/fr/wol/mp/r30/lp-f/wcg/2025/471"
+          },
+          {
+           "type": "image",
+           "titre": "Illustration A · « Ils firent disparaître les dieux étrangers »",
+           "description": "Des Israélites abattent un poteau sacré ; médaillon : une femme brise une statuette (Jg 10:16). → question 1 « Pour aller plus loin ».",
+           "url": "https://wol.jw.org/fr/wol/mp/r30/lp-f/wcg/2025/473"
+          },
+          {
+           "type": "image",
+           "titre": "Illustration B · Encourager ceux qui se sacrifient",
+           "description": "Une sœur partie à l'étranger ouvre avec plaisir un colis (nourriture, vitamines, cadeaux, carte) tout en étant en visioconférence avec des amis. → question sur les jeunes filles qui encourageaient la fille de Jephté.",
+           "url": "https://wol.jw.org/fr/wol/mp/r30/lp-f/wcg/2025/475"
+          },
+          {
+           "type": "video",
+           "titre": "À découvrir aussi : Réussissez votre vie de célibataire (5 min 15)",
+           "description": "Comment un ou une célibataire peut-il prendre exemple sur la fille de Jephté ?",
+           "url": "https://www.jw.org/finder?lank=pub-jwbai_201509_1_VIDEO&wtlocale=F"
+          }
+         ],
+         "liens": [
+          {
+           "t": "Chapitre 19 · « Il a fait un serment ; elle l'a respecté »",
+           "u": "https://wol.jw.org/fr/wol/d/r30/lp-f/1102025919"
+          },
+          {
+           "t": "« Le vœu que tu fais, acquitte-t'en » (w17.04)",
+           "u": "https://wol.jw.org/fr/wol/pc/r30/lp-f/1102025919/2/0"
+          },
+          {
+           "t": "« Agir avec foi mène à l'approbation de Dieu » (w16.04)",
+           "u": "https://wol.jw.org/fr/wol/pc/r30/lp-f/1102025919/4/0"
+          }
+         ],
+         "items": [
+          {
+           "titre": "Question de réflexion",
+           "question": "Pourquoi peut-on dire que Jephté et sa fille ont été courageux ?",
+           "lien": "https://wol.jw.org/fr/wol/d/r30/lp-f/1102025919",
+           "prep": {
+            "reponse": "Jephté, rejeté injustement par ses demi-frères, a accepté de mener Israël au combat contre les Ammonites, sans rancune. Sa fille, sa seule enfant, a accepté de renoncer au mariage et à la maternité pour que le vœu de son père soit respecté.",
+            "verset": "Juges 11:1-11, 34-39 · Hébreux 11:32",
+            "probleme": "Tenir un engagement envers Jéhovah peut coûter très cher.",
+            "application": "Le courage, c'est rester fidèle à sa parole envers Jéhovah, même quand cela fait mal.",
+            "dire": "Leur courage n'était pas le même, mais il était aussi grand. Jephté, lui, a affronté la guerre. Et pourtant, sa propre famille l'avait rejeté, et il n'a gardé aucune rancune. Sa fille, elle, a fait un sacrifice silencieux : renoncer à se marier et à avoir des enfants. Et c'est même elle qui a encouragé son père en lui disant : « Fais ce que tu as promis. » Il en fallait, du courage, pour dire ça."
+           },
+           "src": [
+            {
+             "t": "wcg chap. 19",
+             "u": "https://wol.jw.org/fr/wol/d/r30/lp-f/1102025919"
+            }
+           ]
+          },
+          {
+           "titre": "Pour aller plus loin · 1",
+           "question": "Quel fait indique que les Ammonites ne combattaient pas seulement les Israélites, mais aussi le vrai culte ?",
+           "lien": "https://wol.jw.org/fr/wol/pc/r30/lp-f/1102025919/0/0",
+           "prep": {
+            "reponse": "Les Ammonites ont attaqué juste après que les Israélites se sont repentis, ont fait disparaître leurs faux dieux et sont revenus à Jéhovah. L'ouvrage Étude perspicace explique que Satan poussait les nations contre Israël et que la vraie question était le culte pur.",
+            "verset": "Juges 10:16, 17 ; 11:4 · Révélation 12:9",
+            "probleme": "Quand nous faisons des progrès spirituels, les pressions peuvent augmenter.",
+            "application": "Si je rencontre de l'opposition après avoir pris position pour Jéhovah, ce n'est pas un signe qu'il m'abandonne : c'est le culte pur qui est visé.",
+            "dire": "Ce qui est frappant, c'est le moment où les Ammonites attaquent. Juges 10:16 dit que les Israélites ont fait disparaître les faux dieux et qu'ils servaient de nouveau Jéhovah. Et tout de suite après, les Ammonites se préparent à la guerre. Étude perspicace explique que derrière eux, c'était Satan qui s'en prenait au culte pur. Donc quand on prend position pour Jéhovah et qu'on rencontre de l'opposition, en fait, c'est notre culte qui est visé."
+           },
+           "src": [
+            {
+             "t": "Étude perspicace « Yiphtah » § 5",
+             "u": "https://wol.jw.org/fr/wol/pc/r30/lp-f/1102025919/0/0"
+            }
+           ]
+          },
+          {
+           "titre": "Pour aller plus loin · 2",
+           "question": "En quoi l'état d'esprit de Jephté ressemblait-il à celui de Jacob quand il a lui aussi fait un vœu ?",
+           "lien": "https://wol.jw.org/fr/wol/pc/r30/lp-f/1102025919/1/0",
+           "prep": {
+            "reponse": "Comme Jacob environ 600 ans plus tôt (Gn 28:20-22), Jephté a fait un vœu à un moment décisif. Les deux cherchaient la direction de Jéhovah et reconnaissaient que toute réussite viendrait de lui.",
+            "verset": "Genèse 28:20-22 · Juges 11:30, 31",
+            "probleme": "On peut avoir tendance à s'attribuer le mérite de ses réussites.",
+            "application": "Avant une décision importante, je peux chercher la direction de Jéhovah et, après, lui en rendre le mérite.",
+            "dire": "Jacob et Jephté ont fait leur vœu au moment le plus critique de leur vie. Jacob, quand il partait tout seul vers un pays qu'il ne connaissait pas. Et Jephté, juste avant une bataille. Dans les deux cas, ils montraient qu'ils comptaient sur Jéhovah, et que s'ils réussissaient, ce serait grâce à lui. Je trouve que c'est un bel état d'esprit, à imiter avant nos décisions importantes."
+           },
+           "src": [
+            {
+             "t": "Étude perspicace « Yiphtah » § 10",
+             "u": "https://wol.jw.org/fr/wol/pc/r30/lp-f/1102025919/1/0"
+            }
+           ]
+          },
+          {
+           "titre": "Pour aller plus loin · 3",
+           "question": "Pour Jephté, pourquoi était-ce un grand sacrifice de respecter son vœu ?",
+           "lien": "https://wol.jw.org/fr/wol/pc/r30/lp-f/1102025919/2/0",
+           "prep": {
+            "reponse": "Sa fille était son unique enfant. En la consacrant au service à plein temps au sanctuaire, Jephté renonçait à avoir des descendants : son nom et son héritage s'éteindraient. Il en a déchiré ses vêtements. Pourtant, ni lui ni sa fille n'ont envisagé de revenir sur le vœu.",
+            "verset": "Juges 11:34-39 · Deutéronome 23:21, 23 · Psaume 15:4",
+            "probleme": "On peut être tenté de revenir sur un engagement quand il devient coûteux.",
+            "application": "Tenir parole envers Jéhovah, même à notre détriment, montre la profondeur de notre amour pour lui (Ps 15:4).",
+            "dire": "La Tour de Garde fait remarquer un détail : Jephté n'avait pas de fils. Sa fille était son unique enfant. Donc en la donnant au service du sanctuaire, il savait que sa famille s'arrêterait avec lui. D'ailleurs, il a déchiré ses vêtements tellement il avait mal. Mais il a quand même dit : « Je ne peux pas revenir sur ce que j'ai promis à Jéhovah. » Le Psaume 15 parle exactement de ça : tenir sa promesse, même quand ça nous coûte."
+           },
+           "src": [
+            {
+             "t": "La Tour de Garde avril 2017 p. 4 § 6",
+             "u": "https://wol.jw.org/fr/wol/pc/r30/lp-f/1102025919/2/0"
+            }
+           ]
+          },
+          {
+           "titre": "Pour aller plus loin · 4",
+           "question": "Le prophète Samuel est né vers l'an 1180 avant notre ère. Pourquoi peut-on supposer qu'il a côtoyé la fille de Jephté au tabernacle ?",
+           "lien": "https://wol.jw.org/fr/wol/pc/r30/lp-f/1102025919/3/0",
+           "prep": {
+            "reponse": "Jephté a commencé à juger vers 1173 av. n. è. (d'après les « 300 ans » de Juges 11:26), à l'époque de la prêtrise d'Éli et de l'enfance de Samuel. La fille de Jephté servait au tabernacle de Silo, où Samuel a grandi.",
+            "verset": "Juges 11:26 ; 12:7 · 1 Samuel 1:24 ; 2:11",
+            "probleme": "On lit parfois les récits bibliques comme des histoires isolées.",
+            "application": "Situer les récits dans le temps les rend plus vivants et montre l'exactitude de la Bible.",
+            "dire": "D'après Étude perspicace, Jephté a commencé à juger vers 1173, à l'époque du prêtre Éli. Et Samuel, né vers 1180, a été amené tout petit au tabernacle de Silo. Or, c'est justement là que servait la fille de Jephté. Donc c'est très possible qu'elle l'ait connu, et peut-être même qu'elle s'en soit occupée. J'aime bien imaginer cette jeune femme fidèle qui sert aux côtés d'un futur prophète."
+           },
+           "src": [
+            {
+             "t": "Étude perspicace « Yiphtah » § 1",
+             "u": "https://wol.jw.org/fr/wol/pc/r30/lp-f/1102025919/3/0"
+            }
+           ]
+          },
+          {
+           "titre": "Tire des leçons · 1",
+           "question": "S'ils sont courageux comme l'a été Jephté, quelle influence des parents peuvent-ils avoir sur leurs enfants ?",
+           "lien": "https://wol.jw.org/fr/wol/d/r30/lp-f/1102025919",
+           "prep": {
+            "reponse": "La réaction de la fille (« Fais-moi selon ce que tu as dit ») montre qu'elle partageait la foi de son père. Des parents qui tiennent leurs engagements envers Jéhovah, même au prix de sacrifices, transmettent cette fidélité à leurs enfants.",
+            "verset": "Juges 11:36 · Proverbes 22:6",
+            "probleme": "Les enfants apprennent davantage de ce que font leurs parents que de ce qu'ils disent.",
+            "application": "En tenant mes engagements envers Jéhovah (réunions, prédication, honnêteté), je donne à mes enfants un exemple qu'ils pourront imiter.",
+            "dire": "Ce qui me frappe, c'est la réponse de sa fille. Elle n'a pas eu besoin qu'on la convainque. Tout de suite, elle a dit à son père de tenir parole. On voit bien qu'elle avait appris de lui l'importance de tenir ses promesses envers Jéhovah. Et je me dis : quand des parents restent fidèles, même dans les moments difficiles, leurs enfants le voient… et ça leur donne du courage."
+           }
+          },
+          {
+           "titre": "Tire des leçons · 2",
+           "question": "Comment pouvons-nous imiter les jeunes filles qui félicitaient et encourageaient la fille de Jephté ? (Voir l'illustration B.)",
+           "lien": "https://wol.jw.org/fr/wol/mp/r30/lp-f/wcg/2025/475",
+           "prep": {
+            "reponse": "Chaque année, les jeunes filles d'Israël passaient quatre jours avec la fille de Jephté pour la féliciter de son esprit de sacrifice. L'illustration montre une sœur partie servir à l'étranger qui reçoit un colis, une carte, et parle avec ses amis en visioconférence.",
+            "verset": "Juges 11:40 · Hébreux 10:24",
+            "probleme": "Ceux qui ont fait des sacrifices pour Jéhovah (pionniers, missionnaires, béthélites, célibataires) peuvent se sentir oubliés ou seuls.",
+            "application": "Je peux envoyer un message, une carte ou un petit colis, ou passer du temps avec un frère ou une sœur qui sert loin des siens.",
+            "dire": "Les jeunes filles d'Israël ne se contentaient pas d'admirer la fille de Jephté de loin. Chaque année, elles venaient passer quatre jours avec elle. Et regardez l'illustration : une sœur qui sert à l'étranger reçoit un colis et parle avec ses amis en vidéo. Moi, ça me fait penser à un pionnier ou à un frère célibataire de l'assemblée. Un simple message peut lui dire : ton sacrifice compte."
+           }
+          },
+          {
+           "titre": "Tire des leçons · 3",
+           "question": "De quelles autres façons peux-tu imiter le courage de Jephté et de sa fille ?",
+           "lien": "https://wol.jw.org/fr/wol/d/r30/lp-f/1102025919",
+           "prep": {
+            "reponse": "En tenant nos engagements envers Jéhovah (notre vœu de baptême, nos promesses), en pardonnant comme Jephté a pardonné à ses demi-frères, en cherchant la paix avant le conflit, et en acceptant les sacrifices que notre service implique.",
+            "verset": "Juges 11:7-11, 12-27 · Ecclésiaste 5:4, 5",
+            "probleme": "On peut garder de la rancune envers ceux qui nous ont blessés.",
+            "application": "Comme Jephté, je peux servir aux côtés de ceux qui m'ont fait du tort et chercher d'abord la paix.",
+            "dire": "Il y a un détail qui me touche. Jephté avait été chassé par ses demi-frères. Et pourtant, quand ils sont venus le chercher, il les a aidés, sans rancune. Et avant de se battre, il a d'abord envoyé des messagers pour essayer de faire la paix. Donc le courage, ce n'est pas seulement se battre. C'est aussi savoir pardonner, et chercher la paix."
+           }
+          },
+          {
+           "titre": "Élargis ta réflexion · 1",
+           "question": "Qu'est-ce que ce récit t'apprend sur Jéhovah ?",
+           "lien": "https://wol.jw.org/fr/wol/d/r30/lp-f/1102025919",
+           "prep": {
+            "reponse": "Jéhovah a donné la victoire à Jephté ; il ne voulait pas de sacrifice humain (Dt 18:10, 12) ; il a veillé à ce que la fille soit honorée chaque année et qu'elle trouve de la joie dans son service ; il a mis Jephté dans la liste des hommes de foi (Hé 11:32).",
+            "verset": "Deutéronome 18:10, 12 · Juges 11:40 · Hébreux 11:32",
+            "probleme": "On peut penser que les sacrifices faits pour Jéhovah passent inaperçus.",
+            "application": "Jéhovah remarque et honore chaque sacrifice fait pour lui.",
+            "dire": "Ce récit me montre que Jéhovah n'oublie aucun sacrifice. La fille de Jephté n'a pas eu d'enfants. Mais Jéhovah a fait en sorte qu'on l'honore chaque année. Et son histoire est dans la Bible, pour toujours. Et Jephté, lui, il est cité en Hébreux 11 parmi les hommes de foi. Ce qu'on abandonne pour Jéhovah, il ne l'oublie jamais."
+           }
+          },
+          {
+           "titre": "Élargis ta réflexion · 2",
+           "question": "Quel lien peux-tu faire entre ce récit et le projet de Jéhovah ?",
+           "lien": "https://wol.jw.org/fr/wol/d/r30/lp-f/1102025919",
+           "prep": {
+            "reponse": "Jéhovah a délivré son peuple pour préserver le culte pur et la lignée qui mènerait au Messie. Le récit montre aussi que les sacrifices faits pour lui seront récompensés : dans le monde nouveau, la fille de Jephté ressuscitée pourra peut-être connaître des joies qu'elle n'a pas connues.",
+            "verset": "Juges 10:16 · Hébreux 11:32, 35, 40",
+            "probleme": "Les sacrifices présents peuvent nous sembler définitifs.",
+            "application": "Mes sacrifices d'aujourd'hui s'inscrivent dans le projet de Jéhovah, qui les récompensera pleinement.",
+            "dire": "En délivrant Israël des Ammonites, Jéhovah a protégé le culte pur, et aussi la nation d'où allait venir le Messie. Et pour la fille de Jephté, son sacrifice n'est pas la fin de l'histoire. Grâce au projet de Jéhovah, elle va revenir dans le monde nouveau. Donc ce qu'on perd maintenant pour Jéhovah, il peut nous le rendre au centuple."
+           }
+          },
+          {
+           "titre": "Élargis ta réflexion · 3",
+           "question": "Qu'aimerais-tu demander à Jephté ou à sa fille quand ils seront ressuscités ?",
+           "lien": "https://wol.jw.org/fr/wol/d/r30/lp-f/1102025919",
+           "prep": {
+            "reponse": "Question personnelle.",
+            "verset": "Juges 11:34-40",
+            "probleme": "",
+            "application": "Préparer une question sincère montre qu'on a réfléchi au récit.",
+            "dire": "Moi, j'aimerais demander à la fille de Jephté ce qu'elle a ressenti quand elle a vu son père déchirer ses vêtements. Et où elle a trouvé la force de l'encourager, à ce moment-là. Et puis, j'avoue que j'aimerais bien savoir si elle a connu le petit Samuel au tabernacle !"
+           }
+          }
+         ]
+        },
+        {
+         "num": "",
+         "titre": "Paroles de conclusion | Cantique 134 et prière",
+         "duree": "3 min",
+         "refs": [
+          {
+           "t": "Cantique 134",
+           "u": "https://wol.jw.org/fr/wol/pc/r30/lp-f/202026405/11/0"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    "samedi": {
+     "date": "2026-12-05",
+     "jour": "Samedi",
+     "type": "Étude de La Tour de Garde",
+     "focusLabel": "Article d'étude",
+     "focus": "Rejette l'« esprit du monde »",
+     "focusUrl": "https://wol.jw.org/fr/wol/d/r30/lp-f/2026566",
+     "intro": "La Tour de Garde, édition d'étude de septembre 2026, p. 26-31 · Cantiques 22 et 124 · Texte thème : « Tout ce qui est dans le monde […] ne vient pas du Père » (1 Jean 2:16). En bref : comment résister à l'influence insidieuse du monde dans trois domaines : le langage, la conduite sexuelle et Internet.",
+     "sources": [
+      {
+       "t": "Programme officiel · 30 novembre – 6 décembre 2026",
+       "u": "https://wol.jw.org/fr/wol/meetings/r30/lp-f/2026/49"
+      },
+      {
+       "t": "Rejette l'« esprit du monde »",
+       "u": "https://wol.jw.org/fr/wol/d/r30/lp-f/2026566"
+      }
+     ],
+     "recommandations": [
+      {
+       "titre": "§ 5 · L'« air » (Éphésiens 2:1, 2)",
+       "raison": "L'image de l'air pollué et l'illustration du couple devant la télévision : facile à expliquer et très parlant."
+      },
+      {
+       "titre": "§ 8 · Colossiens 3:8-10",
+       "raison": "Va au fond du sujet : le langage vient du cœur."
+      },
+      {
+       "titre": "§ 11 · Joseph (Genèse 39:9, 12)",
+       "raison": "Un exemple encourageant : on peut apprendre à haïr le mal."
+      },
+      {
+       "titre": "§ 15 · Gloria",
+       "raison": "Une expérience concrète et positive, en lien avec la deuxième illustration."
+      },
+      {
+       "titre": "§ 17 · 1 Jean 4:4",
+       "raison": "Pour finir sur la confiance : Jéhovah est plus fort que le monde."
+      }
+     ],
+     "sections": [
+      {
+       "titre": "Ouverture",
+       "parties": [
+        {
+         "num": "",
+         "titre": "Cantique 22 « Le Royaume est né… Qu'il vienne ! »",
+         "duree": "",
+         "refs": [
+          {
+           "t": "1 Jean 2:16 (texte thème)",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/0/0"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "titre": "Introduction · § 1-3",
+       "parties": [
+        {
+         "num": "§1",
+         "titre": "Comment Satan se sert de l'esprit du monde",
+         "items": [
+          {
+           "titre": "Paragraphe 1 · 1 Jean 2:15, 16",
+           "question": "Comment Satan se sert-il de l'esprit du monde ?",
+           "lien": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/4/0",
+           "prep": {
+            "reponse": "Le monde entier est sous le pouvoir de Satan. Ses démons ne sont pas partout, mais l'esprit du monde, lui, est partout. Beaucoup y cèdent sans s'en rendre compte, et ceux qui suivent cet esprit font en réalité la volonté de Satan, comme pris dans un piège.",
+            "verset": "1 Jean 2:15, 16 ; 5:19 · 2 Timothée 2:26",
+            "probleme": "Beaucoup de gens servent les objectifs de Satan sans même croire qu'il existe.",
+            "application": "Je dois rester conscient que l'influence du monde est partout, même quand elle paraît inoffensive.",
+            "dire": "Ce qui me frappe, c'est que Satan n'a pas besoin d'être partout en personne. Son esprit, lui, il est partout. 1 Jean 2:16 parle du désir de la chair, du désir des yeux, et de l'étalage de ses biens. Et beaucoup de gens suivent ces désirs sans même savoir qu'ils servent Satan. 2 Timothée 2:26 compare ça à un piège. Donc il faut rester vigilant."
+           }
+          }
+         ],
+         "refs": [
+          {
+           "t": "1 Jn 2:15, 16 (lire)",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/4/0"
+          },
+          {
+           "t": "1 Jn 5:19",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/1/1"
+          },
+          {
+           "t": "Ré 12:9",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/3/0"
+          },
+          {
+           "t": "2 Tm 2:26",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/5/0"
+          }
+         ]
+        },
+        {
+         "num": "§2-3",
+         "titre": "Ce que font les serviteurs de Jéhovah · Le danger",
+         "items": [
+          {
+           "titre": "Paragraphes 2-3",
+           "question": "a) Contrairement à ceux qui cèdent à l'« esprit du monde », que font les serviteurs de Jéhovah ? b) De quel danger devons-nous être conscients ?",
+           "lien": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/6/0",
+           "prep": {
+            "reponse": "a) Les serviteurs de Jéhovah, qui suivaient autrefois cet esprit, ont appris à le reconnaître et à le rejeter, comme Tite 2:12 le recommande. Ils résistent malgré la puissance de Satan, ce qui prouve leur attachement à Jéhovah. b) Le danger, c'est que le monde excite nos tendances au péché sans qu'on s'en rende compte ; certains se sont laissé contaminer.",
+            "verset": "Tite 2:11, 12 · Jacques 4:7, 8 · Éphésiens 6:11",
+            "probleme": "On peut se croire à l'abri parce qu'on est dans la vérité depuis longtemps.",
+            "application": "Résister à Satan est possible (Jc 4:7), mais demande une vigilance de chaque jour.",
+            "dire": "Jacques 4:7 contient une belle promesse : « Résistez au Diable, et il fuira loin de vous. » Satan est puissant, oui, mais il n'est pas invincible. Et le fait que des millions de serviteurs de Jéhovah lui résistent chaque jour, ça prouve leur amour pour Jéhovah. Mais le paragraphe 3 nous prévient : le vrai danger, c'est de se laisser contaminer… sans même s'en rendre compte."
+           }
+          }
+         ],
+         "refs": [
+          {
+           "t": "Tt 2:11, 12",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/6/0"
+          },
+          {
+           "t": "Jc 4:7, 8",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/7/0"
+          },
+          {
+           "t": "Ép 6:11",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/8/0"
+          },
+          {
+           "t": "1 Co 2:12",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/9/0"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "titre": "Qu'est-ce que l'« esprit du monde » ? · § 4-5",
+       "parties": [
+        {
+         "num": "§4",
+         "titre": "Définition",
+         "items": [
+          {
+           "titre": "Paragraphe 4",
+           "question": "Qu'est-ce que l'« esprit du monde », et comment se manifeste-t-il aujourd'hui ?",
+           "lien": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/10/0",
+           "prep": {
+            "reponse": "C'est la façon de penser et d'agir de ceux qui ne sont pas amis de Dieu. Elle se manifeste par l'égoïsme et le rejet des normes morales de Jéhovah, par exemple une vision très permissive de ce que Dieu désapprouve. Ces personnes font « la volonté des nations ».",
+            "verset": "1 Pierre 4:3",
+            "probleme": "Ce qui est « normal » pour la société peut finir par nous paraître normal aussi.",
+            "application": "Je mesure ce qui est acceptable d'après les normes de Jéhovah, pas d'après ce que tout le monde fait.",
+            "dire": "En fait, l'esprit du monde, c'est une façon de penser du genre : « Moi d'abord, et chacun fait ce qu'il veut. » 1 Pierre 4:3 parle de faire « la volonté des nations ». Et le danger, c'est que ce qui est banal autour de nous finisse par nous paraître banal à nous aussi. Notre repère, ce n'est pas ce que tout le monde fait. C'est ce que Jéhovah approuve."
+           }
+          }
+         ],
+         "refs": [
+          {
+           "t": "1 P 4:3",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/10/0"
+          }
+         ]
+        },
+        {
+         "num": "§5",
+         "titre": "Un « air » qu'on respire",
+         "items": [
+          {
+           "titre": "Paragraphe 5 · Éphésiens 2:1, 2 et illustration",
+           "question": "Pourquoi Paul a-t-il parlé de l'esprit du monde comme d'un « air » ? (Voir aussi l'illustration.)",
+           "lien": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/12/0",
+           "prep": {
+            "reponse": "Comme l'air pollué, l'esprit du monde est nocif et il est partout : on peut le respirer sans s'en apercevoir. L'illustration montre un frère qui regarde un film violent et sa femme absorbée par son téléphone, pendant que leur bible, sur la table basse, est recouverte de revues.",
+            "verset": "Éphésiens 2:1, 2 · Révélation 12:9",
+            "probleme": "On peut être imprégné peu à peu sans avoir l'impression de faire quelque chose de mal.",
+            "application": "Je peux examiner ce que je « respire » chaque jour : films, musique, réseaux sociaux.",
+            "dire": "Paul compare l'esprit du monde à l'air. On ne voit pas l'air, et pourtant, on le respire tout le temps. Et si l'air est pollué, on s'empoisonne sans s'en rendre compte. Regardez l'illustration : rien de spectaculaire. Juste un film violent, un téléphone… et la bible cachée sous les revues. C'est comme ça que l'esprit du monde s'installe : sans faire de bruit."
+           }
+          }
+         ],
+         "refs": [
+          {
+           "t": "Ép 2:1, 2 (lire)",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/12/0"
+          },
+          {
+           "t": "Ré 12:9",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/11/0"
+          }
+         ],
+         "medias": [
+          {
+           "type": "image",
+           "titre": "On respire l'esprit du monde sans s'en rendre compte",
+           "description": "Un frère regarde un film violent ; sa femme, à côté, est sur son téléphone. Sur la table basse, la bible est recouverte par des revues.",
+           "url": "https://wol.jw.org/fr/wol/mp/r30/lp-f/w26/2026/557"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "titre": "Rejette tout langage malsain · § 6-8",
+       "parties": [
+        {
+         "num": "§6",
+         "titre": "Le langage reflète l'esprit du monde",
+         "items": [
+          {
+           "titre": "Paragraphe 6",
+           "question": "Comment l'esprit du monde se reflète-t-il dans la façon de parler des gens ?",
+           "lien": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/13/0",
+           "prep": {
+            "reponse": "La Bible annonçait que, dans les derniers jours, les gens seraient vantards, orgueilleux, sans esprit d'entente. Cela s'entend : des disputes verbales qui finissent en violence, des injures courantes dans les familles, des paroles obscènes chez les adultes comme chez les enfants.",
+            "verset": "2 Timothée 3:1-3 · Éphésiens 5:3, 4",
+            "probleme": "À force d'entendre un langage grossier, on peut ne plus être choqué.",
+            "application": "Je garde une sensibilité aux mots : ce que le monde trouve normal, je peux le refuser.",
+            "dire": "2 Timothée 3 décrit les gens des derniers jours : vantards, orgueilleux, incapables de s'entendre. Et il suffit d'écouter autour de nous pour s'en rendre compte. Les insultes, les moqueries, les grossièretés… même chez les enfants. Mais Éphésiens 5:4 nous dit que chez nous, ce genre de paroles ne devrait même pas exister."
+           }
+          }
+         ],
+         "refs": [
+          {
+           "t": "2 Tm 3:1-3",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/13/0"
+          },
+          {
+           "t": "Ép 5:3, 4",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/14/0"
+          }
+         ]
+        },
+        {
+         "num": "§7",
+         "titre": "S'examiner",
+         "items": [
+          {
+           "titre": "Paragraphe 7",
+           "question": "Pour examiner notre façon de parler, que pouvons-nous nous demander ?",
+           "lien": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/15/0",
+           "prep": {
+            "reponse": "Est-ce que j'utilise des grossièretés quand on me provoque ou quand je suis avec des personnes qui ne sont pas Témoins ? Suis-je négatif, critique ou sarcastique avec mes frères ? Est-ce que je parle durement à ma famille ? Que diraient-ils de mon langage ?",
+            "verset": "Jacques 1:26",
+            "probleme": "On peut avoir un langage différent à la Salle du Royaume et à la maison ou au travail.",
+            "application": "Je peux demander à un proche ce qu'il pense honnêtement de ma façon de parler.",
+            "dire": "Jacques 1:26 dit que si quelqu'un ne tient pas sa langue en bride, son culte ne sert à rien. Et le paragraphe pose une question qui m'a fait réfléchir : « Qu'est-ce que ma famille dirait de mon langage ? » Parce que, soyons honnêtes, notre vrai langage, ce n'est pas à la Salle du Royaume qu'on le voit. C'est à la maison, quand on est fatigué ou énervé."
+           }
+          }
+         ],
+         "refs": [
+          {
+           "t": "Jc 1:26, 27",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/15/0"
+          }
+         ]
+        },
+        {
+         "num": "§8",
+         "titre": "Changer le cœur",
+         "items": [
+          {
+           "titre": "Paragraphe 8 · Colossiens 3:8-10",
+           "question": "Comment parvenir à rejeter tout langage malsain ?",
+           "lien": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/18/0",
+           "prep": {
+            "reponse": "Il ne suffit pas de changer de mots : le langage vient du cœur (Mt 15:18). La Bible relie les injures à la colère, à la fureur et à l'amertume. Il faut demander à Jéhovah de nous aider à revêtir la personnalité nouvelle, chercher des conseils dans les publications et être déterminé à ne pas laisser l'esprit du monde influencer notre langage.",
+            "verset": "Colossiens 3:8-10 · Matthieu 15:18 · Éphésiens 4:29",
+            "probleme": "On essaie parfois de corriger le langage sans s'occuper de la colère ou de l'amertume qui le produisent.",
+            "application": "Pour changer mes paroles, je travaille d'abord sur mes sentiments : colère, amertume, rancune.",
+            "dire": "Colossiens 3:8 met la colère et la fureur dans la même liste que les injures et les grossièretés. Et ce n'est pas un hasard. Les mots, c'est juste la partie qu'on voit. Comme Jésus l'a dit, ce qui sort de la bouche vient du cœur. Donc si je veux changer ma façon de parler, je dois d'abord demander à Jéhovah de m'aider à changer ce qu'il y a dans mon cœur."
+           }
+          }
+         ],
+         "refs": [
+          {
+           "t": "Col 3:8-10 (lire)",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/18/0"
+          },
+          {
+           "t": "Mt 15:18",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/16/0"
+          },
+          {
+           "t": "Ép 4:29, 31",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/17/0"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "titre": "Rejette toute conduite sexuelle immorale · § 9-11",
+       "parties": [
+        {
+         "num": "§9",
+         "titre": "Le mépris des normes de Jéhovah",
+         "items": [
+          {
+           "titre": "Paragraphe 9",
+           "question": "Comment beaucoup considèrent-ils les normes morales de Jéhovah ?",
+           "lien": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/20/0",
+           "prep": {
+            "reponse": "Beaucoup les méprisent ; certains approuvent ou encouragent l'avortement, l'homosexualité ou les relations sexuelles avant le mariage. Sans vigilance, cet esprit peut affaiblir notre haine du mal et nous faire croire que la Bible est dépassée. Mais les commandements de Jéhovah sont pour notre bien et ne se démodent pas.",
+            "verset": "Isaïe 5:20 · Isaïe 48:17, 18",
+            "probleme": "Entendre sans cesse que la morale biblique est dépassée peut semer le doute.",
+            "application": "Je me rappelle que les normes de Jéhovah sont faites pour mon bonheur (Is 48:17, 18).",
+            "dire": "Isaïe 5:20 parlait déjà de gens qui appellent le mal bien, et le bien mal. Et c'est exactement ce qu'on voit aujourd'hui. Mais Isaïe 48:17, 18 nous montre l'autre côté. Jéhovah nous enseigne pour notre bien. Donc ses normes ne sont pas démodées. Au contraire, elles nous protègent."
+           }
+          }
+         ],
+         "refs": [
+          {
+           "t": "Is 5:20",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/20/0"
+          },
+          {
+           "t": "2 Co 11:3",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/21/0"
+          },
+          {
+           "t": "Is 48:17, 18",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/22/0"
+          }
+         ]
+        },
+        {
+         "num": "§10",
+         "titre": "Analyser nos sentiments",
+         "items": [
+          {
+           "titre": "Paragraphe 10",
+           "question": "Pour analyser nos sentiments vis-à-vis de ce que Jéhovah déteste, que pouvons-nous nous demander ?",
+           "lien": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/23/0",
+           "prep": {
+            "reponse": "Les normes de Jéhovah me donnent-elles l'impression de me retenir ? Mes choix de divertissement révèlent-ils une attirance pour ce qu'il déteste ? Voudrais-je qu'il change ses normes pour qu'elles correspondent à mes désirs ?",
+            "verset": "Psaume 97:10",
+            "probleme": "On peut obéir extérieurement tout en regrettant intérieurement ce qui est interdit.",
+            "application": "Mes divertissements sont un bon test de ce que j'aime vraiment.",
+            "dire": "Le Psaume 97:10 dit : « Vous qui aimez Jéhovah, haïssez ce qui est mal. » Donc il ne suffit pas d'éviter le mal, il faut le détester. Et la question qui m'a le plus fait réfléchir, c'est celle-ci : « Est-ce que mes divertissements montrent une attirance pour ce que Jéhovah déteste ? » Parce que ce que je regarde pour me détendre, ça montre ce que j'aime vraiment."
+           }
+          }
+         ],
+         "refs": [
+          {
+           "t": "Ps 97:10",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/23/0"
+          }
+         ]
+        },
+        {
+         "num": "§11",
+         "titre": "Apprendre à haïr le mal",
+         "items": [
+          {
+           "titre": "Paragraphe 11 · Joseph",
+           "question": "Comment pouvons-nous apprendre à haïr ce que Jéhovah hait ?",
+           "lien": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/26/0",
+           "prep": {
+            "reponse": "Si nous sommes attirés par ce que Jéhovah déteste, ne nous disons pas que c'est perdu : nous sommes tous imparfaits. Mais nous pouvons refuser de céder et de nourrir de mauvaises pensées, en détournant tout de suite les yeux et l'esprit, comme Joseph qui a fui. Avec l'aide de Jéhovah, on apprend à haïr le mal.",
+            "verset": "Psaume 103:14 · Genèse 39:9, 12 · Éphésiens 5:5",
+            "probleme": "On peut se décourager en pensant qu'on n'arrivera jamais à ne plus être attiré par le mal.",
+            "application": "Je ne choisis pas toujours mes tentations, mais je choisis ma réaction : fuir tout de suite.",
+            "dire": "J'aime beaucoup l'exemple de Joseph, en Genèse 39. Au verset 9, il dit : « Comment pourrais-je faire ce grand mal et pécher contre Dieu ? » Et au verset 12, il s'enfuit. Il n'a pas discuté, il n'a pas hésité : il est parti. Et ça m'encourage. Même si je suis imparfait, je peux décider de fuir tout de suite. Et Jéhovah va m'aider à détester le mal."
+           }
+          }
+         ],
+         "refs": [
+          {
+           "t": "Ps 103:14",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/24/1"
+          },
+          {
+           "t": "Gn 39:9",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/26/0"
+          },
+          {
+           "t": "Gn 39:12",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/26/1"
+          },
+          {
+           "t": "Ép 5:5",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/27/0"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "titre": "Fuis les dangers liés à Internet · § 12-14",
+       "parties": [
+        {
+         "num": "§12",
+         "titre": "Ce qu'on trouve sur Internet",
+         "items": [
+          {
+           "titre": "Paragraphe 12",
+           "question": "Comment l'esprit du monde se reflète-t-il dans les contenus qu'on trouve sur Internet ?",
+           "lien": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/28/0",
+           "prep": {
+            "reponse": "La plupart des contenus reflètent l'esprit du monde : la pornographie, facilement accessible même aux enfants ; le sexting chez les jeunes ; la propagande trompeuse ; et les réseaux sociaux qui montrent surtout les meilleurs moments de la vie des autres, ce qui peut nous donner envie de nous divertir et de voyager davantage, au détriment du culte.",
+            "verset": "Hébreux 10:24, 25",
+            "probleme": "Les réseaux sociaux peuvent nous rendre insatisfaits et nous éloigner des réunions.",
+            "application": "Je garde mes priorités spirituelles avant les envies créées par ce que je vois en ligne.",
+            "dire": "Un point m'a frappé : sur les réseaux sociaux, on ne voit que les meilleurs moments de la vie des gens. Et à force de voir des voyages et des loisirs, on peut finir par trouver sa propre vie un peu fade… et le culte moins attirant. Hébreux 10:25 nous rappelle de ne pas abandonner nos réunions. Ce que je vois en ligne ne doit pas décider de mes priorités."
+           }
+          }
+         ],
+         "refs": [
+          {
+           "t": "Hé 10:24, 25",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/28/0"
+          }
+         ]
+        },
+        {
+         "num": "§13",
+         "titre": "Analyser notre utilisation",
+         "items": [
+          {
+           "titre": "Paragraphe 13",
+           "question": "Comment pouvons-nous analyser notre utilisation d'Internet ?",
+           "lien": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/29/0",
+           "prep": {
+            "reponse": "En nous demandant : combien de temps je passe à faire défiler sans but ? À quel genre de contenus je m'expose ? Est-ce que je détourne vite les yeux des contenus douteux ? Est-ce que je vérifie les informations que je lis ?",
+            "verset": "Éphésiens 5:15, 16 · Psaume 119:37 · Proverbes 14:15",
+            "probleme": "Faire défiler sans but peut voler des heures sans qu'on s'en aperçoive.",
+            "application": "Je peux regarder le temps d'écran de mon téléphone cette semaine et fixer une limite.",
+            "dire": "La première question du paragraphe est très concrète : combien de temps je passe à faire défiler sans but ? Éphésiens 5:16 nous dit de bien utiliser notre temps. Et sur nos téléphones, on peut voir exactement combien de temps on passe sur chaque application. Ça peut être un bon point de départ pour une prière, comme au Psaume 119:37 : « Détourne mes yeux des choses sans valeur. »"
+           }
+          }
+         ],
+         "refs": [
+          {
+           "t": "Ép 5:15, 16",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/29/0"
+          },
+          {
+           "t": "Ps 119:37",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/30/0"
+          },
+          {
+           "t": "Pr 14:15",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/31/0"
+          }
+         ]
+        },
+        {
+         "num": "§14",
+         "titre": "Se protéger",
+         "items": [
+          {
+           "titre": "Paragraphe 14",
+           "question": "Comment pouvons-nous éviter les dangers liés à Internet ?",
+           "lien": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/32/0",
+           "prep": {
+            "reponse": "En limitant le temps passé en ligne et en ne regardant rien d'inconvenant. Les parents doivent surveiller l'utilisation des réseaux sociaux par leurs enfants (Ép 6:4). Des chercheurs ont observé que les jeunes qui passent beaucoup de temps sur les réseaux se sentent plus souvent seuls, anxieux et déprimés.",
+            "verset": "Éphésiens 6:4",
+            "probleme": "Des parents peuvent laisser leurs enfants seuls face à Internet.",
+            "application": "Parents : connaître les applications de nos enfants et fixer ensemble des règles claires.",
+            "dire": "Le paragraphe cite des chercheurs, et c'est assez frappant. Les jeunes qui passent beaucoup de temps sur les réseaux se sentent plus seuls, plus anxieux, plus déprimés. C'est le contraire de ce qu'ils espéraient ! Alors pour nous, les parents, Éphésiens 6:4 est clair : élever nos enfants, c'est aussi savoir ce qu'ils font en ligne. Avec amour, mais avec des règles claires."
+           }
+          }
+         ],
+         "refs": [
+          {
+           "t": "Ép 6:4",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/32/0"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "titre": "Tu peux y arriver ! · § 15-17",
+       "parties": [
+        {
+         "num": "§15",
+         "titre": "L'exemple de Gloria",
+         "items": [
+          {
+           "titre": "Paragraphe 15 · Gloria et l'illustration",
+           "question": "Que t'enseigne le cas de Gloria ? (Voir aussi l'illustration.)",
+           "lien": "https://wol.jw.org/fr/wol/d/r30/lp-f/2026566",
+           "prep": {
+            "reponse": "Gloria a connu la vérité jeune, mais elle a été attirée par l'argent et la gloire, a négligé les réunions et a cessé de servir Jéhovah. Elle a compris que l'esprit du monde avait façonné ses objectifs. Elle a réagi en étudiant et en priant davantage et en prenant ses distances avec des personnes qui ne servent pas Jéhovah. Aujourd'hui, elle se dit riche de bénédictions spirituelles.",
+            "verset": "Paragraphe 15 · Illustration p. 31",
+            "probleme": "On peut se laisser fixer des objectifs par le monde sans s'en rendre compte.",
+            "application": "Si je m'éloigne, je peux revenir : plus d'étude, plus de prière et de bonnes fréquentations.",
+            "dire": "Ce qui me plaît dans l'histoire de Gloria, c'est qu'elle a su voir le problème. Ses objectifs, en fait, ce n'étaient pas les siens, c'étaient ceux du monde. Et elle a réagi concrètement : étudier, prier, changer de fréquentations. Et regardez la deuxième illustration : c'est le même couple qu'au début. Mais cette fois, ils regardent « La bonne nouvelle selon Jésus » avec leur bible ouverte, et ils sourient. Changer, c'est possible, et on y gagne en bonheur."
+           }
+          }
+         ],
+         "refs": [
+          {
+           "t": "Illustration",
+           "u": "https://wol.jw.org/fr/wol/mp/r30/lp-f/w26/2026/559"
+          }
+         ],
+         "medias": [
+          {
+           "type": "image",
+           "titre": "Le même couple, transformé",
+           "description": "Le frère et la sœur de la première illustration suivent dans leurs bibles le récit des Évangiles en regardant l'épisode 3 du film « La bonne nouvelle selon Jésus ». Ils sourient. « Comment peux-tu résister à l'influence de l'esprit du monde ? »",
+           "url": "https://wol.jw.org/fr/wol/mp/r30/lp-f/w26/2026/559"
+          }
+         ]
+        },
+        {
+         "num": "§16",
+         "titre": "L'exemple de Robert",
+         "items": [
+          {
+           "titre": "Paragraphe 16 · Robert",
+           "question": "Que t'enseigne le cas de Robert ?",
+           "lien": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/33/0",
+           "prep": {
+            "reponse": "Influencé par ses camarades et des divertissements malsains, Robert s'est mis à fumer, à boire et à pratiquer l'homosexualité, en croyant être libre. Il a compris qu'il était en fait esclave du monde. Il s'est entouré de personnes qui aiment Jéhovah et a changé sa conduite, sa tenue, sa coiffure et son langage. Aujourd'hui, il est heureux de mener une vie pure.",
+            "verset": "2 Pierre 2:19",
+            "probleme": "Le monde présente le péché comme une liberté.",
+            "application": "La vraie liberté, c'est de ne plus être esclave de ses désirs.",
+            "dire": "Robert croyait être libre. Mais 2 Pierre 2:19 dit qu'on est esclave de ce qui nous domine. Voilà le grand mensonge de l'esprit du monde : il promet la liberté, et il nous rend esclaves. Et dans l'histoire de Robert, on voit que le changement a touché tout : sa conduite, sa tenue, son langage. Quand on rejette l'esprit du monde, ça se voit."
+           }
+          }
+         ],
+         "refs": [
+          {
+           "t": "2 P 2:19",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/33/0"
+          }
+         ]
+        },
+        {
+         "num": "§17",
+         "titre": "Jéhovah est plus fort",
+         "items": [
+          {
+           "titre": "Paragraphe 17 · 1 Jean 4:4",
+           "question": "Pourquoi pouvons-nous être certains qu'il nous est possible de rejeter l'esprit du monde ?",
+           "lien": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/34/0",
+           "prep": {
+            "reponse": "L'esprit du monde est puissant, mais Jéhovah est bien plus puissant que Satan et son monde. Il donne son esprit saint à ceux qui le lui demandent (Lc 11:13). En continuant de marcher sous la conduite de cet esprit, nous pouvons résister.",
+            "verset": "1 Jean 4:4 · Luc 11:13 · Galates 5:16",
+            "probleme": "On peut se sentir faible face à une influence aussi omniprésente.",
+            "application": "Je demande l'esprit saint chaque jour, en particulier pour le domaine où je suis le plus vulnérable.",
+            "dire": "1 Jean 4:4 me donne beaucoup de confiance. Il dit que celui qui est avec nous est plus grand que celui qui est avec le monde. L'esprit du monde est partout, comme l'air. Mais l'esprit de Jéhovah est plus fort. Et Luc 11:13 nous promet que Jéhovah le donne à ceux qui le demandent. Alors je peux le lui demander chaque jour, surtout pour le domaine où je me sens le plus faible."
+           }
+          }
+         ],
+         "refs": [
+          {
+           "t": "1 Jn 4:4 (lire)",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/34/0"
+          },
+          {
+           "t": "Lc 11:13",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/35/0"
+          },
+          {
+           "t": "Ga 5:16",
+           "u": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/36/0"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "titre": "Révision · Comment veillerons-nous à…",
+       "parties": [
+        {
+         "num": "",
+         "titre": "Questions de révision",
+         "items": [
+          {
+           "titre": "Révision 1",
+           "question": "Si nous voulons rejeter l'« esprit du monde », comment veillerons-nous à notre langage ?",
+           "lien": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/18/0",
+           "prep": {
+            "reponse": "En examinant notre façon de parler partout, y compris à la maison ; en travaillant sur la colère et l'amertume qui produisent les mauvaises paroles ; en revêtant la personnalité nouvelle avec l'aide de Jéhovah.",
+            "verset": "Colossiens 3:8-10 · Jacques 1:26",
+            "probleme": "",
+            "application": "Je surveille surtout mon langage quand je suis fatigué ou contrarié.",
+            "dire": "En me rappelant que mes paroles viennent de mon cœur. Colossiens 3 m'aide à changer d'abord ce que je ressens, et après, mon langage suivra."
+           }
+          },
+          {
+           "titre": "Révision 2",
+           "question": "… notre façon de considérer les conduites sexuelles immorales ?",
+           "lien": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/23/0",
+           "prep": {
+            "reponse": "En apprenant à haïr ce que Jéhovah hait (Ps 97:10), en examinant nos divertissements, en refusant de nourrir de mauvaises pensées et en fuyant immédiatement, comme Joseph.",
+            "verset": "Psaume 97:10 · Genèse 39:9, 12",
+            "probleme": "",
+            "application": "Je choisis des divertissements qui ne rendent pas le mal attirant.",
+            "dire": "Comme Joseph : en fuyant tout de suite. Et en me demandant honnêtement si mes divertissements m'aident à détester le mal… ou à l'aimer."
+           }
+          },
+          {
+           "titre": "Révision 3",
+           "question": "… notre utilisation d'Internet ?",
+           "lien": "https://wol.jw.org/fr/wol/bc/r30/lp-f/2026566/29/0",
+           "prep": {
+            "reponse": "En limitant notre temps en ligne, en évitant les contenus inconvenants, en vérifiant les informations, et, pour les parents, en surveillant l'utilisation des réseaux sociaux par leurs enfants.",
+            "verset": "Éphésiens 5:15, 16 · Psaume 119:37 · Éphésiens 6:4",
+            "probleme": "",
+            "application": "Je fixe une limite de temps et je détourne les yeux des contenus douteux.",
+            "dire": "En faisant attention à mon temps, comme le dit Éphésiens 5:16. Moins de défilement sans but, et plus de temps pour ce qui me rapproche de Jéhovah."
+           }
+          }
+         ]
+        },
+        {
+         "num": "",
+         "titre": "Cantique 124 « Soyons fidèles » et prière",
+         "duree": ""
         }
        ]
       }
