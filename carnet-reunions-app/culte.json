@@ -1,0 +1,1347 @@
+{
+ "version": "2026-11-25",
+ "periode": "Décembre 2026 – février 2027",
+ "programme": [
+  {
+   "id": "cf-2026-49",
+   "semaine": "2026-49",
+   "debut": "2026-11-30",
+   "titre": "Un culte familial qui donne envie",
+   "public": "famille",
+   "duree": "45 min",
+   "objectif": "Lancer ce nouveau programme ensemble et décider, en famille, de ce qui rendra notre culte agréable chaque semaine.",
+   "sources": [
+    {
+     "t": "Activités pour le culte familial",
+     "u": "https://www.jw.org/fr/la-bible-et-vous/enfants/activites-pour-culte-familial/"
+    }
+   ],
+   "video": {
+    "titre": "Un culte familial mémorable",
+    "key": "pub-jwb-140_4_VIDEO",
+    "duree": "5 min 44",
+    "url": "https://www.jw.org/finder?lank=pub-jwb-140_4_VIDEO&wtlocale=F"
+   },
+   "deroulement": [
+    {
+     "min": 5,
+     "etape": "Prière et accueil",
+     "detail": "Annoncer : « À partir de ce soir, on a un programme pour les trois prochains mois ! »"
+    },
+    {
+     "min": 6,
+     "etape": "Vidéo",
+     "detail": "Regarder « Un culte familial mémorable »."
+    },
+    {
+     "min": 12,
+     "etape": "Discussion",
+     "detail": "Qu'est-ce qui rendait ce culte mémorable ? Lire Deutéronome 6:6, 7 : quand les parents devaient-ils parler de Jéhovah ?"
+    },
+    {
+     "min": 12,
+     "etape": "Notre projet",
+     "detail": "Chacun propose une idée pour nos cultes : un récit biblique préféré, un dessin, une maquette, une sortie dans la nature, une vidéo…"
+    },
+    {
+     "min": 5,
+     "etape": "Engagement",
+     "detail": "Choisir ensemble le jour et l'heure fixes du culte, et qui présentera la semaine prochaine."
+    },
+    {
+     "min": 5,
+     "etape": "Prière",
+     "detail": "Remercier Jéhovah pour notre famille."
+    }
+   ],
+   "questions": [
+    "Qu'est-ce qui rend un culte familial agréable ?",
+    "Pourquoi Jéhovah veut-il que les parents parlent de lui « assis dans la maison » ?",
+    "Qu'est-ce que chacun aimerait faire pendant nos prochains cultes ?"
+   ],
+   "versets": [
+    "Deutéronome 6:6, 7",
+    "Psaume 34:8",
+    "Matthieu 19:13-15"
+   ],
+   "activite": "Faire une affiche « Notre culte familial » avec le jour choisi et les idées de chacun, à coller sur le frigo.",
+   "application": "Cette semaine, chacun note une question sur la Bible qu'il aimerait poser pendant un prochain culte.",
+   "preparation": [
+    "Regarder la vidéo avant, pour pouvoir dire en une phrase ce qu'on veut en retenir.",
+    "Préparer feuilles et feutres pour l'affiche.",
+    "Laisser parler les enfants en premier : c'est leur culte aussi."
+   ]
+  },
+  {
+   "id": "cf-2026-50",
+   "semaine": "2026-50",
+   "debut": "2026-12-07",
+   "titre": "Élisée : Jéhovah est avec nous",
+   "public": "enfants",
+   "duree": "45 min",
+   "objectif": "Aider les enfants à comprendre que, même quand on a peur, Jéhovah et ses anges sont plus forts que tout.",
+   "sources": [
+    {
+     "t": "Agir avec courage (activité)",
+     "u": "https://www.jw.org/fr/la-bible-et-vous/enfants/activites-pour-culte-familial/agir-avec-courage/"
+    }
+   ],
+   "video": {
+    "titre": "Apprends avec les amis de Jéhovah : Élisée",
+    "key": "pub-ljf_11_VIDEO",
+    "duree": "2 min 46",
+    "url": "https://www.jw.org/finder?lank=pub-ljf_11_VIDEO&wtlocale=F"
+   },
+   "deroulement": [
+    {
+     "min": 3,
+     "etape": "Prière",
+     "detail": ""
+    },
+    {
+     "min": 3,
+     "etape": "Vidéo",
+     "detail": "Regarder « Apprends avec les amis de Jéhovah : Élisée »."
+    },
+    {
+     "min": 12,
+     "etape": "Le récit",
+     "detail": "Lire 2 Rois 6:15-17 avec les enfants. Le serviteur a peur de l'armée ; Élisée prie et le serviteur voit les chevaux et les chars de feu."
+    },
+    {
+     "min": 15,
+     "etape": "Activité",
+     "detail": "Faire l'activité « Agir avec courage » de jw.org, ou dessiner la montagne remplie de chars de feu."
+    },
+    {
+     "min": 8,
+     "etape": "Mime",
+     "detail": "Un enfant joue le serviteur qui a peur, un autre Élisée qui le rassure : « Il y en a plus avec nous qu'avec eux ! »"
+    },
+    {
+     "min": 4,
+     "etape": "Prière",
+     "detail": "Chaque enfant demande à Jéhovah du courage pour une situation précise."
+    }
+   ],
+   "questions": [
+    "Pourquoi le serviteur d'Élisée avait-il peur ?",
+    "Qu'est-ce qu'Élisée a fait ?",
+    "Quand est-ce que toi, tu as besoin de courage ?"
+   ],
+   "versets": [
+    "2 Rois 6:15-17",
+    "Psaume 34:7",
+    "Isaïe 41:10"
+   ],
+   "activite": "Imprimer l'activité « Agir avec courage » (jw.org) ou dessiner la scène de la montagne.",
+   "application": "Cette semaine, quand quelque chose fait peur, se rappeler la phrase d'Élisée et prier.",
+   "preparation": [
+    "Regarder la vidéo et lire 2 Rois 6:8-17 avant.",
+    "Télécharger ou imprimer l'activité à l'avance.",
+    "Prévoir une phrase simple à retenir : « Jéhovah est plus fort que tout. »"
+   ]
+  },
+  {
+   "id": "cf-2026-51",
+   "semaine": "2026-51",
+   "debut": "2026-12-14",
+   "titre": "Réseaux sociaux : utiliser Internet avec sagesse",
+   "public": "ados",
+   "duree": "45 min",
+   "objectif": "Parler ouvertement des réseaux sociaux et poser ensemble des règles sages, en lien avec l'article de La Tour de Garde « Rejette l'esprit du monde ».",
+   "sources": [
+    {
+     "t": "Les jeux vidéo : que faut-il savoir ?",
+     "u": "https://www.jw.org/fr/la-bible-et-vous/adolescents/jeunes-s-interrogent/jeux-video-que-faut-il-savoir/"
+    },
+    {
+     "t": "Technologies (rubrique adolescents)",
+     "u": "https://www.jw.org/fr/la-bible-et-vous/adolescents/technologies/"
+    }
+   ],
+   "video": {
+    "titre": "Réseaux sociaux : ce qu'il faut savoir",
+    "key": "docid-502100038_1_VIDEO",
+    "duree": "4 min 32",
+    "url": "https://www.jw.org/finder?lank=docid-502100038_1_VIDEO&wtlocale=F"
+   },
+   "deroulement": [
+    {
+     "min": 3,
+     "etape": "Prière",
+     "detail": ""
+    },
+    {
+     "min": 5,
+     "etape": "Vidéo",
+     "detail": "Regarder « Réseaux sociaux : ce qu'il faut savoir »."
+    },
+    {
+     "min": 15,
+     "etape": "Discussion",
+     "detail": "Qu'est-ce qui nous a marqués ? Lire Éphésiens 5:15, 16 et Psaume 119:37."
+    },
+    {
+     "min": 12,
+     "etape": "Bilan honnête",
+     "detail": "Chacun (parents compris !) regarde son temps d'écran de la semaine sur son téléphone."
+    },
+    {
+     "min": 7,
+     "etape": "Nos règles",
+     "detail": "Se mettre d'accord sur 2 ou 3 règles familiales : pas de téléphone pendant les repas, heure limite le soir…"
+    },
+    {
+     "min": 3,
+     "etape": "Prière",
+     "detail": ""
+    }
+   ],
+   "questions": [
+    "Qu'est-ce que la vidéo dit sur les dangers des réseaux sociaux ?",
+    "Comment savoir si on y passe trop de temps ?",
+    "Quelles règles nous aideraient vraiment ?"
+   ],
+   "versets": [
+    "Éphésiens 5:15, 16",
+    "Psaume 119:37",
+    "Proverbes 14:15",
+    "1 Corinthiens 15:33"
+   ],
+   "activite": "Écrire nos règles familiales sur une feuille et la signer tous ensemble.",
+   "application": "Pendant une semaine, chacun essaie de réduire son temps d'écran et on en reparle au prochain culte.",
+   "preparation": [
+    "Les parents donnent l'exemple : montrer aussi son propre temps d'écran.",
+    "Écouter sans juger : l'objectif est d'aider, pas d'accuser.",
+    "Relire les paragraphes 12 à 14 de l'article « Rejette l'esprit du monde »."
+   ]
+  },
+  {
+   "id": "cf-2026-52",
+   "semaine": "2026-52",
+   "debut": "2026-12-21",
+   "titre": "Quand on n'est pas d'accord",
+   "public": "couple",
+   "duree": "45 min",
+   "objectif": "Apprendre à gérer les désaccords et la colère avec douceur, entre époux et en famille.",
+   "sources": [
+    {
+     "t": "Comment maîtriser votre colère",
+     "u": "https://www.jw.org/fr/la-bible-et-vous/familles/comment-maitriser-votre-colere/"
+    },
+    {
+     "t": "La communication",
+     "u": "https://www.jw.org/fr/la-bible-et-vous/familles/la-communication/"
+    }
+   ],
+   "video": {
+    "titre": "Les secrets d'un mariage heureux : Quand on n'est pas d'accord",
+    "key": "pub-jwb-126_5_VIDEO",
+    "duree": "5 min 2",
+    "url": "https://www.jw.org/finder?lank=pub-jwb-126_5_VIDEO&wtlocale=F"
+   },
+   "deroulement": [
+    {
+     "min": 3,
+     "etape": "Prière",
+     "detail": ""
+    },
+    {
+     "min": 6,
+     "etape": "Vidéo",
+     "detail": "Regarder « Les secrets d'un mariage heureux : Quand on n'est pas d'accord »."
+    },
+    {
+     "min": 15,
+     "etape": "Principes",
+     "detail": "Lire Jacques 1:19 et Proverbes 15:1. Qu'est-ce que la vidéo montre concrètement ?"
+    },
+    {
+     "min": 12,
+     "etape": "Article",
+     "detail": "Lire ensemble « Comment maîtriser votre colère » sur jw.org et choisir une idée à appliquer."
+    },
+    {
+     "min": 6,
+     "etape": "Notre signal",
+     "detail": "Choisir un mot ou un geste qui veut dire « on fait une pause et on en reparle calmement »."
+    },
+    {
+     "min": 3,
+     "etape": "Prière",
+     "detail": ""
+    }
+   ],
+   "questions": [
+    "Pourquoi est-il si important d'écouter avant de répondre ?",
+    "Qu'est-ce qui nous fait souvent monter le ton ?",
+    "Que ferons-nous la prochaine fois qu'on n'est pas d'accord ?"
+   ],
+   "versets": [
+    "Jacques 1:19, 20",
+    "Proverbes 15:1",
+    "Éphésiens 4:26, 31, 32",
+    "Colossiens 3:13"
+   ],
+   "activite": "Jeu de rôle : rejouer une petite dispute du quotidien, d'abord mal, puis en appliquant Jacques 1:19.",
+   "application": "Cette semaine, avant de répondre dans un désaccord, compter jusqu'à cinq et reformuler ce que l'autre a dit.",
+   "preparation": [
+    "Si les enfants sont présents, adapter : parler des désaccords entre frères et sœurs.",
+    "Lire l'article à l'avance et noter une idée clé.",
+    "Rester positif : ne pas ressortir d'anciens conflits pendant le culte."
+   ]
+  },
+  {
+   "id": "cf-2026-53",
+   "semaine": "2026-53",
+   "debut": "2026-12-28",
+   "titre": "Nos objectifs spirituels pour 2027",
+   "public": "famille",
+   "duree": "45 min",
+   "objectif": "Faire le bilan de l'année et fixer, pour chacun et pour la famille, des objectifs spirituels réalistes.",
+   "sources": [
+    {
+     "t": "Spiritualité (rubrique adolescents)",
+     "u": "https://www.jw.org/fr/la-bible-et-vous/adolescents/spiritualite/"
+    }
+   ],
+   "video": {
+    "titre": "Prépare ton avenir dès maintenant !",
+    "key": "docid-502100035_1_VIDEO",
+    "duree": "3 min 30",
+    "url": "https://www.jw.org/finder?lank=docid-502100035_1_VIDEO&wtlocale=F"
+   },
+   "deroulement": [
+    {
+     "min": 3,
+     "etape": "Prière",
+     "detail": ""
+    },
+    {
+     "min": 10,
+     "etape": "Bilan",
+     "detail": "Chacun raconte un bon souvenir spirituel de 2026 : une prédication, une assemblée, une réponse à une prière…"
+    },
+    {
+     "min": 4,
+     "etape": "Vidéo",
+     "detail": "Regarder « Prépare ton avenir dès maintenant ! »."
+    },
+    {
+     "min": 12,
+     "etape": "Principes",
+     "detail": "Lire Proverbes 21:5 et 1 Corinthiens 9:26. Pourquoi un objectif précis est-il plus facile à atteindre ?"
+    },
+    {
+     "min": 13,
+     "etape": "Nos objectifs",
+     "detail": "Chacun choisit un objectif personnel, puis un objectif pour toute la famille (lire la Bible chaque jour, préparer les réunions, servir comme pionnier auxiliaire…)."
+    },
+    {
+     "min": 3,
+     "etape": "Prière",
+     "detail": "Confier ces objectifs à Jéhovah."
+    }
+   ],
+   "questions": [
+    "Quel a été notre plus beau moment spirituel cette année ?",
+    "Pourquoi faut-il des objectifs précis ?",
+    "Quelle sera la première étape de mon objectif ?"
+   ],
+   "versets": [
+    "Proverbes 21:5",
+    "1 Corinthiens 9:26",
+    "Philippiens 3:16",
+    "Psaume 37:5"
+   ],
+   "activite": "Écrire les objectifs sur des cartes que chacun garde dans sa Bible.",
+   "application": "Faire la première étape de son objectif avant le prochain culte.",
+   "preparation": [
+    "Préparer un exemple d'objectif réaliste pour chaque âge.",
+    "Penser à féliciter chacun pour ses efforts de l'année.",
+    "Prévoir de refaire le point en mars."
+   ]
+  },
+  {
+   "id": "cf-2027-01",
+   "semaine": "2027-01",
+   "debut": "2027-01-04",
+   "titre": "Ruth : une amie fidèle",
+   "public": "enfants",
+   "duree": "45 min",
+   "objectif": "Montrer aux enfants ce qu'est une vraie amitié en imitant Ruth, fidèle à Naomi et à Jéhovah.",
+   "sources": [
+    {
+     "t": "L'amitié fidèle (activité)",
+     "u": "https://www.jw.org/fr/la-bible-et-vous/enfants/activites-pour-culte-familial/amitie-fidele-ruth-naomi/"
+    }
+   ],
+   "video": {
+    "titre": "Apprends avec les amis de Jéhovah : Ruth",
+    "key": "pub-ljf_10_VIDEO",
+    "duree": "2 min 52",
+    "url": "https://www.jw.org/finder?lank=pub-ljf_10_VIDEO&wtlocale=F"
+   },
+   "deroulement": [
+    {
+     "min": 3,
+     "etape": "Prière",
+     "detail": ""
+    },
+    {
+     "min": 3,
+     "etape": "Vidéo",
+     "detail": "Regarder « Apprends avec les amis de Jéhovah : Ruth »."
+    },
+    {
+     "min": 12,
+     "etape": "Le récit",
+     "detail": "Lire Ruth 1:16, 17. Ruth aurait pu rentrer chez elle, mais elle reste avec Naomi."
+    },
+    {
+     "min": 15,
+     "etape": "Activité",
+     "detail": "Faire l'activité « L'amitié fidèle » de jw.org."
+    },
+    {
+     "min": 8,
+     "etape": "Pour mes amis",
+     "detail": "Chaque enfant pense à un ami et prépare un petit dessin ou un mot gentil pour lui."
+    },
+    {
+     "min": 4,
+     "etape": "Prière",
+     "detail": ""
+    }
+   ],
+   "questions": [
+    "Pourquoi Ruth est-elle restée avec Naomi ?",
+    "Qu'est-ce qu'un vrai ami ?",
+    "Comment peux-tu être un bon ami cette semaine ?"
+   ],
+   "versets": [
+    "Ruth 1:16, 17",
+    "Proverbes 17:17",
+    "Ruth 2:12"
+   ],
+   "activite": "Faire l'activité « L'amitié fidèle » et préparer un petit cadeau pour un ami.",
+   "application": "Donner le dessin ou le mot à son ami à la réunion.",
+   "preparation": [
+    "Imprimer l'activité.",
+    "Préparer papier, crayons et enveloppes.",
+    "Penser à des amis de l'assemblée, y compris des personnes âgées."
+   ]
+  },
+  {
+   "id": "cf-2027-02",
+   "semaine": "2027-02",
+   "debut": "2027-01-11",
+   "titre": "La patience en famille",
+   "public": "famille",
+   "duree": "45 min",
+   "objectif": "Cultiver la patience les uns envers les autres, surtout avec les enfants et dans les moments difficiles.",
+   "sources": [
+    {
+     "t": "Comment cultiver la patience",
+     "u": "https://www.jw.org/fr/la-bible-et-vous/familles/comment-cultiver-patience/"
+    }
+   ],
+   "video": {
+    "titre": "« Avec patience, supportons-nous les uns les autres dans l'amour » : Nos enfants",
+    "key": "pub-mwbv_202507_1_VIDEO",
+    "duree": "3 min 56",
+    "url": "https://www.jw.org/finder?lank=pub-mwbv_202507_1_VIDEO&wtlocale=F"
+   },
+   "deroulement": [
+    {
+     "min": 3,
+     "etape": "Prière",
+     "detail": ""
+    },
+    {
+     "min": 4,
+     "etape": "Vidéo",
+     "detail": "Regarder la vidéo sur la patience avec les enfants."
+    },
+    {
+     "min": 12,
+     "etape": "Principes",
+     "detail": "Lire Colossiens 3:12, 13 et Ecclésiaste 7:8."
+    },
+    {
+     "min": 12,
+     "etape": "Article",
+     "detail": "Lire « Comment cultiver la patience » sur jw.org et noter deux idées pratiques."
+    },
+    {
+     "min": 10,
+     "etape": "Jeu",
+     "detail": "Le jeu de la patience : chacun dit une situation où il perd patience, les autres proposent une solution."
+    },
+    {
+     "min": 4,
+     "etape": "Prière",
+     "detail": ""
+    }
+   ],
+   "questions": [
+    "Pourquoi Jéhovah est-il patient avec nous ?",
+    "Dans quelles situations perdons-nous le plus patience ?",
+    "Que ferons-nous différemment cette semaine ?"
+   ],
+   "versets": [
+    "Colossiens 3:12, 13",
+    "Ecclésiaste 7:8",
+    "2 Pierre 3:9",
+    "Galates 5:22"
+   ],
+   "activite": "Le jeu de la patience (situations et solutions).",
+   "application": "Chacun choisit une situation où il veut être plus patient, et on en reparle au prochain culte.",
+   "preparation": [
+    "Lire l'article avant.",
+    "Les parents peuvent reconnaître humblement leurs propres impatiences.",
+    "Prévoir une petite récompense pour les efforts des enfants."
+   ]
+  },
+  {
+   "id": "cf-2027-03",
+   "semaine": "2027-03",
+   "debut": "2027-01-18",
+   "titre": "Pourquoi être honnête ?",
+   "public": "ados",
+   "duree": "45 min",
+   "objectif": "Comprendre pourquoi l'honnêteté plaît à Jéhovah et nous protège, même quand mentir semble plus facile.",
+   "sources": [
+    {
+     "t": "Spiritualité (rubrique adolescents)",
+     "u": "https://www.jw.org/fr/la-bible-et-vous/adolescents/spiritualite/"
+    }
+   ],
+   "video": {
+    "titre": "Pourquoi être honnête ?",
+    "key": "docid-502100016_1_VIDEO",
+    "duree": "3 min 20",
+    "url": "https://www.jw.org/finder?lank=docid-502100016_1_VIDEO&wtlocale=F"
+   },
+   "deroulement": [
+    {
+     "min": 3,
+     "etape": "Prière",
+     "detail": ""
+    },
+    {
+     "min": 4,
+     "etape": "Vidéo",
+     "detail": "Regarder « Pourquoi être honnête ? »."
+    },
+    {
+     "min": 12,
+     "etape": "Principes",
+     "detail": "Lire Hébreux 13:18, Proverbes 12:22 et Luc 16:10."
+    },
+    {
+     "min": 15,
+     "etape": "Situations",
+     "detail": "Discuter de cas concrets : un devoir copié, une petite excuse inventée, une erreur de caisse en notre faveur…"
+    },
+    {
+     "min": 8,
+     "etape": "Exemple biblique",
+     "detail": "Ananias et Saphira (Actes 5:1-5) : pourquoi leur mensonge était-il si grave ?"
+    },
+    {
+     "min": 3,
+     "etape": "Prière",
+     "detail": ""
+    }
+   ],
+   "questions": [
+    "Qu'est-ce que la vidéo nous apprend sur l'honnêteté ?",
+    "Pourquoi les « petits » mensonges sont-ils dangereux ?",
+    "Comment l'honnêteté nous protège-t-elle ?"
+   ],
+   "versets": [
+    "Hébreux 13:18",
+    "Proverbes 12:22",
+    "Luc 16:10",
+    "Actes 5:1-5"
+   ],
+   "activite": "Préparer des cartes « situation » et laisser chacun proposer une réponse honnête.",
+   "application": "Cette semaine, repérer une situation où l'honnêteté a demandé du courage, et la raconter.",
+   "preparation": [
+    "Préparer 4 ou 5 situations réalistes pour l'âge des jeunes.",
+    "Être prêt à raconter un exemple personnel.",
+    "Valoriser les réponses honnêtes plutôt que de sermonner."
+   ]
+  },
+  {
+   "id": "cf-2027-04",
+   "semaine": "2027-04",
+   "debut": "2027-01-25",
+   "titre": "Soirée film : Noé marchait avec Dieu",
+   "public": "famille",
+   "duree": "50 min",
+   "objectif": "Passer une soirée en famille autour d'un film biblique et en tirer des leçons d'obéissance et de foi.",
+   "sources": [
+    {
+     "t": "Les personnages de la Bible (enfants)",
+     "u": "https://www.jw.org/fr/la-bible-et-vous/enfants/personnages-bibliques/"
+    }
+   ],
+   "video": {
+    "titre": "Noé : il marchait avec Dieu",
+    "key": "pub-ivno_x_VIDEO",
+    "duree": "24 min 10",
+    "url": "https://www.jw.org/finder?lank=pub-ivno_x_VIDEO&wtlocale=F"
+   },
+   "deroulement": [
+    {
+     "min": 3,
+     "etape": "Prière",
+     "detail": ""
+    },
+    {
+     "min": 25,
+     "etape": "Film",
+     "detail": "Regarder « Noé : il marchait avec Dieu » (idéal sur la télé avec le Diffuseur)."
+    },
+    {
+     "min": 12,
+     "etape": "Discussion",
+     "detail": "Lire Genèse 6:9, 22 et Hébreux 11:7. Qu'est-ce qui montre que Noé avait foi ?"
+    },
+    {
+     "min": 5,
+     "etape": "Application",
+     "detail": "Qu'est-ce que Jéhovah nous demande aujourd'hui que d'autres trouvent étrange ?"
+    },
+    {
+     "min": 3,
+     "etape": "Prière",
+     "detail": ""
+    }
+   ],
+   "questions": [
+    "Qu'est-ce que « marcher avec Dieu » veut dire ?",
+    "Pourquoi Noé a-t-il fait exactement ce que Jéhovah demandait ?",
+    "Comment imiter sa foi aujourd'hui ?"
+   ],
+   "versets": [
+    "Genèse 6:9, 22",
+    "Hébreux 11:7",
+    "Matthieu 24:37-39"
+   ],
+   "activite": "Préparer un pop-corn et projeter le film sur la télé avec le Diffuseur.",
+   "application": "Chacun dit une chose qu'il fera pour « marcher avec Dieu » cette semaine.",
+   "preparation": [
+    "Télécharger le film à l'avance dans le Diffuseur (Bibliothèque jw.org → Enfants → Films) pour ne pas dépendre d'Internet.",
+    "Prévoir 50 minutes au total.",
+    "Préparer les 3 questions sur une carte."
+   ]
+  },
+  {
+   "id": "cf-2027-05",
+   "semaine": "2027-05",
+   "debut": "2027-02-01",
+   "titre": "Jéhovah est une personne réelle",
+   "public": "enfants",
+   "duree": "45 min",
+   "objectif": "Aider les enfants à voir Jéhovah comme un ami réel qui les connaît et les aime.",
+   "sources": [
+    {
+     "t": "Choisir de servir Jéhovah (activité)",
+     "u": "https://www.jw.org/fr/la-bible-et-vous/enfants/activites-pour-culte-familial/choisir-de-servir-jehovah/"
+    }
+   ],
+   "video": {
+    "titre": "Jéhovah est une personne réelle",
+    "key": "pub-pk_59_VIDEO",
+    "duree": "10 min 35",
+    "url": "https://www.jw.org/finder?lank=pub-pk_59_VIDEO&wtlocale=F"
+   },
+   "deroulement": [
+    {
+     "min": 3,
+     "etape": "Prière",
+     "detail": ""
+    },
+    {
+     "min": 11,
+     "etape": "Vidéo",
+     "detail": "Regarder « Jéhovah est une personne réelle » (Deviens l'ami de Jéhovah)."
+    },
+    {
+     "min": 10,
+     "etape": "Discussion",
+     "detail": "Lire Psaume 34:8 et Actes 17:27. Comment savoir que Jéhovah est réel, même si on ne le voit pas ?"
+    },
+    {
+     "min": 14,
+     "etape": "Activité",
+     "detail": "Faire l'activité « Choisir de servir Jéhovah » de jw.org."
+    },
+    {
+     "min": 4,
+     "etape": "Prière",
+     "detail": "Chaque enfant dit une chose qu'il aime chez Jéhovah."
+    }
+   ],
+   "questions": [
+    "Comment sait-on que Jéhovah existe ?",
+    "Qu'est-ce que tu aimes le plus chez Jéhovah ?",
+    "Comment peux-tu devenir son ami ?"
+   ],
+   "versets": [
+    "Psaume 34:8",
+    "Actes 17:27",
+    "Josué 24:15",
+    "Romains 1:20"
+   ],
+   "activite": "Promenade ou images de la nature : chercher des preuves que quelqu'un l'a créée.",
+   "application": "Chaque soir de la semaine, remercier Jéhovah pour une chose qu'il a créée.",
+   "preparation": [
+    "Imprimer l'activité.",
+    "Préparer des photos de la nature (ou prévoir une petite sortie).",
+    "Laisser les enfants poser toutes leurs questions."
+   ]
+  },
+  {
+   "id": "cf-2027-06",
+   "semaine": "2027-06",
+   "debut": "2027-02-08",
+   "titre": "Apprendre la gratitude",
+   "public": "famille",
+   "duree": "45 min",
+   "objectif": "Cultiver la reconnaissance en famille, en lien avec l'article de La Tour de Garde « Montre-toi reconnaissant ».",
+   "sources": [
+    {
+     "t": "Apprendre la gratitude",
+     "u": "https://www.jw.org/fr/la-bible-et-vous/familles/apprendre-gratitude/"
+    }
+   ],
+   "video": null,
+   "deroulement": [
+    {
+     "min": 3,
+     "etape": "Prière",
+     "detail": ""
+    },
+    {
+     "min": 12,
+     "etape": "Article",
+     "detail": "Lire « Apprendre la gratitude » sur jw.org."
+    },
+    {
+     "min": 10,
+     "etape": "Principes",
+     "detail": "Lire Colossiens 3:15 et 1 Thessaloniciens 5:18. Luc 17:11-19 : un seul lépreux sur dix revient dire merci."
+    },
+    {
+     "min": 15,
+     "etape": "Le bocal à mercis",
+     "detail": "Chacun écrit sur des petits papiers trois choses pour lesquelles il est reconnaissant, et les met dans un bocal."
+    },
+    {
+     "min": 5,
+     "etape": "Prière",
+     "detail": "Chacun remercie Jéhovah pour une chose précise."
+    }
+   ],
+   "questions": [
+    "Pourquoi un seul lépreux est-il revenu ?",
+    "Comment montrer notre reconnaissance à Jéhovah ?",
+    "Et aux membres de notre famille ?"
+   ],
+   "versets": [
+    "Colossiens 3:15",
+    "1 Thessaloniciens 5:18",
+    "Luc 17:11-19",
+    "Psaume 103:2"
+   ],
+   "activite": "Le bocal à mercis : on y ajoute un papier chaque jour de la semaine.",
+   "application": "Au prochain culte, on lit ensemble les papiers du bocal.",
+   "preparation": [
+    "Préparer un bocal, des papiers et des stylos.",
+    "Relire l'article d'étude « Montre-toi reconnaissant ».",
+    "Penser à remercier chaque membre de la famille pour une chose précise."
+   ]
+  },
+  {
+   "id": "cf-2027-07",
+   "semaine": "2027-07",
+   "debut": "2027-02-15",
+   "titre": "Création ou évolution ?",
+   "public": "ados",
+   "duree": "45 min",
+   "objectif": "Aider les jeunes à expliquer avec assurance pourquoi ils croient en un Créateur.",
+   "sources": [
+    {
+     "t": "Création ou évolution ? (1re partie) : Pourquoi croire en Dieu ?",
+     "u": "https://www.jw.org/fr/la-bible-et-vous/adolescents/jeunes-s-interrogent/creation-evolution-partie-1/"
+    }
+   ],
+   "video": {
+    "titre": "Fiers d'être Témoins : Évolution ou création",
+    "key": "pub-rff_2_VIDEO",
+    "duree": "4 min 48",
+    "url": "https://www.jw.org/finder?lank=pub-rff_2_VIDEO&wtlocale=F"
+   },
+   "deroulement": [
+    {
+     "min": 3,
+     "etape": "Prière",
+     "detail": ""
+    },
+    {
+     "min": 5,
+     "etape": "Vidéo",
+     "detail": "Regarder « Fiers d'être Témoins : Évolution ou création »."
+    },
+    {
+     "min": 12,
+     "etape": "Article",
+     "detail": "Lire « Création ou évolution ? (1re partie) » sur jw.org."
+    },
+    {
+     "min": 12,
+     "etape": "Principes",
+     "detail": "Lire Romains 1:20, Hébreux 3:4 et Psaume 139:14."
+    },
+    {
+     "min": 10,
+     "etape": "Entraînement",
+     "detail": "Jeu de rôle : un camarade dit « La Bible n'est pas scientifique ». Comment répondre avec respect ?"
+    },
+    {
+     "min": 3,
+     "etape": "Prière",
+     "detail": ""
+    }
+   ],
+   "questions": [
+    "Pourquoi est-il logique de croire en un Créateur ?",
+    "Comment répondre à un camarade avec respect ?",
+    "Quel exemple de la nature te touche le plus ?"
+   ],
+   "versets": [
+    "Romains 1:20",
+    "Hébreux 3:4",
+    "Psaume 139:14",
+    "1 Pierre 3:15"
+   ],
+   "activite": "Chercher ensemble un exemple de « conception » dans la nature (la rubrique « Conçu ? » de Réveillez-vous ! en contient beaucoup).",
+   "application": "Partager un argument avec un camarade ou noter une question qu'on n'a pas su répondre.",
+   "preparation": [
+    "Lire l'article avant et noter les arguments clés.",
+    "Préparer l'objection du jeu de rôle.",
+    "Encourager plutôt que corriger."
+   ]
+  },
+  {
+   "id": "cf-2027-08",
+   "semaine": "2027-08",
+   "debut": "2027-02-22",
+   "titre": "Jonas et la miséricorde de Jéhovah",
+   "public": "famille",
+   "duree": "45 min",
+   "objectif": "Comprendre, avec le récit de Jonas, que Jéhovah donne une deuxième chance et qu'il veut que nous soyons miséricordieux.",
+   "sources": [
+    {
+     "t": "Les personnages de la Bible (enfants)",
+     "u": "https://www.jw.org/fr/la-bible-et-vous/enfants/personnages-bibliques/"
+    }
+   ],
+   "video": {
+    "titre": "Culte familial : Yona et la miséricorde de Jéhovah",
+    "key": "pub-jwb_201706_3_VIDEO",
+    "duree": "7 min 3",
+    "url": "https://www.jw.org/finder?lank=pub-jwb_201706_3_VIDEO&wtlocale=F"
+   },
+   "deroulement": [
+    {
+     "min": 3,
+     "etape": "Prière",
+     "detail": ""
+    },
+    {
+     "min": 8,
+     "etape": "Vidéo",
+     "detail": "Regarder « Culte familial : Yona et la miséricorde de Jéhovah »."
+    },
+    {
+     "min": 12,
+     "etape": "Le récit",
+     "detail": "Lire Jonas 3:10 ; 4:1-4, 10, 11. Pourquoi Jonas était-il en colère ?"
+    },
+    {
+     "min": 12,
+     "etape": "Activité",
+     "detail": "Raconter le récit en dessins (le bateau, le poisson, Ninive, la plante)."
+    },
+    {
+     "min": 7,
+     "etape": "Application",
+     "detail": "À qui pouvons-nous montrer plus de miséricorde ?"
+    },
+    {
+     "min": 3,
+     "etape": "Prière",
+     "detail": ""
+    }
+   ],
+   "questions": [
+    "Pourquoi Jonas a-t-il fui ?",
+    "Qu'est-ce que Jéhovah voulait lui apprendre avec la plante ?",
+    "Comment imiter la miséricorde de Jéhovah ?"
+   ],
+   "versets": [
+    "Jonas 3:10",
+    "Jonas 4:1-4, 10, 11",
+    "Michée 7:18",
+    "Matthieu 5:7"
+   ],
+   "activite": "Raconter l'histoire en 4 dessins et les afficher dans l'ordre.",
+   "application": "Cette semaine, pardonner rapidement à quelqu'un qui nous a contrariés.",
+   "preparation": [
+    "Regarder la vidéo avant : elle montre justement une famille pendant son culte.",
+    "Préparer feuilles et crayons.",
+    "Lire Jonas 1 à 4 la veille."
+   ]
+  }
+ ],
+ "banque": [
+  {
+   "id": "cfb-esprit",
+   "semaine": "",
+   "debut": "",
+   "titre": "L'esprit saint nous donne de la force",
+   "public": "enfants",
+   "duree": "45 min",
+   "objectif": "Comprendre que l'esprit de Jéhovah nous aide à faire ce qui est bien.",
+   "sources": [
+    {
+     "t": "L'esprit saint nous donne de la force (activité)",
+     "u": "https://www.jw.org/fr/la-bible-et-vous/enfants/activites-pour-culte-familial/esprit-saint-nous-donne-de-la-force/"
+    }
+   ],
+   "video": null,
+   "deroulement": [
+    {
+     "min": 5,
+     "etape": "Prière et lecture",
+     "detail": "Lire Luc 11:13."
+    },
+    {
+     "min": 25,
+     "etape": "Activité",
+     "detail": "Faire l'activité de jw.org."
+    },
+    {
+     "min": 10,
+     "etape": "Discussion",
+     "detail": ""
+    },
+    {
+     "min": 5,
+     "etape": "Prière",
+     "detail": ""
+    }
+   ],
+   "questions": [
+    "Comment demander l'esprit saint ?",
+    "Quand en as-tu besoin ?"
+   ],
+   "versets": [
+    "Luc 11:13",
+    "Galates 5:22, 23"
+   ],
+   "activite": "Activité jw.org.",
+   "application": "Demander l'esprit saint chaque soir.",
+   "preparation": [
+    "Imprimer l'activité."
+   ]
+  },
+  {
+   "id": "cfb-rahab",
+   "semaine": "",
+   "debut": "",
+   "titre": "Rahab suit les instructions",
+   "public": "enfants",
+   "duree": "45 min",
+   "objectif": "Apprendre l'obéissance et la foi avec Rahab.",
+   "sources": [
+    {
+     "t": "Rahab suit les instructions (activité)",
+     "u": "https://www.jw.org/fr/la-bible-et-vous/enfants/activites-pour-culte-familial/rahab-suit-les-instructions/"
+    }
+   ],
+   "video": null,
+   "deroulement": [
+    {
+     "min": 5,
+     "etape": "Prière et lecture",
+     "detail": "Lire Josué 2:18-21."
+    },
+    {
+     "min": 25,
+     "etape": "Activité",
+     "detail": ""
+    },
+    {
+     "min": 10,
+     "etape": "Discussion",
+     "detail": ""
+    },
+    {
+     "min": 5,
+     "etape": "Prière",
+     "detail": ""
+    }
+   ],
+   "questions": [
+    "Pourquoi Rahab a-t-elle obéi ?",
+    "Quelles instructions de Jéhovah suivons-nous ?"
+   ],
+   "versets": [
+    "Josué 2:18-21",
+    "Hébreux 11:31"
+   ],
+   "activite": "Activité jw.org.",
+   "application": "Obéir rapidement cette semaine.",
+   "preparation": [
+    "Imprimer l'activité."
+   ]
+  },
+  {
+   "id": "cfb-smartphone",
+   "semaine": "",
+   "debut": "",
+   "titre": "Mon enfant devrait-il avoir un smartphone ?",
+   "public": "couple",
+   "duree": "45 min",
+   "objectif": "Réfléchir en couple au bon moment et aux bonnes règles.",
+   "sources": [
+    {
+     "t": "Mon enfant devrait-il avoir un smartphone ?",
+     "u": "https://www.jw.org/fr/la-bible-et-vous/familles/enfant-devrait-il-avoir-smartphone/"
+    },
+    {
+     "t": "Utiliser un smartphone avec bon sens",
+     "u": "https://www.jw.org/fr/la-bible-et-vous/familles/enfant-smartphone-bon-sens/"
+    }
+   ],
+   "video": null,
+   "deroulement": [
+    {
+     "min": 5,
+     "etape": "Prière",
+     "detail": ""
+    },
+    {
+     "min": 20,
+     "etape": "Article",
+     "detail": "Lire les deux articles."
+    },
+    {
+     "min": 15,
+     "etape": "Décisions",
+     "detail": ""
+    },
+    {
+     "min": 5,
+     "etape": "Prière",
+     "detail": ""
+    }
+   ],
+   "questions": [
+    "Notre enfant est-il prêt ?",
+    "Quelles règles fixer ?"
+   ],
+   "versets": [
+    "Proverbes 22:6",
+    "Éphésiens 6:4"
+   ],
+   "activite": "",
+   "application": "Écrire nos règles.",
+   "preparation": [
+    "Lire les articles avant."
+   ]
+  },
+  {
+   "id": "cfb-affection",
+   "semaine": "",
+   "debut": "",
+   "titre": "Montrer de l'affection",
+   "public": "couple",
+   "duree": "45 min",
+   "objectif": "Exprimer davantage notre amour dans le couple.",
+   "sources": [
+    {
+     "t": "Les secrets d'un mariage heureux : Montrer de l'affection",
+     "u": "https://www.jw.org/fr/la-bible-et-vous/familles/mariage-montrer-amour-et-affection/"
+    }
+   ],
+   "video": {
+    "titre": "Les secrets d'un mariage heureux : Montrer de l'affection",
+    "key": "pub-jwb-088_3_VIDEO",
+    "duree": "4 min 27",
+    "url": "https://www.jw.org/finder?lank=pub-jwb-088_3_VIDEO&wtlocale=F"
+   },
+   "deroulement": [
+    {
+     "min": 5,
+     "etape": "Prière",
+     "detail": ""
+    },
+    {
+     "min": 5,
+     "etape": "Vidéo",
+     "detail": ""
+    },
+    {
+     "min": 25,
+     "etape": "Discussion",
+     "detail": "Lire Chant de Salomon 8:6 et Colossiens 3:14."
+    },
+    {
+     "min": 5,
+     "etape": "Prière",
+     "detail": ""
+    }
+   ],
+   "questions": [
+    "Comment chacun se sent-il aimé ?",
+    "Que pouvons-nous faire de plus ?"
+   ],
+   "versets": [
+    "Colossiens 3:14",
+    "1 Corinthiens 13:4-7"
+   ],
+   "activite": "",
+   "application": "Un geste d'affection chaque jour.",
+   "preparation": [
+    "Regarder la vidéo avant."
+   ]
+  },
+  {
+   "id": "cfb-david",
+   "semaine": "",
+   "debut": "",
+   "titre": "Soirée film : David mettait sa confiance en Jéhovah",
+   "public": "enfants",
+   "duree": "50 min",
+   "objectif": "Apprendre le courage et la confiance avec David.",
+   "sources": [
+    {
+     "t": "Les personnages de la Bible (enfants)",
+     "u": "https://www.jw.org/fr/la-bible-et-vous/enfants/personnages-bibliques/"
+    }
+   ],
+   "video": {
+    "titre": "David : il mettait sa confiance en Jéhovah",
+    "key": "pub-ivdd_x_VIDEO",
+    "duree": "28 min 45",
+    "url": "https://www.jw.org/finder?lank=pub-ivdd_x_VIDEO&wtlocale=F"
+   },
+   "deroulement": [
+    {
+     "min": 5,
+     "etape": "Prière",
+     "detail": ""
+    },
+    {
+     "min": 30,
+     "etape": "Film",
+     "detail": ""
+    },
+    {
+     "min": 10,
+     "etape": "Discussion",
+     "detail": "Lire 1 Samuel 17:45-47."
+    },
+    {
+     "min": 5,
+     "etape": "Prière",
+     "detail": ""
+    }
+   ],
+   "questions": [
+    "Pourquoi David n'avait-il pas peur de Goliath ?",
+    "Quel est ton « Goliath » ?"
+   ],
+   "versets": [
+    "1 Samuel 17:45-47",
+    "Psaume 56:3, 4"
+   ],
+   "activite": "Projeter le film sur la télé.",
+   "application": "Prier pour son propre « Goliath ».",
+   "preparation": [
+    "Télécharger le film dans le Diffuseur."
+   ]
+  },
+  {
+   "id": "cfb-timidite",
+   "semaine": "",
+   "debut": "",
+   "titre": "Comment surmonter ma timidité ?",
+   "public": "ados",
+   "duree": "45 min",
+   "objectif": "Aider les jeunes timides à prendre confiance, y compris dans la prédication.",
+   "sources": [
+    {
+     "t": "Comment surmonter ma timidité ?",
+     "u": "https://www.jw.org/fr/la-bible-et-vous/adolescents/jeunes-s-interrogent/surmonter-la-timidite/"
+    }
+   ],
+   "video": null,
+   "deroulement": [
+    {
+     "min": 5,
+     "etape": "Prière",
+     "detail": ""
+    },
+    {
+     "min": 15,
+     "etape": "Article",
+     "detail": ""
+    },
+    {
+     "min": 20,
+     "etape": "Entraînement",
+     "detail": "Jeu de rôle d'une conversation."
+    },
+    {
+     "min": 5,
+     "etape": "Prière",
+     "detail": ""
+    }
+   ],
+   "questions": [
+    "Qu'est-ce qui me rend timide ?",
+    "Quelle petite étape puis-je faire ?"
+   ],
+   "versets": [
+    "2 Timothée 1:7",
+    "Philippiens 4:13"
+   ],
+   "activite": "Jeu de rôle.",
+   "application": "Engager une conversation à la réunion.",
+   "preparation": [
+    "Lire l'article avant."
+   ]
+  },
+  {
+   "id": "cfb-parents",
+   "semaine": "",
+   "debut": "",
+   "titre": "Honorer et aider nos parents âgés",
+   "public": "famille",
+   "duree": "45 min",
+   "objectif": "Réfléchir à la façon d'honorer et de soutenir nos parents âgés.",
+   "sources": [
+    {
+     "t": "Prendre soin de ses parents âgés",
+     "u": "https://www.jw.org/fr/la-bible-et-vous/questions-bibliques/parents-ages-prendre-soin-aide/"
+    },
+    {
+     "t": "Que signifie « honorer son père et sa mère » ?",
+     "u": "https://www.jw.org/fr/la-bible-et-vous/questions-bibliques/honore-ton-pere-et-ta-mere/"
+    }
+   ],
+   "video": null,
+   "deroulement": [
+    {
+     "min": 5,
+     "etape": "Prière",
+     "detail": ""
+    },
+    {
+     "min": 15,
+     "etape": "Articles",
+     "detail": ""
+    },
+    {
+     "min": 20,
+     "etape": "Projet",
+     "detail": "Préparer un appel, une visite ou un cadeau pour les grands-parents."
+    },
+    {
+     "min": 5,
+     "etape": "Prière",
+     "detail": ""
+    }
+   ],
+   "questions": [
+    "Que signifie honorer ses parents ?",
+    "Que pouvons-nous faire cette semaine ?"
+   ],
+   "versets": [
+    "Éphésiens 6:2, 3",
+    "1 Timothée 5:4"
+   ],
+   "activite": "Préparer un cadeau ou une carte.",
+   "application": "Appeler ou visiter les grands-parents.",
+   "preparation": [
+    "Lire les articles avant."
+   ]
+  },
+  {
+   "id": "cfb-argent",
+   "semaine": "",
+   "debut": "",
+   "titre": "Gérer notre argent avec sagesse",
+   "public": "couple",
+   "duree": "45 min",
+   "objectif": "Appliquer les principes bibliques au budget familial.",
+   "sources": [
+    {
+     "t": "Comment gérer son argent",
+     "u": "https://www.jw.org/fr/la-bible-et-vous/familles/comment-gerer-son-argent/"
+    }
+   ],
+   "video": {
+    "titre": "Comment bien gérer ton argent ?",
+    "key": "docid-502100006_1_VIDEO",
+    "duree": "3 min 22",
+    "url": "https://www.jw.org/finder?lank=docid-502100006_1_VIDEO&wtlocale=F"
+   },
+   "deroulement": [
+    {
+     "min": 5,
+     "etape": "Prière",
+     "detail": ""
+    },
+    {
+     "min": 5,
+     "etape": "Vidéo",
+     "detail": ""
+    },
+    {
+     "min": 25,
+     "etape": "Budget",
+     "detail": "Lire Proverbes 21:5 et Luc 14:28 ; faire un petit budget."
+    },
+    {
+     "min": 5,
+     "etape": "Prière",
+     "detail": ""
+    }
+   ],
+   "questions": [
+    "Quels principes bibliques nous aident ?",
+    "Où pouvons-nous économiser ?"
+   ],
+   "versets": [
+    "Proverbes 21:5",
+    "Luc 14:28",
+    "Hébreux 13:5"
+   ],
+   "activite": "Faire un budget simple.",
+   "application": "Suivre nos dépenses pendant une semaine.",
+   "preparation": [
+    "Préparer les chiffres du mois."
+   ]
+  }
+ ]
+}

@@ -1,8 +1,8 @@
 /* Service worker du Carnet de réunions : l'appli fonctionne entièrement hors connexion.
    Mise à jour de l'appli : modifie index.html puis change VERSION.
    Mise à jour des programmes : remplace simplement semaines.json (récupéré automatiquement quand il y a Internet). */
-const VERSION = 'carnet-v3.5.0';
-const FILES = ['./', './index.html', './semaines.json', './manifest.webmanifest',
+const VERSION = 'carnet-v3.7.0';
+const FILES = ['./', './index.html', './semaines.json', './culte.json', './versets.json', './manifest.webmanifest',
   './icons/icon-192.png', './icons/icon-512.png', './icons/icon-maskable-512.png', './icons/apple-touch-icon.png'];
 // lecteurs PDF et Word : gardés en cache pour importer des plans hors connexion
 const LIBS = ['https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js',
@@ -32,8 +32,10 @@ self.addEventListener('fetch', e => {
   }
   if (url.origin !== location.origin) return; // liens jw.org : laissés au navigateur
   // Programmes : version en ligne si possible, sinon la dernière gardée
-  if (url.pathname.endsWith('/semaines.json')){
-    e.respondWith(fetch(req).then(res => putCache('./semaines.json', res)).catch(() => caches.match('./semaines.json')));
+  const data = url.pathname.match(/\/(semaines|culte|versets)\.json$/);
+  if (data){
+    const k = './' + data[1] + '.json';
+    e.respondWith(fetch(req).then(res => putCache(k, res)).catch(() => caches.match(k)));
     return;
   }
   // Ouverture de l'appli : réponse immédiate depuis le cache, mise à jour en arrière-plan

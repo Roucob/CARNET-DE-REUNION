@@ -193,6 +193,21 @@ nav a{flex:none}
 .jwp{position:relative;aspect-ratio:16/9;background:#1b1530}.jwp img{width:100%;height:100%;object-fit:cover;display:block}.jwp span{position:absolute;right:8px;bottom:8px;background:#000b;color:#fff;font-size:12px;border-radius:6px;padding:2px 6px}
 .jwb{padding:10px 12px 12px}.jwb h3{font-size:14px}.jwb small{color:var(--muted)}.jwb .btn{min-height:36px;padding:0 10px;font-size:13px}
 .tv-arrows .tv-ap{width:auto;padding:0 16px;font-size:15px;font-weight:600}
+.bref{color:var(--vi);text-decoration:underline;text-decoration-style:dotted;text-underline-offset:2px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:4px 0 6px}.chips button{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:7px 12px;font-weight:500;font-size:13px;cursor:pointer}.chips button.on{background:var(--vibtn);color:#fff;border-color:transparent}
+.cfc.cur{border-color:var(--vibtn);box-shadow:0 0 0 3px var(--lav)}
+.cfh h1{margin:6px 0 4px}.cfobj{background:var(--lav);border-radius:14px;padding:10px 12px;margin:10px 0 0;font-weight:500}
+.cfact{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.cfsteps{list-style:none;padding:0;margin:8px 0 0}.cfsteps li{display:grid;grid-template-columns:58px minmax(0,1fr);gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}.cfsteps li:last-child{border:0}
+.cfm{background:var(--lav2);color:var(--vi);border-radius:8px;font-size:12px;font-weight:600;text-align:center;padding:4px 0;align-self:start}
+.lnk{border:0;background:none;color:var(--vi);text-decoration:underline;cursor:pointer;padding:0;font:inherit}
+@media print{header,nav,.btn,.row,.cfact,.chips,.toast,.back,button,#cfnote{display:none!important}body{background:#fff!important;color:#000!important}.card,.prog{border:1px solid #bbb!important;box-shadow:none!important;break-inside:avoid}a{color:#000}}
+.vhead small{color:var(--vi);font-weight:600;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase}.vhead h2{margin:2px 0 0}
+.vtext{display:grid;gap:8px;max-height:52vh;overflow:auto;padding:4px 2px}
+.vv{display:flex!important;gap:10px;align-items:flex-start;font-weight:400!important;font-family:Georgia,"Times New Roman",serif;font-size:calc(var(--fs) + 3px);line-height:1.55}
+.vv input{width:auto!important;margin-top:6px;accent-color:var(--vibtn)}.vv sup{color:var(--vi);font-family:system-ui;font-weight:700;font-size:.7em}
+.vact{display:flex;gap:8px;flex-wrap:wrap}
+.chips button[data-vth]{font-weight:600}.chips button[data-vth].on{outline:3px solid var(--vi);outline-offset:2px}
 .medias{display:grid;gap:8px;margin-top:10px}
 .md{display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;background:var(--lav2);border-radius:12px;padding:10px 12px}
 .sat .md{background:var(--peach2)}
@@ -234,6 +249,7 @@ textarea.big,#tform textarea,#tform input,#tform select{width:100%;border:1.5px 
     <a href="#commentaires" data-nav="commentaires"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19l1.4-3.6A8 8 0 1 1 8.6 19z"/><path d="M9 10h6M9 13.5h4"/></svg>Commentaires</a>
     <a href="#historique" data-nav="historique"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3.5 12a8.5 8.5 0 1 0 2.4-5.9L3.5 8.5"/><path d="M3.5 4v4.5H8M12 8v4.5l3 2"/></svg>Historique</a>
     <a href="#discours" data-nav="discours"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>Discours</a>
+    <a href="#culte" data-nav="culte"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Culte</a>
     <a href="#diffuser" data-nav="diffuser"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Diffuser</a>
   </nav>
 </div></header>
@@ -345,7 +361,7 @@ function cmCard(c){
   return `<article class="card cm"><div class="cmh"><div><h3>${esc(c.partLabel || 'Commentaire libre')}</h3><small>Réunion du ${esc(c.meeting)}${m ? ' · ' + esc(dLabel(m.date)) : ''}</small></div><span class="tag ${esc(c.statut)}">${esc(ST[c.statut]||'Brouillon')}</span></div>
   ${c.dire ? `<p class="txt">${esc(c.dire)}</p>` : ''}
   <details><summary>Voir la structure</summary><dl class="pp">
-  ${c.reponse?`<dt>Réponse directe</dt><dd>${esc(c.reponse)}</dd>`:''}${c.verset?`<dt>Verset ou publication</dt><dd>${esc(c.verset)}</dd>`:''}${c.probleme?`<dt>Problème ou difficulté</dt><dd>${esc(c.probleme)}</dd>`:''}${c.application?`<dt>Application ou leçon</dt><dd>${esc(c.application)}</dd>`:''}</dl></details>
+  ${c.reponse?`<dt>Réponse directe</dt><dd>${esc(c.reponse)}</dd>`:''}${c.verset?`<dt>Verset ou publication</dt><dd>${bl(c.verset)}</dd>`:''}${c.probleme?`<dt>Problème ou difficulté</dt><dd>${esc(c.probleme)}</dd>`:''}${c.application?`<dt>Application ou leçon</dt><dd>${esc(c.application)}</dd>`:''}</dl></details>
   <div class="row"><button class="btn soft" data-edit="${esc(c.id)}">Modifier</button><button class="btn" data-copy="${esc(c.id)}">Copier</button><button class="btn" data-tvc="${esc(c.id)}" title="Diffuser sur la télé">📺</button><button class="btn" data-del="${esc(c.id)}" style="color:var(--te)">Supprimer</button></div></article>`;
 }
 function vHistorique(){
@@ -372,25 +388,25 @@ function vDetail(k){
 function partHtml(w,k,p,mine){
   const pk = partKey(p), my = mine.filter(c => c.partKey === pk);
   return `<div class="part"><div class="ph"><span class="num">${esc(p.num ? (/^\d+$/.test(p.num) ? p.num + '.' : p.num) : '♪')}</span><div><h3>${esc(p.titre)} ${p.duree ? `<span class="dur">· ${esc(p.duree)}</span>` : ''}</h3>
-  ${p.consigne ? `<p class="cons">${esc(p.consigne)}</p>` : ''}
-  ${p.refs?.length ? `<div class="refs">${p.refs.map(r => `<a href="${esc(r.u)}" target="_blank" rel="noopener">${esc(r.t)} ${ext}</a>`).join('')}</div>` : ''}</div></div>
+  ${p.consigne ? `<p class="cons">${bl(p.consigne)}</p>` : ''}
+  ${p.refs?.length ? `<div class="refs">${p.refs.map(r => `<a href="${esc(refURL(r))}" target="_blank" rel="noopener">${esc(r.t)} ${ext}</a>`).join('')}</div>` : ''}</div></div>
   <div class="inner">
   ${p.medias?.length ? `<div class="medias">${p.medias.map(md => `<div class="md"><span class="mdi">${md.type==='video' ? '▶' : '🖼'}</span><div><b>${md.type==='video' ? 'Vidéo' : 'Image'}${md.titre ? ' · ' + esc(md.titre) : ''}</b>${md.description ? `<p>${esc(md.description)}</p>` : ''}${md.url ? `<a href="${esc(md.url)}" target="_blank" rel="noopener">${md.type==='video' ? 'Regarder' : 'Voir'} ${ext}</a>` : ''}${md.type==='video' && /_VIDEO/i.test(md.url||'') ? ` <button class="btn" style="min-height:32px;padding:0 10px;font-size:12.5px;margin-left:6px" data-tvjw="${esc(md.url)}">📺 Diffuser</button>` : ''}</div></div>`).join('')}</div>` : ''}
   ${p.discours ? (() => { const D = p.discours, mots = (D.texte||'').split(/\s+/).filter(Boolean).length, tk = 'j-' + w.id + '-' + (p.num||'x');
     return `<div class="disc"><div class="dh"><span class="pill">🎤 Discours préparé · ${esc(D.duree||10)} min</span><small>${mots} mots · ≈ ${mmss(mots/130*60)} + lecture des versets</small></div>
     ${D.filRouge ? `<p class="note" style="margin:8px 0 0"><b>Fil rouge :</b> ${esc(D.filRouge)}</p>` : ''}
-    <ol class="dplan">${(D.plan||[]).map(x => `<li><b>${esc(x.titre)}</b> <span class="dur">· ${esc(x.min)} min</span>${x.notes ? `<div class="note" style="margin:2px 0 0">${esc(x.notes)}</div>` : ''}</li>`).join('')}</ol>
+    <ol class="dplan">${(D.plan||[]).map(x => `<li><b>${esc(x.titre)}</b> <span class="dur">· ${esc(x.min)} min</span>${x.notes ? `<div class="note" style="margin:2px 0 0">${bl(x.notes)}</div>` : ''}</li>`).join('')}</ol>
     <details><summary>Texte complet du discours</summary><div class="dtxt">${esc(D.texte)}</div></details>
     ${D.fiche ? `<details><summary>Fiche-mémo pour l'estrade</summary><ul class="conseils">${D.fiche.map(f => `<li>${esc(f)}</li>`).join('')}</ul></details>` : ''}
-    ${D.versets ? `<details><summary>Versets à préparer</summary><ul class="conseils">${D.versets.map(f => `<li>${esc(f)}</li>`).join('')}</ul></details>` : ''}
+    ${D.versets ? `<details><summary>Versets à préparer</summary><ul class="conseils">${D.versets.map(f => `<li>${bl(f)}</li>`).join('')}</ul></details>` : ''}
     ${D.sources ? `<div class="refs">${D.sources.map(r => `<a href="${esc(r.u)}" target="_blank" rel="noopener">${esc(r.t)} ${ext}</a>`).join('')}</div>` : ''}
     <div class="row" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px"><button class="btn pri" data-jtrain="${esc(k)}|${esc(pk)}">⏱ S'entraîner</button><button class="btn" data-jedit="${esc(k)}|${esc(pk)}">${talk(tk) ? '✎ Ma version' : '✎ Personnaliser'}</button><button class="btn" data-tvd="${esc(k)}|${esc(pk)}">📺 Diffuser le plan</button></div></div>`; })() : ''}
   ${p.dialogue?.length ? `<details class="dlg" open><summary>Exemple de dialogue</summary>${p.dialogue.map(l => `<div class="bub ${/proclam|^moi$/i.test(l.qui) ? 'me' : ''}"><small>${esc(l.qui)}</small>${esc(l.texte)}</div>`).join('')}${p.lecon ? `<p class="note"><b>Leçon :</b> ${esc(p.lecon)}</p>` : ''}</details>` : ''}
-  ${p.conseils ? `<ul class="conseils">${p.conseils.map(c => `<li>${esc(c)}</li>`).join('')}</ul>` : ''}
-  ${(p.items||[]).map((it,j) => `<div class="item"><div class="q">${esc(it.titre)} ${it.lien ? `<a href="${esc(it.lien)}" target="_blank" rel="noopener" aria-label="Ouvrir sur wol.jw.org">${ext}</a>` : ''}</div><p class="qq">${esc(it.question)}</p>
-    <details><summary>Voir le commentaire</summary><dl class="pp"><dt>Réponse directe</dt><dd>${esc(it.prep.reponse)}</dd><dt>Verset ou publication</dt><dd>${esc(it.prep.verset)}</dd>${it.prep.probleme?`<dt>Problème ou difficulté</dt><dd>${esc(it.prep.probleme)}</dd>`:''}<dt>Application ou leçon</dt><dd>${esc(it.prep.application)}</dd></dl>
-    <div class="say"><b>Commentaire à dire</b>${esc(it.prep.dire)}</div>${it.src?.length ? `<div class="refs">${it.src.map(r => `<a href="${esc(r.u)}" target="_blank" rel="noopener">📖 ${esc(r.t)} ${ext}</a>`).join('')}</div>` : ''}
-    <div class="acts"><a href="${esc(it.lien || w.programme)}" target="_blank" rel="noopener">Voir la source ${ext}</a><button class="btn" data-tvadd="${esc(k)}|${esc(pk)}|${j}" title="Ajouter à la diffusion TV">📺 Diffuser</button>${(() => { const ex = existingTake(w.id, k, pk, j); return ex
+  ${p.conseils ? `<ul class="conseils">${p.conseils.map(c => `<li>${bl(c)}</li>`).join('')}</ul>` : ''}
+  ${(p.items||[]).map((it,j) => `<div class="item"><div class="q">${esc(it.titre)} ${it.lien ? `<a href="${esc(ilink(it))}" target="_blank" rel="noopener" aria-label="Ouvrir sur wol.jw.org">${ext}</a>` : ''}</div><p class="qq">${esc(it.question)}</p>
+    <details><summary>Voir le commentaire</summary><dl class="pp"><dt>Réponse directe</dt><dd>${esc(it.prep.reponse)}</dd><dt>Verset ou publication</dt><dd>${bl(it.prep.verset)}</dd>${it.prep.probleme?`<dt>Problème ou difficulté</dt><dd>${esc(it.prep.probleme)}</dd>`:''}<dt>Application ou leçon</dt><dd>${esc(it.prep.application)}</dd></dl>
+    <div class="say"><b>Commentaire à dire</b>${esc(it.prep.dire)}</div>${it.src?.length ? `<div class="refs">${it.src.map(r => `<a href="${esc(refURL(r))}" target="_blank" rel="noopener">📖 ${esc(r.t)} ${ext}</a>`).join('')}</div>` : ''}
+    <div class="acts"><a href="${esc(ilink(it) || w.programme)}" target="_blank" rel="noopener">Voir la source ${ext}</a><button class="btn" data-tvadd="${esc(k)}|${esc(pk)}|${j}" title="Ajouter à la diffusion TV">📺 Diffuser</button>${(() => { const ex = existingTake(w.id, k, pk, j); return ex
       ? `<button class="btn" data-edit="${esc(ex.id)}" style="color:var(--ok)">✓ Repris · Modifier</button>`
       : `<button class="btn soft" data-take="${esc(k)}|${esc(pk)}|${j}">${plus} Reprendre</button>`; })()}</div></details></div>`).join('')}
   ${p.autres ? `<details><summary>Autres questions du chapitre</summary><ul class="conseils">${p.autres.map(a => `<li>${esc(a)}</li>`).join('')}</ul></details>` : ''}
@@ -487,21 +503,21 @@ function art(){
 }
 
 /* ---------- rendu et routage ---------- */
-function route(){ const h = location.hash.slice(1); return ['commentaires','historique','mercredi','samedi','live-mercredi','live-samedi','discours','diffuser','tv','tv-recv','jw'].includes(h) || /^talk-(edit|train)-[\w-]+$/.test(h) ? h : 'semaine'; }
+function route(){ const h = location.hash.slice(1); return ['commentaires','historique','mercredi','samedi','live-mercredi','live-samedi','discours','diffuser','tv','tv-recv','jw','culte'].includes(h) || /^culte-[\w-]+$/.test(h) || /^talk-(edit|train)-[\w-]+$/.test(h) ? h : 'semaine'; }
 function render(keepScroll){
   const r = route(), y = scrollY, live = r.startsWith('live-');
-  const needWeeks = !['commentaires','discours','diffuser','tv','tv-recv','jw'].includes(r) && !r.startsWith('talk-');
+  const needWeeks = !['commentaires','discours','diffuser','tv','tv-recv','jw','culte'].includes(r) && !r.startsWith('culte-') && !r.startsWith('talk-');
   if (needWeeks && !Object.keys(WEEKS).length){
     $('#app').innerHTML = LOADERR
       ? `<div class="card" style="margin-top:18px"><h3>Programmes indisponibles</h3><p class="note">Connecte-toi une fois à Internet pour télécharger les programmes. Tes commentaires et tes discours restent accessibles.</p><a class="btn" href="#discours">Mes discours</a></div>`
       : `<p class="sub" style="margin-top:24px">Chargement des programmes…</p>`;
     return;
   }
-  document.querySelectorAll('[data-nav]').forEach(a => a.toggleAttribute('aria-current', a.dataset.nav === r || (r==='mercredi'||r==='samedi'||live) && a.dataset.nav==='semaine' || r.startsWith('talk-') && a.dataset.nav==='discours' || (r==='jw'||r==='tv') && a.dataset.nav==='diffuser'));
+  document.querySelectorAll('[data-nav]').forEach(a => a.toggleAttribute('aria-current', a.dataset.nav === r || (r==='mercredi'||r==='samedi'||live) && a.dataset.nav==='semaine' || r.startsWith('talk-') && a.dataset.nav==='discours' || (r==='jw'||r==='tv') && a.dataset.nav==='diffuser' || r.startsWith('culte-') && a.dataset.nav==='culte'));
   document.querySelectorAll('[data-nav]').forEach(a => a.hasAttribute('aria-current') ? a.setAttribute('aria-current','page') : 0);
   const open = [...document.querySelectorAll('details[open]')].map(d => d.querySelector('summary')?.parentElement?.closest('.item')?.querySelector('.q')?.textContent);
   const qv = $('#q')?.value, fv = $('#fm')?.value;
-  $('#app').innerHTML = r==='commentaires' ? vCommentaires() : r==='historique' ? vHistorique() : (r==='mercredi'||r==='samedi') ? vDetail(r) : live ? vLive(r.slice(5)) : r==='discours' ? vTalks() : r==='diffuser' ? vDiffuser() : r==='jw' ? vJW() : (r==='tv'||r==='tv-recv') ? vTV() : r.startsWith('talk-edit-') ? vTalkEdit(r.slice(10)) : r.startsWith('talk-train-') ? vTalkTrain(r.slice(11)) : vSemaine();
+  $('#app').innerHTML = r==='commentaires' ? vCommentaires() : r==='historique' ? vHistorique() : (r==='mercredi'||r==='samedi') ? vDetail(r) : live ? vLive(r.slice(5)) : r==='discours' ? vTalks() : r==='diffuser' ? vDiffuser() : r==='jw' ? vJW() : r==='culte' ? vCulte() : r.startsWith('culte-') ? vCulteDetail(r.slice(6)) : (r==='tv'||r==='tv-recv') ? vTV() : r.startsWith('talk-edit-') ? vTalkEdit(r.slice(10)) : r.startsWith('talk-train-') ? vTalkTrain(r.slice(11)) : vSemaine();
   if (r.startsWith('talk-edit-')) afterTalkEdit(r.slice(10));
   if (r.startsWith('talk-train-')) startTrain(r.slice(11)); else stopTrain();
   wakeLock(live || r.startsWith('talk-train-') || r==='tv' || r==='tv-recv');
@@ -1237,6 +1253,234 @@ document.addEventListener('click', e => {
   else if ('tvremote' in d){ const v = document.querySelector('.tv video'); try { v.remote.prompt().catch(() => toast('Aucun appareil trouvé : utilise la recopie d\'écran')); } catch(_){ toast('Diffusion indisponible ici'); } }
 });
 
+/* ---------- Bible d'étude (jw.org) : toute référence biblique ouvre le bon verset ---------- */
+const BIBLE = [null,
+ ['Genèse','genèse gn gen genese'],['exode','exode ex'],['Lévitique','lévitique lv lév'],['nombres','nombres nb nomb'],['Deutéronome','deutéronome dt deut'],
+ ['Josué','josué jos'],['juges','juges jg'],['ruth','ruth ru'],['1-samuel','1 samuel|1s|1 sam'],['2-samuel','2 samuel|2s|2 sam'],
+ ['1-rois','1 rois|1r'],['2-rois','2 rois|2r'],['1-chroniques','1 chroniques|1ch|1 chron'],['2-chroniques','2 chroniques|2ch|2 chron'],['esdras','esdras esd'],
+ ['Néhémie','néhémie né néh'],['esther','esther est'],['job','job jb'],['psaumes','psaumes psaume ps'],['proverbes','proverbes pr prov'],
+ ['Ecclésiaste','ecclésiaste ec eccl'],['chant-de-salomon','chant de salomon|ch|ct'],['Isaïe','isaïe is'],['Jérémie','jérémie jr jér'],['lamentations','lamentations lm lam'],
+ ['Ézéchiel','ézéchiel éz ézéch ez'],['daniel','daniel dn dan'],['Osée','osée os'],['Joël','joël jl'],['amos','amos am'],
+ ['abdias','abdias ab'],['jonas','jonas jon'],['Michée','michée mi'],['nahum','nahum na'],['habacuc','habacuc ha'],
+ ['sophonie','sophonie so'],['Aggée','aggée ag'],['zacharie','zacharie za zach'],['malachie','malachie ml mal'],
+ ['matthieu','matthieu mt mat'],['marc','marc mc'],['luc','luc lc'],['jean','jean jn'],['actes','actes ac'],
+ ['romains','romains rm ro rom'],['1-corinthiens','1 corinthiens|1co|1 cor'],['2-corinthiens','2 corinthiens|2co|2 cor'],['galates','galates ga gal'],['Éphésiens','éphésiens ép éph'],
+ ['philippiens','philippiens ph phil'],['colossiens','colossiens col'],['1-thessaloniciens','1 thessaloniciens|1th|1 thess'],['2-thessaloniciens','2 thessaloniciens|2th|2 thess'],['1-Timothée','1 timothée|1tm|1 tim'],
+ ['2-Timothée','2 timothée|2tm|2 tim'],['tite','tite tt'],['Philémon','philémon phm'],['Hébreux','hébreux hé héb'],['jacques','jacques jc jacq'],
+ ['1-pierre','1 pierre|1p|1 pier'],['2-pierre','2 pierre|2p|2 pier'],['1-jean','1 jean|1jn'],['2-jean','2 jean|2jn'],['3-jean','3 jean|3jn'],
+ ['jude','jude'],['Révélation','révélation ré rév']];
+const BALIAS = {};
+BIBLE.forEach((b, n) => { if (!b) return; b[1].split(b[1].includes('|') ? '|' : ' ').forEach(a => { a = a.trim(); BALIAS[a] = n; if (/^\d /.test(a)) BALIAS[a.replace(' ', '')] = n; if (/^\d\S/.test(a)) BALIAS[a[0] + ' ' + a.slice(1)] = n; }); });
+const BKEYS = Object.keys(BALIAS).sort((a, b) => b.length - a.length).map(k => k.replace(/ /g, '\\s?'));
+// pas de « lookbehind » (non pris en charge par Safari 15) : on capture le caractère qui précède
+const BRE = new RegExp('(^|[^A-Za-zÀ-ÿ0-9])(' + BKEYS.join('|') + ')\\.?\\s*(\\d{1,3}):(\\d{1,3})((?:\\s*[-–]\\s*\\d{1,3})?(?:\\s*,\\s*\\d{1,3}(?:\\s*[-–]\\s*\\d{1,3})?)*)((?:\\s*;\\s*\\d{1,3}:\\d{1,3}(?:\\s*[-–]\\s*\\d{1,3})?(?:\\s*,\\s*\\d{1,3}(?:\\s*[-–]\\s*\\d{1,3})?)*)*)', 'gi');
+const pad = (n, l) => String(n).padStart(l, '0');
+function studyURL(book, ch, v1, v2){
+  const slug = encodeURIComponent(BIBLE[book][0]), id = 'v' + pad(book, 2) + pad(ch, 3) + pad(v1, 3);
+  return 'https://www.jw.org/fr/biblioth%C3%A8que/bible/bible-d-etude/livres/' + slug + '/' + ch + '/#' + id + (v2 && v2 > v1 ? '-v' + pad(book, 2) + pad(ch, 3) + pad(v2, 3) : '');
+}
+const bookOf = s => BALIAS[s.toLowerCase().replace(/\s+/g, ' ').replace(/^(\d)\s?/, '$1 ')] || BALIAS[s.toLowerCase().replace(/\s+/g, '')];
+// première référence d'un texte → adresse de la Bible d'étude
+function firstStudy(t){ BRE.lastIndex = 0; const m = BRE.exec(String(t || '')); if (!m) return null; const b = bookOf(m[2]); if (!b) return null;
+  const last = (m[5].match(/\d+/g) || []).pop(); return studyURL(b, +m[3], +m[4], last ? +last : 0); }
+// transforme toutes les références d'un texte (déjà échappé) en liens vers la Bible d'étude
+function bibleLinks(html){
+  return String(html || '').replace(BRE, (all, pre, bk, ch, v, rest, more) => {
+    const b = bookOf(bk); if (!b) return all;
+    const lastV = (rest.match(/\d+/g) || []).pop();
+    let out = pre + `<a class="bref" href="${studyURL(b, +ch, +v, lastV ? +lastV : 0)}" target="_blank" rel="noopener">${bk}${all.slice(pre.length + bk.length, all.length - rest.length - more.length).replace(/^\./, '.')}${rest}</a>`;
+    if (more) out += more.replace(/(\d{1,3}):(\d{1,3})((?:\s*[-–]\s*\d{1,3})?(?:\s*,\s*\d{1,3}(?:\s*[-–]\s*\d{1,3})?)*)/g, (x, c2, v2, r2) => { const l2 = (r2.match(/\d+/g) || []).pop(); return `<a class="bref" href="${studyURL(b, +c2, +v2, l2 ? +l2 : 0)}" target="_blank" rel="noopener">${x}</a>`; });
+    return out;
+  });
+}
+const bl = t => bibleLinks(esc(t));
+// adresse d'une puce de référence : la Bible d'étude si c'est un verset, sinon le lien d'origine
+const refURL = r => (/^\s*(?:[123]\s?)?[A-Za-zÀ-ÿ]+\.?\s*\d+:\d+/.test(r.t) && firstStudy(r.t)) || r.u;
+
+// lien d'une question : la Bible d'étude quand le lien d'origine pointe vers un verset de la Bibliothèque en ligne
+const ilink = it => (/wol\.jw\.org\/fr\/wol\/(bc|b)\//.test(it.lien || '') && firstStudy(it.prep && it.prep.verset)) || it.lien;
+
+/* ---------- Culte familial : programme sur plusieurs mois, sujets jw.org ---------- */
+let CULTE = null, CFILT = 'tous';
+const LCF = 'carnet-culte';
+let CF = {sel: {}, done: {}, notes: {}, swap: {}}; try { CF = Object.assign(CF, JSON.parse(localStorage.getItem(LCF) || '{}')); } catch(e){}
+const saveCF = () => { try { localStorage.setItem(LCF, JSON.stringify(CF)); } catch(e){} };
+const PUBLIC = {famille: ['Toute la famille', '👨‍👩‍👧'], enfants: ['Enfants', '🧒'], ados: ['Adolescents', '🧑'], couple: ['Couple', '💑']};
+async function loadCulte(){
+  try { const r = await fetch('culte.json', {cache: 'no-cache'}); if (!r.ok) throw 0; CULTE = await r.json(); } catch(e){ CULTE = CULTE || {programme: [], banque: [], err: 1}; }
+  if (route().startsWith('culte')) render(true);
+}
+// sujet effectif d'une semaine (éventuellement remplacé par un sujet de la banque)
+function cfTopic(t){ const b = CF.swap[t.semaine] && (CULTE.banque || []).find(x => x.id === CF.swap[t.semaine]); return b ? {...b, id: t.id, semaine: t.semaine, debut: t.debut, remplace: t.titre} : t; }
+const cfAll = () => (CULTE?.programme || []).map(cfTopic);
+const cfFind = id => cfAll().find(t => t.id === id);
+
+function vCulte(){
+  if (!CULTE) { loadCulte(); return `<h1>Culte familial</h1><p class="sub">Chargement du programme…</p>`; }
+  if (CULTE.err && !CULTE.programme.length) return `<h1>Culte familial</h1><div class="card"><p class="note">Connecte-toi une fois à Internet pour télécharger le programme.</p></div>`;
+  const all = cfAll(), nsel = all.filter(t => CF.sel[t.id]).length, t0 = today();
+  const L = all.filter(t => CFILT === 'tous' || (CFILT === 'sel' ? CF.sel[t.id] : t.public === CFILT));
+  const nowT = all.find(t => pd(t.debut) <= t0 && t0 < new Date(pd(t.debut).getTime() + 7*864e5)), nextT = nowT || all.find(t => pd(t.debut) > t0);
+  const months = {}; L.forEach(t => { const d = new Date(pd(t.debut).getTime() + 3*864e5), k = MOIS[d.getMonth()] + ' ' + d.getFullYear(); (months[k] = months[k] || []).push(t); });
+  return `<h1>Culte familial</h1><p class="sub">Programme ${esc(CULTE.periode || '')} · des sujets tirés de jw.org pour chaque semaine. Touche ⭐ pour choisir ceux que tu présenteras et te préparer à l'avance.</p>
+  <div class="chips">${[['tous','Tous'],['sel','⭐ Je présente (' + nsel + ')'],['famille','👨‍👩‍👧 Famille'],['enfants','🧒 Enfants'],['ados','🧑 Ados'],['couple','💑 Couple']].map(([k,l]) => `<button class="${CFILT===k?'on':''}" data-cff="${k}">${l}</button>`).join('')}</div>
+  ${Object.entries(months).map(([m, ts]) => `<h2 style="text-transform:capitalize">${esc(m)}</h2>${ts.map(t => { const p = PUBLIC[t.public] || PUBLIC.famille, cur = nextT && t.id === nextT.id;
+    return `<article class="card cfc ${cur ? 'cur' : ''}"><div class="cmh"><div><small>Semaine du ${esc(dLabel(t.debut))}${cur ? ` · <b style="color:var(--vi)">${nowT ? 'cette semaine' : 'prochain sujet'}</b>` : ''}</small><h3>${esc(t.titre)}</h3>
+      <small>${p[1]} ${esc(p[0])} · ${esc(t.duree)}${t.video ? ' · 🎬 ' + esc(t.video.duree) : ''}${t.remplace ? ' · sujet remplacé' : ''}</small></div>
+      <span class="tag ${CF.done[t.id] ? 'pret' : ''}">${CF.done[t.id] ? '✓ Fait' : CF.sel[t.id] ? '⭐ Je présente' : 'Prévu'}</span></div>
+      <div class="row"><a class="btn soft" href="#culte-${esc(t.id)}">Ouvrir</a><button class="btn" data-cfsel="${esc(t.id)}">${CF.sel[t.id] ? '★ Retirer' : '☆ Je présente'}</button></div></article>`; }).join('')}`).join('') || `<p class="sub">Aucun sujet dans ce filtre.</p>`}
+  <div class="card" style="margin:18px 0 40px"><h3>📥 Programme hors connexion</h3><p class="note">Le programme est enregistré sur ton téléphone dès la première ouverture. Pour les vidéos, ouvre un sujet et touche « 📺 Diffuser », puis télécharge-la dans le Diffuser (⬇ Hors connexion).</p><button class="btn" data-cfprint>🖨 Imprimer le programme</button></div>`;
+}
+function vCulteDetail(id){
+  if (!CULTE){ loadCulte(); return `<p class="sub">Chargement…</p>`; }
+  const t = cfFind(id); if (!t) return `<p class="sub">Sujet introuvable.</p><a class="btn" href="#culte">← Programme</a>`;
+  const p = PUBLIC[t.public] || PUBLIC.famille, tot = t.deroulement.reduce((a, x) => a + (+x.min || 0), 0);
+  return `<a class="back" href="#culte">← Programme du culte familial</a>
+  <div class="cfh"><small>Semaine du ${esc(dLabel(t.debut))} · ${p[1]} ${esc(p[0])} · ${esc(t.duree)}</small><h1>${esc(t.titre)}</h1>${t.remplace ? `<p class="note">Remplace : « ${esc(t.remplace)} » · <button class="lnk" data-cfunswap="${esc(t.semaine)}">revenir au sujet prévu</button></p>` : ''}
+   <p class="cfobj">🎯 ${esc(t.objectif)}</p></div>
+  <div class="row cfact"><button class="btn ${CF.sel[t.id] ? 'pri' : ''}" data-cfsel="${esc(t.id)}">${CF.sel[t.id] ? '★ Je présente' : '☆ Je présente'}</button><button class="btn" data-cfdone="${esc(t.id)}">${CF.done[t.id] ? '✓ Fait' : 'Marquer comme fait'}</button><button class="btn" data-cftv="${esc(t.id)}">📺 Diffuser</button><button class="btn" data-cfswap="${esc(t.semaine)}">🔁 Changer de sujet</button><button class="btn" data-cfprint>🖨 Imprimer</button></div>
+  ${t.video ? `<div class="md" style="margin-top:12px"><span class="mdi">▶</span><div><b>Vidéo · ${esc(t.video.titre)}</b><p>${esc(t.video.duree)} · jw.org</p><a href="${esc(t.video.url)}" target="_blank" rel="noopener">Regarder sur jw.org ${ext}</a> <button class="btn" style="min-height:32px;padding:0 10px;font-size:12.5px;margin-left:6px" data-tvjw="${esc(t.video.url)}">📺 Ajouter au diffuseur</button></div></div>` : ''}
+  <div class="refs" style="margin-top:10px">${t.sources.map(s => `<a href="${esc(s.u)}" target="_blank" rel="noopener">📄 ${esc(s.t)} ${ext}</a>`).join('')}</div>
+  <section class="prog" style="margin-top:14px"><h2>Déroulement · ${tot} min</h2>
+   <ol class="cfsteps">${t.deroulement.map(x => `<li><span class="cfm">${esc(x.min)} min</span><div><b>${esc(x.etape)}</b>${x.detail ? `<div class="note" style="margin:2px 0 0">${bl(x.detail)}</div>` : ''}</div></li>`).join('')}</ol>
+   <h2>Questions pour la discussion</h2><ul class="conseils">${t.questions.map(q => `<li>${esc(q)}</li>`).join('')}</ul>
+   <h2>Versets</h2><ul class="conseils">${t.versets.map(v => `<li>${bl(v)}</li>`).join('')}</ul>
+   ${t.activite ? `<h2>Activité</h2><p>${bl(t.activite)}</p>` : ''}
+   ${t.application ? `<h2>Pour la semaine</h2><p>${bl(t.application)}</p>` : ''}
+  </section>
+  <div class="card" style="margin-top:14px;background:var(--peach2)"><h3>📝 Pour bien préparer</h3><ul class="conseils">${t.preparation.map(x => `<li>${bl(x)}</li>`).join('')}</ul></div>
+  <label class="sheet" style="padding:0;margin:14px 0 40px">Mes notes de préparation<textarea id="cfnote" data-id="${esc(t.id)}" style="min-height:120px" placeholder="Idées, exemples personnels, questions à poser…">${esc(CF.notes[t.id] || '')}</textarea></label>`;
+}
+function cfSwapDialog(sem){
+  const b = CULTE.banque || [];
+  $('#form').innerHTML = `<h2>Choisir un autre sujet</h2><p class="note">Ces sujets viennent aussi de jw.org. Le sujet prévu reste disponible : tu pourras y revenir.</p>
+  ${b.map(x => { const p = PUBLIC[x.public] || PUBLIC.famille; return `<button type="button" class="card wk" style="width:100%;text-align:left;margin:0" data-cfpick="${esc(sem)}|${esc(x.id)}"><span class="ico">${p[1]}</span><div><h3>${esc(x.titre)}</h3><small>${esc(p[0])}${x.video ? ' · 🎬 ' + esc(x.video.duree) : ''}</small></div></button>`; }).join('')}
+  <div class="end"><button class="btn" value="cancel">Fermer</button></div>`;
+  $('#form').oninput = null; $('#form').onsubmit = null; $('#dlg').oncancel = null;
+  try { $('#dlg').showModal(); } catch(e){ $('#dlg').setAttribute('open',''); }
+}
+async function cfToTV(t){
+  tvAdd({titre: t.titre, sous: (PUBLIC[t.public] || PUBLIC.famille)[0] + ' · culte familial', texte: t.objectif}, true);
+  if (t.video) await addJwVideo(t.video.url);
+  tvAdd({titre: 'Questions pour la discussion', sous: t.titre, texte: t.questions.map(q => '• ' + q).join('\n'), verset: t.versets.join(' · ')}, true);
+  toast('📺 Sujet ajouté au diffuseur'); }
+let cfT;
+document.addEventListener('input', e => { if (e.target.id === 'cfnote'){ CF.notes[e.target.dataset.id] = e.target.value; clearTimeout(cfT); cfT = setTimeout(saveCF, 400); } });
+document.addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return; const d = b.dataset;
+  if (d.cff){ CFILT = d.cff; render(); }
+  else if (d.cfsel){ CF.sel[d.cfsel] = !CF.sel[d.cfsel]; if (!CF.sel[d.cfsel]) delete CF.sel[d.cfsel]; saveCF(); render(true); toast(CF.sel[d.cfsel] ? '⭐ Ajouté à mes préparations' : 'Retiré de mes préparations'); }
+  else if (d.cfdone){ CF.done[d.cfdone] = !CF.done[d.cfdone]; if (!CF.done[d.cfdone]) delete CF.done[d.cfdone]; saveCF(); render(true); }
+  else if (d.cfswap) cfSwapDialog(d.cfswap);
+  else if (d.cfpick){ const [sem, id] = d.cfpick.split('|'); CF.swap[sem] = id; saveCF(); $('#dlg').close(); render(true); toast('Sujet remplacé'); }
+  else if (d.cfunswap){ delete CF.swap[d.cfunswap]; saveCF(); render(true); }
+  else if (d.cftv){ const t = cfFind(d.cftv); if (t) cfToTV(t); }
+  else if ('cfprint' in d) window.print();
+});
+
+/* ---------- Versets dans l'appli + cartes à partager ---------- */
+let VERSES = {};
+async function loadVerses(){ try { const r = await fetch('versets.json', {cache: 'no-cache'}); if (r.ok) VERSES = await r.json(); } catch(e){} }
+// adresse de la Bible d'étude → clé « livre.chapitre.v1.v2 »
+function keyFromURL(u){ const m = String(u).match(/#v(\d{2})(\d{3})(\d{3})(?:-v\d{2}\d{3}(\d{3}))?/); if (!m) return null;
+  return [+m[1], +m[2], +m[3], m[4] ? +m[4] : +m[3]].join('.'); }
+let VSEL = null; // passage affiché : {k, c, v:[[n,t]], url, on:Set}
+function showVerse(k, url){
+  const P = VERSES[k]; if (!P) return false;
+  VSEL = {k, c: P.c, v: P.v, url, on: new Set(P.v.map(x => x[0]))};
+  $('#form').innerHTML = `<div class="vhead"><small>Traduction du monde nouveau</small><h2>${esc(P.c)}</h2></div>
+   <div class="vtext">${P.v.map(([n, t]) => `<label class="vv"><input type="checkbox" data-vn="${n}" checked><span><sup>${n}</sup> ${esc(t)}</span></label>`).join('')}</div>
+   ${P.v.length > 1 ? `<p class="note" style="margin:0">Décoche les versets que tu ne veux pas mettre sur la carte.</p>` : ''}
+   <div class="vact"><button class="btn pri" type="button" data-vcard>🖼 Créer une carte</button><button class="btn" type="button" data-vcopy>📋 Copier</button><button class="btn" type="button" data-vtv>📺 Diffuser</button>
+   <a class="btn" href="${esc(url)}" target="_blank" rel="noopener">📖 Bible d'étude ${ext}</a></div>
+   <div class="end"><button class="btn" value="cancel">Fermer</button></div>`;
+  $('#form').oninput = e => { const n = +e.target.dataset.vn; if (!n) return; e.target.checked ? VSEL.on.add(n) : VSEL.on.delete(n); };
+  $('#form').onsubmit = null; $('#dlg').oncancel = null;
+  try { $('#dlg').showModal(); } catch(e){ $('#dlg').setAttribute('open',''); }
+  return true;
+}
+// citation des versets choisis : « Lamentations 3:22-24 » ou « Lamentations 3:22, 24 »
+function selCitation(){
+  const book = VSEL.c.replace(/\s*\d+\s*:.*$/, ''), ch = (VSEL.c.match(/(\d+)\s*:/) || [])[1], ns = VSEL.v.map(x => x[0]).filter(n => VSEL.on.has(n));
+  if (!ns.length) return VSEL.c;
+  const parts = []; let a = ns[0], p = ns[0];
+  for (const n of ns.slice(1).concat([null])){ if (n === p + 1){ p = n; continue; } parts.push(a === p ? '' + a : a + (p === a + 1 ? ', ' : '-') + p); a = p = n; }
+  return book + ' ' + ch + ':' + parts.join(', ');
+}
+const selText = () => VSEL.v.filter(x => VSEL.on.has(x[0])).map(x => x[1]).join(' ');
+
+/* --- dessin de la carte (canvas) --- */
+const THEMES = {
+  aube:  {n: 'Aube',  bg: ['#5b3fc6', '#9a6cf0', '#f08a64'], ink: '#ffffff', sub: '#ffffffcc', acc: '#ffe3d6'},
+  nuit:  {n: 'Nuit',  bg: ['#0e0b1c', '#241b47', '#3a2b6e'], ink: '#f4f1ff', sub: '#c9bcffcc', acc: '#ffb28f'},
+  olive: {n: 'Olivier', bg: ['#f3f6ee', '#dfe8d5', '#c3d4b4'], ink: '#22311b', sub: '#22311bb3', acc: '#5d7a3a'},
+  sable: {n: 'Sable', bg: ['#fdf7ee', '#f4e6cf', '#e8cfa8'], ink: '#3b2a1a', sub: '#3b2a1ab3', acc: '#a3443a'},
+  ocean: {n: 'Océan', bg: ['#0b3a53', '#12607a', '#3fa3a8'], ink: '#ffffff', sub: '#ffffffcc', acc: '#ffd88a'}};
+let VTHEME = 'aube';
+function wrapLines(ctx, text, maxW){
+  // espace insécable avant ; : ? ! » et après « (typographie française)
+  text = text.replace(/ ([;:?!»])/g, '\u00a0$1').replace(/« /g, '«\u00a0');
+  const words = text.split(/ +/), lines = []; let line = '';
+  for (const w of words){ const t = line ? line + ' ' + w : w; if (ctx.measureText(t).width > maxW && line){ lines.push(line); line = w; } else line = t; }
+  if (line) lines.push(line); return lines;
+}
+function drawCard(text, ref, th){
+  const W = 1080, H = 1350, c = document.createElement('canvas'); c.width = W; c.height = H; const x = c.getContext('2d'), T = THEMES[th];
+  const g = x.createLinearGradient(0, 0, W, H); T.bg.forEach((col, i) => g.addColorStop(i / (T.bg.length - 1), col)); x.fillStyle = g; x.fillRect(0, 0, W, H);
+  // halos et cercles décoratifs
+  [[W*.15, H*.12, 420, .18], [W*.92, H*.85, 520, .16], [W*.85, H*.18, 180, .12]].forEach(([cx, cy, r, a]) => {
+    const rg = x.createRadialGradient(cx, cy, 0, cx, cy, r); rg.addColorStop(0, `rgba(255,255,255,${a})`); rg.addColorStop(1, 'rgba(255,255,255,0)'); x.fillStyle = rg; x.fillRect(0, 0, W, H); });
+  x.strokeStyle = T.sub; x.globalAlpha = .25; x.lineWidth = 2; x.strokeRect(48, 48, W - 96, H - 96); x.globalAlpha = 1;
+  x.fillStyle = T.acc; x.font = '600 30px -apple-system, system-ui, "Segoe UI", sans-serif'; x.textAlign = 'center';
+  x.fillText('TRADUCTION DU MONDE NOUVEAU', W / 2, 150);
+  x.globalAlpha = .35; x.font = 'bold 240px Georgia, "Times New Roman", serif'; x.fillText('“', W / 2, 400); x.globalAlpha = 1;
+  // texte : taille automatique pour remplir la zone
+  const maxW = 860, top = 330, bottom = 1040; let size = 72, lines, lh;
+  for (; size >= 28; size -= 2){ x.font = `${size}px Georgia, "Times New Roman", serif`; lines = wrapLines(x, text, maxW); lh = size * 1.42; if (lines.length * lh <= bottom - top) break; }
+  x.fillStyle = T.ink; const y0 = top + (bottom - top - lines.length * lh) / 2 + size;
+  lines.forEach((l, i) => x.fillText(l, W / 2, y0 + i * lh));
+  x.fillStyle = T.acc; x.fillRect(W / 2 - 50, 1095, 100, 4);
+  x.fillStyle = T.ink; x.font = '700 46px -apple-system, system-ui, "Segoe UI", sans-serif'; x.fillText(ref, W / 2, 1170);
+  x.fillStyle = T.sub; x.font = '500 28px -apple-system, system-ui, "Segoe UI", sans-serif'; x.fillText('jw.org', W / 2, 1240);
+  return c;
+}
+let VCANVAS = null;
+function cardDialog(){
+  const ref = selCitation(), text = selText();
+  if (!text) return toast('Choisis au moins un verset');
+  const paint = () => { VCANVAS = drawCard(text, ref, VTHEME); $('#vprev').src = VCANVAS.toDataURL('image/jpeg', .85);
+    document.querySelectorAll('[data-vth]').forEach(b => b.classList.toggle('on', b.dataset.vth === VTHEME)); };
+  $('#form').innerHTML = `<h2>Carte · ${esc(ref)}</h2><img id="vprev" alt="Aperçu de la carte" style="width:100%;border-radius:16px;box-shadow:0 10px 30px #0003">
+   <div class="chips">${Object.entries(THEMES).map(([k, t]) => `<button type="button" data-vth="${k}" style="background:linear-gradient(135deg,${t.bg.join(',')});color:${t.ink};border-color:transparent">${t.n}</button>`).join('')}</div>
+   <div class="vact"><button class="btn pri" type="button" data-vshare>📤 Partager</button><button class="btn" type="button" data-vsave>⬇ Enregistrer l'image</button></div>
+   <div class="end"><button class="btn" type="button" data-vback>← Retour au verset</button><button class="btn" value="cancel">Fermer</button></div>`;
+  $('#form').oninput = null; $('#form').onsubmit = null;
+  paint(); $('#form').onclick = e => { const b = e.target.closest('[data-vth]'); if (b){ VTHEME = b.dataset.vth; try { localStorage.setItem('carnet-vtheme', VTHEME); } catch(_){} paint(); } };
+}
+try { VTHEME = localStorage.getItem('carnet-vtheme') || 'aube'; if (!THEMES[VTHEME]) VTHEME = 'aube'; } catch(e){}
+async function shareCard(){
+  const ref = selCitation(), blob = await new Promise(r => VCANVAS.toBlob(r, 'image/png')), file = new File([blob], ref.replace(/[^\wÀ-ÿ]+/g, '-') + '.png', {type: 'image/png'});
+  const data = {files: [file], title: ref, text: ref + ' — lire sur jw.org : ' + VSEL.url};
+  try { if (navigator.canShare && navigator.canShare({files: [file]})){ await navigator.share(data); return; } } catch(e){ if (e.name === 'AbortError') return; }
+  saveCard(blob, file.name); toast('Partage direct indisponible ici : image enregistrée');
+}
+function saveCard(blob, name){ const go = b => { const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = name || 'verset.png'; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 2000); };
+  if (blob) go(blob); else VCANVAS.toBlob(b => go(b), 'image/png'); }
+
+// un toucher sur un lien vers la Bible d'étude : on affiche le verset dans l'appli si on l'a
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href*="bible-d-etude/livres/"]');
+  if (a && !a.closest('#form')){ const k = keyFromURL(a.href); if (k && showVerse(k, a.href)){ e.preventDefault(); } return; }
+  const b = e.target.closest('button'); if (!b || !VSEL) return; const d = b.dataset;
+  if ('vcard' in d) cardDialog();
+  else if ('vback' in d) showVerse(VSEL.k, VSEL.url);
+  else if ('vshare' in d) shareCard();
+  else if ('vsave' in d) saveCard(null, selCitation().replace(/[^\wÀ-ÿ]+/g, '-') + '.png');
+  else if ('vcopy' in d){ const t = '« ' + selText() + ' » (' + selCitation() + ', Traduction du monde nouveau)\n' + VSEL.url;
+    try { navigator.clipboard.writeText(t).then(() => toast('Verset copié'), () => toast('Copie impossible ici')); } catch(_){ toast('Copie impossible ici'); } }
+  else if ('vtv' in d){ tvAdd({titre: selCitation(), texte: selText(), verset: 'Traduction du monde nouveau'}); }
+});
+
 /* ---------- application installable (PWA) ---------- */
 const STANDALONE = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
 const IOS = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
@@ -1272,7 +1516,7 @@ async function loadWeeks(){
   catch(e){ LOADERR = true; }
   render(true);
 }
-render(); loadWeeks();
+render(); loadWeeks(); loadCulte(); loadVerses();
 
 
 /* ---------- base de données (semaines + commentaires) ---------- */
