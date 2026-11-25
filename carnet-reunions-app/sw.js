@@ -1,7 +1,7 @@
 /* Service worker du Carnet de réunions : l'appli fonctionne entièrement hors connexion.
    Mise à jour de l'appli : modifie index.html puis change VERSION.
    Mise à jour des programmes : remplace simplement semaines.json (récupéré automatiquement quand il y a Internet). */
-const VERSION = 'carnet-v3.2.0';
+const VERSION = 'carnet-v3.3.0';
 const FILES = ['./', './index.html', './semaines.json', './manifest.webmanifest',
   './icons/icon-192.png', './icons/icon-512.png', './icons/icon-maskable-512.png', './icons/apple-touch-icon.png'];
 // lecteurs PDF et Word : gardés en cache pour importer des plans hors connexion

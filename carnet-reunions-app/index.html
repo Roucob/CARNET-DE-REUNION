@@ -162,6 +162,17 @@ nav a{flex:none}
 .bub.me{background:var(--lav);border-color:transparent;border-radius:14px 14px 4px 14px;margin:8px 0 0 30px}
 .bub small{display:block;font-size:11px;font-weight:600;color:var(--vi)}
 .reco{background:var(--okbg);border-radius:14px;padding:12px 14px;margin:14px 0 4px}.reco b{color:var(--ok)}.reco ul{margin:6px 0 0;padding-left:18px}.reco li b{color:var(--ink)}
+.tvmode header{display:none}.tvmode{overflow:hidden}
+.tv{position:fixed;inset:0;z-index:50;background:radial-gradient(ellipse at top,#2a2152,#0e0b1c 70%);color:#f4f1ff;display:flex;flex-direction:column;justify-content:center;padding:4vh 6vw}
+.tv-card{max-width:1400px;margin:auto 0;width:100%}
+.tv-t{font-size:clamp(22px,3.6vw,56px);font-weight:600;letter-spacing:-.02em;line-height:1.15;color:#c9bcff}
+.tv-q{font-size:clamp(16px,2.2vw,32px);color:#a8a0c8;margin-top:1.2vh;line-height:1.3}
+.tv-x{white-space:pre-wrap;margin-top:3.5vh;line-height:1.45}
+.tv-x.tv-l{font-size:clamp(22px,3.4vw,54px)}.tv-x.tv-m{font-size:clamp(18px,2.7vw,42px)}.tv-x.tv-s{font-size:clamp(15px,2.1vw,32px)}
+.tv-v{margin-top:3vh;font-size:clamp(16px,2.2vw,34px);color:#ffb28f;font-weight:500}
+.tv-foot{position:absolute;left:6vw;right:6vw;bottom:3vh;display:flex;justify-content:space-between;color:#7d76a0;font-size:clamp(12px,1.4vw,20px)}
+.tv-nav{position:absolute;top:0;bottom:0;width:30%;background:none;border:0;cursor:pointer}.tv-nav.l{left:0}.tv-nav.r{right:0}
+.tv-x-btn{position:absolute;top:2vh;right:2vw;z-index:2;background:#ffffff1a;color:#fff;border:0;border-radius:999px;width:44px;height:44px;font-size:18px;cursor:pointer}
 .medias{display:grid;gap:8px;margin-top:10px}
 .md{display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;background:var(--lav2);border-radius:12px;padding:10px 12px}
 .sat .md{background:var(--peach2)}
@@ -203,6 +214,7 @@ textarea.big,#tform textarea,#tform input,#tform select{width:100%;border:1.5px 
     <a href="#commentaires" data-nav="commentaires"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19l1.4-3.6A8 8 0 1 1 8.6 19z"/><path d="M9 10h6M9 13.5h4"/></svg>Commentaires</a>
     <a href="#historique" data-nav="historique"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3.5 12a8.5 8.5 0 1 0 2.4-5.9L3.5 8.5"/><path d="M3.5 4v4.5H8M12 8v4.5l3 2"/></svg>Historique</a>
     <a href="#discours" data-nav="discours"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>Discours</a>
+    <a href="#diffuser" data-nav="diffuser"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Diffuser</a>
   </nav>
 </div></header>
 <main class="wrap" id="app"></main>
@@ -314,7 +326,7 @@ function cmCard(c){
   ${c.dire ? `<p class="txt">${esc(c.dire)}</p>` : ''}
   <details><summary>Voir la structure</summary><dl class="pp">
   ${c.reponse?`<dt>Réponse directe</dt><dd>${esc(c.reponse)}</dd>`:''}${c.verset?`<dt>Verset ou publication</dt><dd>${esc(c.verset)}</dd>`:''}${c.probleme?`<dt>Problème ou difficulté</dt><dd>${esc(c.probleme)}</dd>`:''}${c.application?`<dt>Application ou leçon</dt><dd>${esc(c.application)}</dd>`:''}</dl></details>
-  <div class="row"><button class="btn soft" data-edit="${esc(c.id)}">Modifier</button><button class="btn" data-copy="${esc(c.id)}">Copier</button><button class="btn" data-del="${esc(c.id)}" style="color:var(--te)">Supprimer</button></div></article>`;
+  <div class="row"><button class="btn soft" data-edit="${esc(c.id)}">Modifier</button><button class="btn" data-copy="${esc(c.id)}">Copier</button><button class="btn" data-tvc="${esc(c.id)}" title="Diffuser sur la télé">📺</button><button class="btn" data-del="${esc(c.id)}" style="color:var(--te)">Supprimer</button></div></article>`;
 }
 function vHistorique(){
   const ws = sortedWeeks().reverse();
@@ -352,13 +364,13 @@ function partHtml(w,k,p,mine){
     ${D.fiche ? `<details><summary>Fiche-mémo pour l'estrade</summary><ul class="conseils">${D.fiche.map(f => `<li>${esc(f)}</li>`).join('')}</ul></details>` : ''}
     ${D.versets ? `<details><summary>Versets à préparer</summary><ul class="conseils">${D.versets.map(f => `<li>${esc(f)}</li>`).join('')}</ul></details>` : ''}
     ${D.sources ? `<div class="refs">${D.sources.map(r => `<a href="${esc(r.u)}" target="_blank" rel="noopener">${esc(r.t)} ${ext}</a>`).join('')}</div>` : ''}
-    <div class="row" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px"><button class="btn pri" data-jtrain="${esc(k)}|${esc(pk)}">⏱ S'entraîner</button><button class="btn" data-jedit="${esc(k)}|${esc(pk)}">${talk(tk) ? '✎ Ma version' : '✎ Personnaliser'}</button></div></div>`; })() : ''}
+    <div class="row" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px"><button class="btn pri" data-jtrain="${esc(k)}|${esc(pk)}">⏱ S'entraîner</button><button class="btn" data-jedit="${esc(k)}|${esc(pk)}">${talk(tk) ? '✎ Ma version' : '✎ Personnaliser'}</button><button class="btn" data-tvd="${esc(k)}|${esc(pk)}">📺 Diffuser le plan</button></div></div>`; })() : ''}
   ${p.dialogue?.length ? `<details class="dlg" open><summary>Exemple de dialogue</summary>${p.dialogue.map(l => `<div class="bub ${/proclam|^moi$/i.test(l.qui) ? 'me' : ''}"><small>${esc(l.qui)}</small>${esc(l.texte)}</div>`).join('')}${p.lecon ? `<p class="note"><b>Leçon :</b> ${esc(p.lecon)}</p>` : ''}</details>` : ''}
   ${p.conseils ? `<ul class="conseils">${p.conseils.map(c => `<li>${esc(c)}</li>`).join('')}</ul>` : ''}
   ${(p.items||[]).map((it,j) => `<div class="item"><div class="q">${esc(it.titre)} ${it.lien ? `<a href="${esc(it.lien)}" target="_blank" rel="noopener" aria-label="Ouvrir sur wol.jw.org">${ext}</a>` : ''}</div><p class="qq">${esc(it.question)}</p>
     <details><summary>Voir le commentaire</summary><dl class="pp"><dt>Réponse directe</dt><dd>${esc(it.prep.reponse)}</dd><dt>Verset ou publication</dt><dd>${esc(it.prep.verset)}</dd>${it.prep.probleme?`<dt>Problème ou difficulté</dt><dd>${esc(it.prep.probleme)}</dd>`:''}<dt>Application ou leçon</dt><dd>${esc(it.prep.application)}</dd></dl>
     <div class="say"><b>Commentaire à dire</b>${esc(it.prep.dire)}</div>${it.src?.length ? `<div class="refs">${it.src.map(r => `<a href="${esc(r.u)}" target="_blank" rel="noopener">📖 ${esc(r.t)} ${ext}</a>`).join('')}</div>` : ''}
-    <div class="acts"><a href="${esc(it.lien || w.programme)}" target="_blank" rel="noopener">Voir la source ${ext}</a>${(() => { const ex = existingTake(w.id, k, pk, j); return ex
+    <div class="acts"><a href="${esc(it.lien || w.programme)}" target="_blank" rel="noopener">Voir la source ${ext}</a><button class="btn" data-tvadd="${esc(k)}|${esc(pk)}|${j}" title="Ajouter à la diffusion TV">📺 Diffuser</button>${(() => { const ex = existingTake(w.id, k, pk, j); return ex
       ? `<button class="btn" data-edit="${esc(ex.id)}" style="color:var(--ok)">✓ Repris · Modifier</button>`
       : `<button class="btn soft" data-take="${esc(k)}|${esc(pk)}|${j}">${plus} Reprendre</button>`; })()}</div></details></div>`).join('')}
   ${p.autres ? `<details><summary>Autres questions du chapitre</summary><ul class="conseils">${p.autres.map(a => `<li>${esc(a)}</li>`).join('')}</ul></details>` : ''}
@@ -455,10 +467,10 @@ function art(){
 }
 
 /* ---------- rendu et routage ---------- */
-function route(){ const h = location.hash.slice(1); return ['commentaires','historique','mercredi','samedi','live-mercredi','live-samedi','discours'].includes(h) || /^talk-(edit|train)-[\w-]+$/.test(h) ? h : 'semaine'; }
+function route(){ const h = location.hash.slice(1); return ['commentaires','historique','mercredi','samedi','live-mercredi','live-samedi','discours','diffuser','tv','tv-recv'].includes(h) || /^talk-(edit|train)-[\w-]+$/.test(h) ? h : 'semaine'; }
 function render(keepScroll){
   const r = route(), y = scrollY, live = r.startsWith('live-');
-  const needWeeks = !['commentaires','discours'].includes(r) && !r.startsWith('talk-');
+  const needWeeks = !['commentaires','discours','diffuser','tv','tv-recv'].includes(r) && !r.startsWith('talk-');
   if (needWeeks && !Object.keys(WEEKS).length){
     $('#app').innerHTML = LOADERR
       ? `<div class="card" style="margin-top:18px"><h3>Programmes indisponibles</h3><p class="note">Connecte-toi une fois à Internet pour télécharger les programmes. Tes commentaires et tes discours restent accessibles.</p><a class="btn" href="#discours">Mes discours</a></div>`
@@ -469,10 +481,11 @@ function render(keepScroll){
   document.querySelectorAll('[data-nav]').forEach(a => a.hasAttribute('aria-current') ? a.setAttribute('aria-current','page') : 0);
   const open = [...document.querySelectorAll('details[open]')].map(d => d.querySelector('summary')?.parentElement?.closest('.item')?.querySelector('.q')?.textContent);
   const qv = $('#q')?.value, fv = $('#fm')?.value;
-  $('#app').innerHTML = r==='commentaires' ? vCommentaires() : r==='historique' ? vHistorique() : (r==='mercredi'||r==='samedi') ? vDetail(r) : live ? vLive(r.slice(5)) : r==='discours' ? vTalks() : r.startsWith('talk-edit-') ? vTalkEdit(r.slice(10)) : r.startsWith('talk-train-') ? vTalkTrain(r.slice(11)) : vSemaine();
+  $('#app').innerHTML = r==='commentaires' ? vCommentaires() : r==='historique' ? vHistorique() : (r==='mercredi'||r==='samedi') ? vDetail(r) : live ? vLive(r.slice(5)) : r==='discours' ? vTalks() : r==='diffuser' ? vDiffuser() : (r==='tv'||r==='tv-recv') ? vTV() : r.startsWith('talk-edit-') ? vTalkEdit(r.slice(10)) : r.startsWith('talk-train-') ? vTalkTrain(r.slice(11)) : vSemaine();
   if (r.startsWith('talk-edit-')) afterTalkEdit(r.slice(10));
   if (r.startsWith('talk-train-')) startTrain(r.slice(11)); else stopTrain();
-  wakeLock(live || r.startsWith('talk-train-'));
+  wakeLock(live || r.startsWith('talk-train-') || r==='tv' || r==='tv-recv');
+  if (r==='tv' || r==='tv-recv') tvEnter(); else tvLeave();
   if (r==='commentaires'){ if (qv) $('#q').value = qv; if (fv) $('#fm').value = fv; fillList(); }
   if (keepScroll){ document.querySelectorAll('.item').forEach(it => { if (open.includes(it.querySelector('.q')?.textContent)) it.querySelector('details')?.setAttribute('open',''); }); scrollTo(0,y); }
 }
@@ -817,6 +830,116 @@ document.addEventListener('click', e => {
   else if ('tnext' in d && TR){ if (TR.sec < TR.S.length - 1){ TR.sec++; TR.secStart = TR.el; paintTrain(); document.querySelector(`[data-ti="${TR.sec}"]`)?.scrollIntoView({behavior:'smooth', block:'center'}); } }
   else if ('treset' in d && TR){ Object.assign(TR, {run:false, el:0, sec:0, secStart:0}); paintTrain(); }
 });
+
+/* ---------- Diffuseur : partager des recherches sur la télé ---------- */
+const LTV = 'carnet-tv';
+let TVL = []; try { TVL = JSON.parse(localStorage.getItem(LTV) || '[]'); } catch(e){}
+const saveTV = () => { try { localStorage.setItem(LTV, JSON.stringify(TVL)); } catch(e){} };
+let TVI = 0;
+function tvAdd(sl, quiet){ TVL.push({id: 's' + newId().slice(1), ...sl}); saveTV(); if (!quiet) toast('📺 Ajouté à la diffusion (' + TVL.length + ')'); }
+
+function vDiffuser(){
+  const cast = 'PresentationRequest' in window;
+  return `<h1>Diffuser sur la télé</h1><p class="sub">Prépare ici ce que tu veux montrer à ta famille, puis lance le mode TV.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn pri" href="#tv" ${TVL.length ? '' : 'aria-disabled="true" style="opacity:.5;pointer-events:none"'}>▶ Lancer le mode TV</a>
+  ${cast ? `<button class="btn" data-tvcast>📡 Envoyer au Chromecast</button>` : ''}
+  <button class="btn" data-tvnew>${plus} Ajouter une recherche</button>${TVL.length ? `<button class="btn" data-tvclear style="color:var(--te)">Tout vider</button>` : ''}</div>
+  <div style="height:12px"></div>
+  ${TVL.length ? TVL.map((s,i) => `<article class="card cm"><div class="cmh"><div><small>Diapo ${i+1}</small><h3>${esc(s.titre || 'Sans titre')}</h3>${s.verset ? `<small style="color:var(--vi)">${esc(s.verset)}</small>` : ''}</div></div>
+    ${s.texte ? `<p class="txt" style="max-height:4.6em;overflow:hidden">${esc(s.texte)}</p>` : ''}
+    <div class="row"><button class="btn" data-tvup="${i}" aria-label="Monter">↑</button><button class="btn" data-tvdown="${i}" aria-label="Descendre">↓</button><button class="btn soft" data-tved="${i}">Modifier</button><button class="btn" data-tvdel="${i}" style="color:var(--te)">Retirer</button><a class="btn" href="#tv" data-tvgo="${i}">▶</a></div></article>`).join('')
+  : `<div class="card empty"><div class="ico">📺</div><h3>Rien à diffuser pour le moment</h3><p>Touche « 📺 Diffuser » sous un commentaire, un plan de discours ou un de tes commentaires. Tu peux aussi ajouter ta propre recherche.</p></div>`}
+  <details class="card"><summary>Comment afficher sur ma télé ?</summary><ul class="conseils">
+   <li><b>iPhone + Apple TV ou télé compatible AirPlay</b> : ouvre le Centre de contrôle (glisse depuis le coin en haut à droite) → <b>Recopie de l'écran</b> → choisis ta télé, puis lance le mode TV et tourne le téléphone à l'horizontale.</li>
+   <li><b>Android</b> : dans les réglages rapides, touche <b>Caster</b>, <b>Smart View</b> (Samsung) ou <b>Partage d'écran</b>, choisis ta télé, puis lance le mode TV.</li>
+   <li><b>Chromecast + Chrome sur Android</b> : utilise le bouton <b>📡 Envoyer au Chromecast</b> s'il apparaît ; sinon, menu ⋮ de Chrome → <b>Caster…</b>.</li>
+   <li><b>Télé avec navigateur internet</b> : ouvre l'adresse de l'appli sur la télé. Note : la liste de diffusion est enregistrée sur chaque appareil.</li>
+   <li><b>Câble HDMI</b> : branche le téléphone ou l'ordinateur à la télé avec un adaptateur, puis lance le mode TV.</li>
+  </ul><p class="note">Dans le mode TV : touche la droite ou la gauche de l'écran, glisse le doigt ou utilise les flèches du clavier pour changer de diapo.</p></details>`;
+}
+function tvSlide(s, i, n){
+  const len = (s.texte || '').length, fs = len > 520 ? 'tv-s' : len > 300 ? 'tv-m' : 'tv-l';
+  return `<div class="tv-card">${s.titre ? `<div class="tv-t">${esc(s.titre)}</div>` : ''}${s.sous ? `<div class="tv-q">${esc(s.sous)}</div>` : ''}
+   ${s.texte ? `<div class="tv-x ${fs}">${esc(s.texte)}</div>` : ''}${s.verset ? `<div class="tv-v">📖 ${esc(s.verset)}</div>` : ''}</div>
+   <div class="tv-foot"><span>${i+1} / ${n}</span><span>Carnet de réunions</span></div>`;
+}
+function vTV(){
+  if (!TVL.length) return `<div class="tv"><div class="tv-card"><div class="tv-t">Rien à diffuser</div></div><button class="tv-x-btn" data-tvquit>✕</button></div>`;
+  TVI = Math.max(0, Math.min(TVI, TVL.length - 1));
+  return `<div class="tv" id="tv">${tvSlide(TVL[TVI], TVI, TVL.length)}<button class="tv-nav l" data-tvprev aria-label="Précédent"></button><button class="tv-nav r" data-tvnext aria-label="Suivant"></button><button class="tv-x-btn" data-tvquit aria-label="Quitter">✕</button></div>`;
+}
+function tvShow(){ const el = $('#tv'); if (!el) return; el.innerHTML = vTV().replace(/^<div class="tv" id="tv">|<\/div>$/g, ''); tvSync(); }
+function tvMove(d){ const n = Math.max(0, Math.min(TVL.length - 1, TVI + d)); if (n !== TVI){ TVI = n; tvShow(); } }
+function tvEnter(){
+  document.body.classList.add('tvmode');
+  try { const r = document.documentElement; (r.requestFullscreen || r.webkitRequestFullscreen)?.call(r)?.catch?.(() => {}); } catch(e){}
+  try { screen.orientation?.lock?.('landscape').catch(() => {}); } catch(e){}
+  tvSync();
+}
+function tvLeave(){ document.body.classList.remove('tvmode'); try { if (document.fullscreenElement) document.exitFullscreen(); } catch(e){} }
+
+/* envoi direct vers un Chromecast (Chrome Android, API Presentation) */
+let PCONN = null;
+function tvSync(){ try { if (PCONN && PCONN.state === 'connected') PCONN.send(JSON.stringify({slides: TVL, i: TVI})); } catch(e){} }
+async function tvCast(){
+  try {
+    const req = new PresentationRequest([location.href.split('#')[0] + '#tv-recv']);
+    PCONN = await req.start();
+    PCONN.onconnect = () => { tvSync(); toast('📡 Connecté à la télé'); };
+    if (PCONN.state === 'connected') tvSync();
+    location.hash = 'tv';
+  } catch(e){ toast(e && e.name === 'NotAllowedError' ? 'Diffusion annulée' : 'Ta télé ne permet pas l\'envoi direct : utilise la recopie d\'écran'); }
+}
+// côté télé : reçoit les diapos envoyées par le téléphone
+if (navigator.presentation && navigator.presentation.receiver){
+  navigator.presentation.receiver.connectionList.then(list => {
+    const on = c => c.addEventListener('message', ev => { try { const m = JSON.parse(ev.data); TVL = m.slides || []; TVI = m.i || 0; if (location.hash !== '#tv') location.hash = 'tv'; else tvShow(); } catch(e){} });
+    list.connections.forEach(on); list.onconnectionavailable = ev => on(ev.connection);
+  }).catch(() => {});
+}
+
+function tvEditor(i){
+  const s = i == null ? {} : TVL[i];
+  $('#form').innerHTML = `<h2>${i == null ? 'Nouvelle recherche' : 'Modifier la diapo'}</h2>
+  <label>Titre<input name="titre" value="${esc(s.titre)}" placeholder="Ex. : Pourquoi Jéhovah permet-il la souffrance ?"></label>
+  <label>Question ou sous-titre<input name="sous" value="${esc(s.sous)}"></label>
+  <label>Texte à afficher<textarea name="texte" style="min-height:140px">${esc(s.texte)}</textarea></label>
+  <label>Verset ou référence<input name="verset" value="${esc(s.verset)}" placeholder="Ex. : Jacques 1:13"></label>
+  <div class="end"><button class="btn" value="cancel" formnovalidate>Annuler</button><button class="btn pri" value="ok">Enregistrer</button></div>`;
+  $('#form').oninput = null; $('#dlg').oncancel = null;
+  $('#form').onsubmit = ev => { if (ev.submitter?.value !== 'ok') return; const f = new FormData($('#form'));
+    const sl = {titre: f.get('titre').trim(), sous: f.get('sous').trim(), texte: f.get('texte').trim(), verset: f.get('verset').trim()};
+    if (i == null) tvAdd(sl); else { Object.assign(TVL[i], sl); saveTV(); } render(true); };
+  try { $('#dlg').showModal(); } catch(e){ $('#dlg').setAttribute('open',''); }
+}
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('button,a'); if (!b) return; const d = b.dataset;
+  if (d.tvadd){ const a = d.tvadd.split('|'), k = a[0], j = +a[a.length-1], pk = a.slice(1,-1).join('|'), w = pickWeek();
+    const p = allParts(w,k).find(x => partKey(x) === pk), it = p?.items?.[j]; if (it) tvAdd({titre: it.titre, sous: it.question, texte: it.prep.dire, verset: it.prep.verset}); }
+  else if (d.tvc){ const c = COMMENTS.find(x => x.id === d.tvc); if (c) tvAdd({titre: c.partLabel || 'Commentaire', sous: c.question || '', texte: c.dire || c.reponse, verset: c.verset}); }
+  else if (d.tvd){ const [k, ...r] = d.tvd.split('|'), w = pickWeek(), p = allParts(w,k).find(x => partKey(x) === r.join('|')), D = p?.discours; if (!D) return;
+    tvAdd({titre: D.theme, sous: D.filRouge || '', texte: (D.plan||[]).map(x => '• ' + x.titre).join('\n'), verset: (D.versets||[]).join(' · ')}, true);
+    (D.plan||[]).forEach(x => tvAdd({titre: x.titre, texte: x.notes || ''}, true)); toast('📺 Plan ajouté (' + ((D.plan||[]).length + 1) + ' diapos)'); }
+  else if ('tvnew' in d) tvEditor(null);
+  else if (d.tved) tvEditor(+d.tved);
+  else if (d.tvdel){ TVL.splice(+d.tvdel, 1); saveTV(); render(true); }
+  else if (d.tvup || d.tvdown){ const i = +(d.tvup || d.tvdown), j = d.tvup ? i - 1 : i + 1; if (j < 0 || j >= TVL.length) return; [TVL[i], TVL[j]] = [TVL[j], TVL[i]]; saveTV(); render(true); }
+  else if ('tvclear' in d){ if (!d.sure){ d.sure = 1; b.textContent = 'Confirmer ?'; return; } TVL = []; saveTV(); render(true); }
+  else if (d.tvgo){ TVI = +d.tvgo; }
+  else if (b.getAttribute('href') === '#tv') TVI = 0;
+  else if ('tvcast' in d) tvCast();
+  else if ('tvnext' in d) tvMove(1);
+  else if ('tvprev' in d) tvMove(-1);
+  else if ('tvquit' in d) location.hash = 'diffuser';
+});
+document.addEventListener('keydown', e => { if (!document.body.classList.contains('tvmode')) return;
+  if (['ArrowRight','PageDown',' ','Enter'].includes(e.key)){ e.preventDefault(); tvMove(1); }
+  else if (['ArrowLeft','PageUp','Backspace'].includes(e.key)){ e.preventDefault(); tvMove(-1); }
+  else if (e.key === 'Escape') location.hash = 'diffuser'; });
+let tx0 = null;
+document.addEventListener('touchstart', e => { if (document.body.classList.contains('tvmode')) tx0 = e.touches[0].clientX; }, {passive: true});
+document.addEventListener('touchend', e => { if (tx0 == null) return; const dx = e.changedTouches[0].clientX - tx0; tx0 = null; if (Math.abs(dx) > 50) tvMove(dx < 0 ? 1 : -1); }, {passive: true});
 
 /* ---------- application installable (PWA) ---------- */
 const STANDALONE = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
